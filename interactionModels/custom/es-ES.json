@@ -1,0 +1,116 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "numJugadores",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1297740976121.58499680412",
+                "confirmation": "Confirm.Slot.274567948648.1241407158722"
+              }
+            }
+          ],
+          "name": "numJugadoresIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1558169965326"
+          }
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "numJugadores",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{numJugadores} jugadores",
+                "{numJugadores}"
+              ]
+            }
+          ],
+          "name": "numJugadoresIntent",
+          "samples": [
+            "{numJugadores}",
+            "{numJugadores} jugadores",
+            "empezar una nueva partida",
+            "empezar una partida",
+            "nueva partida"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "tirarDadoIntent",
+          "samples": [
+            "tira el dado",
+            "tirar dado"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "probando oca"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuántos jugadores participarán?"
+          }
+        ],
+        "id": "Elicit.Slot.1297740976121.58499680412"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Van a participar {numJugadores} jugadores, ¿es esto correcto?"
+          }
+        ],
+        "id": "Confirm.Slot.1558169965326.1652526822582"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Todo listo para comenzar la partida?"
+          }
+        ],
+        "id": "Confirm.Intent.1558169965326"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Van a participar {numJugadores} jugadores, ¿es esto correcto?"
+          }
+        ],
+        "id": "Confirm.Slot.274567948648.1241407158722"
+      }
+    ]
+  }
+}

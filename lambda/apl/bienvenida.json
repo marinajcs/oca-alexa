@@ -1,0 +1,41 @@
+{
+ "type": "APL",
+ "version": "1.4",
+ "import": [
+    {
+      "name": "alexa-layouts",
+      "version": "1.7.0"
+    }
+  ],
+ "mainTemplate": {
+    "items": [
+      {
+        "type": "Container",
+        "width": "100%",
+        "height": "100%",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "items": [
+          {
+            "type": "AlexaBackground",
+            "backgroundColor": "#FFFFFF"
+          },
+          {
+            "type": "Image",
+            "source": "https://i.ibb.co/Yfmk5mt/oca.png",
+            "width": "50%",
+            "height": "50%",
+            "scale": "best-fit"
+          },
+          {
+            "type": "Text",
+            "text": "¡Bienvenido/a a la oca!",
+            "color": "#000000",
+            "fontSize": "50dp",
+            "marginTop": "20dp"
+          }
+        ]
+      }
+    ]
+ }
+}
