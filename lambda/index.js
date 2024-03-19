@@ -5,13 +5,13 @@
  * */
 const Alexa = require('ask-sdk-core');
 const bienvenida = require('./apl/bienvenida.json');
-const dado = require('./apl/dado.json');
 const {crearJugadores} = require('./Jugador.js');
-const {tirarUnDado} = require('./Oca.js');
+const {tirarUnDado, getImgDado} = require('./Oca.js');
 
 const WELCOME_TOKEN= 'text';
 let jugadores;
 let turno = 0;
+let dado = 0;
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -73,21 +73,23 @@ const tirarDadoHandler = {
         let speakOutput = `Jugador 1 ha tirado el dado. `;
 
         let responseBuilder = handlerInput.responseBuilder;
-        const d = tirarUnDado();
+        dado = tirarUnDado();
+        let dadoApl = 'dado'+dado+'.json';
         if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
             responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 token: 'tiradaDado',
-                document: dado
+                document: require(`./apl/${dadoApl}`)
             });
         }
         //speakOutput += `Jugador ${jugadores[turno].color} ha sacado un ${d}`;
-        speakOutput += `Jugador 1 ha sacado un ${d}`;
+        speakOutput += `<break time="5s"/> Jugador 1 ha sacado un ${dado}`;
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
     }
 };
+
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {

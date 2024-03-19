@@ -1,21 +1,29 @@
 // gameLogic.js
 
-function crearJugador(id, color, posicion, puntos) {
-    return {
-        id: id,
-        color: color,
-        posicion: posicion,
-        puntos: puntos
-    };
+class Jugador {
+    constructor(id, color, posicion, puntos){
+        this.id = id;
+        this.color = color;
+        this.posicion = posicion;
+        this.puntos = puntos;
+    }
+    
+    getPosActual(){
+        return this.posicion;
+    }
+    setPosActual(npos){
+        this.posicion = npos;
+    }
 }
 
+
 function crearJugadores(n) {
-    const jugadores = [];
+    let jugadores = [];
     const colores = ['Rojo', 'Azul', 'Verde', 'Amarillo'];
 
     for (let i = 0; i < n; i++) {
         const color = colores[i % colores.length];
-        const jugador = crearJugador(i + 1, color, 0, 0);
+        let jugador = new Jugador(i + 1, color, 0, 0);
         jugadores.push(jugador);
     }
 

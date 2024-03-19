@@ -1,0 +1,15 @@
+{
+ "type": "APL",
+ "version": "1.8",
+ "mainTemplate": {
+    "items": [
+      {
+        "type": "Video",
+        "source": "https://www.dropbox.com/scl/fi/rpz96bbwx3e9jt2toaih4/1-video.mp4?rlkey=oto3mwhrm3px1shjvvk5v8epq&raw=1",
+        "autoplay": true,
+        "width": "80%",
+        "height": "80%"
+      }
+    ]
+ }
+}
