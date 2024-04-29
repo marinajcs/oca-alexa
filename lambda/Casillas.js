@@ -1,10 +1,11 @@
 class Casilla {
-    constructor(id) {
+    constructor(id, url) {
         this.id = id;
+        this.url = url;
     }
 
     recibeJugador(jug) {
-        return "Has caído en una casilla normal";
+        return `Has caído en la casilla normal ${this.id}`;
     }
     
 }

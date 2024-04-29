@@ -15,9 +15,9 @@ function avanzaJugador(jActual, tirada, tablero, jugadores){
     return [casillaNueva, informe, finPartida];
 }
     
-function pasarTurno(jActual, jugadores){
+function pasarTurno(jActual, jugadores, njugadores){
     let sig = jActual + 1;
-    if (sig >= jugadores.length())
+    if (sig >= njugadores)
         jActual = 0;
     else
         jActual = sig;
@@ -38,5 +38,7 @@ function tirarDado() {
 
 module.exports = {
     tirarDado,
-    getJugadoresCasilla
+    getJugadoresCasilla,
+    avanzaJugador,
+    pasarTurno
 };

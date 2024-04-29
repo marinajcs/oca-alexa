@@ -3,7 +3,7 @@ const {Casilla, CasillaOca, CasillaPuente} = require('./Casillas.js')
 class Tablero {
     constructor() {
         this.tablero = [];
-        this.addCasilla(new Casilla("Salida"));
+        this.addCasilla(new Casilla("Salida", "https://i.ibb.co/Yfmk5mt/oca.png"));
     }
 
     addCasilla(casilla) {
@@ -44,24 +44,24 @@ function crearTableroPrueba() {
     
     //Salida[0] añadida en constructor de Tablero
     //...[1-3] (3)
-    tablero.addCasilla(new Casilla("C1"));
-    tablero.addCasilla(new Casilla("C2"));
-    tablero.addCasilla(new Casilla("C3"));
+    tablero.addCasilla(new Casilla("C1", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("C2", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("C3", "https://i.ibb.co/Yfmk5mt/oca.png"));
     //Oca[4]
-    tablero.addCasilla(new CasillaOca("Oca-4"));
+    tablero.addCasilla(new CasillaOca("Oca-4", "https://i.ibb.co/Yfmk5mt/oca.png"));
     //Puente[5]
-    tablero.addCasilla(new CasillaPuente("Puente-5"));
+    tablero.addCasilla(new CasillaPuente("Puente-5", "https://i.ibb.co/Yfmk5mt/oca.png"));
     //...[6-7]
-    tablero.addCasilla(new Casilla("C6"));
-    tablero.addCasilla(new Casilla("C7"));
+    tablero.addCasilla(new Casilla("C6", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("C7", "https://i.ibb.co/Yfmk5mt/oca.png"));
     //Oca[8]
-    tablero.addCasilla(new CasillaOca("Oca-8"));
+    tablero.addCasilla(new CasillaOca("Oca-8", "https://i.ibb.co/Yfmk5mt/oca.png"));
     //...[9-10]
-    tablero.addCasilla(new Casilla("C9"));
-    tablero.addCasilla(new Casilla("C10"));
+    tablero.addCasilla(new Casilla("C9", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("C10", "https://i.ibb.co/Yfmk5mt/oca.png"));
 
     // Meta[11]
-    tablero.addCasilla(new Casilla("META"));
+    tablero.addCasilla(new Casilla("META", "https://i.ibb.co/Yfmk5mt/oca.png"));
     
     return tablero;
     
@@ -71,7 +71,7 @@ function crearTableroPrueba() {
 function crearTablero() {
     
     let tablero = new Tablero()
-    
+    /*
     //Salida[0] añadida en constructor de Tablero
     //...[1-3] (3)
     tablero.addCasilla(new Casilla("C1"));
@@ -172,8 +172,9 @@ function crearTablero() {
     tablero.addCasilla(new Casilla("C62"));
     // Meta[63]
     tablero.addCasilla(new Casilla("META"));
-    
+    */
     return tablero;
+    
     
 }
 

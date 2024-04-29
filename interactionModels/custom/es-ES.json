@@ -18,7 +18,7 @@
           "name": "numJugadoresIntent",
           "confirmationRequired": true,
           "prompts": {
-            "confirmation": "Confirm.Intent.1558169965326"
+            "confirmation": "Confirm.Intent.373965235974"
           }
         }
       ],
@@ -63,9 +63,17 @@
           ]
         },
         {
-          "slots": [],
+          "slots": [
+            {
+              "name": "valorDado",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
           "name": "tirarDadoIntent",
           "samples": [
+            "avanzar",
+            "mover ficha",
+            "mover jugador",
             "tira el dado",
             "tirar dado"
           ]
@@ -97,19 +105,19 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "¿Todo listo para comenzar la partida?"
+            "value": "Van a participar {numJugadores} jugadores, ¿es esto correcto?"
           }
         ],
-        "id": "Confirm.Intent.1558169965326"
+        "id": "Confirm.Slot.274567948648.1241407158722"
       },
       {
         "variations": [
           {
             "type": "PlainText",
-            "value": "Van a participar {numJugadores} jugadores, ¿es esto correcto?"
+            "value": "A continuación mostraré a los participantes del juego. ¿Todo listo para comenzar la partida?"
           }
         ],
-        "id": "Confirm.Slot.274567948648.1241407158722"
+        "id": "Confirm.Intent.373965235974"
       }
     ]
   }
