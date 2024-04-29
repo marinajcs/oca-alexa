@@ -5,13 +5,16 @@
  * */
 const Alexa = require('ask-sdk-core');
 const bienvenida = require('./apl/bienvenida.json');
+const fichas = require('./apl/fichas.json');
 const {crearJugadores} = require('./Jugador.js');
-const {tirarUnDado, getImgDado} = require('./Oca.js');
+const {crearTableroPrueba} = require('./Tablero.js');
+const {tirarDado, pasarTurno, avanzaJugador, getJugadoresCasilla} = require('./Oca.js');
 
 const WELCOME_TOKEN= 'text';
 let jugadores;
 let turno = 0;
 let dado = 0;
+let tablero = crearTableroPrueba();
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -42,21 +45,44 @@ const numJugadoresHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
+        let responseBuilder = handlerInput.responseBuilder;
         let speakOutput = '';
+        let njugadores = 0;
 
         // Verifica si el slot 'numJugadores' está presente y tiene un valor
         if (intent.confirmationStatus === 'CONFIRMED'){
-            let njugadores = Alexa.getSlotValue(requestEnvelope, 'numJugadores');
+            njugadores = Alexa.getSlotValue(requestEnvelope, 'numJugadores');
             sessionAttributes.numJugadores = njugadores;
             
             jugadores = crearJugadores(njugadores);
             
             speakOutput += `Estos son los ${njugadores} jugadores que van a participar: `;
             jugadores.forEach(jugador => {
-                speakOutput += (`jugador ${jugador.id}, representado por el color ${jugador.color}; `);
+                speakOutput += (`Jugador ${jugador.id}, representado por el color ${jugador.color}. `);
             });
-        }
+            
+            speakOutput += `<break time="3s"/> Bien, si los ${njugadores} jugadores están preparados, que comience la partida.
+                        Jugador rojo, proceda a tirar el dado`;
+            
         
+            responseBuilder.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                token: 'jugadoresToken',
+                document: fichas,
+                datasources: {
+                    datosFichas: {
+                        type: 'object',
+                        properties: {
+                            jugadores: jugadores.map(jugador => ({
+                                id: jugador.id,
+                                codigo: jugador.codigo
+                            }))
+                        }
+                    }
+                }
+            })
+        }
+    
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
@@ -69,11 +95,11 @@ const tirarDadoHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'tirarDadoIntent';
     },
     handle(handlerInput) {
-        //let speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. `;
-        let speakOutput = `Jugador 1 ha tirado el dado. `;
+        let speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. `;
+        //let speakOutput = `Jugador 1 ha tirado el dado. `;
 
         let responseBuilder = handlerInput.responseBuilder;
-        dado = tirarUnDado();
+        dado = tirarDado();
         let dadoApl = 'dado'+dado+'.json';
         if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
             responseBuilder.addDirective({
@@ -82,14 +108,72 @@ const tirarDadoHandler = {
                 document: require(`./apl/${dadoApl}`)
             });
         }
-        //speakOutput += `Jugador ${jugadores[turno].color} ha sacado un ${d}`;
-        speakOutput += `<break time="5s"/> Jugador 1 ha sacado un ${dado}`;
+        speakOutput += `<break time="5s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}`;
+        //speakOutput += `<break time="5s"/> Jugador 1 ha sacado un ${dado}`;
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            /*
+            .addDelegateDirective({
+                name: 'moverJugadorIntent',
+                confirmationStatus: 'NONE',
+                slots: {}
+            })
+            */
             .getResponse();
     }
 };
 
+const moverJugadorHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'moverJugadorIntent';
+    },
+    handle(handlerInput) {
+        let jActual = jugadores[turno];
+        
+        const [casillaNueva, informe, finPartida] = avanzaJugador(jActual, dado, tablero, jugadores);
+        let speakOutput = informe;
+        
+        const topText = casillaNueva.id;
+        const circleColor = jActual.colorCod;
+        const circleText = jActual.color;
+        const jugEnCasilla = getJugadoresCasilla(jActual.getPosActual(), jActual, jugadores);
+        const fichas = jugEnCasilla.map(jugador => ({
+            color: jugador.colorCod,
+            texto: `Jugador ${jugador.color}`
+        }));
+
+        const datosCasilla = {
+            "payload": {
+                topText,
+                circleColor,
+                circleText,
+                fichas
+            }
+        };
+        
+        if (!finPartida) {
+            turno = pasarTurno(turno, jugadores);
+            speakOutput += `<break time="7s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado.`;
+    
+            return handlerInput.responseBuilder
+                .speak(speakOutput)
+                .reprompt(speakOutput)
+                .addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    token: 'casillaApl',
+                    document: require('./apl/casilla.json'),
+                    datasources: datosCasilla
+                })
+                .getResponse();
+        } else {
+            return handlerInput.responseBuilder
+                .speak('Partida terminada. Gracias por jugar.')
+                .endSession()
+                .getResponse();
+        }
+    }
+};
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -204,6 +288,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         numJugadoresHandler,
         tirarDadoHandler,
+        moverJugadorHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,

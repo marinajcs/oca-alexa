@@ -3,8 +3,8 @@ class Casilla {
         this.id = id;
     }
 
-    getDescripcion() {
-        return "Casilla normal";
+    recibeJugador(jug) {
+        return "Has caído en una casilla normal";
     }
     
 }
@@ -14,8 +14,18 @@ class CasillaOca extends Casilla {
         super(id);
     }
 
-    getDescripcion() {
+    recibeJugador(jug) {
         return "Casilla de oca en oca y tiro porque me toca";
+    }
+}
+
+class CasillaPuente extends Casilla {
+    constructor(id) {
+        super(id);
+    }
+
+    recibeJugador(jug) {
+        return "Casilla de puente a puente y me lleva la corriente";
     }
 }
 
@@ -29,11 +39,13 @@ class CasillaMinijuego extends Casilla {
         return this.caracteristicaEspecial;
     }
     
-    getDescripcion() {
+    recibeJugador(jug) {
         return "Casilla de minijuego";
     }
 }
 
 module.exports = {
-    Casilla
+    Casilla,
+    CasillaOca,
+    CasillaPuente
 };
