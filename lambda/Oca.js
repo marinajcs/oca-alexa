@@ -12,11 +12,11 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones){
     if (tablero.getCasilla(posActual) instanceof CasillaPenalizacion && penalizaciones[jActual.id] > 0){
         posNueva = posActual;
         casillaNueva = tablero.getCasilla(posNueva);
-        informe = `Jugador ${jActual.color} no puede moverse aún. Turnos restantes antes de poder tirar el dado: ${penalizaciones[jActual.id]}. `
+        informe += `Jugador ${jActual.color} no puede moverse aún. Turnos restantes antes de poder tirar el dado: ${penalizaciones[jActual.id]}. `
         penalizaciones[jActual.id] -= 1;
     } else {
-        informe = `Jugador ${jActual.color} va a moverse ${tirada} casillas. `;
-        posNueva = tablero.nuevaPosicion(posActual, tirada);
+        informe += `Jugador ${jActual.color} va a moverse ${tirada} casillas. `;
+        posNueva += tablero.nuevaPosicion(posActual, tirada);
         casillaNueva = tablero.getCasilla(posNueva);
         jActual.setPosActual(posNueva);
         informe += casillaNueva.recibeJugador(jActual);
@@ -39,7 +39,7 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones){
         }
         
         if (casillaNueva.id === "META"){
-            informe = ` ¡Felicidades jugador ${jActual.color}, ha ganado la partida! `;
+            informe += ` ¡Felicidades jugador ${jActual.color}, ha ganado la partida! `;
             finPartida = true;
         }
     }
@@ -60,13 +60,8 @@ function getJugadoresCasilla(numCasilla, jActual, jugadores) {
     return jugadoresEnCasilla;
 }
 
-function tirarDado() {
-    return Math.floor(Math.random() * 6) + 1;
-}
-
 
 module.exports = {
-    tirarDado,
     getJugadoresCasilla,
     avanzaJugador,
     pasarTurno

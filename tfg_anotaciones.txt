@@ -1,0 +1,17 @@
+TFG 
+Falta por implementar:
+- Casillas de juegos sorpresa (sencillos de implementar)
+	- Conoce a tus compañeros
+	- Trivial básico (con ayuda de compañeros)
+	- Memorizar palabras en grupo
+- Cuando termina la partida, borra los datos de la actual
+  y se puede empezar otra invocando "nueva partida"
+- Terminar tablero definitivo (el de prueba ya está hecho)
+
+Mejorar:
+- Colores de jugadores asignados aleatoriamente cada partida
+- Aumentar a 8-10 el máx de jugadores
+- Hacer los diálogos de Alexa más motivadores y naturales
+- Ajustar el tamaño de las imágenes del tablero (algunas salen recortadas)
+- Cuando tira el dado, mostrar por pantalla jugador y casilla actual
+- Cuando muestra listado de jugadores, añadir imagen de casilla de salida

@@ -8,7 +8,7 @@ class Casilla {
         if (this.id === "META"){
             return ` Has caído en la casilla de meta. `
         }
-        return `Has caído en la casilla normal: ${this.id}`;
+        return `Ha caído en la casilla normal: ${this.id}.`;
     }
     
 }
@@ -19,7 +19,7 @@ class CasillaOca extends Casilla {
     }
 
     recibeJugador(jug) {
-        return `Buena suerte, has caído en la casilla ${this.id}. De oca en oca y tiro porque me toca.`;
+        return `Buena suerte, ha caído en la casilla ${this.id}. De oca en oca y tiro porque me toca.`;
     }
 }
 
@@ -29,7 +29,7 @@ class CasillaPuente extends Casilla {
     }
 
     recibeJugador(jug) {
-        return `Has caído en la casilla ${this.id}. De puente a puente y me lleva la corriente`;
+        return `Ha caído en la casilla ${this.id}. De puente a puente y me lleva la corriente.`;
     }
 }
 
@@ -40,7 +40,7 @@ class CasillaPenalizacion extends Casilla {
     }
 
     recibeJugador(jug) {
-        return `Mala suerte, has caído en un pozo. Pierdes ${this.penaliza} turnos.`;
+        return `Mala suerte, ha caído en un pozo. Pierdes ${this.penaliza} turnos.`;
     }
 }
 

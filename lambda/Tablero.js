@@ -83,7 +83,10 @@ function crearTableroPrueba() {
     tablero.addCasilla(new CasillaPuente("Puente 11", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
     //Oca[12]
     tablero.addCasilla(new CasillaOca("Oca 12", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg"));
-    // Meta[13]
+    //...[13-14]
+    tablero.addCasilla(new Casilla("Casilla 13", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("Casilla 14", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    // Meta[15]
     tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
     
     return tablero;

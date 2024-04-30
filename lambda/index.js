@@ -5,7 +5,8 @@ const bienvenida = require('./apl/bienvenida.json');
 const fichas = require('./apl/fichas.json');
 const {crearJugadores} = require('./Jugador.js');
 const {crearTableroPrueba} = require('./Tablero.js');
-const {tirarDado, pasarTurno, avanzaJugador, getJugadoresCasilla} = require('./Oca.js');
+const {pasarTurno, avanzaJugador, getJugadoresCasilla} = require('./Oca.js');
+const {tirarDado, getUrlDado} = require('./Dado.js');
 
 const WELCOME_TOKEN= 'text';
 let jugadores;
@@ -59,7 +60,7 @@ const numJugadoresHandler = {
             
             speakOutput += `Estos son los ${njugadores} jugadores que van a participar: `;
             jugadores.forEach(jugador => {
-                speakOutput += (`Jugador ${jugador.id}, representado por el color ${jugador.color}. `);
+                speakOutput += (`Jugador ${jugador.id + 1}, representado por el color ${jugador.color}. `);
             });
             
             speakOutput += `<break time="3s"/> Bien, si los ${njugadores} jugadores están preparados, que comience la partida.
@@ -75,7 +76,7 @@ const numJugadoresHandler = {
                         type: 'object',
                         properties: {
                             jugadores: jugadores.map(jugador => ({
-                                id: jugador.id,
+                                id: (jugador.id+1),
                                 codigo: jugador.codigo
                             }))
                         }
@@ -109,12 +110,19 @@ const tirarDadoHandler = {
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
-            let dadoApl = 'dado'+dado+'.json';
             if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
                 responseBuilder.addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     token: 'tiradaDado',
-                    document: require(`./apl/${dadoApl}`)
+                    document: require('./apl/dado.json'),
+                    datasources: {
+                        datosDado: {
+                            type: 'object',
+                            properties: {
+                                num: getUrlDado(dado)
+                            }
+                        }
+                    }
                 });
             }
             speakOutput += `<break time="5s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
