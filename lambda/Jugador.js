@@ -23,7 +23,7 @@ function crearJugadores(n) {
     for (let i = 0; i < n; i++) {
         const color = colores[i];
         const cod = codigos[i];
-        let jugador = new Jugador(i + 1, color, cod, 0, 0);
+        let jugador = new Jugador(i, color, cod, 0, 0);
         jugadores.push(jugador);
     }
 

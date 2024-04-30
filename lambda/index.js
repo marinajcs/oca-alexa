@@ -1,4 +1,3 @@
-//const Alexa = require('ask-sdk-core');
 //const handlers = require('./handlers.js');
 
 const Alexa = require('ask-sdk-core');
@@ -54,6 +53,9 @@ const numJugadoresHandler = {
             sessionAttributes.numJugadores = njugadores;
             
             jugadores = crearJugadores(njugadores);
+            for (let i = 0; i < njugadores; i++){
+                penalizaciones[i] = 0;
+            }
             
             speakOutput += `Estos son los ${njugadores} jugadores que van a participar: `;
             jugadores.forEach(jugador => {
@@ -101,7 +103,7 @@ const tirarDadoHandler = {
         let responseBuilder = handlerInput.responseBuilder;
         dado = sessionAttributes.valorDado;
         
-        if (!dado){
+        if (dado === undefined && penalizaciones[jugadores[turno].id] === 0){
             speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. `
             dado = tirarDado();
             sessionAttributes.valorDado = dado;
@@ -115,53 +117,53 @@ const tirarDadoHandler = {
                     document: require(`./apl/${dadoApl}`)
                 });
             }
-            speakOutput += `<break time="5s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}`;
+            speakOutput += `<break time="5s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
         } else {
-            speakOutput = `Jugador ${jugadores[turno].color} se va a mover ${dado} casillas. `
+            let njugadores =  sessionAttributes.numJugadores;
+            sessionAttributes.valorDado = undefined;
             let jActual = jugadores[turno];
-        
-            const [casillaNueva, informe, finPartida] = avanzaJugador(jActual, dado, tablero, jugadores);
+            
+            const [casillaNueva, informe, finPartida, dobleTurno] = avanzaJugador(jActual, dado, tablero, jugadores, penalizaciones);
             speakOutput += informe;
             
             const jugEnCasilla = getJugadoresCasilla(jActual.getPosActual(), jActual, jugadores);
             
             if (!finPartida) {
-                let njugadores =  sessionAttributes.numJugadores;
-                sessionAttributes.valorDado = undefined;
-                turno = pasarTurno(turno, jugadores, njugadores); //si no es casilla de oca
-                speakOutput += `<break time="5s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
-                
-                responseBuilder.addDirective({
-                        type: 'Alexa.Presentation.APL.RenderDocument',
-                        token: 'casillaApl',
-                        document: require('./apl/casilla.json'),
-                        datasources: {
-                            datosCasilla: {
-                                type: 'object',
-                                properties: {
-                                    topText: casillaNueva.id,
-                                    circleColor: jActual.codigo,
-                                    circleId: `J${jActual.id}`,
-                                    casillaImg: casillaNueva.url,
-                                    fichas: jugEnCasilla.map(jugador => ({
-                                        codigo: jugador.codigo,
-                                        id: `J${jugador.id}`
-                                    }))
-                                }
-                            }
-                        }
-                    })
+                if (dobleTurno){
+                    speakOutput += `<break time="5s"/> Vuelve a ser el turno del jugador ${jugadores[turno].color}. Por favor tire el dado de nuevo. `;
+                } else {
+                    turno = pasarTurno(turno, njugadores);
+                    speakOutput += `<break time="5s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
+                }
                     
             } else {
                 speakOutput += 'Partida terminada. Gracias por jugar.';
                 //responseBuilder.endSession();
             }
-            
+            responseBuilder.addDirective({
+                type: 'Alexa.Presentation.APL.RenderDocument',
+                token: 'casillaApl',
+                document: require('./apl/casilla.json'),
+                datasources: {
+                    datosCasilla: {
+                        type: 'object',
+                        properties: {
+                            topText: casillaNueva.id,
+                            circleColor: jActual.codigo,
+                            circleId: `J${jActual.id}`,
+                            casillaImg: casillaNueva.url,
+                            fichas: jugEnCasilla.map(jugador => ({
+                                codigo: jugador.codigo,
+                                id: `J${jugador.id}`
+                            }))
+                        }
+                    }
+                }
+            })
         }
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
             .getResponse();
     }
 };

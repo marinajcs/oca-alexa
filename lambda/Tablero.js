@@ -36,6 +36,26 @@ class Tablero {
         return numCasilla >= 0 && numCasilla < this.tablero.length;
     }
     
+    buscarSiguienteOca(posActual) {
+        for (let i = posActual + 1; i < this.tablero.length; i++) {
+            if (this.tablero[i] instanceof CasillaOca) {
+                return i;
+            } else if (i === (this.tablero.length-1)) {
+                return (this.tablero.length-1);
+            }
+        }
+        return null;
+    }
+    
+    buscarSiguientePuente(posActual) {
+        for (let i = 0; i < this.tablero.length; i++) {
+            if (this.tablero[i] instanceof CasillaPuente && i !== posActual) {
+                return i;
+            }
+        }
+        return null;
+    }
+    
 }
 
 function crearTableroPrueba() {
@@ -57,7 +77,7 @@ function crearTableroPrueba() {
     //Oca[8]
     tablero.addCasilla(new CasillaOca("Oca 8", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg"));
     //...[9-10]
-    tablero.addCasilla(new CasillaPenalizacion("Casilla 9", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg"));
+    tablero.addCasilla(new CasillaPenalizacion("Casilla 9", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", 2));
     tablero.addCasilla(new Casilla("Casilla 10", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
     // Puente[11]
     tablero.addCasilla(new CasillaPuente("Puente 11", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
