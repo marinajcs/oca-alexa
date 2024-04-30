@@ -1,4 +1,4 @@
-const {Casilla, CasillaOca, CasillaPuente} = require('./Casillas.js')
+const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion} = require('./Casillas.js')
 
 class Tablero {
     constructor() {
@@ -44,24 +44,27 @@ function crearTableroPrueba() {
     
     //Salida[0] añadida en constructor de Tablero
     //...[1-3] (3)
-    tablero.addCasilla(new Casilla("C1", "https://i.ibb.co/Yfmk5mt/oca.png"));
-    tablero.addCasilla(new Casilla("C2", "https://i.ibb.co/Yfmk5mt/oca.png"));
-    tablero.addCasilla(new Casilla("C3", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("Casilla 1", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("Casilla 2", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("Casilla 3", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
     //Oca[4]
-    tablero.addCasilla(new CasillaOca("Oca-4", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new CasillaOca("Oca 4", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg"));
     //Puente[5]
-    tablero.addCasilla(new CasillaPuente("Puente-5", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new CasillaPuente("Puente 5", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
     //...[6-7]
-    tablero.addCasilla(new Casilla("C6", "https://i.ibb.co/Yfmk5mt/oca.png"));
-    tablero.addCasilla(new Casilla("C7", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new Casilla("Casilla 6", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("Casilla 7", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
     //Oca[8]
-    tablero.addCasilla(new CasillaOca("Oca-8", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new CasillaOca("Oca 8", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg"));
     //...[9-10]
-    tablero.addCasilla(new Casilla("C9", "https://i.ibb.co/Yfmk5mt/oca.png"));
-    tablero.addCasilla(new Casilla("C10", "https://i.ibb.co/Yfmk5mt/oca.png"));
-
-    // Meta[11]
-    tablero.addCasilla(new Casilla("META", "https://i.ibb.co/Yfmk5mt/oca.png"));
+    tablero.addCasilla(new CasillaPenalizacion("Casilla 9", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg"));
+    tablero.addCasilla(new Casilla("Casilla 10", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    // Puente[11]
+    tablero.addCasilla(new CasillaPuente("Puente 11", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
+    //Oca[12]
+    tablero.addCasilla(new CasillaOca("Oca 12", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg"));
+    // Meta[13]
+    tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
     
     return tablero;
     

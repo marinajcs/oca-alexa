@@ -13,6 +13,7 @@ let jugadores;
 let turno = 0;
 let dado = 0;
 let tablero = crearTableroPrueba();
+let penalizaciones = [];
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -126,7 +127,8 @@ const tirarDadoHandler = {
             
             if (!finPartida) {
                 let njugadores =  sessionAttributes.numJugadores;
-                turno = pasarTurno(turno, jugadores, njugadores);
+                sessionAttributes.valorDado = undefined;
+                turno = pasarTurno(turno, jugadores, njugadores); //si no es casilla de oca
                 speakOutput += `<break time="5s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
                 
                 responseBuilder.addDirective({
@@ -140,6 +142,7 @@ const tirarDadoHandler = {
                                     topText: casillaNueva.id,
                                     circleColor: jActual.codigo,
                                     circleId: `J${jActual.id}`,
+                                    casillaImg: casillaNueva.url,
                                     fichas: jugEnCasilla.map(jugador => ({
                                         codigo: jugador.codigo,
                                         id: `J${jugador.id}`
@@ -160,26 +163,6 @@ const tirarDadoHandler = {
             .speak(speakOutput)
             .reprompt(speakOutput)
             .getResponse();
-    }
-};
-
-const moverJugadorHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'moverJugadorIntent';
-    },
-    handle(handlerInput) {
-        let responsebuilder = handlerInput.responseBuilder
-        let jActual = jugadores[turno];
-        
-        const [casillaNueva, informe, finPartida] = avanzaJugador(jActual, dado, tablero, jugadores);
-        let speakOutput = informe;
-        
-        const jugEnCasilla = getJugadoresCasilla(jActual.getPosActual(), jActual, jugadores);
-        
-        return responsebuilder
-                .speak(speakOutput)
-                .getResponse();
     }
 };
 
@@ -291,7 +274,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         numJugadoresHandler,
         tirarDadoHandler,
-        //moverJugadorHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,

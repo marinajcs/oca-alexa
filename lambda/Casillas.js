@@ -11,8 +11,8 @@ class Casilla {
 }
 
 class CasillaOca extends Casilla {
-    constructor(id) {
-        super(id);
+    constructor(id, url) {
+        super(id, url);
     }
 
     recibeJugador(jug) {
@@ -21,8 +21,8 @@ class CasillaOca extends Casilla {
 }
 
 class CasillaPuente extends Casilla {
-    constructor(id) {
-        super(id);
+    constructor(id, url) {
+        super(id, url);
     }
 
     recibeJugador(jug) {
@@ -30,9 +30,19 @@ class CasillaPuente extends Casilla {
     }
 }
 
+class CasillaPenalizacion extends Casilla {
+    constructor(id, url) {
+        super(id, url);
+    }
+
+    recibeJugador(jug) {
+        return "Mala suerte, has caído en un pozo. Pierdes el siguiente turno.";
+    }
+}
+
 class CasillaMinijuego extends Casilla {
-    constructor(id, caracteristicaEspecial) {
-        super(id);
+    constructor(id, url, caracteristicaEspecial) {
+        super(id, url);
         this.caracteristicaEspecial = caracteristicaEspecial;
     }
 
@@ -48,5 +58,6 @@ class CasillaMinijuego extends Casilla {
 module.exports = {
     Casilla,
     CasillaOca,
-    CasillaPuente
+    CasillaPuente,
+    CasillaPenalizacion
 };

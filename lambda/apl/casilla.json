@@ -20,7 +20,7 @@
           },
           {
             "type": "Image",
-            "source": "https://i.ibb.co/Yfmk5mt/oca.png",
+            "source": "${payload.datosCasilla.properties.casillaImg}",
             "scale": "best-fill",
             "width": "80%",
             "height": "90%",
