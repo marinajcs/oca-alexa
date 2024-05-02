@@ -20,6 +20,23 @@
           "prompts": {
             "confirmation": "Confirm.Intent.373965235974"
           }
+        },
+        {
+          "slots": [
+            {
+              "name": "temaAyuda",
+              "elicitationRequired": true,
+              "type": "tipoAyuda",
+              "confirmationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.282739723454.1287855592498",
+                "confirmation": "Confirm.Slot.470303180071.482449974275"
+              }
+            }
+          ],
+          "name": "ayudaReglasIntent",
+          "confirmationRequired": false,
+          "prompts": {}
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -32,7 +49,10 @@
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": []
+          "samples": [
+            "ayúdame",
+            "ayuda"
+          ]
         },
         {
           "name": "AMAZON.StopIntent",
@@ -63,12 +83,7 @@
           ]
         },
         {
-          "slots": [
-            {
-              "name": "valorDado",
-              "type": "AMAZON.NUMBER"
-            }
-          ],
+          "slots": [],
           "name": "tirarDadoIntent",
           "samples": [
             "avanzar",
@@ -77,9 +92,84 @@
             "tira el dado",
             "tirar dado"
           ]
+        },
+        {
+          "slots": [
+            {
+              "name": "temaAyuda",
+              "type": "tipoAyuda",
+              "samples": [
+                "di {temaAyuda}",
+                "comenta {temaAyuda}",
+                "{temaAyuda}",
+                "explica {temaAyuda}",
+                "coméntame {temaAyuda}",
+                "recuérdame {temaAyuda}",
+                "dime {temaAyuda}",
+                "explícame {temaAyuda}"
+              ]
+            }
+          ],
+          "name": "ayudaReglasIntent",
+          "samples": [
+            "di {temaAyuda}",
+            "comenta {temaAyuda}",
+            "explica {temaAyuda}",
+            "recuérdame {temaAyuda}",
+            "coméntame {temaAyuda}",
+            "dime {temaAyuda}",
+            "explícame {temaAyuda}"
+          ]
         }
       ],
-      "types": [],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "tipos de minijuegos",
+                  "los tipos de minijuegos",
+                  "los minijuegos"
+                ],
+                "value": "minijuegos"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "los comandos de voz disponibles",
+                  "los comandos de voz",
+                  "los comandos",
+                  "comandos de voz"
+                ],
+                "value": "comandos"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "las casillas del tablero",
+                  "las casillas",
+                  "casillas del tablero"
+                ],
+                "value": "casillas"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "las reglas generales",
+                  "las reglas",
+                  "las reglas del juego"
+                ],
+                "value": "reglas"
+              }
+            }
+          ],
+          "name": "tipoAyuda"
+        }
+      ],
       "invocationName": "probando oca"
     },
     "prompts": [
@@ -118,6 +208,24 @@
           }
         ],
         "id": "Confirm.Intent.373965235974"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "El tema a explicar es \u0027 {temaAyuda} \u0027, ¿correcto?"
+          }
+        ],
+        "id": "Confirm.Slot.470303180071.482449974275"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Qué tema quiere que le explique?"
+          }
+        ],
+        "id": "Elicit.Slot.282739723454.1287855592498"
       }
     ]
   }

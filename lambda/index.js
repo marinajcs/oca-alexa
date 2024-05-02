@@ -20,7 +20,8 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        let speakOutput = 'Bienvenidos y bienvenidas a la oca. Para empezar una partida, di "Nueva partida"';
+        let speakOutput = 'Bienvenidos y bienvenidas al juego de la oca. Si tiene dudas acerca del juego, pídame ayuda.\
+                           Para empezar una partida, di "Nueva partida"';
         let responseBuilder = handlerInput.responseBuilder;
         if (Alexa.getSupportedInterfaces(handlerInput.requestEnvelope)['Alexa.Presentation.APL']){
             responseBuilder.addDirective({
@@ -31,6 +32,59 @@ const LaunchRequestHandler = {
         } 
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            .reprompt('Para empezar una partida, di "Nueva partida"')
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
+
+const ayudaReglasHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ayudaReglasIntent';
+    },
+    handle(handlerInput) {
+        const {request} = handlerInput.requestEnvelope.request;
+        let responseBuilder = handlerInput.responseBuilder;
+        let speakOutput = '';
+
+        const temaAyuda = Alexa.getSlotValue(handlerInput.requestEnvelope, 'temaAyuda');
+        const tema = handlerInput.requestEnvelope.request.intent.slots.temaAyuda.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
+        if (tema === 'reglas'){
+            speakOutput += "Claro, con mucho gusto. Hay dos objetivos principales en este juego. El primero consiste \
+                            en ser el jugador más rápido en llegar a la última casilla del tablero, la número 63. \
+                            El segundo objetivo, acumular el mayor número de puntos, que se pueden conseguir ganando \
+                            los minijuegos de las casillas sorpresa del tablero. En cada turno, el jugador actual tendrá \
+                            que tirar el dado y avanzar su ficha por el tablero. Para más información acerca de las \
+                            casillas disponibles o los comandos de voz, siéntase libre de preguntarme.";
+            
+        } else if (tema === 'casillas'){
+            speakOutput += "Claro, con mucho gusto. Hay 5 tipos de casillas en este juego. En primer lugar, las \
+                            casillas normales, que no desencadenan ningún evento. En segundo lugar, las casillas \
+                            de oca en oca, que permiten al jugador avanzar a la siguiente casilla de oca, incluida \
+                            la última, y volver a tirar el dado. En tercer lugar,  la casilla de puente a puente, \
+                            que mueven al jugador al otro puente del tablero, pero sin darle un turno extra. \
+                            En cuarto lugar, las casillas de penalización, que hacen que el jugador pierda \
+                            un número determinado de turnos, sin poder avanzar. En último lugar, las casillas \
+                            sorpresa, que inician un minijuego aleatorio con la posibilidad de ganar puntos, en el \
+                            que dependiendo del que haya tocado, pueden participar más jugadores.";
+            
+        } else if (tema === 'minijuegos'){
+            speakOutput += "Claro, con mucho gusto. Los minijuegos disposibles son: ...";
+            
+        } else if (tema === 'comandos'){
+            speakOutput += "Claro, con mucho gusto. Los comandos de voz disponibles son: nueva partida, \
+                            tirar dado, mover ficha, ayuda y terminar partida";
+        }
+        
+        speakOutput += ' Espero que le haya servido de ayuda. No dude en preguntarme de nuevo si no le quedó claro. ';
+        
+    
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
             .getResponse();
     }
 };
@@ -87,6 +141,8 @@ const numJugadoresHandler = {
     
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            .reprompt(speakOutput)
+            .withShouldEndSession(false)
             .getResponse();
     }
 };
@@ -125,7 +181,8 @@ const tirarDadoHandler = {
                     }
                 });
             }
-            speakOutput += `<break time="5s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
+            speakOutput += `<break time="10s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
+
         } else {
             let njugadores =  sessionAttributes.numJugadores;
             sessionAttributes.valorDado = undefined;
@@ -172,6 +229,8 @@ const tirarDadoHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            .reprompt(speakOutput)
+            .withShouldEndSession(false)
             .getResponse();
     }
 };
@@ -182,7 +241,8 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'You can say hello to me! How can I help?';
+        const speakOutput = 'Por supuesto. Los temas que puedo explicarle son: las reglas del juego, las casillas del tablero, \
+                             los tipos de minijuegos y los comandos de voz disponibles.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -282,6 +342,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         HelpIntentHandler,
+        ayudaReglasHandler,
         numJugadoresHandler,
         tirarDadoHandler,
         CancelAndStopIntentHandler,

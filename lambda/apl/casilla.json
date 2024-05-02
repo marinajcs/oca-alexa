@@ -21,7 +21,6 @@
           {
             "type": "Image",
             "source": "${payload.datosCasilla.properties.casillaImg}",
-            "scale": "best-fill",
             "width": "75%",
             "height": "85%",
             "position": "absolute",
