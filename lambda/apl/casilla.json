@@ -48,14 +48,15 @@
             "type": "Sequence",
             "id": "fichaSequence",
             "width": "15%",
-            "height": "200dp",
+            "height": "70%",
+            "scrollDirection": "vertical",
             "data": "${payload.datosCasilla.properties.fichas}",
             "items": [
               {
                 "type": "Frame",
                 "direction": "row",
                 "width": "auto",
-                "height": "auto",
+                "height": "60dp",
                 "borderRadius": "50%",
                 "backgroundColor": "${data.codigo}",
                 "alignItems": "left",

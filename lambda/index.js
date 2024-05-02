@@ -80,11 +80,11 @@ const ayudaReglasHandler = {
         }
         
         speakOutput += ' Espero que le haya servido de ayuda. No dude en preguntarme de nuevo si no le quedó claro. ';
-        
     
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt('¿Quiere que le explique algo más?')
+            .withShouldEndSession(false)
             .getResponse();
     }
 };
@@ -100,9 +100,9 @@ const numJugadoresHandler = {
         const {intent} = requestEnvelope.request;
         let responseBuilder = handlerInput.responseBuilder;
         let speakOutput = '';
+        let repromptAudio;
         let njugadores = 0;
 
-        // Verifica si el slot 'numJugadores' está presente y tiene un valor
         if (intent.confirmationStatus === 'CONFIRMED'){
             njugadores = Alexa.getSlotValue(requestEnvelope, 'numJugadores');
             sessionAttributes.numJugadores = njugadores;
@@ -112,13 +112,14 @@ const numJugadoresHandler = {
                 penalizaciones[i] = 0;
             }
             
-            speakOutput += `Estos son los ${njugadores} jugadores que van a participar: `;
+            speakOutput += `${njugadores === 1 ? 'Este es el jugador que va a participar' : 'Estos son los jugadores que van a participar <break time="2s"/>'}`;
             jugadores.forEach(jugador => {
-                speakOutput += (`Jugador ${jugador.id + 1}, representado por el color ${jugador.color}. `);
+                speakOutput += (`<break time="1s"/> Jugador ${jugador.id + 1}, representado por el color ${jugador.color}. `);
             });
             
-            speakOutput += `<break time="3s"/> Bien, si los ${njugadores} jugadores están preparados, que comience la partida.
-                        Jugador rojo, proceda a tirar el dado`;
+            speakOutput += `<break time="3s"/> Bien, si ${njugadores === 1 ? 'el jugador está preparado' : 'los jugadores están preparados'}, que comience la partida. `
+            repromptAudio = `Jugador ${jugadores[turno].color}, proceda a tirar el dado`;
+            speakOutput += repromptAudio;
             
         
             responseBuilder.addDirective({
@@ -141,7 +142,7 @@ const numJugadoresHandler = {
     
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt(repromptAudio)
             .withShouldEndSession(false)
             .getResponse();
     }
@@ -157,11 +158,12 @@ const tirarDadoHandler = {
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
         let speakOutput = '';
+        let repromptAudio;
         let responseBuilder = handlerInput.responseBuilder;
         dado = sessionAttributes.valorDado;
         
         if (dado === undefined && penalizaciones[jugadores[turno].id] === 0){
-            speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. `
+            speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. <break time="10s"/>`
             dado = tirarDado();
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
@@ -181,8 +183,9 @@ const tirarDadoHandler = {
                     }
                 });
             }
-            speakOutput += `<break time="10s"/> Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
-
+            
+            repromptAudio = `Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
+            speakOutput += repromptAudio;
         } else {
             let njugadores =  sessionAttributes.numJugadores;
             sessionAttributes.valorDado = undefined;
@@ -195,10 +198,13 @@ const tirarDadoHandler = {
             
             if (!finPartida) {
                 if (dobleTurno){
-                    speakOutput += `<break time="5s"/> Vuelve a ser el turno del jugador ${jugadores[turno].color}. Por favor tire el dado de nuevo. `;
+                    repromptAudio = `<break time="3s"/> Vuelve a ser el turno del jugador ${jugadores[turno].color}. Por favor tire el dado de nuevo. `;
+                    speakOutput += repromptAudio;
+                    
                 } else {
                     turno = pasarTurno(turno, njugadores);
-                    speakOutput += `<break time="5s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
+                    repromptAudio = `<break time="3s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
+                    speakOutput += repromptAudio;
                 }
                     
             } else {
@@ -229,7 +235,7 @@ const tirarDadoHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt(repromptAudio)
             .withShouldEndSession(false)
             .getResponse();
     }

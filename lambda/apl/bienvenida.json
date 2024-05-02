@@ -29,7 +29,7 @@
           },
           {
             "type": "Text",
-            "text": "¡Bienvenido/a a la oca!",
+            "text": "¡Bienvenidos/as a la oca!",
             "color": "#000000",
             "fontSize": "50dp",
             "marginTop": "20dp"

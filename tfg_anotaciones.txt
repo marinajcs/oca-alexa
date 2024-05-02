@@ -1,17 +1,25 @@
 TFG 
 Falta por implementar:
-- Casillas de juegos sorpresa (sencillos de implementar)
-	- Conoce a tus compañeros
-	- Trivial básico (con ayuda de compañeros)
-	- Memorizar palabras en grupo
-- Cuando termina la partida, borra los datos de la actual
-  y se puede empezar otra invocando "nueva partida"
+- Casillas de juegos sorpresa (sencillos de implementar) - ganar da puntos
+	- Conoce a tus compañeros (sí) (indiv)
+	- Trivial básico (con rebote, divide puntos) (sí) (indiv/colab)
+	- Memorizar palabras en grupo (colab)
+	- Ronda de operaciones matemáticas (colab)
+	- Completa el refrán (sí) (indiv)
+- Cuando termina la partida, borrar los datos de la actual*
+  y se puede empezar otra invocando a "nueva partida"
 - Terminar tablero definitivo (el de prueba ya está hecho)
+- Guardar el estado de la partida (base de datos Dynamo)
+
 
 Mejorar:
 - Colores de jugadores asignados aleatoriamente cada partida
-- Aumentar a 8-10 el máx de jugadores
 - Hacer los diálogos de Alexa más motivadores y naturales
-- Ajustar el tamaño de las imágenes del tablero (algunas salen recortadas)
+- Ajustar el tamaño de las imágenes del tablero
 - Cuando tira el dado, mostrar por pantalla jugador y casilla actual
 - Cuando muestra listado de jugadores, añadir imagen de casilla de salida
+- Aumentar tamaños de letra para más accesibilidad*
+- Que Alexa deje más tiempo para responder
+- Ajustar los mensajes de reprompt
+- Modularizar lógica de la Oca (quitar var globales de index.js)**
+

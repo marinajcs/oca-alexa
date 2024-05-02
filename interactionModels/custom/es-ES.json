@@ -86,6 +86,8 @@
           "slots": [],
           "name": "tirarDadoIntent",
           "samples": [
+            "muéveme",
+            "mueve mi ficha",
             "avanzar",
             "mover ficha",
             "mover jugador",
@@ -112,6 +114,12 @@
           ],
           "name": "ayudaReglasIntent",
           "samples": [
+            "explica los {temaAyuda}",
+            "explica las {temaAyuda}",
+            "comenta los {temaAyuda}",
+            "comenta las {temaAyuda}",
+            "dime las {temaAyuda}",
+            "dime los {temaAyuda}",
             "di {temaAyuda}",
             "comenta {temaAyuda}",
             "explica {temaAyuda}",

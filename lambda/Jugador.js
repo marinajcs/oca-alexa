@@ -17,8 +17,8 @@ class Jugador {
 
 function crearJugadores(n) {
     let jugadores = [];
-    const colores = ['Rojo', 'Azul', 'Verde', 'Amarillo'];
-    const codigos = ['#FF0000', '#0000FF', '#008000', '#FFFF00'];
+    const colores = ['Rojo', 'Azul', 'Verde', 'Amarillo', 'Morado', 'Naranja', 'Gris', 'Rosa'];
+    const codigos = ['#FF0000', '#0000FF', '#008000', '#FFFF00', '#AA00FD', '#FD7D00', '#8C8C8C', '#FF6AB9'];
 
     for (let i = 0; i < n; i++) {
         const color = colores[i];

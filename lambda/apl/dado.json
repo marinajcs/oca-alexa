@@ -10,6 +10,7 @@
         "type": "Video",
         "source": "${payload.datosDado.properties.num}",
         "autoplay": true,
+        "audioTrack": "none",
         "width": "80%",
         "height": "80%"
       }

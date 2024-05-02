@@ -12,10 +12,11 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones){
     if (tablero.getCasilla(posActual) instanceof CasillaPenalizacion && penalizaciones[jActual.id] > 0){
         posNueva = posActual;
         casillaNueva = tablero.getCasilla(posNueva);
-        informe += `Jugador ${jActual.color} no puede moverse aún. Turnos restantes antes de poder tirar el dado: ${penalizaciones[jActual.id]}. `
+        informe += `Jugador ${jActual.color} no puede moverse aún. ${penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${penalizaciones[jActual.id]} \
+                    ${penalizaciones[jActual.id] === 1 ? 'turno' : 'turnos'} antes de poder volver a tirar el dado. `
         penalizaciones[jActual.id] -= 1;
     } else {
-        informe += `Jugador ${jActual.color} va a moverse ${tirada} casillas. `;
+        informe += `Jugador ${jActual.color} va a moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}. `;
         posNueva += tablero.nuevaPosicion(posActual, tirada);
         casillaNueva = tablero.getCasilla(posNueva);
         jActual.setPosActual(posNueva);
