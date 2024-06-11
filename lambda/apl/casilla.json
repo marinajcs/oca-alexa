@@ -12,26 +12,17 @@
         "height": "100%",
         "items": [
           {
-            "type": "Text",
-            "text": "${payload.datosCasilla.properties.topText}",
-            "color": "#FFFFFF",
-            "fontSize": "50dp",
-            "alignSelf": "center"
-          },
-          {
             "type": "Image",
             "source": "${payload.datosCasilla.properties.casillaImg}",
-            "width": "75%",
-            "height": "85%",
+            "width": "50%",
+            "height": "100%",
             "position": "absolute",
-            "top": "60dp",
-            "right": "10dp"
+            "right": "1dp"
           },
           {
             "type": "Frame",
-            "width": "20%",
-            "height": "20%",
-            "borderRadius": "50%",
+            "width": "50%",
+            "height": "30%",
             "backgroundColor": "${payload.datosCasilla.properties.circleColor}",
             "alignSelf": "left",
             "alignItems": "left",
@@ -40,14 +31,14 @@
                 "type": "Text",
                 "text": "${payload.datosCasilla.properties.circleId}",
                 "color": "#FFFFFF",
-                "fontSize": "25dp"
+                "fontSize": "50dp"
               }
             ]
           },
           {
             "type": "Sequence",
             "id": "fichaSequence",
-            "width": "15%",
+            "width": "20%",
             "height": "70%",
             "scrollDirection": "vertical",
             "data": "${payload.datosCasilla.properties.fichas}",
@@ -56,8 +47,7 @@
                 "type": "Frame",
                 "direction": "row",
                 "width": "auto",
-                "height": "60dp",
-                "borderRadius": "50%",
+                "height": "auto",
                 "backgroundColor": "${data.codigo}",
                 "alignItems": "left",
                 "justifyContent": "center",
@@ -66,7 +56,7 @@
                     "type": "Text",
                     "text": "${data.id}",
                     "color": "#FFFFFF",
-                    "fontSize": "25dp"
+                    "fontSize": "40dp"
                  }
                 ]
               }

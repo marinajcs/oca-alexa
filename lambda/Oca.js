@@ -1,34 +1,34 @@
 const {Tablero} = require('./Tablero.js')
-const {CasillaOca, CasillaPuente, CasillaPenalizacion} = require('./Casillas.js')
+const {CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF} = require('./Casillas.js')
 
-function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones){
+function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones, hayEquipos){
     let finPartida = false;
     let dobleTurno = false;
+    let minijuego = 0;
     let posNueva = 0;
     let posActual = jActual.getPosActual();
     let casillaNueva;
-    let informe = `Jugador ${jActual.color} está en la casilla ${posActual}. `;
+    let informe = `${hayEquipos ? 'El equipo' : ''} ${jActual.nombre} estaba en la casilla ${posActual}. `;
     
     if (tablero.getCasilla(posActual) instanceof CasillaPenalizacion && penalizaciones[jActual.id] > 0){
         posNueva = posActual;
         casillaNueva = tablero.getCasilla(posNueva);
-        informe += `Jugador ${jActual.color} no puede moverse aún. ${penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${penalizaciones[jActual.id]} \
+        informe += `${hayEquipos ? 'El equipo' : ''} ${jActual.nombre} no puede moverse aún. ${penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${penalizaciones[jActual.id]} \
                     ${penalizaciones[jActual.id] === 1 ? 'turno' : 'turnos'} antes de poder volver a tirar el dado. `
         penalizaciones[jActual.id] -= 1;
     } else {
-        informe += `Jugador ${jActual.color} va a moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}. `;
         posNueva += tablero.nuevaPosicion(posActual, tirada);
         casillaNueva = tablero.getCasilla(posNueva);
         jActual.setPosActual(posNueva);
-        informe += casillaNueva.recibeJugador(jActual);
+        informe += `Tras moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}, ahora está en la casilla ${posNueva}. `;
+        informe += casillaNueva.recibeJugador(jActual, hayEquipos);
         
         if (casillaNueva instanceof CasillaOca){
             posNueva = tablero.buscarSiguienteOca(posNueva);
             casillaNueva = tablero.getCasilla(posNueva);
             jActual.setPosActual(posNueva);
             dobleTurno = true;
-            informe += ` Ahora está en la casilla ${casillaNueva.id}. `
-            
+
         } else if (casillaNueva instanceof CasillaPenalizacion){
             penalizaciones[jActual.id] += casillaNueva.penaliza;
             
@@ -36,15 +36,17 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones){
             posNueva = tablero.buscarSiguientePuente(posNueva);
             casillaNueva = tablero.getCasilla(posNueva);
             jActual.setPosActual(posNueva);
-            informe += ` Ahora está en la casilla ${casillaNueva.id}. `
+
+        } else if (casillaNueva instanceof CasillaVyF) {
+            minijuego = 1;
         }
         
         if (casillaNueva.id === "META"){
-            informe += ` ¡Felicidades jugador ${jActual.color}, ha ganado la partida! `;
+            informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${hayEquipos ? 'habéis' : 'has'} ganado la partida! `;
             finPartida = true;
         }
     }
-    return [casillaNueva, informe, finPartida, dobleTurno];
+    return [casillaNueva, informe, finPartida, dobleTurno, minijuego];
 }
     
 function pasarTurno(jActual, njugadores){

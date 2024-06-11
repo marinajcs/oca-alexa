@@ -3,16 +3,19 @@
 const Alexa = require('ask-sdk-core');
 const bienvenida = require('./apl/bienvenida.json');
 const fichas = require('./apl/fichas.json');
-const {crearJugadores} = require('./Jugador.js');
-const {crearTableroPrueba} = require('./Tablero.js');
+const {crearJugadores, Jugador} = require('./Jugador.js');
+const {crearTableroPrueba, crearTablero} = require('./Tablero.js');
 const {pasarTurno, avanzaJugador, getJugadoresCasilla} = require('./Oca.js');
 const {tirarDado, getUrlDado} = require('./Dado.js');
+const {reglasInfo, casillasInfo, minijuegosInfo, comandosInfo} = require('./exports/frasesAyuda.js');
 
 const WELCOME_TOKEN= 'text';
+let hayEquipos = false; 
 let jugadores;
+let nj = 0;
 let turno = 0;
 let dado = 0;
-let tablero = crearTableroPrueba();
+let tablero = crearTablero();
 let penalizaciones = [];
 
 const LaunchRequestHandler = {
@@ -30,6 +33,19 @@ const LaunchRequestHandler = {
                 document: bienvenida
             });
         } 
+        // /*
+        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        sessionAttributes.numJugadores = 2;
+        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+        const njugadores = sessionAttributes.numJugadores;
+        hayEquipos = true;
+        jugadores = crearJugadores(njugadores);
+        for (let i = 0; i < njugadores; i++){
+            penalizaciones[i] = 0;
+        }
+        jugadores[0].nombre = 'los reyes del mambo';
+        jugadores[1].nombre = 'las divinas';
+        // */
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt('Para empezar una partida, di "Nueva partida"')
@@ -53,37 +69,23 @@ const ayudaReglasHandler = {
         const tema = handlerInput.requestEnvelope.request.intent.slots.temaAyuda.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 
         if (tema === 'reglas'){
-            speakOutput += "Claro, con mucho gusto. Hay dos objetivos principales en este juego. El primero consiste \
-                            en ser el jugador más rápido en llegar a la última casilla del tablero, la número 63. \
-                            El segundo objetivo, acumular el mayor número de puntos, que se pueden conseguir ganando \
-                            los minijuegos de las casillas sorpresa del tablero. En cada turno, el jugador actual tendrá \
-                            que tirar el dado y avanzar su ficha por el tablero. Para más información acerca de las \
-                            casillas disponibles o los comandos de voz, siéntase libre de preguntarme.";
+            speakOutput += reglasInfo;
             
         } else if (tema === 'casillas'){
-            speakOutput += "Claro, con mucho gusto. Hay 5 tipos de casillas en este juego. En primer lugar, las \
-                            casillas normales, que no desencadenan ningún evento. En segundo lugar, las casillas \
-                            de oca en oca, que permiten al jugador avanzar a la siguiente casilla de oca, incluida \
-                            la última, y volver a tirar el dado. En tercer lugar,  la casilla de puente a puente, \
-                            que mueven al jugador al otro puente del tablero, pero sin darle un turno extra. \
-                            En cuarto lugar, las casillas de penalización, que hacen que el jugador pierda \
-                            un número determinado de turnos, sin poder avanzar. En último lugar, las casillas \
-                            sorpresa, que inician un minijuego aleatorio con la posibilidad de ganar puntos, en el \
-                            que dependiendo del que haya tocado, pueden participar más jugadores.";
+            speakOutput += casillasInfo;
             
         } else if (tema === 'minijuegos'){
-            speakOutput += "Claro, con mucho gusto. Los minijuegos disposibles son: ...";
+            speakOutput += minijuegosInfo;
             
         } else if (tema === 'comandos'){
-            speakOutput += "Claro, con mucho gusto. Los comandos de voz disponibles son: nueva partida, \
-                            tirar dado, mover ficha, ayuda y terminar partida";
+            speakOutput += comandosInfo;
         }
         
         speakOutput += ' Espero que le haya servido de ayuda. No dude en preguntarme de nuevo si no le quedó claro. ';
     
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('¿Quiere que le explique algo más?')
+            .reprompt('¿Quiere que le explique algo más? Los temas que puedo explicarle son: las reglas, las casillas, los minijuegos y los comandos de voz.')
             .withShouldEndSession(false)
             .getResponse();
     }
@@ -105,20 +107,65 @@ const numJugadoresHandler = {
 
         if (intent.confirmationStatus === 'CONFIRMED'){
             njugadores = Alexa.getSlotValue(requestEnvelope, 'numJugadores');
+            let tparticipante = Alexa.getSlotValue(requestEnvelope, 'tipoParticipante');
+            if (tparticipante === 'equipos') 
+                hayEquipos = true;
+            
             sessionAttributes.numJugadores = njugadores;
+            sessionAttributes.porEquipos = hayEquipos;
             
             jugadores = crearJugadores(njugadores);
             for (let i = 0; i < njugadores; i++){
                 penalizaciones[i] = 0;
             }
             
-            speakOutput += `${njugadores === 1 ? 'Este es el jugador que va a participar' : 'Estos son los jugadores que van a participar <break time="2s"/>'}`;
+            speakOutput = `Para registrar el nombre del ${hayEquipos ? 'equipo' : 'participante'}, cada uno debe decir: \
+                           '${hayEquipos ? 'Nuestro' : 'Mi'} nombre es', seguido del nombre elegido. Por ejemplo, \
+                           '${hayEquipos ? 'Nuestro' : 'Mi'} nombre es '${hayEquipos ? 'Amantes de la paella' : 'Roberta'}. \
+                           Empezamos por el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${jugadores[0].color}.`
+            
+        }
+    
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
+const addJugadorHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'addJugadorIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        let responseBuilder = handlerInput.responseBuilder;
+        let speakOutput = '';
+        let repromptAudio = '';
+        let nombreJugador = Alexa.getSlotValue(requestEnvelope, 'nombreJugador');
+        const njugadores = jugadores.length;
+
+        jugadores[nj].nombre = nombreJugador;
+        nj++;
+
+        if (nj < njugadores) {
+            speakOutput = `Se ha registrado el nombre ${nombreJugador}. <break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${jugadores[nj].color}.`;
+            repromptAudio = speakOutput;
+        } else {
+            speakOutput = `Se ha registrado el nombre ${nombreJugador}. Todos los participantes han sido añadidos. <break time="2s"/>`;
+                
+          
+            speakOutput += `${njugadores === 1 ? `Este es el ${hayEquipos ? 'equipo' : 'jugador'} que va a participar` : `Estos son los ${hayEquipos ? 'equipos' : 'jugadores'} que van a participar <break time="2s"/>`}. `;
             jugadores.forEach(jugador => {
-                speakOutput += (`<break time="1s"/> Jugador ${jugador.id + 1}, representado por el color ${jugador.color}. `);
+                speakOutput += (`<break time="1s"/> ${hayEquipos ? 'Equipo' : 'Participante'} ${jugador.nombre}, cuyo color asignado es el ${jugador.color}. `);
             });
             
-            speakOutput += `<break time="3s"/> Bien, si ${njugadores === 1 ? 'el jugador está preparado' : 'los jugadores están preparados'}, que comience la partida. `
-            repromptAudio = `Jugador ${jugadores[turno].color}, proceda a tirar el dado`;
+            
+            speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' \
+                            y después, 'mover ficha' para poder realizar dichas acciones. `
+            repromptAudio = `${hayEquipos ? 'Equipo' : ''} ${jugadores[turno].nombre}, proceda a tirar el dado`;
             speakOutput += repromptAudio;
             
         
@@ -131,7 +178,7 @@ const numJugadoresHandler = {
                         type: 'object',
                         properties: {
                             jugadores: jugadores.map(jugador => ({
-                                id: (jugador.id+1),
+                                nombre: jugador.nombre,
                                 codigo: jugador.codigo
                             }))
                         }
@@ -139,10 +186,10 @@ const numJugadoresHandler = {
                 }
             })
         }
-    
+
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(repromptAudio)
+            .reprompt(speakOutput)
             .withShouldEndSession(false)
             .getResponse();
     }
@@ -163,8 +210,9 @@ const tirarDadoHandler = {
         dado = sessionAttributes.valorDado;
         
         if (dado === undefined && penalizaciones[jugadores[turno].id] === 0){
-            speakOutput = `Jugador ${jugadores[turno].color} ha tirado el dado. <break time="10s"/>`
-            dado = tirarDado();
+            speakOutput = `${hayEquipos ? 'El equipo' : ''} ${jugadores[turno].nombre} ha tirado el dado. <break time="10s"/>`
+            //dado = tirarDado();
+            dado = 6;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -184,26 +232,44 @@ const tirarDadoHandler = {
                 });
             }
             
-            repromptAudio = `Jugador ${jugadores[turno].color} ha sacado un ${dado}. Por favor proceda a mover su ficha.`;
+            repromptAudio = ` ${jugadores[turno].nombre} ha${hayEquipos ? 'n' : ''} sacado un ${dado}. Por favor proceda${hayEquipos ? 'n' : ''} a mover su ficha.`;
             speakOutput += repromptAudio;
         } else {
             let njugadores =  sessionAttributes.numJugadores;
             sessionAttributes.valorDado = undefined;
             let jActual = jugadores[turno];
             
-            const [casillaNueva, informe, finPartida, dobleTurno] = avanzaJugador(jActual, dado, tablero, jugadores, penalizaciones);
+            const [casillaNueva, informe, finPartida, dobleTurno, minijuego] = avanzaJugador(jActual, dado, tablero, jugadores, penalizaciones, hayEquipos);
             speakOutput += informe;
             
             const jugEnCasilla = getJugadoresCasilla(jActual.getPosActual(), jActual, jugadores);
             
             if (!finPartida) {
                 if (dobleTurno){
-                    repromptAudio = `<break time="3s"/> Vuelve a ser el turno del jugador ${jugadores[turno].color}. Por favor tire el dado de nuevo. `;
+                    repromptAudio = `<break time="3s"/> Vuelve a ser el turno de ${jActual.nombre}. Por favor ${hayEquipos ? 'tiren' : 'tire'} el dado de nuevo. `;
                     speakOutput += repromptAudio;
+                
+                } else if (minijuego !== 0) {
+                    let pregunta = casillaNueva.getPreguntaRandom();
+
+                    if (minijuego === 1) {
+                        sessionAttributes.preguntaActual = pregunta;
+                        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                        speakOutput += 'La pregunta es: ' + pregunta.question + ' ¿Verdadero o falso?';
+                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                        
+                    } else if(minijuego === 2) {
+                        sessionAttributes.sujetoRespuesta = false;
+                        sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
+                        speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
+                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                    }
                     
+                    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+
                 } else {
                     turno = pasarTurno(turno, njugadores);
-                    repromptAudio = `<break time="3s"/> Ahora es el turno del jugador ${jugadores[turno].color}. Por favor tire el dado. `;
+                    repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
                     speakOutput += repromptAudio;
                 }
                     
@@ -221,11 +287,11 @@ const tirarDadoHandler = {
                         properties: {
                             topText: casillaNueva.id,
                             circleColor: jActual.codigo,
-                            circleId: `J${jActual.id}`,
+                            circleId: jActual.nombre,
                             casillaImg: casillaNueva.url,
                             fichas: jugEnCasilla.map(jugador => ({
                                 codigo: jugador.codigo,
-                                id: `J${jugador.id}`
+                                id: jugador.nombre
                             }))
                         }
                     }
@@ -233,6 +299,86 @@ const tirarDadoHandler = {
             })
         }
 
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
+const preguntasVyFHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasVyFIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        const {intent} = requestEnvelope.request;
+        let speakOutput, repromptAudio;
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuesta');
+        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        const pregunta = sessionAttributes.preguntaActual;
+        const njugadores =  sessionAttributes.numJugadores
+        const solucion = pregunta.answer;
+        let jActual = jugadores[turno];
+        
+        if ((respuesta === 'verdadero' && solucion) || (respuesta === 'falso' && !solucion)) {
+            jActual.puntos += 10;
+            speakOutput = `¡Correcto! ${pregunta.explanation}. ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.puntos}. `;
+        } else {
+            speakOutput = `Lástima, es incorrecto. ${pregunta.explanation}. `;
+        }
+        
+        turno = pasarTurno(turno, njugadores);
+        repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+        speakOutput += repromptAudio;
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
+const preguntasCompasHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasCompasIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        const {intent} = requestEnvelope.request;
+        let speakOutput, repromptAudio;
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuesta');
+        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        const sujetoPregunta = sessionAttributes.sujetoPregunta;
+        const sujetoRespuesta = sessionAttributes.sujetoRespuesta;
+        const njugadores =  sessionAttributes.numJugadores
+        let jActual = jugadores[turno];
+        
+        if (!sujetoRespuesta) {
+            speakOutput = `${jActual.nombre} ha contestado: ` + respuesta + `. ¿Es esto correcto, ${sujetoPregunta.nombre}?`;
+            sessionAttributes.sujetoRespuesta = true;
+            handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+            
+        } else {
+            if (respuesta === 'sí') {
+                jActual.puntos += 15;
+                sujetoPregunta.puntos += 5;
+                speakOutput = `¡Buen trabajo! Por conoceros bien, ${jActual.nombre} se lleva${hayEquipos ? 'n' : ''} \
+                                15 puntos y ${sujetoPregunta.nombre}, 5 puntos.  \
+                                Ahora vuestras puntuaciones son ${jActual.puntos} y ${sujetoPregunta.puntos} respectivamente.`;
+            } else {
+                speakOutput = 'Lástima, pero no os desaniméis, ya habrá otra oportunidad de conseguir puntos.';
+            }
+            turno = pasarTurno(turno, njugadores);
+            repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+            speakOutput += repromptAudio;
+        }
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(repromptAudio)
@@ -350,7 +496,9 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         ayudaReglasHandler,
         numJugadoresHandler,
+        addJugadorHandler,
         tirarDadoHandler,
+        preguntasVyFHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,

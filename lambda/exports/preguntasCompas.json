@@ -1,0 +1,118 @@
+[
+  {
+    "question": "¿Ha viajado fuera de España alguna vez?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Practica algún deporte?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Tiene algún hobby o pasatiempo que disfrute particularmente?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Está trabajando en la actualidad?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Tiene mascotas en casa?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha participado alguna vez en un maratón?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta escuchar música clásica?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Sabe hablar más de un idioma?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Colecciona algún tipo de objeto?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha probado alguna vez la comida tailandesa?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Toca algún instrumento musical?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha vivido alguna vez en otro país?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta cocinar?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha corrido alguna vez un maratón?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le interesa la fotografía?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha asistido alguna vez a un concierto de música en vivo?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Tiene algún tatuaje?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Ha visto alguna vez una aurora boreal?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gustan los videojuegos?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta la poesía?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta la novela negra?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gustan los culebrones?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta el rock?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Tiene hijos?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Está casado o casada?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta pintar o dibujar?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Es aficionado a la fotografía?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta asistir a obras de teatro?",
+    "answer": "Sí o No"
+  },
+  {
+    "question": "¿Le gusta el cine?",
+    "answer": "Sí o No"
+  }
+]

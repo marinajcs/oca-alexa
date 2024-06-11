@@ -1,0 +1,460 @@
+[
+  {
+    "question": "La caja negra de un avión es negra.",
+    "answer": false,
+    "explanation": "De hecho, son naranjas para facilitar su localización en caso de accidente."
+  },
+  {
+    "question": "La acrofobia es el miedo al ajo.",
+    "answer": false,
+    "explanation": "La acrofobia es el miedo a las alturas, no al ajo."
+  },
+  {
+    "question": "Marrakech es la capital de Marruecos.",
+    "answer": false,
+    "explanation": "La capital de Marruecos es Rabat."
+  },
+  {
+    "question": "Mónaco es el país más pequeño del mundo.",
+    "answer": false,
+    "explanation": "El país más pequeño del mundo es la Ciudad del Vaticano, con solo 0,44 km²."
+  },
+  {
+    "question": "Hay cinco grupos sanguíneos diferentes.",
+    "answer": false,
+    "explanation": "Hay cuatro grupos sanguíneos principales: A, B, AB y O."
+  },
+  {
+    "question": "El verdadero nombre de Madonna es Madonna.",
+    "answer": true,
+    "explanation": "Su nombre completo es Madonna Louise Ciccone."
+  },
+  {
+    "question": "Alexander Fleming descubrió la penicilina.",
+    "answer": true,
+    "explanation": "Alexander Fleming descubrió la penicilina en 1928."
+  },
+  {
+    "question": "Walt Disney tiene el récord de más Oscars.",
+    "answer": true,
+    "explanation": "Walt Disney ganó 26 premios de la Academia (cuatro de ellos honoríficos) y fue nominado un total de 59 veces."
+  },
+  {
+    "question": "Venus es el planeta más caliente del sistema solar.",
+    "answer": true,
+    "explanation": "Venus tiene una temperatura media en su superficie de unos 450° C debido a su atmósfera densa y su efecto invernadero."
+  },
+  {
+    "question": "Las fresas tienen más vitamina C que las naranjas.",
+    "answer": true,
+    "explanation": "Las fresas contienen más vitamina C por gramo que las naranjas."
+  },
+  {
+    "question": "No se puede estornudar con los ojos abiertos.",
+    "answer": true,
+    "explanation": "Es un reflejo automático cerrar los ojos al estornudar."
+  },
+  {
+    "question": "El Museo del Prado es el museo más grande de España.",
+    "answer": true,
+    "explanation": "El Museo del Prado en Madrid es uno de los museos más grandes y más importantes de España."
+  },
+  {
+    "question": "Los delfines son mamíferos.",
+    "answer": true,
+    "explanation": "Los delfines son mamíferos marinos y pertenecen al grupo de los cetáceos."
+  },
+  {
+    "question": "El Nilo es el río más largo del mundo.",
+    "answer": true,
+    "explanation": "El Nilo es generalmente considerado el río más largo del mundo, aunque hay debate con el Amazonas."
+  },
+  {
+    "question": "China es el país más grande del mundo.",
+    "answer": false,
+    "explanation": "El país más grande del mundo es Rusia."
+  },
+  {
+    "question": "El Machu Picchu está en Perú.",
+    "answer": true,
+    "explanation": "Machu Picchu es una antigua ciudad inca ubicada en Perú."
+  },
+  {
+    "question": "Hay cuatro sabores básicos.",
+    "answer": false,
+    "explanation": "Hay cinco sabores básicos: salado, dulce, amargo, ácido y umami."
+  },
+  {
+    "question": "The Beatles es el grupo que más discos ha vendido en la historia.",
+    "answer": true,
+    "explanation": "The Beatles han vendido más de 600 millones de discos a nivel mundial."
+  },
+  {
+    "question": "Hay arsénico en el café.",
+    "answer": true,
+    "explanation": "El café puede contener trazas de arsénico debido a la contaminación del suelo."
+  },
+  {
+    "question": "El cabello sigue creciendo después de la muerte.",
+    "answer": false,
+    "explanation": "Lo que ocurre es que la piel se deshidrata y se retrae, dando la apariencia de que el cabello ha crecido."
+  },
+  {
+    "question": "Los caballos no pueden vomitar.",
+    "answer": true,
+    "explanation": "La anatomía del caballo les impide vomitar debido a la fuerza del esfínter esofágico inferior."
+  },
+  {
+    "question": "Los búhos son las únicas aves que pueden ver el color azul.",
+    "answer": true,
+    "explanation": "Los búhos tienen una visión excelente en la oscuridad y pueden ver algunos colores, incluido el azul."
+  },
+  {
+    "question": "Los toros odian el color rojo.",
+    "answer": false,
+    "explanation": "Lo que enfurece al toro es el movimiento de la capa, no el color."
+  },
+  {
+    "question": "Cada día producimos más de un litro de saliva.",
+    "answer": true,
+    "explanation": "El ser humano produce aproximadamente entre 1 y 1,5 litros de saliva al día."
+  },
+  {
+    "question": "Las lombrices tienen dos corazones.",
+    "answer": false,
+    "explanation": "Las lombrices tienen cinco pares de aortas, que a veces se consideran como diez corazones."
+  },
+  {
+    "question": "El nombre más común en el mundo es Mohammed.",
+    "answer": true,
+    "explanation": "Mohammed es el nombre más común a nivel mundial, con aproximadamente 150 millones de personas que lo llevan."
+  },
+  {
+    "question": "Las hormigas solo duermen en invierno.",
+    "answer": false,
+    "explanation": "Las hormigas no duermen de manera regular como los humanos."
+  },
+  {
+    "question": "Los koalas duermen 22 horas al día.",
+    "answer": true,
+    "explanation": "Los koalas pueden dormir hasta 22 horas al día para conservar energía."
+  },
+  {
+    "question": "El elefante es el animal más grande del mundo.",
+    "answer": false,
+    "explanation": "El animal más grande del mundo es la ballena azul."
+  },
+  {
+    "question": "Los perezosos tardan dos semanas en hacer la digestión.",
+    "answer": true,
+    "explanation": "Los perezosos tienen un metabolismo muy lento y pueden tardar hasta dos semanas en digerir su comida."
+  },
+  {
+    "question": "Las tortugas pueden dormir hasta 16 horas seguidas.",
+    "answer": true,
+    "explanation": "Las tortugas pueden dormir hasta 16 horas seguidas, especialmente durante períodos de hibernación."
+  },
+  {
+    "question": "Los pulpos tienen ocho corazones.",
+    "answer": false,
+    "explanation": "Los pulpos tienen tres corazones."
+  },
+  {
+    "question": "El animal nacional de Escocia es la cabra.",
+    "answer": false,
+    "explanation": "El animal nacional de Escocia es el unicornio."
+  },
+  {
+    "question": "Nueva York tiene más de 30 islas.",
+    "answer": true,
+    "explanation": "Nueva York está compuesta por más de 30 islas, incluyendo Manhattan y Staten Island."
+  },
+  {
+    "question": "Groenlandia es la isla más grande del mundo.",
+    "answer": true,
+    "explanation": "Groenlandia es la isla más grande del mundo con una superficie de más de 2 millones de km²."
+  },
+  {
+    "question": "Alaska tiene los volcanes más peligrosos del mundo.",
+    "answer": true,
+    "explanation": "Alaska alberga algunos de los volcanes más activos y peligrosos del mundo."
+  },
+  {
+    "question": "Sudáfrica tiene dos capitales.",
+    "answer": false,
+    "explanation": "Sudáfrica tiene tres capitales: Pretoria, Cape Town y Bloemfontein."
+  },
+  {
+    "question": "China es el país con más kilómetros de costa.",
+    "answer": false,
+    "explanation": "El país con más kilómetros de costa es Canadá."
+  },
+  {
+    "question": "La mayor catarata del mundo está en Perú.",
+    "answer": false,
+    "explanation": "La mayor catarata del mundo es el Salto Ángel en Venezuela."
+  },
+  {
+    "question": "La piel humana se regenera cada semana.",
+    "answer": false,
+    "explanation": "La piel humana se regenera aproximadamente cada mes."
+  },
+  {
+    "question": "Los humanos perdemos unos 75 pelos al mes.",
+    "answer": false,
+    "explanation": "Los humanos perdemos entre 50 y 100 pelos al día."
+  },
+  {
+    "question": "El cerebro está hecho de músculo en su mayor parte.",
+    "answer": false,
+    "explanation": "El cerebro está compuesto principalmente de grasa y agua."
+  },
+  {
+    "question": "El ojo humano puede distinguir 10 millones de colores.",
+    "answer": true,
+    "explanation": "El ojo humano tiene la capacidad de distinguir hasta 10 millones de diferentes colores."
+  },
+  {
+    "question": "Los humanos pierden calor corporal por los pies.",
+    "answer": false,
+    "explanation": "La mayor parte del calor corporal se pierde a través de la cabeza, no de los pies."
+  },
+  {
+    "question": "El cuerpo humano está hecho de un 70% de agua.",
+    "answer": true,
+    "explanation": "Aproximadamente el 70% del cuerpo humano está compuesto de agua."
+  },
+  {
+    "question": "'Toy Story' fue la primera película de Pixar.",
+    "answer": true,
+    "explanation": "'Toy Story' fue la primera película de Pixar y se estrenó en 1995."
+  },
+  {
+    "question": "'Dumbo' es la película de Disney más corta.",
+    "answer": true,
+    "explanation": "'Dumbo' dura solo 64 minutos, lo que la convierte en la película animada más corta de Disney."
+  },
+  {
+    "question": "McDonald's es el restaurante con más tiendas en Estados Unidos.",
+    "answer": false,
+    "explanation": "Subway tiene más tiendas en Estados Unidos que McDonald's."
+  },
+  {
+    "question": "Italia es el país que más vino produce del mundo.",
+    "answer": true,
+    "explanation": "Italia es el mayor productor de vino del mundo."
+  },
+  {
+    "question": "Mónaco es el país más pequeño del mundo.",
+    "answer": false,
+    "explanation": "El país más pequeño del mundo es la Ciudad del Vaticano."
+  },
+  {
+    "question": "El español proviene del Latín.",
+    "answer": true,
+    "explanation": "El español, o castellano, es una lengua romance que proviene del latín vulgar."
+  },
+  {
+    "question": "La pizza se inventó en Roma.",
+    "answer": false,
+    "explanation": "La pizza moderna se originó en Nápoles, Italia."
+  },
+  {
+    "question": "El café se descubrió en Colombia.",
+    "answer": false,
+    "explanation": "El café fue descubierto en Etiopía."
+  },
+  {
+    "question": "Goya pintó 'Las Meninas'.",
+    "answer": false,
+    "explanation": "'Las Meninas' fue pintado por Diego Velázquez."
+  },
+  {
+    "question": "'Avatar' es la película más taquillera de la historia.",
+    "answer": true,
+    "explanation": "'Avatar' es una de las películas más taquilleras de todos los tiempos."
+  },
+  {
+    "question": "Colón descubrió América en 1492.",
+    "answer": true,
+    "explanation": "Cristóbal Colón llegó a América en 1492."
+  },
+  {
+    "question": "El diamante es el mineral más duro del mundo.",
+    "answer": true,
+    "explanation": "El diamante es el mineral más duro conocido por el hombre."
+  },
+  {
+    "question": "El mosquito es el animal que más mata en el mundo.",
+    "answer": true,
+    "explanation": "Los mosquitos son responsables de la transmisión de enfermedades que causan millones de muertes cada año."
+  },
+  {
+    "question": "La bandera norteamericana tiene 42 estrellas.",
+    "answer": false,
+    "explanation": "La bandera de Estados Unidos tiene 50 estrellas, una por cada estado."
+  },
+  {
+    "question": "Hay siete películas de Harry Potter.",
+    "answer": false,
+    "explanation": "Hay ocho películas en la serie de Harry Potter."
+  },
+  {
+    "question": "La ballena azul es el animal más grande del mundo.",
+    "answer": true,
+    "explanation": "La ballena azul es el animal más grande del mundo, alcanzando hasta 30 metros de longitud."
+  },
+  {
+    "question": "Mozart era alemán.",
+    "answer": false,
+    "explanation": "Wolfgang Amadeus Mozart era austriaco."
+  },
+  {
+    "question": "Los pulpos tienen cuatro corazones.",
+    "answer": false,
+    "explanation": "Los pulpos tienen tres corazones."
+  },
+  {
+    "question": "El rascacielos más alto del mundo está en Nueva York.",
+    "answer": false,
+    "explanation": "El rascacielos más alto del mundo es el Burj Khalifa en Dubái."
+  },
+  {
+    "question": "Próxima Centauri es la estrella más cercana a la Tierra después del Sol.",
+    "answer": true,
+    "explanation": "Próxima Centauri es la estrella más cercana a la Tierra después del Sol, situada a unos 4,24 años luz de distancia."
+  },
+  {
+    "question": "Los Beatles eran de Manchester.",
+    "answer": false,
+    "explanation": "Los Beatles eran de Liverpool, Inglaterra."
+  },
+  {
+    "question": "El idioma más antiguo de Europa es el vasco.",
+    "answer": true,
+    "explanation": "El euskera, o vasco, es uno de los idiomas más antiguos de Europa y no está relacionado con ningún otro idioma conocido."
+  },
+  {
+    "question": "El desastre de Chernobyl ocurrió en 1986.",
+    "answer": true,
+    "explanation": "El accidente nuclear de Chernobyl ocurrió el 26 de abril de 1986."
+  },
+  {
+    "question": "Un piano tiene 88 teclas.",
+    "answer": true,
+    "explanation": "Un piano estándar tiene 88 teclas, 52 blancas y 36 negras."
+  },
+  {
+    "question": "El desierto de Atacama está en Chile.",
+    "answer": true,
+    "explanation": "El desierto de Atacama está situado en el norte de Chile y es uno de los lugares más secos del planeta."
+  },
+  {
+    "question": "Arthur Conan Doyle escribió 'Sherlock Holmes'.",
+    "answer": true,
+    "explanation": "Sir Arthur Conan Doyle creó el personaje de Sherlock Holmes."
+  },
+  {
+    "question": "La segunda montaña más alta del mundo es el K2.",
+    "answer": true,
+    "explanation": "El K2, ubicado en la cordillera del Karakórum, es la segunda montaña más alta del mundo."
+  },
+  {
+    "question": "El guepardo es el animal más rápido del mundo.",
+    "answer": true,
+    "explanation": "El guepardo puede alcanzar velocidades de hasta 112 km/h, lo que lo convierte en el animal terrestre más rápido."
+  },
+  {
+    "question": "El corazón tiene cuatro válvulas.",
+    "answer": true,
+    "explanation": "El corazón humano tiene cuatro válvulas: mitral, tricúspide, pulmonar y aórtica."
+  },
+  {
+    "question": "Steve Jobs falleció en el año 2011.",
+    "answer": true,
+    "explanation": "Steve Jobs, cofundador de Apple Inc., falleció el 5 de octubre de 2011."
+  },
+  {
+    "question": "El neurotransmisor de la felicidad es la serotonina.",
+    "answer": true,
+    "explanation": "La serotonina es un neurotransmisor asociado con la regulación del humor y la felicidad."
+  },
+  {
+    "question": "El disco más vendido de la historia es 'Thriller', de Michael Jackson.",
+    "answer": true,
+    "explanation": "'Thriller' de Michael Jackson es el álbum más vendido de todos los tiempos."
+  },
+  {
+    "question": "Neil Armstrong fue el primer hombre que pisó la Luna.",
+    "answer": true,
+    "explanation": "Neil Armstrong pisó la Luna el 20 de julio de 1969 durante la misión Apolo 11."
+  },
+  {
+    "question": "El Océano Atlántico es el más grande del mundo.",
+    "answer": false,
+    "explanation": "El Océano Pacífico es el más grande del mundo."
+  },
+  {
+    "question": "El órgano más grande del cuerpo humano es el cerebro.",
+    "answer": false,
+    "explanation": "El órgano más grande del cuerpo humano es la piel."
+  },
+  {
+    "question": "El muro de Berlín cayó en noviembre de 1989.",
+    "answer": true,
+    "explanation": "El muro de Berlín cayó el 9 de noviembre de 1989, marcando el inicio del fin de la Guerra Fría."
+  },
+  {
+    "question": "El auténtico nombre de Marilyn Monroe era Norma Jeane Baker.",
+    "answer": true,
+    "explanation": "Marilyn Monroe nació como Norma Jeane Mortenson, pero su nombre de bautismo fue Norma Jeane Baker."
+  },
+  {
+    "question": "El hígado produce la insulina.",
+    "answer": false,
+    "explanation": "La insulina es producida por el páncreas, no por el hígado."
+  },
+  {
+    "question": "La esposa de Ulises se llamaba Penélope.",
+    "answer": true,
+    "explanation": "En la mitología griega, Penélope es la esposa de Ulises (Odiseo) y es conocida por su fidelidad durante su larga ausencia."
+  },
+  {
+    "question": "Australia es el país con más islas en el mundo.",
+    "answer": false,
+    "explanation": "Suecia es el país con más islas en el mundo, con un total de aproximadamente 267,570 islas."
+  },
+  {
+    "question": "La capital de Islandia es Reikiavik.",
+    "answer": true,
+    "explanation": "Reikiavik es la capital y la ciudad más grande de Islandia."
+  },
+  {
+    "question": "El resultado de la multiplicación se llama producto.",
+    "answer": true,
+    "explanation": "En matemáticas, el resultado de multiplicar dos números se llama producto."
+  },
+  {
+    "question": "La libra es la moneda del Reino Unido.",
+    "answer": true,
+    "explanation": "La libra esterlina es la moneda oficial del Reino Unido."
+  },
+  {
+    "question": "El pergamino se fabrica con la piel de animales.",
+    "answer": true,
+    "explanation": "El pergamino es un material hecho a partir de la piel de animales, generalmente de ovejas, cabras o terneros."
+  },
+  {
+    "question": "Alemania fue ganadora del mundial de Brasil en 2014.",
+    "answer": true,
+    "explanation": "Alemania ganó la Copa Mundial de la FIFA 2014, celebrada en Brasil."
+  },
+  {
+    "question": "Una célula tiene mayores dimensiones que un átomo.",
+    "answer": true,
+    "explanation": "Las células son mucho más grandes que los átomos, ya que están compuestas por muchos átomos."
+  }
+]
+
+  
+  
