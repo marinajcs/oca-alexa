@@ -1,4 +1,5 @@
-const preguntasVF = require('./exports/preguntasVF');
+const preguntasVF = require('./exports/preguntasVF.json');
+const fc = require('./exports/frasesCasillas.json')
 
 class Casilla {
     constructor(id, url, frases) {
@@ -11,11 +12,16 @@ class Casilla {
         if (this.id === "META"){
             return ` Has caído en la casilla de meta. `
         }
-        const random = Math.floor(Math.random() * this.frases.length);
-        let desc = `Ha caído en la casilla normal: ${this.id}. `;
-        desc += this.frases[random];
-        
+        const desc = this.getFraseRandom(hayEquipos);
+
         return desc;
+    }
+    
+    getFraseRandom(hayEquipos) {
+        const desc = hayEquipos ? this.frases.equipo : this.frases.jugador;
+        const idx = Math.floor(Math.random() * 3);
+
+        return desc[idx];
     }
     
 }
@@ -73,9 +79,9 @@ class CasillaVyF extends Casilla {
     
     recibeJugador(jug, hayEquipos) {
         if (hayEquipos){
-            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Verdadero o Falso';
+            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Verdadero o Falso. ';
         }
-        return 'Oh, ¡sorpresa! Has caído en el minijuego de Verdadero o Falso';
+        return 'Oh, ¡sorpresa! Has caído en el minijuego de Verdadero o Falso. ';
     }
 }
 

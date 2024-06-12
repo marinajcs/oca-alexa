@@ -175,13 +175,25 @@
         {
           "slots": [
             {
-              "name": "respuesta",
+              "name": "respuestaVF",
               "type": "VyF"
             }
           ],
           "name": "preguntasVyFIntent",
           "samples": [
-            "{respuesta}"
+            "{respuestaVF}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaSN",
+              "type": "SiNo"
+            }
+          ],
+          "name": "preguntasCompasIntent",
+          "samples": [
+            "{respuestaSN}"
           ]
         }
       ],

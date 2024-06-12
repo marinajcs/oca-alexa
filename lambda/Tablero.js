@@ -1,5 +1,6 @@
 const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF} = require('./Casillas.js')
 const {fc1, fc2} = require('./exports/frasesCasillas.js')
+const fc = require('./exports/frasesCasillas.json')
 
 class Tablero {
     constructor() {
@@ -101,106 +102,105 @@ function crearTablero() {
     
     //Salida[0] añadida en constructor de Tablero
     //...[1-3] (3)
-    tablero.addCasilla(new Casilla("Casilla 1", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 2", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 3", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[4]
-    tablero.addCasilla(new CasillaOca("Oca 4", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //Puente[5]
-    tablero.addCasilla(new CasillaPuente("Puente 5", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg", ''));
-    //...[6-7]
-    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", ''));
-    tablero.addCasilla(new Casilla("Casilla 7", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[8]
-    tablero.addCasilla(new CasillaOca("Oca 8", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[9-10]
-    tablero.addCasilla(new Casilla("Casilla 9", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 10", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Puente[11]
-    tablero.addCasilla(new CasillaPuente("Puente 11", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg", ''));
-    //...[12]
-    tablero.addCasilla(new Casilla("Casilla 12", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[13]
-    tablero.addCasilla(new CasillaOca("Oca 13", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[14-16]
-    tablero.addCasilla(new Casilla("Casilla 14", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 15", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 16", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[17]
-    tablero.addCasilla(new CasillaOca("Oca 17", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //Posada/hotel[18]
-    tablero.addCasilla(new CasillaPenalizacion("La posada", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", '', 2));
-    //...[19-21]
-    tablero.addCasilla(new Casilla("Casilla 19", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 20", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 21", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 22", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[22]
-    tablero.addCasilla(new CasillaOca("Oca 22", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[23-25]
-    tablero.addCasilla(new Casilla("Casilla 23", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 24", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 25", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[26]
-    tablero.addCasilla(new CasillaOca("Oca 26", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[27-29]
-    tablero.addCasilla(new Casilla("Casilla 27", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 28", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 29", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Pozo[30]
-    tablero.addCasilla(new CasillaPenalizacion("El pozo", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", '', 2));
-    //Oca[31]
-    tablero.addCasilla(new CasillaOca("Oca 31", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[32-34]
-    tablero.addCasilla(new Casilla("Casilla 32", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 33", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 34", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[35]
-    tablero.addCasilla(new CasillaOca("Oca 35", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[36-39]
-    tablero.addCasilla(new Casilla("Casilla 36", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 37", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 38", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 39", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[40]
-    tablero.addCasilla(new CasillaOca("Oca 40", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //Laberinto[41]
-    tablero.addCasilla(new CasillaPenalizacion("El laberinto", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", '', 3));
-    //...[42-43]
-    tablero.addCasilla(new Casilla("Casilla 42", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 43", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[44]
-    tablero.addCasilla(new CasillaOca("Oca 44", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[45-48]
-    tablero.addCasilla(new Casilla("Casilla 45", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 46", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 47", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 48", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[49]
-    tablero.addCasilla(new CasillaOca("Oca 49", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[50]
-    tablero.addCasilla(new Casilla("Casilla 50", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Cárcel[51]
-    tablero.addCasilla(new CasillaPenalizacion("La cárcel", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", '', 3));
-    //...[52]
-    tablero.addCasilla(new Casilla("Casilla 52", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Oca[53]
-    tablero.addCasilla(new CasillaOca("Oca 53", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[54-56]
-    tablero.addCasilla(new Casilla("Casilla 54", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 55", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 56", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    //Calavera[57]
-    tablero.addCasilla(new CasillaPenalizacion("La casilla trampa", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", '', 3));
-    //Oca[58]
-    tablero.addCasilla(new CasillaOca("Oca 58", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", ''));
-    //...[59-62]
-    tablero.addCasilla(new Casilla("Casilla 59", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 60", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 61", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
-    tablero.addCasilla(new Casilla("Casilla 62", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc2));
+    tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
+    tablero.addCasilla(new CasillaVyF("Minijuego Compas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    //Oca[5]
+    tablero.addCasilla(new CasillaOca("Oca 5", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //Puente[6]
+    tablero.addCasilla(new CasillaPuente("Puente 6", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
+    //...[7-8]
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("lentejas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[3]));
+    //Oca[9]
+    tablero.addCasilla(new CasillaOca("Oca 9", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[10-11]
+    tablero.addCasilla(new Casilla("queso", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[4]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    //Puente[12]
+    tablero.addCasilla(new CasillaPuente("Puente 12", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
+    //...[13]
+    tablero.addCasilla(new Casilla("banco", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[5]));
+    //Oca[14]
+    tablero.addCasilla(new CasillaOca("Oca 14", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[15-17]
+    tablero.addCasilla(new Casilla("jardín", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[6]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("jamón", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[7]));
+    //Oca[18]
+    tablero.addCasilla(new CasillaOca("Oca 18", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //Posada/hotel[19]
+    tablero.addCasilla(new CasillaPenalizacion("La posada", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[19], 2));
+    //...[20-22]
+    tablero.addCasilla(new Casilla("fútbol", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[8]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("paraguas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[9]));
+    //Oca[23]
+    tablero.addCasilla(new CasillaOca("Oca 23", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[24-26]
+    tablero.addCasilla(new Casilla("fruta", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[10]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("sombrero", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[11]));
+    //Oca[27]
+    tablero.addCasilla(new CasillaOca("Oca 27", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[28-30]
+    tablero.addCasilla(new Casilla("chocolate", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[12]));
+    tablero.addCasilla(new Casilla("paella", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[13]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    //Pozo[31]
+    tablero.addCasilla(new CasillaPenalizacion("El pozo", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[20], 2));
+    //Oca[32]
+    tablero.addCasilla(new CasillaOca("Oca 32", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[33-35]
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("Granada", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[14]));
+    tablero.addCasilla(new Casilla("perro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[15]));
+    //Oca[36]
+    tablero.addCasilla(new CasillaOca("Oca 36", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[37-40]
+    tablero.addCasilla(new Casilla("canicas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[16]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("rayuela", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[17]));
+    tablero.addCasilla(new Casilla("biblioteca", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[18]));
+    //Oca[41]
+    tablero.addCasilla(new CasillaOca("Oca 41", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //Laberinto[42]
+    tablero.addCasilla(new CasillaPenalizacion("El laberinto", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[21], 3));
+    //...[43-44]
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("tarta", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[22]));
+    //Oca[45]
+    tablero.addCasilla(new CasillaOca("Oca 45", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[46-49]
+    tablero.addCasilla(new Casilla("calcetín", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[23]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("reloj", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[26]));
+    tablero.addCasilla(new Casilla("payaso", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[24]));
+    //Oca[50]
+    tablero.addCasilla(new CasillaOca("Oca 50", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[51]
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    //Cárcel[52]
+    tablero.addCasilla(new CasillaPenalizacion("La cárcel", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[25], 3));
+    //...[53]
+    tablero.addCasilla(new Casilla("cámara", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[27]));
+    //Oca[54]
+    tablero.addCasilla(new CasillaOca("Oca 54", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[55-57]
+    tablero.addCasilla(new Casilla("piscina", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[28]));
+    tablero.addCasilla(new Casilla("árbol de Navidad", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[29]));
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    //Serpiente[58]
+    tablero.addCasilla(new CasillaPenalizacion("La serpiente", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[0], 3));
+    //Oca[59]
+    tablero.addCasilla(new CasillaOca("Oca 59", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
+    //...[60-62]
+    tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new Casilla("gato", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[31]));
+    tablero.addCasilla(new Casilla("cometa", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[32]));
     // Meta[63]
-    tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg", ''));
+    tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
     
     return tablero;
     

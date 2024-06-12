@@ -1,0 +1,464 @@
+[
+  {
+    "id": "oca",
+    "num": 0,
+    "jugador": [
+        "Vaya, ¡estás de suerte! Has caído en una casilla de oca.",
+        "Es tu día de suerte, has caído en una casilla de oca.",
+        "La fortuna te sonríe y caes en una casilla de la oca."
+    ],
+    "equipo": [
+        "Vaya, ¡estáis de suerte! Habéis caído en una casilla de oca.",
+        "Es vuestro día de suerte, habéis caído en una casilla de oca.",
+        "La fortuna os sonríe y habéis caído en una casilla de oca."
+    ]
+  },
+  {
+    "id": "tesoro",
+    "num": 1,
+    "jugador": [
+        "Vaya, ¡estás de enhorabuena! Todas estas riquezas son tuyas ahora.",
+        "¡Menuda suerte! ¿Qué harás con tanto oro?",
+        "La fortuna te sonríe, disfruta de las riquezas del baúl del tesoro."
+    ],
+    "equipo": [
+        "Vaya, ¡estáis de enhorabuena! Todas estas riquezas son vuestras ahora.",
+        "¡Menuda suerte! ¿Qué haréis con tanto oro?",
+        "La fortuna os sonríe, disfrutad de las riquezas del baúl del tesoro."
+    ]
+  },
+  {
+    "id": "trompo",
+    "num": 2,
+    "jugador": [
+        "Has encontrado un trompo. ¡A disfrutar del juego!",
+        "El trompo es tuyo, hazlo girar.",
+        "Un trompo aparece en tu camino, ¡diviértete!"
+    ],
+    "equipo": [
+        "Habéis encontrado un trompo. ¡A disfrutar del juego!",
+        "El trompo es vuestro, hacedlo girar.",
+        "Un trompo aparece en vuestro camino, ¡divertíos!"
+    ]
+  },
+  {
+    "id": "lentejas",
+    "num": 3,
+    "jugador": [
+        "Te has encontrado con un saco de lentejas, ¡a cocinar!",
+        "Un plato de lentejas, quien quiera las come y quien no las deja",
+        "Un montón de lentejas para ti, ¡saludable y delicioso!"
+    ],
+    "equipo": [
+        "Os habéis encontrado con un saco de lentejas, ¡a cocinar!",
+        "Un plato de lentejas, quien quiera las come y quien no las deja",
+        "Un montón de lentejas para vosotros, ¡saludable y delicioso!"
+    ]
+  },
+  {
+    "id": "queso",
+    "num": 4,
+    "jugador": [
+        "Has encontrado un delicioso queso. ¡Qué suerte!",
+        "El queso es tuyo, disfruta cada bocado.",
+        "Un trozo de queso para ti, ¡a saborearlo!"
+    ],
+    "equipo": [
+        "Habéis encontrado un delicioso queso. ¡Qué suerte!",
+        "El queso es vuestro, disfrutad cada bocado.",
+        "Un trozo de queso para vosotros, ¡a saborearlo!"
+    ]
+  },
+  {
+    "id": "banco de dinero",
+    "num": 5,
+    "jugador": [
+        "Has llegado al banco, ¡es hora de contar tus ahorros!",
+        "El banco te recibe, ¿harás una inversión?",
+        "Dinero seguro en el banco, ¡buen trabajo!"
+    ],
+    "equipo": [
+        "Habéis llegado al banco, ¡es hora de contar vuestros ahorros!",
+        "El banco os recibe, ¿haréis una inversión?",
+        "Dinero seguro en el banco, ¡buen trabajo!"
+    ]
+  },
+  {
+    "id": "maceta",
+    "num": 6,
+    "jugador": [
+        "Una maceta floreciente te espera. ¡Qué belleza!",
+        "Has encontrado una maceta, ¡cuida de tus plantas!",
+        "Una maceta llena de vida para ti, ¡disfruta de la naturaleza!"
+    ],
+    "equipo": [
+        "Una maceta floreciente os espera. ¡Qué belleza!",
+        "Habéis encontrado una maceta, ¡cuidad de vuestras plantas!",
+        "Una maceta llena de vida para vosotros, ¡disfrutad de la naturaleza!"
+    ]
+  },
+  {
+    "id": "jamon",
+    "num": 7,
+    "jugador": [
+        "¡Qué delicia! Has encontrado un jamón.",
+        "El jamón es tuyo, ¡a disfrutarlo!",
+        "Un sabroso jamón para ti, ¡buen provecho!"
+    ],
+    "equipo": [
+        "¡Qué delicia! Habéis encontrado un jamón.",
+        "El jamón es vuestro, ¡a disfrutarlo!",
+        "Un sabroso jamón para vosotros, ¡buen provecho!"
+    ]
+  },
+  {
+    "id": "futbol",
+    "num": 8,
+    "jugador": [
+        "Un balón de fútbol aparece, ¡es hora de jugar!",
+        "Has encontrado un balón, ¡a la cancha!",
+        "Un partido de fútbol te espera, ¡diviértete!"
+    ],
+    "equipo": [
+        "Un balón de fútbol aparece, ¡es hora de jugar!",
+        "Habéis encontrado un balón, ¡a la cancha!",
+        "Un partido de fútbol os espera, ¡divertíos!"
+    ]
+  },
+  {
+    "id": "paraguas",
+    "num": 9,
+    "jugador": [
+        "Un paraguas para ti, ¡prepárate para la lluvia!",
+        "Has encontrado un paraguas, ¡no te mojarás!",
+        "Un paraguas aparece, ¡qué oportuno!"
+    ],
+    "equipo": [
+        "Un paraguas para vosotros, ¡preparaos para la lluvia!",
+        "Habéis encontrado un paraguas, ¡no os mojaréis!",
+        "Un paraguas aparece, ¡qué oportuno!"
+    ]
+  },
+  {
+    "id": "fruta",
+    "num": 10,
+    "jugador": [
+        "Has encontrado fruta fresca, ¡a disfrutar!",
+        "Un montón de fruta para ti, ¡qué delicia!",
+        "Fruta saludable en tu camino, ¡aprovéchala!"
+    ],
+    "equipo": [
+        "Habéis encontrado fruta fresca, ¡a disfrutar!",
+        "Un montón de fruta para vosotros, ¡qué delicia!",
+        "Fruta saludable en vuestro camino, ¡aprovechadla!"
+    ]
+  },
+  {
+    "id": "sombrero",
+    "num": 11,
+    "jugador": [
+        "Un elegante sombrero para ti, ¡póntelo!",
+        "Has encontrado un sombrero, ¡qué estilo!",
+        "Un sombrero aparece, ¡te queda perfecto!"
+    ],
+    "equipo": [
+        "Un elegante sombrero para vosotros, ¡póntelo!",
+        "Habéis encontrado un sombrero, ¡qué estilo!",
+        "Un sombrero aparece, ¡os queda perfecto!"
+    ]
+  },
+  {
+    "id": "chocolate",
+    "num": 12,
+    "jugador": [
+        "Has encontrado un delicioso chocolate, ¡qué dulce!",
+        "El chocolate es tuyo, ¡a disfrutarlo!",
+        "Un trozo de chocolate para ti, ¡buen provecho!"
+    ],
+    "equipo": [
+        "Habéis encontrado un delicioso chocolate, ¡qué dulce!",
+        "El chocolate es vuestro, ¡a disfrutarlo!",
+        "Un trozo de chocolate para vosotros, ¡buen provecho!"
+    ]
+  },
+  {
+    "id": "paella",
+    "num": 13,
+    "jugador": [
+        "Una sabrosa paella te espera, ¡a disfrutarla!",
+        "Has encontrado una paella, ¡qué festín!",
+        "Una paella para ti, ¡buen provecho!"
+    ],
+    "equipo": [
+        "Una sabrosa paella os espera, ¡a disfrutarla!",
+        "Habéis encontrado una paella, ¡qué festín!",
+        "Una paella para vosotros, ¡buen provecho!"
+    ]
+  },
+  {
+    "id": "granada",
+    "num": 14,
+    "jugador": [
+        "Bienvenido a Granada, ¡explora sus maravillas!",
+        "Has llegado a Granada, ¡qué hermosa ciudad!",
+        "Granada te recibe, ¡disfruta del paisaje!"
+    ],
+    "equipo": [
+        "Bienvenidos a Granada, ¡explorad sus maravillas!",
+        "Habéis llegado a Granada, ¡qué hermosa ciudad!",
+        "Granada os recibe, ¡disfrutad del paisaje!"
+    ]
+  },
+  {
+    "id": "perro",
+    "num": 15,
+    "jugador": [
+        "Un perro amistoso aparece, ¡juega con él!",
+        "Has encontrado un perro, ¡qué compañía!",
+        "Un perro te acompaña, ¡diviértete!"
+    ],
+    "equipo": [
+        "Un perro amistoso aparece, ¡jugad con él!",
+        "Habéis encontrado un perro, ¡qué compañía!",
+        "Un perro os acompaña, ¡divertíos!"
+    ]
+  },
+  {
+    "id": "canicas",
+    "num": 16,
+    "jugador": [
+        "Has encontrado un juego de canicas, ¡a jugar!",
+        "Las canicas son tuyas, ¡diviértete!",
+        "Unas canicas aparecen, ¡qué entretenimiento!"
+    ],
+    "equipo": [
+        "Habéis encontrado un juego de canicas, ¡a jugar!",
+        "Las canicas son vuestras, ¡divertíos!",
+        "Unas canicas aparecen, ¡qué entretenimiento!"
+    ]
+  },
+  {
+    "id": "la rayuela",
+    "num": 17,
+    "jugador": [
+        "Un juego de rayuela te espera, ¡a saltar!",
+        "Has encontrado una rayuela, ¡diviértete!",
+        "La rayuela está lista, ¡a jugar!"
+    ],
+    "equipo": [
+        "Un juego de rayuela os espera, ¡a saltar!",
+        "Habéis encontrado una rayuela, ¡divertíos!",
+        "La rayuela está lista, ¡a jugar!"
+    ]
+  },
+  {
+    "id": "biblioteca",
+    "num": 18,
+    "jugador": [
+        "Has llegado a la biblioteca, ¡es hora de leer!",
+        "Un libro te espera en la biblioteca, ¡disfrútalo!",
+        "La biblioteca está abierta, ¡a explorar sus libros!"
+    ],
+    "equipo": [
+        "Habéis llegado a la biblioteca, ¡es hora de leer!",
+        "Un libro os espera en la biblioteca, ¡disfrutadlo!",
+        "La biblioteca está abierta, ¡a explorar sus libros!"
+    ]
+  },
+  {
+    "id": "la posada",
+    "num": 19,
+    "jugador": [
+        "Mala suerte, has caído en la posada.",
+        "Lástima, no vas a poder salir de la posada en un rato.",
+        "Vaya... Has caído en la posada."
+    ],
+    "equipo": [
+        "Mala suerte, habéis caído en la posada.",
+        "Lástima, no vais a poder salir de la posada en un rato.",
+        "Vaya... Habéis caído en la posada."
+    ]
+  },
+  {
+    "id": "el pozo",
+    "num": 20,
+    "jugador": [
+        "Mala suerte, has caído en la casilla del pozo.",
+        "Lástima, no vas a poder moverte del pozo en un rato.",
+        "Vaya... Has caído en el pozo."
+    ],
+    "equipo": [
+        "Mala suerte, habéis caído en la casilla del pozo.",
+        "Lástima, no vais a poder moveros del pozo en un rato.",
+        "Vaya... Habéis caído en el pozo."
+    ]
+  },
+  {
+    "id": "laberinto",
+    "num": 21,
+    "jugador": [
+        "Mala suerte, te has perdido en el laberinto.",
+        "Lástima, no vas a poder escapar del laberinto en un rato.",
+        "Vaya... Te has adentrado en el laberinto."
+    ],
+    "equipo": [
+        "Mala suerte, os habéis perdido en el laberinto.",
+        "Lástima, no vais a poder escapar del laberinto en un rato.",
+        "Vaya... Os habéis adentrado en el laberinto."
+    ]
+  },
+  {
+    "id": "tarta",
+    "num": 22,
+    "jugador": [
+        "¡Feliz cumpleaños! Una tarta para ti.",
+        "Has encontrado una tarta de cumpleaños, ¡a celebrarlo!",
+        "Una tarta deliciosa para ti, ¡felicidades!"
+    ],
+    "equipo": [
+        "¡Feliz cumpleaños! Una tarta para vosotros.",
+        "Habéis encontrado una tarta de cumpleaños, ¡a celebrarlo!",
+        "Una tarta deliciosa para vosotros, ¡felicidades!"
+    ]
+  },
+  {
+    "id": "calcetin",
+    "num": 23,
+    "jugador": [
+        "Un calcetín solitario aparece, ¡encuéntrale pareja!",
+        "Has encontrado un calcetín, ¡qué curioso!",
+        "Un calcetín para ti, ¡a buscar el otro!"
+    ],
+    "equipo": [
+        "Un calcetín solitario aparece, ¡encontradle pareja!",
+        "Habéis encontrado un calcetín, ¡qué curioso!",
+        "Un calcetín para vosotros, ¡a buscar el otro!"
+    ]
+  },
+  {
+    "id": "payaso",
+    "num": 24,
+    "jugador": [
+        "Un payaso aparece, ¡prepárate para reír!",
+        "Has encontrado un payaso, ¡qué divertido!",
+        "Un payaso te saluda, ¡a reírse!"
+    ],
+    "equipo": [
+        "Un payaso aparece, ¡preparaos para reír!",
+        "Habéis encontrado un payaso, ¡qué divertido!",
+        "Un payaso os saluda, ¡a reírse!"
+    ]
+  },
+  {
+    "id": "carcel",
+    "num": 25,
+    "jugador": [
+        "Oh no, ¡has caído en la cárcel!",
+        "La cárcel te espera, ¡mala suerte!",
+        "Estás en la cárcel, ¡espera tu turno para salir!"
+    ],
+    "equipo": [
+        "Oh no, ¡habéis caído en la cárcel!",
+        "La cárcel os espera, ¡mala suerte!",
+        "Estáis en la cárcel, ¡esperad vuestro turno para salir!"
+    ]
+  },
+  {
+    "id": "reloj",
+    "num": 26,
+    "jugador": [
+        "Un reloj aparece, ¡el tiempo es oro!",
+        "Has encontrado un reloj, ¡a controlar el tiempo!",
+        "Un reloj para ti, ¡no pierdas la hora!"
+    ],
+    "equipo": [
+        "Un reloj aparece, ¡el tiempo es oro!",
+        "Habéis encontrado un reloj, ¡a controlar el tiempo!",
+        "Un reloj para vosotros, ¡no perdáis la hora!"
+    ]
+  },
+  {
+    "id": "camara de fotos",
+    "num": 27,
+    "jugador": [
+        "Una cámara de fotos para ti, ¡captura el momento!",
+        "Has encontrado una cámara, ¡a sacar fotos!",
+        "Una cámara aparece, ¡qué recuerdos!"
+    ],
+    "equipo": [
+        "Una cámara de fotos para vosotros, ¡capturad el momento!",
+        "Habéis encontrado una cámara, ¡a sacar fotos!",
+        "Una cámara aparece, ¡qué recuerdos!"
+    ]
+  },
+  {
+    "id": "piscina",
+    "num": 28,
+    "jugador": [
+        "Una piscina te espera, ¡a nadar!",
+        "Has encontrado una piscina, ¡refrescate!",
+        "Una piscina aparece, ¡a disfrutar!"
+    ],
+    "equipo": [
+        "Una piscina os espera, ¡a nadar!",
+        "Habéis encontrado una piscina, ¡refrescaos!",
+        "Una piscina aparece, ¡a disfrutar!"
+    ]
+  },
+  {
+    "id": "arbol de Navidad",
+    "num": 29,
+    "jugador": [
+        "Un árbol de Navidad te recibe, ¡felices fiestas!",
+        "Has encontrado un árbol de Navidad, ¡qué alegría!",
+        "Un árbol navideño para ti, ¡a decorarlo!"
+    ],
+    "equipo": [
+        "Un árbol de Navidad os recibe, ¡felices fiestas!",
+        "Habéis encontrado un árbol de Navidad, ¡qué alegría!",
+        "Un árbol navideño para vosotros, ¡a decorarlo!"
+    ]
+  },
+  {
+    "id": "serpiente",
+    "num": 30,
+    "jugador": [
+        "¡Cuidado! Una serpiente aparece.",
+        "Una serpiente en tu camino, ¡mantén la calma!",
+        "Has encontrado una serpiente, ¡cuidado!"
+    ],
+    "equipo": [
+        "¡Cuidado! Una serpiente aparece.",
+        "Una serpiente en vuestro camino, ¡mantened la calma!",
+        "Habéis encontrado una serpiente, ¡cuidado!"
+    ]
+  },
+  {
+    "id": "gato",
+    "num": 31,
+    "jugador": [
+        "Un gato amistoso aparece, ¡qué tierno!",
+        "Has encontrado un gato, ¡a acariciarlo!",
+        "Un gato para ti, ¡qué adorable!"
+    ],
+    "equipo": [
+        "Un gato amistoso aparece, ¡qué tierno!",
+        "Habéis encontrado un gato, ¡a acariciarlo!",
+        "Un gato para vosotros, ¡qué adorable!"
+    ]
+  },
+  {
+    "id": "cometa",
+    "num": 32,
+    "jugador": [
+        "Una cometa aparece, ¡a volarlo!",
+        "Has encontrado una cometa, ¡qué divertido!",
+        "Una cometa para ti, ¡a disfrutar del viento!"
+    ],
+    "equipo": [
+        "Una cometa aparece, ¡a volarlo!",
+        "Habéis encontrado una cometa, ¡qué divertido!",
+        "Una cometa para vosotros, ¡a disfrutar del viento!"
+    ]
+  }
+]

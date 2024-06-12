@@ -31,14 +31,14 @@
                 "type": "Text",
                 "text": "${payload.datosCasilla.properties.circleId}",
                 "color": "#FFFFFF",
-                "fontSize": "50dp"
+                "fontSize": "60dp"
               }
             ]
           },
           {
             "type": "Sequence",
             "id": "fichaSequence",
-            "width": "20%",
+            "width": "40%",
             "height": "70%",
             "scrollDirection": "vertical",
             "data": "${payload.datosCasilla.properties.fichas}",

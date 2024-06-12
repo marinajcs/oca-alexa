@@ -39,7 +39,11 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones, hayE
 
         } else if (casillaNueva instanceof CasillaVyF) {
             minijuego = 1;
+            
+        }/* else if (casillaNueva instanceof CasillaCompas) {
+            minijuego = 2;
         }
+        */
         
         if (casillaNueva.id === "META"){
             informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${hayEquipos ? 'habéis' : 'has'} ganado la partida! `;

@@ -33,7 +33,7 @@ const LaunchRequestHandler = {
                 document: bienvenida
             });
         } 
-        // /*
+         
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         sessionAttributes.numJugadores = 2;
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
@@ -45,7 +45,7 @@ const LaunchRequestHandler = {
         }
         jugadores[0].nombre = 'los reyes del mambo';
         jugadores[1].nombre = 'las divinas';
-        // */
+         
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt('Para empezar una partida, di "Nueva partida"')
@@ -212,7 +212,7 @@ const tirarDadoHandler = {
         if (dado === undefined && penalizaciones[jugadores[turno].id] === 0){
             speakOutput = `${hayEquipos ? 'El equipo' : ''} ${jugadores[turno].nombre} ha tirado el dado. <break time="10s"/>`
             //dado = tirarDado();
-            dado = 6;
+            dado = 4;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -259,20 +259,20 @@ const tirarDadoHandler = {
                         repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
                         
                     } else if(minijuego === 2) {
+                       /*
                         sessionAttributes.sujetoRespuesta = false;
                         sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
                         speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
                         repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                        */
                     }
-                    
-                    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
                 } else {
                     turno = pasarTurno(turno, njugadores);
-                    repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+                    repromptAudio = `<break time="3s"/> Ahora es el turno de ${jugadores[turno].nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
                     speakOutput += repromptAudio;
                 }
-                    
+                
             } else {
                 speakOutput += 'Partida terminada. Gracias por jugar.';
                 //responseBuilder.endSession();
@@ -316,7 +316,7 @@ const preguntasVyFHandler = {
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuesta');
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaVF');
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const pregunta = sessionAttributes.preguntaActual;
         const njugadores =  sessionAttributes.numJugadores
@@ -325,14 +325,14 @@ const preguntasVyFHandler = {
         
         if ((respuesta === 'verdadero' && solucion) || (respuesta === 'falso' && !solucion)) {
             jActual.puntos += 10;
-            speakOutput = `¡Correcto! ${pregunta.explanation}. ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+            speakOutput = `¡Correcto! ${pregunta.explanation} ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
                             ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.puntos}. `;
         } else {
-            speakOutput = `Lástima, es incorrecto. ${pregunta.explanation}. `;
+            speakOutput = `Lástima, es incorrecto. ${pregunta.explanation} `;
         }
         
         turno = pasarTurno(turno, njugadores);
-        repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+        repromptAudio = `<break time="3s"/> Ahora es el turno de ${jugadores[turno].nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
         speakOutput += repromptAudio;
 
         return handlerInput.responseBuilder
