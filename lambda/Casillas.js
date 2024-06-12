@@ -1,5 +1,6 @@
 const preguntasVF = require('./exports/preguntasVF.json');
-const fc = require('./exports/frasesCasillas.json')
+//const fc = require('./exports/frasesCasillas.json')
+const preguntasFechas = require('./exports/preguntasFechas.json');
 
 class Casilla {
     constructor(id, url, frases) {
@@ -67,9 +68,8 @@ class CasillaPenalizacion extends Casilla {
 }
 
 class CasillaVyF extends Casilla {
-    constructor(id, url, frases, caracteristicaEspecial) {
+    constructor(id, url, frases) {
         super(id, url, frases);
-        this.caracteristicaEspecial = caracteristicaEspecial;
     }
 
     getPreguntaRandom() {
@@ -85,10 +85,33 @@ class CasillaVyF extends Casilla {
     }
 }
 
+class CasillaFechas extends Casilla {
+    constructor(id, url, frases) {
+        super(id, url, frases);
+    }
+
+    getPreguntaRandom() {
+        const ind = Math.floor(Math.random() * preguntasFechas.length);
+        return preguntasFechas[ind]
+    }
+    
+    recibeJugador(jug, hayEquipos) {
+        let desc;
+        if (hayEquipos){
+            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Adivina la fecha. ';
+        } else {
+            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la fecha. ';
+        }
+        desc += 'Recordad que la respuesta debe ser un número solo. ';
+        return desc;
+    }
+}
+
 module.exports = {
     Casilla,
     CasillaOca,
     CasillaPuente,
     CasillaPenalizacion,
-    CasillaVyF
+    CasillaVyF,
+    CasillaFechas
 };

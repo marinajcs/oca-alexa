@@ -1,5 +1,4 @@
-const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF} = require('./Casillas.js')
-const {fc1, fc2} = require('./exports/frasesCasillas.js')
+const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaFechas} = require('./Casillas.js')
 const fc = require('./exports/frasesCasillas.json')
 
 class Tablero {
@@ -103,7 +102,7 @@ function crearTablero() {
     //Salida[0] añadida en constructor de Tablero
     //...[1-3] (3)
     tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-    tablero.addCasilla(new CasillaVyF("Minijuego Compas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+    tablero.addCasilla(new CasillaFechas("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
     tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
     tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
     //Oca[5]

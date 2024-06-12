@@ -211,8 +211,8 @@ const tirarDadoHandler = {
         
         if (dado === undefined && penalizaciones[jugadores[turno].id] === 0){
             speakOutput = `${hayEquipos ? 'El equipo' : ''} ${jugadores[turno].nombre} ha tirado el dado. <break time="10s"/>`
-            //dado = tirarDado();
-            dado = 4;
+            dado = tirarDado();
+            //dado = 2;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -259,7 +259,14 @@ const tirarDadoHandler = {
                         repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
                         
                     } else if(minijuego === 2) {
-                       /*
+                        sessionAttributes.preguntaActual = pregunta;
+                        sessionAttributes.reboteFechas = turno;
+                        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                        speakOutput += 'La pregunta es: ' + pregunta.question;
+                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                     
+                    } else if (minijuego === 3) {
+                        /*
                         sessionAttributes.sujetoRespuesta = false;
                         sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
                         speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
@@ -325,15 +332,64 @@ const preguntasVyFHandler = {
         
         if ((respuesta === 'verdadero' && solucion) || (respuesta === 'falso' && !solucion)) {
             jActual.puntos += 10;
-            speakOutput = `¡Correcto! ${pregunta.explanation} ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+            speakOutput = ` ¡Correcto! ${pregunta.explanation} ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
                             ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.puntos}. `;
         } else {
-            speakOutput = `Lástima, es incorrecto. ${pregunta.explanation} `;
+            speakOutput = ` Lástima, es incorrecto. ${pregunta.explanation} `;
         }
         
         turno = pasarTurno(turno, njugadores);
         repromptAudio = `<break time="3s"/> Ahora es el turno de ${jugadores[turno].nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
         speakOutput += repromptAudio;
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
+const preguntasFechasHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasFechasIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        const {intent} = requestEnvelope.request;
+        let speakOutput, repromptAudio;
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaFecha');
+        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        const pregunta = sessionAttributes.preguntaActual;
+        const njugadores =  sessionAttributes.numJugadores;
+        let rebote = sessionAttributes.reboteFechas;
+
+        if (respuesta === pregunta.answer) {
+            jugadores[rebote].puntos += 50;
+            speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 50 puntos. \
+                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jugadores[rebote].puntos}. `;
+            
+            turno = pasarTurno(turno, njugadores);
+            repromptAudio = `<break time="3s"/> Ahora es el turno de ${jugadores[turno].nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+            speakOutput += repromptAudio;
+            
+        } else {
+            speakOutput = ' Lástima, es incorrecto. ';
+            rebote = pasarTurno(rebote, njugadores);
+            if (rebote !== turno) {
+                repromptAudio = `La pregunta rebota a ${jugadores[rebote].nombre}: ${pregunta.question} `;
+                speakOutput += repromptAudio;
+            } else {
+                speakOutput = `Parece que nadie ha acertado la pregunta. La respuesta correcta era: ${pregunta.answer}. `;
+            
+                turno = pasarTurno(turno, njugadores);
+                repromptAudio = `<break time="3s"/> Ahora es el turno de ${jugadores[turno].nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
+                speakOutput += repromptAudio;
+            }
+            sessionAttributes.reboteFechas = rebote;
+            handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+        }
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -499,6 +555,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         addJugadorHandler,
         tirarDadoHandler,
         preguntasVyFHandler,
+        preguntasFechasHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,

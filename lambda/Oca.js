@@ -1,5 +1,5 @@
 const {Tablero} = require('./Tablero.js')
-const {CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF} = require('./Casillas.js')
+const {CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaFechas} = require('./Casillas.js')
 
 function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones, hayEquipos){
     let finPartida = false;
@@ -40,10 +40,10 @@ function avanzaJugador(jActual, tirada, tablero, jugadores, penalizaciones, hayE
         } else if (casillaNueva instanceof CasillaVyF) {
             minijuego = 1;
             
-        }/* else if (casillaNueva instanceof CasillaCompas) {
+        } else if (casillaNueva instanceof CasillaFechas) {
             minijuego = 2;
         }
-        */
+        
         
         if (casillaNueva.id === "META"){
             informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${hayEquipos ? 'habéis' : 'has'} ganado la partida! `;

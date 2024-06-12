@@ -195,6 +195,18 @@
           "samples": [
             "{respuestaSN}"
           ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaFecha",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "preguntasFechasIntent",
+          "samples": [
+            "{respuestaFecha}"
+          ]
         }
       ],
       "types": [
