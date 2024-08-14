@@ -18,15 +18,14 @@
             "type": "Frame",
             "direction": "row",
             "backgroundColor": "${data.codigo}",
-            "height": "120dp",
+            "height": "96dp",
             "width": "100%",
             "items": [
               {
                 "type": "Text",
-                "id": "${data.id}",
-                "text": "Jugador ${data.id}",
+                "text": "${data.nombre}",
                 "color": "white",
-                "fontSize": "30dp"
+                "fontSize": "60dp"
               }
             ]
           }

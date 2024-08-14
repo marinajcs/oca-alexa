@@ -23,16 +23,16 @@
           {
             "type": "Image",
             "source": "https://i.ibb.co/Yfmk5mt/oca.png",
-            "width": "50%",
-            "height": "50%",
+            "width": "70%",
+            "height": "70%",
             "scale": "best-fit"
           },
           {
             "type": "Text",
             "text": "¡Bienvenidos/as a la oca!",
             "color": "#000000",
-            "fontSize": "50dp",
-            "marginTop": "20dp"
+            "fontSize": "60dp",
+            "marginTop": "15dp"
           }
         ]
       }

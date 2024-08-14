@@ -1,0 +1,18 @@
+[
+  {
+    "type": "dayOfWeek",
+    "question": "¿En qué día de la semana estamos?"
+  },
+  {
+    "type": "month",
+    "question": "¿En qué mes estamos?"
+  },
+  {
+    "type": "season",
+    "question": "¿En qué estación del año estamos?"
+  },
+  {
+    "type": "year",
+    "question": "¿En qué año estamos?"
+  }
+]

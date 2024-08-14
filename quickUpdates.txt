@@ -1,0 +1,29 @@
+- Separar clases Casilla en ficheros .js distintos
+
+- Verdadero/Falso (Cultura general) -> HECHO
+- Arreglar preguntas compañeros (Colaborativo)
+- Cambiar preguntasFechas por Cifras (Competitivo), revisar las difíciles y añadir más
+- Añadir preguntas de fecha actual (Memoria)
+- Recuerda la última casilla (Memoria)
+
+- Añadir GestorEstados con los distintos estados del juego: 
+  tirandoDado, moviendoFicha, configurandoPartida, minijuegoVyF, minijuegoCifras, 
+  minijuegoFechaActual, minijuegoCompas, minijuegoUltimaCasilla, etc.
+- Cada estado de juego está asociado a un repromptText
+
+- Hacer usuario IAM
+- Almacenar todas las fotos y vídeos en Amazon S3
+- Hacer base de datos para que pueda guardar la partida
+- Crear intents para: guardar (añadir guardado automático cada X tiempo) y terminar
+  partida (elimina los datos de la actual y finaliza la partida), para cerrar skill
+  se puede usar el intent por defecto de cierre de skill
+  (cambiar nombre de numJugadoresIntent por nuevaPartidaIntent)
+- Al lanzar la skill, dar opción al usuario de reanudar la última partida o crear una
+  nueva, borrando la anterior guardada
+
+- Repasar las frases de las casillas
+- Repasar diálogos de Alexa (que sean fluidos pero bien articulados, con pausas)
+- Modificar la explicación de tirar el dado y mover ficha (para repetirlo en las 5
+  primeras rondas, por ejemplo, y después solo dice "Tire el dado" sutilmente)
+- Completar la "ayuda de Alexa"
+- Revisar invocaciones (considerar todas las variantes de comandos de voz)

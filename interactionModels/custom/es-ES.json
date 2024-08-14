@@ -5,6 +5,16 @@
         {
           "slots": [
             {
+              "name": "tipoParticipante",
+              "elicitationRequired": true,
+              "type": "tipoParticipantes",
+              "confirmationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.228153027134.600727903026",
+                "confirmation": "Confirm.Slot.228153027134.600727903026"
+              }
+            },
+            {
               "name": "numJugadores",
               "elicitationRequired": true,
               "type": "AMAZON.NUMBER",
@@ -37,6 +47,20 @@
           "name": "ayudaReglasIntent",
           "confirmationRequired": false,
           "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "nombreJugador",
+              "elicitationRequired": false,
+              "type": "AMAZON.FictionalCharacter",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "addJugadorIntent",
+          "confirmationRequired": false,
+          "prompts": {}
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -65,18 +89,24 @@
         {
           "slots": [
             {
+              "name": "tipoParticipante",
+              "type": "tipoParticipantes",
+              "samples": [
+                "{tipoParticipante}",
+                "{tipoParticipante} individuales",
+                "Por {tipoParticipante}"
+              ]
+            },
+            {
               "name": "numJugadores",
               "type": "AMAZON.NUMBER",
               "samples": [
-                "{numJugadores} jugadores",
-                "{numJugadores}"
+                "{numJugadores} "
               ]
             }
           ],
           "name": "numJugadoresIntent",
           "samples": [
-            "{numJugadores}",
-            "{numJugadores} jugadores",
             "empezar una nueva partida",
             "empezar una partida",
             "nueva partida"
@@ -128,6 +158,63 @@
             "dime {temaAyuda}",
             "explícame {temaAyuda}"
           ]
+        },
+        {
+          "slots": [
+            {
+              "name": "nombreJugador",
+              "type": "AMAZON.FictionalCharacter"
+            }
+          ],
+          "name": "addJugadorIntent",
+          "samples": [
+            "nuestro nombre son {nombreJugador}",
+            "nuestro nombre es {nombreJugador}",
+            "mi nombre es {nombreJugador}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaVF",
+              "type": "VyF"
+            }
+          ],
+          "name": "preguntasVyFIntent",
+          "samples": [
+            "{respuestaVF}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaSN",
+              "type": "SiNo"
+            }
+          ],
+          "name": "preguntasCompasIntent",
+          "samples": [
+            "{respuestaSN}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaFecha",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "preguntasFechasIntent",
+          "samples": [
+            "{respuestaFecha}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "configuracionPruebaIntent",
+          "samples": [
+            "configuracion de prueba"
+          ]
         }
       ],
       "types": [
@@ -176,6 +263,61 @@
             }
           ],
           "name": "tipoAyuda"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "no"
+                ],
+                "value": "No"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sí",
+                  "si"
+                ],
+                "value": "Si"
+              }
+            }
+          ],
+          "name": "SiNo"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "jugadores individuales"
+                ],
+                "value": "jugadores"
+              }
+            },
+            {
+              "name": {
+                "value": "equipos"
+              }
+            }
+          ],
+          "name": "tipoParticipantes"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "falso"
+              }
+            },
+            {
+              "name": {
+                "value": "verdadero"
+              }
+            }
+          ],
+          "name": "VyF"
         }
       ],
       "invocationName": "probando oca"
@@ -185,7 +327,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "¿Cuántos jugadores participarán?"
+            "value": "¿Cuántos {tipoParticipante} participarán?"
           }
         ],
         "id": "Elicit.Slot.1297740976121.58499680412"
@@ -203,7 +345,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Van a participar {numJugadores} jugadores, ¿es esto correcto?"
+            "value": "Van a participar {numJugadores} {tipoParticipante}, ¿es esto correcto?"
           }
         ],
         "id": "Confirm.Slot.274567948648.1241407158722"
@@ -212,7 +354,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "A continuación mostraré a los participantes del juego. ¿Todo listo para comenzar la partida?"
+            "value": "A continuación, pediré a los {numJugadores} {tipoParticipante} sus nombres en esta partida. ¿Procedemos al registro de nombres?"
           }
         ],
         "id": "Confirm.Intent.373965235974"
@@ -234,6 +376,24 @@
           }
         ],
         "id": "Elicit.Slot.282739723454.1287855592498"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Se va a jugar por equipos o jugadores individuales?"
+          }
+        ],
+        "id": "Elicit.Slot.228153027134.600727903026"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "En esta partida, van a participar {tipoParticipante} , ¿correcto?"
+          }
+        ],
+        "id": "Confirm.Slot.228153027134.600727903026"
       }
     ]
   }

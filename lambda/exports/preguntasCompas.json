@@ -1,0 +1,282 @@
+[
+  {
+    "question1": "¿Alguno de los integrantes del equipo ha viajado a la India?",
+    "question2": "¿Alguno de los miembros del equipo ha viajado a la India?"
+  },
+  {
+    "question1": "¿Alguno de los integrantes del equipo toca un instrumento musical?",
+    "question2": "¿Alguno de los miembros del equipo toca un instrumento musical?"
+  },
+  {
+    "question1": "¿Tiene hermanos?",
+    "question2": "¿Algún miembro del equipo tiene hermanos?"
+  },
+  {
+    "question1": "¿Le gusta cocinar?",
+    "question2": "¿A algún miembro del equipo le gusta cocinar?"
+  },
+  {
+    "question1": "¿Alguna vez ha hecho paracaidismo?",
+    "question2": "¿Algún miembro del equipo ha hecho paracaidismo?"
+  },
+  {
+    "question1": "¿Tiene una mascota en casa?",
+    "question2": "¿Algún miembro del equipo tiene una mascota en casa?"
+  },
+  {
+    "question1": "¿Alguna vez ha vivido en otro país?",
+    "question2": "¿Algún miembro del equipo ha vivido en otro país?"
+  },
+  {
+    "question1": "¿Le gusta la comida picante?",
+    "question2": "¿A algún miembro del equipo le gusta la comida picante?"
+  },
+  {
+    "question1": "¿Alguna vez ha hecho un viaje en solitario?",
+    "question2": "¿Algún miembro del equipo ha hecho un viaje en solitario?"
+  },
+  {
+    "question1": "¿Ha asistido a un concierto en el último año?",
+    "question2": "¿Algún miembro del equipo ha asistido a un concierto en el último año?"
+  },
+  {
+    "question1": "¿Ha corrido alguna vez una maratón?",
+    "question2": "¿Algún miembro del equipo ha corrido alguna vez una maratón?"
+  },
+  {
+    "question1": "¿Le gusta leer libros de ficción?",
+    "question2": "¿A algún miembro del equipo le gusta leer libros de ficción?"
+  },
+  {
+    "question1": "¿Alguna vez ha tomado una clase de baile?",
+    "question2": "¿Algún miembro del equipo ha tomado una clase de baile?"
+  },
+  {
+    "question1": "¿Le gusta hacer senderismo?",
+    "question2": "¿A algún miembro del equipo le gusta hacer senderismo?"
+  },
+  {
+    "question1": "¿Ha participado en algún tipo de voluntariado?",
+    "question2": "¿Algún miembro del equipo ha participado en algún tipo de voluntariado?"
+  },
+  {
+    "question1": "¿Tiene alguna alergia alimentaria?",
+    "question2": "¿Algún miembro del equipo tiene alguna alergia alimentaria?"
+  },
+  {
+    "question1": "¿Le gusta el cine de terror?",
+    "question2": "¿A algún miembro del equipo le gusta el cine de terror?"
+  },
+  {
+    "question1": "¿Alguna vez ha asistido a una obra de teatro?",
+    "question2": "¿Algún miembro del equipo ha asistido a una obra de teatro?"
+  },
+  {
+    "question1": "¿Alguna vez has ido de campamento?",
+    "question2": "¿Algún miembro del equipo ha ido de campamento?"
+  },
+  {
+    "question1": "¿Le gusta el café?",
+    "question2": "¿A algún miembro del equipo le gusta el café?"
+  },
+  {
+    "question1": "¿Ha probado alguna vez la comida vegana?",
+    "question2": "¿Algún miembro del equipo ha probado alguna vez la comida vegana?"
+  },
+  {
+    "question1": "¿Le gustan los deportes de invierno?",
+    "question2": "¿A algún miembro del equipo le gustan los deportes de invierno?"
+  },
+  {
+    "question1": "¿Alguna vez ha tomado clases de arte?",
+    "question2": "¿Algún miembro del equipo ha tomado clases de arte?"
+  },
+  {
+    "question1": "¿Tiene algún tipo de colección (sellos, monedas, etc.)?",
+    "question2": "¿Algún miembro del equipo tiene algún tipo de colección (sellos, monedas, etc.)?"
+  },
+  {
+    "question1": "¿Alguna vez ha escrito un diario?",
+    "question2": "¿Algún miembro del equipo ha escrito un diario?"
+  },
+  {
+    "question1": "¿Le gusta la jardinería?",
+    "question2": "¿A algún miembro del equipo le gusta la jardinería?"
+  },
+  {
+    "question1": "¿Alguna vez ha montado a caballo?",
+    "question2": "¿Algún miembro del equipo ha montado a caballo?"
+  },
+  {
+    "question1": "¿Tiene miedo a viajar en avión?",
+    "question2": "¿Algún miembro del equipo tiene miedo a viajar en avión?"
+  },
+  {
+    "question1": "¿Alguna vez has hecho snorkel o buceo?",
+    "question2": "¿Algún miembro del equipo ha hecho snorkel o buceo?"
+  },
+  {
+    "question1": "¿Le gustan los videojuegos?",
+    "question2": "¿A algún miembro del equipo le gustan los videojuegos?"
+  },
+  {
+    "question1": "¿Ha tomado clases de cocina?",
+    "question2": "¿Algún miembro del equipo ha tomado clases de cocina?"
+  },
+  {
+    "question1": "¿Le gustan los puzzles y rompecabezas?",
+    "question2": "¿A algún miembro del equipo le gustan los puzzles y rompecabezas?"
+  },
+  {
+    "question1": "¿Alguna vez has asistido a una conferencia o seminario profesional?",
+    "question2": "¿Algún miembro del equipo ha asistido a una conferencia o seminario profesional?"
+  },
+  {
+    "question1": "¿Le gusta el yoga o la meditación?",
+    "question2": "¿A algún miembro del equipo le gusta el yoga o la meditación?"
+  },
+  {
+    "question1": "¿Practica aquagym?",
+    "question2": "¿Algún miembro del equipo practica aquagym?"
+  },
+  {
+    "question1": "¿Practica tenis?",
+    "question2": "¿Algún miembro del equipo practica tenis?"
+  },
+  {
+    "question1": "¿Le gusta ir a la playa?",
+    "question2": "¿A algún miembro del equipo le gusta ir a la playa?"
+  },
+  {
+    "question1": "¿Alguna vez ha hecho un viaje en tren de larga distancia?",
+    "question2": "¿Algún miembro del equipo ha hecho un viaje en tren de larga distancia?"
+  },
+  {
+    "question1": "¿Te gusta celebrar tu cumpleaños?",
+    "question2": "¿Algún miembro del equipo disfruta celebrar su cumpleaños?"
+  },
+  {
+    "question1": "¿Alguna vez has participado en una competencia deportiva?",
+    "question2": "¿Algún miembro del equipo ha participado en una competencia deportiva?"
+  },
+  {
+    "question1": "¿Le gusta la fotografía?",
+    "question2": "¿A algún miembro del equipo le gusta la fotografía?"
+  },
+  {
+    "question1": "¿Alguna vez has hecho un curso en línea?",
+    "question2": "¿Algún miembro del equipo ha hecho un curso en línea?"
+  },
+  {
+    "question1": "¿Le gustan los animales?",
+    "question2": "¿A algún miembro del equipo le gustan los animales?"
+  },
+  {
+    "question1": "¿Alguna vez has visto un eclipse solar o lunar?",
+    "question2": "¿Algún miembro del equipo ha visto un eclipse solar o lunar?"
+  },
+  {
+    "question1": "¿Te gusta decorar para las festividades?",
+    "question2": "¿Algún miembro del equipo disfruta decorar para las festividades?"
+  },
+  {
+    "question1": "¿Alguna vez ha hecho algo de bricolaje o manualidades?",
+    "question2": "¿Algún miembro del equipo ha hecho algo de bricolaje o manualidades?"
+  },
+  {
+    "question1": "¿Le gusta la música clásica?",
+    "question2": "¿A algún miembro del equipo le gusta la música clásica?"
+  },
+  {
+    "question1": "¿Ha viajado fuera de España alguna vez?",
+    "question2": "¿Algún miembro del equipo ha viajado fuera de España alguna vez?"
+  },
+  {
+    "question1": "¿Practica algún deporte?",
+    "question2": "¿Algún miembro del equipo practica algún deporte?"
+  },
+  {
+    "question1": "¿Tiene algún hobby o pasatiempo que disfrute particularmente?",
+    "question2": "¿Algún miembro del equipo tiene algún hobby o pasatiempo que disfrute particularmente?"
+  },
+  {
+    "question1": "¿Está trabajando en la actualidad?",
+    "question2": "¿Algún miembro del equipo está trabajando en la actualidad?"
+  },
+  {
+    "question1": "¿Ha participado alguna vez en un maratón?",
+    "question2": "¿Algún miembro del equipo ha participado alguna vez en un maratón?"
+  },
+  {
+    "question1": "¿Le gusta escuchar música clásica?",
+    "question2": "¿A algún miembro del equipo le gusta escuchar música clásica?"
+  },
+  {
+    "question1": "¿Sabe hablar más de un idioma?",
+    "question2": "¿Algún miembro del equipo sabe hablar más de un idioma?"
+  },
+  {
+    "question1": "¿Colecciona algún tipo de objeto?",
+    "question2": "¿Algún miembro del equipo colecciona algún tipo de objeto?"
+  },
+  {
+    "question1": "¿Ha probado alguna vez la comida tailandesa?",
+    "question2": "¿Algún miembro del equipo ha probado alguna vez la comida tailandesa?"
+  },
+  {
+    "question1": "¿Toca algún instrumento musical?",
+    "question2": "¿Algún miembro del equipo toca algún instrumento musical?"
+  },
+  {
+    "question1": "¿Le interesa la fotografía?",
+    "question2": "¿Algún miembro del equipo está interesado en la fotografía?"
+  },
+  {
+    "question1": "¿Tiene algún tatuaje?",
+    "question2": "¿Algún miembro del equipo tiene algún tatuaje?"
+  },
+  {
+    "question1": "¿Ha visto alguna vez una aurora boreal?",
+    "question2": "¿Algún miembro del equipo ha visto alguna vez una aurora boreal?"
+  },
+  {
+    "question1": "¿Le gusta la poesía?",
+    "question2": "¿A algún miembro del equipo le gusta la poesía?"
+  },
+  {
+    "question1": "¿Le gusta la novela negra?",
+    "question2": "¿A algún miembro del equipo le gusta la novela negra?"
+  },
+  {
+    "question1": "¿Le gustan los culebrones?",
+    "question2": "¿A algún miembro del equipo le gustan los culebrones?"
+  },
+  {
+    "question1": "¿Le gusta el rock?",
+    "question2": "¿A algún miembro del equipo le gusta el rock?"
+  },
+  {
+    "question1": "¿Tiene hijos?",
+    "question2": "¿Algún miembro del equipo tiene hijos?"
+  },
+  {
+    "question1": "¿Está casado o casada?",
+    "question2": "¿Algún miembro del equipo está casado o casada?"
+  },
+  {
+    "question1": "¿Le gusta pintar o dibujar?",
+    "question2": "¿A algún miembro del equipo le gusta pintar o dibujar?"
+  },
+  {
+    "question1": "¿Es aficionado a la fotografía?",
+    "question2": "¿Algún miembro del equipo es aficionado a la fotografía?"
+  },
+  {
+    "question1": "¿Le gusta asistir a obras de teatro?",
+    "question2": "¿A algún miembro del equipo le gusta asistir a obras de teatro?"
+  },
+  {
+    "question1": "¿Le gusta el cine?",
+    "question2": "¿A algún miembro del equipo le gusta el cine?"
+  }
+]
