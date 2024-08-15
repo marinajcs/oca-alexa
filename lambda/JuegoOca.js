@@ -1,3 +1,4 @@
+const {EstadoJuego} = require('./EstadoJuego.js');
 const {Tablero} = require('./Tablero.js');
 const {Jugador} = require('./Jugador.js');
 const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaFechas} = require('./Casillas.js');
@@ -11,6 +12,8 @@ class JuegoOca {
         this.turno = 0;
         this.penalizaciones = [];
         this.tablero = this.crearTablero();
+        this.ronda = 1;
+        this.estado = EstadoJuego.INDETERMINADO;
     }
     
     setEquipos(hayEquipos) {
@@ -23,6 +26,18 @@ class JuegoOca {
     
     getTurno() {
        return this.turno;
+    }
+    
+    getRonda() {
+        return this.ronda;
+    }
+    
+    setEstado(estado) {
+        this.estado = estado;
+    }
+    
+    getEstado() {
+        return this.estado;
     }
     
     getJugador(i) {
@@ -55,7 +70,6 @@ class JuegoOca {
             const nombresJugadores = jugadoresEnCasilla.map(jugador => jugador.nombre).join(', ');
             mensaje += ` ¡Qué casualidad! En esta casilla también están los siguientes ${this.hayEquipos ? ' equipos' : ' jugadores' }: ${nombresJugadores}. `;
         }
-    
         return [jugadoresEnCasilla, mensaje];
     }
     
@@ -73,8 +87,10 @@ class JuegoOca {
     
     pasarTurno() {
         let sig = this.turno + 1;
-        if (sig >= this.numJugadores)
+        if (sig >= this.numJugadores) {
             sig = 0;
+            this.ronda++;
+        }
             
         this.turno = sig;
     }
@@ -87,61 +103,78 @@ class JuegoOca {
         return sig;
     }
     
-    avanzaJugador(jActual, tirada){
-        let finPartida = false;
-        let dobleTurno = false;
-        let minijuego = 0;
-        let posNueva = 0;
-        let posActual = jActual.getPosActual();
-        let casillaNueva;
-        let informe = `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} estaba en la casilla ${posActual}. `;
-        
-        if (this.tablero.getCasilla(posActual) instanceof CasillaPenalizacion && this.penalizaciones[jActual.id] > 0){
-            posNueva = posActual;
-            casillaNueva = this.tablero.getCasilla(posNueva);
-            informe += `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} no puede moverse aún. ${this.penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${this.penalizaciones[jActual.id]} \
-                        ${this.penalizaciones[jActual.id] === 1 ? 'turno' : 'turnos'} antes de poder volver a tirar el dado. `
-            this.penalizaciones[jActual.id] -= 1;
+    anunciarTurno() {
+        if (this.estado === EstadoJuego.TIRAR_DADO) {
+            let informe = `<break time="3s"/> Ahora es el turno de ${this.getNombreJActual()}. `;
+            if (this.getRonda() < 4) {
+                informe += ` Para poder tirar el dado, diga: 'Tirar dado'. `;
+            } else {
+                informe += `Por favor, ${this.hayEquipos ? 'tiren' : 'tire'} el dado. `;
+            }
+            return informe;
         } else {
-            posNueva += this.tablero.nuevaPosicion(posActual, tirada);
-            casillaNueva = this.tablero.getCasilla(posNueva);
-            jActual.setPosActual(posNueva);
-            informe += `Tras moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}, ahora está en la casilla ${posNueva}. `;
-            informe += casillaNueva.recibeJugador(jActual, this.hayEquipos);
-            
-            if (casillaNueva instanceof CasillaOca){
-                posNueva = this.tablero.buscarSiguienteOca(posNueva);
-                casillaNueva = this.tablero.getCasilla(posNueva);
-                jActual.setPosActual(posNueva);
-                dobleTurno = true;
-    
-            } else if (casillaNueva instanceof CasillaPenalizacion){
-                this.penalizaciones[jActual.id] += casillaNueva.penaliza;
-                
-            } else if (casillaNueva instanceof CasillaPuente){
-                posNueva = this.tablero.buscarSiguientePuente(posNueva);
-                casillaNueva = this.tablero.getCasilla(posNueva);
-                jActual.setPosActual(posNueva);
-    
-            } else if (casillaNueva instanceof CasillaVyF) {
-                minijuego = 1;
-                
-            } else if (casillaNueva instanceof CasillaFechas) {
-                minijuego = 2;
-            }
-            
-            
-            if (casillaNueva.id === "META"){
-                informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${this.hayEquipos ? 'habéis' : 'has'} ganado la partida! `;
-                finPartida = true;
-            }
+            return null;
         }
-        return [casillaNueva, informe, finPartida, dobleTurno, minijuego];
+    }
+    
+    avanzaJugador(jActual, tirada){
+        if (this.estado === EstadoJuego.MOVER_FICHA) {
+            let finPartida = false;
+            let dobleTurno = false;
+            let minijuego = 0;
+            let posNueva = 0;
+            let posActual = jActual.getPosActual();
+            let casillaNueva;
+            let informe = `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} estaba en la casilla ${posActual}. `;
+            
+            if (this.tablero.getCasilla(posActual) instanceof CasillaPenalizacion && this.penalizaciones[jActual.id] > 0){
+                posNueva = posActual;
+                casillaNueva = this.tablero.getCasilla(posNueva);
+                informe += `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} no puede moverse aún. ${this.penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${this.penalizaciones[jActual.id]} \
+                            ${this.penalizaciones[jActual.id] === 1 ? 'turno' : 'turnos'} antes de poder volver a tirar el dado. `
+                this.penalizaciones[jActual.id] -= 1;
+            } else {
+                posNueva += this.tablero.nuevaPosicion(posActual, tirada);
+                casillaNueva = this.tablero.getCasilla(posNueva);
+                jActual.setPosActual(posNueva);
+                informe += `Tras moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}, ahora está en la casilla ${posNueva}. `;
+                informe += casillaNueva.recibeJugador(jActual, this.hayEquipos);
+                
+                if (casillaNueva instanceof CasillaOca){
+                    posNueva = this.tablero.buscarSiguienteOca(posNueva);
+                    casillaNueva = this.tablero.getCasilla(posNueva);
+                    jActual.setPosActual(posNueva);
+                    dobleTurno = true;
+        
+                } else if (casillaNueva instanceof CasillaPenalizacion){
+                    this.penalizaciones[jActual.id] += casillaNueva.penaliza;
+                    
+                } else if (casillaNueva instanceof CasillaPuente){
+                    posNueva = this.tablero.buscarSiguientePuente(posNueva);
+                    casillaNueva = this.tablero.getCasilla(posNueva);
+                    jActual.setPosActual(posNueva);
+        
+                } else if (casillaNueva instanceof CasillaVyF) {
+                    minijuego = 1;
+                    
+                } else if (casillaNueva instanceof CasillaFechas) {
+                    minijuego = 2;
+                }
+                
+                if (casillaNueva.id === "META"){
+                    informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${this.hayEquipos ? 'habéis' : 'has'} ganado la partida! `;
+                    finPartida = true;
+                }
+            }
+            return [casillaNueva, informe, finPartida, dobleTurno, minijuego];
+        } else {
+            return null;
+        }
     }
     
     crearJugadores(n) {
         let ok = false;
-        if (n < 6) {
+        if (n < 6 && this.estado === EstadoJuego.CONFIGURANDO) {
             const colores = ['Rojo', 'Azul', 'Verde', 'Morado', 'Naranja', 'Gris'];
             const codigos = ['#FF0000', '#0000FF', '#008000', '#AA00FD', '#FD7D00', '#8C8C8C'];
         
@@ -267,7 +300,6 @@ class JuegoOca {
     }
     
 }
-
 
 module.exports = {
     JuegoOca

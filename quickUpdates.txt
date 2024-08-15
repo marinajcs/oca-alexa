@@ -1,3 +1,5 @@
+- Resumen del juego (pos finales) y ranking de puntos (al terminar la partida)
+
 - Separar clases Casilla en ficheros .js distintos
 
 - Verdadero/Falso (Cultura general) -> HECHO
@@ -6,12 +8,12 @@
 - Añadir preguntas de fecha actual (Memoria)
 - Recuerda la última casilla (Memoria)
 
-- Añadir GestorEstados con los distintos estados del juego: 
+- Añadir GestorEstados con los distintos estados del juego: -> HECHO
   tirandoDado, moviendoFicha, configurandoPartida, minijuegoVyF, minijuegoCifras, 
   minijuegoFechaActual, minijuegoCompas, minijuegoUltimaCasilla, etc.
-- Cada estado de juego está asociado a un repromptText
+- Cada estado de juego está asociado a un repromptText -> HECHO, PROBAR EN ECHO SHOW
 
-- Hacer usuario IAM
+- Hacer usuario IAM, modificar tiemout de función lambda
 - Almacenar todas las fotos y vídeos en Amazon S3
 - Hacer base de datos para que pueda guardar la partida
 - Crear intents para: guardar (añadir guardado automático cada X tiempo) y terminar
@@ -21,9 +23,10 @@
 - Al lanzar la skill, dar opción al usuario de reanudar la última partida o crear una
   nueva, borrando la anterior guardada
 
+- Eliminar código repetido -> EN PROCESO
 - Repasar las frases de las casillas
 - Repasar diálogos de Alexa (que sean fluidos pero bien articulados, con pausas)
 - Modificar la explicación de tirar el dado y mover ficha (para repetirlo en las 5
-  primeras rondas, por ejemplo, y después solo dice "Tire el dado" sutilmente)
+  primeras rondas, por ejemplo, y después solo dice "Tire el dado" sutilmente) -> HECHO
 - Completar la "ayuda de Alexa"
 - Revisar invocaciones (considerar todas las variantes de comandos de voz)

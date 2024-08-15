@@ -5,6 +5,7 @@ const {JuegoOca} = require('./JuegoOca.js');
 const {Jugador} = require('./Jugador.js')
 const {tirarDado, getUrlDado} = require('./Dado.js');
 const {reglasInfo, casillasInfo, minijuegosInfo, comandosInfo} = require('./exports/frasesAyuda.js');
+const {EstadoJuego, informeEstado} = require('./EstadoJuego.js');
 
 let oca = new JuegoOca();
 
@@ -42,19 +43,20 @@ const configuracion1Handler = {
     handle(handlerInput) {
         const {request} = handlerInput.requestEnvelope.request;
         let responseBuilder = handlerInput.responseBuilder;
-        let speakOutput = '';
+        let speakOutput, repromptAudio;
         
         oca.setEquipos(true);
-        let hayEquipos = true;
+        const hayEquipos = true;
+        oca.setEstado(EstadoJuego.CONFIGURANDO);
         oca.crearJugadores(2);
         oca.getJugador(0).setNombre('los campeones rojos');
         oca.getJugador(1).setNombre('las divinas azules');
+        oca.setEstado(EstadoJuego.TIRAR_DADO);
         
-        speakOutput += `Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' \
-                            y después, 'mover ficha' para poder realizar dichas acciones. `
-                            
-        const repromptAudio = `${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
-        speakOutput += repromptAudio;
+        speakOutput = `Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' y después, \
+                       'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
+        
+        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
         
         responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
@@ -80,7 +82,6 @@ const configuracion1Handler = {
             .getResponse();
     }
 }
-
 
 const ayudaReglasHandler = {
     canHandle(handlerInput) {
@@ -128,9 +129,9 @@ const numJugadoresHandler = {
         const {intent} = requestEnvelope.request;
         let responseBuilder = handlerInput.responseBuilder;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        let speakOutput = '';
-        let repromptAudio;
+        let speakOutput, repromptAudio, registroActual;
         let njugadores, hayEquipos;
+        oca.setEstado(EstadoJuego.CONFIGURANDO);
 
         if (intent.confirmationStatus === 'CONFIRMED'){
             njugadores = Alexa.getSlotValue(requestEnvelope, 'numJugadores');
@@ -144,10 +145,15 @@ const numJugadoresHandler = {
             sessionAttributes.numJugadoresSet = 0;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
             
+            oca.setEstado(EstadoJuego.REGISTRO_NOMBRES);
+            
+            registroActual = `Empezamos por el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(0).getColor()}.`
+
             speakOutput = `Para registrar el nombre del ${hayEquipos ? 'equipo' : 'participante'}, cada uno debe decir: \
                            '${hayEquipos ? 'Nuestro' : 'Mi'} nombre es', seguido del nombre elegido. Por ejemplo, \
-                           '${hayEquipos ? 'Nuestro' : 'Mi'} nombre es '${hayEquipos ? 'Amantes de la paella' : 'Roberta'}. \
-                           Empezamos por el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(0).getColor()}.`
+                           '${hayEquipos ? 'Nuestro' : 'Mi'} nombre es '${hayEquipos ? 'Amantes de la paella' : 'Roberta'}. ` + registroActual;
+                           
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos) + registroActual;
             
         }
     
@@ -168,8 +174,7 @@ const addJugadorHandler = {
         const {requestEnvelope} = handlerInput;
         let responseBuilder = handlerInput.responseBuilder;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        let speakOutput = '';
-        let repromptAudio = '';
+        let speakOutput, repromptAudio, registroActual;
         let nombreJugador = Alexa.getSlotValue(requestEnvelope, 'nombreJugador');
         let nJugadoresSet = sessionAttributes.numJugadoresSet;
         const njugadores = oca.getNumJugadores();
@@ -181,8 +186,9 @@ const addJugadorHandler = {
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
         if (nJugadoresSet < njugadores) {
-            speakOutput = `Se ha registrado el nombre ${nombreJugador}. <break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()}.`;
-            repromptAudio = speakOutput;
+            registroActual = `<break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()} `.
+            speakOutput = `Se ha registrado el nombre ${nombreJugador}. ` + registroActual;
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos) + registroActual;
         } else {
             speakOutput = `Se ha registrado el nombre ${nombreJugador}. Todos los participantes han sido añadidos. <break time="2s"/>`;
                 
@@ -190,14 +196,13 @@ const addJugadorHandler = {
             oca.getJugadores().forEach(jugador => {
                 speakOutput += (`<break time="1s"/> ${hayEquipos ? 'Equipo' : 'Participante'} ${jugador.getNombre()}, cuyo color asignado es el ${jugador.getColor()}. `);
             });
+            oca.setEstado(EstadoJuego.TIRAR_DADO);
             
+            speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno: primero, se dice 'tirar dado' y después, \
+                            'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
             
-            speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' \
-                            y después, 'mover ficha' para poder realizar dichas acciones. `
-            repromptAudio = `${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
-            speakOutput += repromptAudio;
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             
-        
             responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',
                 token: 'jugadoresToken',
@@ -233,8 +238,7 @@ const tirarDadoHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
-        let speakOutput = '';
-        let repromptAudio;
+        let speakOutput, repromptAudio;
         let responseBuilder = handlerInput.responseBuilder;
         let dado = sessionAttributes.valorDado;
         let jActual = oca.getJugadorActual();
@@ -262,55 +266,77 @@ const tirarDadoHandler = {
                     }
                 });
             }
+            oca.setEstado(EstadoJuego.MOVER_FICHA);
             
-            repromptAudio = ` ${oca.getNombreJActual()} ha${hayEquipos ? 'n' : ''} sacado un ${dado}. Por favor proceda${hayEquipos ? 'n' : ''} a mover su ficha.`;
-            speakOutput += repromptAudio;
+            speakOutput += ` ${oca.getNombreJActual()} ha${hayEquipos ? 'n' : ''} sacado un ${dado}.`;
+            if (oca.getRonda() < 4) {
+                speakOutput += ` Para poder mover su ficha, diga: 'Mover ficha'. `;
+            } else {
+                speakOutput += ` Por favor proceda${hayEquipos ? 'n' : ''} a mover su ficha. `;
+            }
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+            
         } else {
             sessionAttributes.valorDado = undefined;
             
             const [casillaNueva, informe, finPartida, dobleTurno, minijuego] = oca.avanzaJugador(jActual, dado);
-            speakOutput += informe;
+            speakOutput = informe;
             
             const [jugEnCasilla, mensaje] = oca.getJugadoresCasilla(jActual.getPosActual(), jActual);
             speakOutput += mensaje;
             
             if (!finPartida) {
                 if (dobleTurno){
-                    repromptAudio = `<break time="3s"/> Vuelve a ser el turno de ${jActual.nombre}. Por favor ${hayEquipos ? 'tiren' : 'tire'} el dado de nuevo. `;
-                    speakOutput += repromptAudio;
+                    oca.setEstado(EstadoJuego.TIRAR_DADO);
+                    speakOutput += `<break time="3s"/> Vuelve a ser el turno de ${jActual.getNombre()}. Por favor ${hayEquipos ? 'tiren' : 'tire'} el dado de nuevo. `;
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre());
                 
                 } else if (minijuego !== 0) {
                     let pregunta = casillaNueva.getPreguntaRandom();
-
+                    let preguntaTxt;
+                    
                     if (minijuego === 1) {
+                        oca.setEstado(EstadoJuego.MINIJUEGO_VF);
                         sessionAttributes.preguntaActual = pregunta;
                         handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-                        speakOutput += 'La pregunta es: ' + pregunta.question + ' ¿Verdadero o falso?';
-                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                        preguntaTxt = 'La pregunta es: ' + pregunta.question + ' ¿Verdadero o falso?';
+                        speakOutput += preguntaTxt;
+                        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                         
                     } else if(minijuego === 2) {
+                        oca.setEstado(EstadoJuego.MINIJUEGO_CIFRAS);
                         sessionAttributes.preguntaActual = pregunta;
                         sessionAttributes.reboteFechas = oca.getTurno();
                         handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-                        speakOutput += 'La pregunta es: ' + pregunta.question;
-                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                        preguntaTxt = 'La pregunta es: ' + pregunta.question;
+                        speakOutput += preguntaTxt;
+                        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                      
                     } else if (minijuego === 3) {
+                        oca.setEstado(EstadoJuego.MINIJUEGO_COMPAS);
                         /*
                         sessionAttributes.sujetoRespuesta = false;
                         sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
                         speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
                         repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
                         */
+                    } else if (minijuego === 4) {
+                        oca.setEstado(EstadoJuego.MINIJUEGO_FECHA);
+                        
+                    } else {
+                        oca.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
+                        
                     }
 
                 } else {
                     oca.pasarTurno();
-                    repromptAudio = `<break time="3s"/> Ahora es el turno de ${oca.getNombreJActual()}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
-                    speakOutput += repromptAudio;
+                    oca.setEstado(EstadoJuego.TIRAR_DADO);
+                    speakOutput += oca.anunciarTurno();
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
                 }
                 
             } else {
+                oca.setEstado(EstadoJuego.FINALIZADO);
                 speakOutput += 'Partida terminada. Gracias por jugar.';
                 //responseBuilder.endSession();
             }
@@ -370,8 +396,9 @@ const preguntasVyFHandler = {
         }
         
         oca.pasarTurno();
-        repromptAudio = `<break time="3s"/> Ahora es el turno de ${oca.getNombreJActual()}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
-        speakOutput += repromptAudio;
+        oca.setEstado(EstadoJuego.TIRAR_DADO);
+        speakOutput += oca.anunciarTurno();
+        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -400,21 +427,23 @@ const preguntasFechasHandler = {
                             ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${oca.getJugador(rebote).getPuntos()}. `;
             
             oca.pasarTurno();
-            repromptAudio = `<break time="3s"/> Ahora es el turno de ${oca.getNombreJActual()}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
-            speakOutput += repromptAudio;
+            oca.setEstado(EstadoJuego.TIRAR_DADO);
+            speakOutput += oca.anunciarTurno();
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             
         } else {
             speakOutput = ' Lástima, es incorrecto. ';
             rebote = oca.calcularRebote(rebote);
             if (rebote !== oca.getTurno()) {
-                repromptAudio = `La pregunta rebota a ${oca.getJugador(rebote).getNombre()}: ${pregunta.question} `;
-                speakOutput += repromptAudio;
+                speakOutput += `La pregunta rebota a ${oca.getJugador(rebote).getNombre()}: ${pregunta.question} `;
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getJugador(rebote).getNombre(), pregunta.question);
             } else {
                 speakOutput = `Parece que nadie ha acertado la pregunta. La respuesta correcta era: ${pregunta.answer}. `;
             
                 oca.pasarTurno();
-                repromptAudio = `<break time="3s"/> Ahora es el turno de ${oca.getNombreJActual()}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
-                speakOutput += repromptAudio;
+                oca.setEstado(EstadoJuego.TIRAR_DADO);
+                speakOutput += oca.anunciarTurno();
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             }
             sessionAttributes.reboteFechas = rebote;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
