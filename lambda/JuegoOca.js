@@ -11,7 +11,7 @@ class JuegoOca {
         this.numJugadores = 0;
         this.turno = 0;
         this.penalizaciones = [];
-        this.tablero = this.crearTablero();
+        this.tablero = this.crearTableroPrueba();
         this.ronda = 1;
         this.estado = EstadoJuego.INDETERMINADO;
     }
@@ -57,6 +57,12 @@ class JuegoOca {
     
     getJugadores() {
         return this.jugadores;
+    }
+    
+    getJugadorCasilla(numCasilla) {
+        const jugEnCasilla = this.jugadores.filter(jugador => jugador.posicion === numCasilla);
+    
+        return jugEnCasilla;
     }
     
     getJugadoresCasilla(numCasilla, jActual) {
@@ -109,6 +115,34 @@ class JuegoOca {
         }
     }
     
+    anunciarGanadores() {
+        let resultados;
+
+        if (this.estado === EstadoJuego.FINALIZADO) {
+            const jugEnMeta = this.getJugadorActual();
+            resultados = `Enhorabuena${this.hayEquipos ? ' al equipo' : ' al participante'} ${jugEnMeta.getNombre()}, que ha ganado la \
+                          partida al llegar a la meta en primer lugar. `;
+            
+            const jugMayorPts = this.jugadores.reduce((max, actual) => 
+                actual.getPuntos() > max.getPuntos() ? actual : max, this.jugadores[0]
+            );
+            
+            if (jugMayorPts === jugEnMeta) {
+                resultados += `Además,${this.hayEquipos ? ' habéis' : ' has'} acumulado más puntos que nadie, \
+                                ${jugMayorPts.getPuntos()} puntos en total, por tanto también${this.hayEquipos ? ' conseguís' : ' consigues'}
+                                la Medalla de Minijuegos. ¡Felicidades! `;
+            } else {
+                resultados += ` Honorable mención${this.hayEquipos ? ' al equipo' : ' al participante'} ${jugMayorPts.getNombre()}, \
+                                que con ${jugMayorPts.getPuntos()} puntos ha logrado la mayor cantidad, por tanto se lleva la \
+                                Medalla de Minijuegos. ¡Felicidades! `;
+            }
+            
+        } else {
+            resultados = 'La partida todavía sigue en curso, nadie ha llegado a la meta aún. ';
+        }
+        return resultados;
+    }
+    
     avanzaJugador(jActual, tirada, jugEnCasilla){
         if (this.estado === EstadoJuego.MOVER_FICHA) {
             let finPartida = false;
@@ -131,21 +165,12 @@ class JuegoOca {
                 casillaNueva = this.tablero.getCasilla(posNueva);
                 jActual.setPosActual(posNueva);
                 informe += `Tras moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}, ahora está en la casilla ${posNueva}. `;
-
-                if (jugEnCasilla.length === 1) {
-                    const nombreJugador = jugEnCasilla[0].nombre;
-                    informe += ` ¡Qué casualidad! En esta casilla también ${this.hayEquipos ? ' están ' : ' está '} ${nombreJugador}. `;
-                } else if (jugEnCasilla.length > 1) {
-                    const nombresJugadores = jugEnCasilla.map(jugador => jugador.nombre).join(', ');
-                    informe += ` ¡Qué casualidad! En esta casilla también están los siguientes ${this.hayEquipos ? ' equipos' : ' jugadores' }: ${nombresJugadores}. `;
-                }
-                informe += casillaNueva.recibeJugador(jActual, this.hayEquipos);
                 
                 if (casillaNueva instanceof CasillaOca){
                     posNueva = this.tablero.buscarSiguienteOca(posNueva);
                     casillaNueva = this.tablero.getCasilla(posNueva);
                     jActual.setPosActual(posNueva);
-                    dobleTurno = true;
+                    this.setEstado(EstadoJuego.TIRAR_DADO);
         
                 } else if (casillaNueva instanceof CasillaPenalizacion){
                     this.penalizaciones[jActual.id] += casillaNueva.penaliza;
@@ -156,18 +181,18 @@ class JuegoOca {
                     jActual.setPosActual(posNueva);
         
                 } else if (casillaNueva instanceof CasillaVyF) {
-                    minijuego = 1;
+                    this.setEstado(EstadoJuego.MINIJUEGO_VF);
                     
                 } else if (casillaNueva instanceof CasillaCifras) {
-                    minijuego = 2;
+                    this.setEstado(EstadoJuego.MINIJUEGO_CIFRAS);
+                //} else if ...
+                 
                 }
-                
-                if (casillaNueva.id === "META"){
-                    informe += `${casillaNueva.id}. ¡Felicidades ${jActual.nombre}, ${this.hayEquipos ? 'habéis' : 'has'} ganado la partida! `;
-                    finPartida = true;
+                if (casillaNueva.getId() === "META") {
+                    this.setEstado(EstadoJuego.FINALIZADO);
                 }
             }
-            return [casillaNueva, informe, finPartida, dobleTurno, minijuego];
+            return [casillaNueva, informe];
         } else {
             return null;
         }
@@ -192,7 +217,18 @@ class JuegoOca {
         return ok;
     }
     
-    crearTablero() {
+    crearTableroPrueba() { 
+        let tablero = new Tablero()
+        
+        tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
+        tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+        tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
+        tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
+        
+        return tablero;
+    }
+
+    crearTablero() { //unas 44 normales+minijuegos aprox (20-22 cada una)
         let tablero = new Tablero()
         
         //Salida[0] añadida en constructor de Tablero

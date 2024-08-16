@@ -51,6 +51,7 @@ const configuracion1Handler = {
         oca.crearJugadores(2);
         oca.getJugador(0).setNombre('los campeones rojos');
         oca.getJugador(1).setNombre('las divinas azules');
+        oca.getJugador(1).addPuntos(30);
         oca.setEstado(EstadoJuego.TIRAR_DADO);
         
         speakOutput = `Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' y después, \
@@ -186,7 +187,7 @@ const addJugadorHandler = {
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
         if (nJugadoresSet < njugadores) {
-            registroActual = `<break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()} `.
+            registroActual = `<break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()}. `
             speakOutput = `Se ha registrado el nombre ${nombreJugador}. ` + registroActual;
             repromptAudio = informeEstado(oca.getEstado(), hayEquipos) + registroActual;
         } else {
@@ -247,7 +248,7 @@ const jugarTurnoHandler = {
         if (dado === undefined && oca.getPenalizaciones(jActual.getId()) === 0){
             speakOutput = `${hayEquipos ? 'El equipo' : ''} ${oca.getNombreJActual()} ha tirado el dado. <break time="10s"/>`
             //dado = tirarDado();
-            dado = 2;
+            dado = 4;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -279,54 +280,55 @@ const jugarTurnoHandler = {
         } else {
             sessionAttributes.valorDado = undefined;
             
+            const [casillaNueva, informe] = oca.avanzaJugador(jActual, dado);
             const jugEnCasilla = oca.getJugadoresCasilla(jActual.getPosActual(), jActual);
-
-            const [casillaNueva, informe, finPartida, dobleTurno, minijuego] = oca.avanzaJugador(jActual, dado, jugEnCasilla);
             speakOutput = informe;
             
-            if (!finPartida) {
-                if (dobleTurno){
-                    oca.setEstado(EstadoJuego.TIRAR_DADO);
+            if (jugEnCasilla.length === 1) {
+                const nombreJugador = jugEnCasilla[0].nombre;
+                speakOutput += ` ¡Qué casualidad! En esta casilla también ${hayEquipos ? ' están ' : ' está '} ${nombreJugador}. `;
+            } else if (jugEnCasilla.length > 1) {
+                const nombresJugadores = jugEnCasilla.map(jugador => jugador.nombre).join(', ');
+                speakOutput += ` ¡Qué casualidad! En esta casilla también están los siguientes ${hayEquipos ? ' equipos' : ' jugadores' }: ${nombresJugadores}. `;
+            }
+            speakOutput += casillaNueva.recibeJugador(jActual, hayEquipos);
+
+            if (oca.getEstado() !== EstadoJuego.FINALIZADO) {
+                if (oca.getEstado() === EstadoJuego.TIRAR_DADO){
                     speakOutput += `<break time="3s"/> Vuelve a ser el turno de ${jActual.getNombre()}. Por favor ${hayEquipos ? 'tiren' : 'tire'} el dado de nuevo. `;
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre());
                 
-                } else if (minijuego !== 0) {
-                    let pregunta = casillaNueva.getPreguntaRandom();
-                    let preguntaTxt;
+                } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_VF) {
+                    const pregunta = casillaNueva.getPreguntaRandom();
+                    sessionAttributes.preguntaActual = pregunta;
+                    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                    const preguntaTxt = 'La pregunta es: ' + pregunta.question + ' ¿Verdadero o falso?';
+                    speakOutput += preguntaTxt;
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                     
-                    if (minijuego === 1) {
-                        oca.setEstado(EstadoJuego.MINIJUEGO_VF);
-                        sessionAttributes.preguntaActual = pregunta;
-                        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-                        preguntaTxt = 'La pregunta es: ' + pregunta.question + ' ¿Verdadero o falso?';
-                        speakOutput += preguntaTxt;
-                        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
-                        
-                    } else if(minijuego === 2) {
-                        oca.setEstado(EstadoJuego.MINIJUEGO_CIFRAS);
-                        sessionAttributes.preguntaActual = pregunta;
-                        sessionAttributes.reboteFechas = oca.getTurno();
-                        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-                        preguntaTxt = 'La pregunta es: ' + pregunta.question;
-                        speakOutput += preguntaTxt;
-                        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
-                     
-                    } else if (minijuego === 3) {
-                        oca.setEstado(EstadoJuego.MINIJUEGO_COMPAS);
-                        /*
-                        sessionAttributes.sujetoRespuesta = false;
-                        sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
-                        speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
-                        repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
-                        */
-                    } else if (minijuego === 4) {
-                        oca.setEstado(EstadoJuego.MINIJUEGO_FECHA);
-                        
-                    } else {
-                        oca.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
-                        
-                    }
-
+                } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_CIFRAS) {
+                    const pregunta = casillaNueva.getPreguntaRandom();
+                    sessionAttributes.preguntaActual = pregunta;
+                    sessionAttributes.reboteFechas = oca.getTurno();
+                    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                    const preguntaTxt = 'La pregunta es: ' + pregunta.question;
+                    speakOutput += preguntaTxt;
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
+                 
+                } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_COMPAS) {
+                    const pregunta = casillaNueva.getPreguntaRandom();
+                    /*
+                    sessionAttributes.sujetoRespuesta = false;
+                    sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
+                    speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
+                    repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
+                    */
+                } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
+                    oca.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
+                    
+                } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_CASILLA) {
+                    oca.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
+                    
                 } else {
                     oca.pasarTurno();
                     oca.setEstado(EstadoJuego.TIRAR_DADO);
@@ -335,9 +337,9 @@ const jugarTurnoHandler = {
                 }
                 
             } else {
-                oca.setEstado(EstadoJuego.FINALIZADO);
-                speakOutput += 'Partida terminada. Gracias por jugar.';
-                //responseBuilder.endSession();
+                speakOutput += `<break time="3s"/> ${oca.anunciarGanadores()}`;
+                //speakOutput += 'Partida finalizada. '
+                //responseBuilder.endSession(); overwritten by False
             }
             responseBuilder.addDirective({
                 type: 'Alexa.Presentation.APL.RenderDocument',

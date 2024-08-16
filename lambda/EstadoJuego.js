@@ -7,7 +7,7 @@ const EstadoJuego = {
     MINIJUEGO_VF: 'MINIJUEGO_VF',
     MINIJUEGO_CIFRAS: 'MINIJUEGO_CIFRAS',
     MINIJUEGO_COMPAS: 'MINIJUEGO_COMPAS',
-    MINIJUEGO_FECHA: 'MINIJUEGO_FECHA',
+    MINIJUEGO_FECHAS: 'MINIJUEGO_FECHAS',
     MINIJUEGO_CASILLA: 'MINIJUEGO_CASILLA',
     FINALIZADO: 'FINALIZADO'
 };
@@ -37,7 +37,7 @@ function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') 
             mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con el número que pensáis que es correcto. Si  \
                        ${hayEquipos ? 'acertáis, ganaréis' : 'aciertas, ganarás'} 30 puntos. La pregunta es: ${pregunta}. `;
             break;
-        case EstadoJuego.MINIJUEGO_FECHA:
+        case EstadoJuego.MINIJUEGO_FECHAS:
             mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con el día de la semana, mes o estación del año que considere ${hayEquipos ? 'n ' : ' '} \
             adecuada. Si la respuesta es correcta, ${hayEquipos ? 'ganaréis' : 'ganarás'} 20 puntos. La pregunta es: ${pregunta}. `;
             break;
@@ -50,7 +50,8 @@ function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') 
             de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. La pregunta es: ${pregunta}. `;
             break;
         case EstadoJuego.FINALIZADO:
-            mensaje = 'Se ha terminado la partida, gracias por jugar. ';
+            mensaje = 'El juego ha finalizado, gracias por jugar. Si quiere crear una partida nueva, diga: Nueva partida. ';
+                       //Si quiere volver a escuchar las puntuaciones, diga: Ver resultados finales.
             break;
         default:
             mensaje = 'Estado de juego desconocido. '

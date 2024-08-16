@@ -16,7 +16,7 @@ class Casilla {
 
     recibeJugador(jug, hayEquipos) {
         if (this.id === "META"){
-            return ` Has caído en la casilla de meta. `
+            return `¡Buen trabajo! ${hayEquipos ? ' Habéis ' : 'Has ' } caído en la casilla de meta. `
         }
         const desc = this.getFraseRandom(hayEquipos);
 

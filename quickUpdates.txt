@@ -1,18 +1,23 @@
-- Resumen del juego (pos finales) y ranking de puntos (al terminar la partida)
+SOLO SI DA TIEMPO, AL FINAL DEL TODO:
+- Resumen del juego (pos finales) y ranking de puntos (al terminar la partida) - hacer APL básico
 - Borrar archivos basura de GitHub
 - Separar clases Casilla en ficheros .js distintos -> PETA
+- Intent de consultar mis puntos
 
+URGENTE:
+- Mensaje de final de la partida, anunciar ganadores -> HECHO
+- Añadir un enum con los distintos estados del juego: -> HECHO
+- Cada estado de juego está asociado a un repromptText -> HECHO
+- Modificar explicación de tirar dado y mover ficha (repetir hasta 5ª rondas) -> HECHO
+
+MINIJUEGOS:
 - Verdadero/Falso (Cultura general) -> HECHO
-- Arreglar preguntas compañeros (Colaborativo)
-- Cambiar preguntasFechas por Cifras (Competitivo), revisar las difíciles y añadir más
-- Añadir preguntas de fecha actual (Memoria)
+- Arreglar preguntas compañeros (Colaborativo) -> EN PROCESO
+- Revisar preguntas difíciles y añadir más que no sean años en Adivina la Cifra (Competitivo)
+- Añadir preguntas de fecha actual (Memoria temporal actual?) -> EN PROCESO
 - Recuerda la última casilla (Memoria)
 
-- Añadir GestorEstados con los distintos estados del juego: -> HECHO
-  tirandoDado, moviendoFicha, configurandoPartida, minijuegoVyF, minijuegoCifras, 
-  minijuegoFechaActual, minijuegoCompas, minijuegoUltimaCasilla, etc.
-- Cada estado de juego está asociado a un repromptText -> HECHO, PROBAR EN ECHO SHOW
-
+BASE DE DATOS:
 - Hacer usuario IAM, modificar tiemout de función lambda
 - Almacenar todas las fotos y vídeos en Amazon S3
 - Hacer base de datos para que pueda guardar la partida
@@ -23,10 +28,9 @@
 - Al lanzar la skill, dar opción al usuario de reanudar la última partida o crear una
   nueva, borrando la anterior guardada
 
+ÚLTIMOS RETOQUES:
 - Eliminar código repetido -> EN PROCESO
 - Repasar las frases de las casillas
-- Repasar diálogos de Alexa (que sean fluidos pero bien articulados, con pausas)
-- Modificar la explicación de tirar el dado y mover ficha (para repetirlo en las 5
-  primeras rondas, por ejemplo, y después solo dice "Tire el dado" sutilmente) -> HECHO
+- Repasar diálogos de Alexa (que sean fluidos pero bien articulados, con pausas adecuadas)
 - Completar la "ayuda de Alexa"
 - Revisar invocaciones (considerar todas las variantes de comandos de voz)
