@@ -215,6 +215,55 @@
           "samples": [
             "configuracion de prueba"
           ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaCasilla",
+              "type": "idCasilla"
+            }
+          ],
+          "name": "preguntasCasillaIntent",
+          "samples": [
+            "no me acuerdo",
+            "no me acuerdo de la casilla",
+            "en {respuestaCasilla}",
+            "en la casilla del {respuestaCasilla}",
+            "en la casilla de la {respuestaCasilla}",
+            "en la casilla de {respuestaCasilla}",
+            "la casilla del {respuestaCasilla}",
+            "la casilla de la {respuestaCasilla}",
+            "la casilla de {respuestaCasilla}",
+            "la casilla {respuestaCasilla}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuestaDiaSemana",
+              "type": "AMAZON.DayOfWeek"
+            },
+            {
+              "name": "respuestaMes",
+              "type": "AMAZON.Month"
+            },
+            {
+              "name": "respuestaEstacion",
+              "type": "estacion"
+            }
+          ],
+          "name": "preguntasFechasIntent",
+          "samples": [
+            "estamos en {respuestaEstacion}",
+            "estamos a {respuestaEstacion}",
+            "estamos en {respuestaMes}",
+            "estamos a {respuestaMes}",
+            "hoy es {respuestaDiaSemana}",
+            "estamos a {respuestaDiaSemana}",
+            "{respuestaMes}",
+            "{respuestaEstacion}",
+            "{respuestaDiaSemana}"
+          ]
         }
       ],
       "types": [
@@ -318,6 +367,66 @@
             }
           ],
           "name": "VyF"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "la del tesoro",
+                  "el tesoro"
+                ],
+                "value": "tesoro"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "la del trompo",
+                  "el trompo"
+                ],
+                "value": "trompo"
+              }
+            }
+          ],
+          "name": "idCasilla"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "el invierno"
+                ],
+                "value": "invierno"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "el otoño"
+                ],
+                "value": "otoño"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "el verano"
+                ],
+                "value": "verano"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "la primavera"
+                ],
+                "value": "primavera"
+              }
+            }
+          ],
+          "name": "estacion"
         }
       ],
       "invocationName": "probando oca"

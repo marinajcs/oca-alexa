@@ -248,7 +248,7 @@ const jugarTurnoHandler = {
         if (dado === undefined && oca.getPenalizaciones(jActual.getId()) === 0){
             speakOutput = `${hayEquipos ? 'El equipo' : ''} ${oca.getNombreJActual()} ha tirado el dado. <break time="10s"/>`
             //dado = tirarDado();
-            dado = 4;
+            dado = 2;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -324,10 +324,13 @@ const jugarTurnoHandler = {
                     repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
                     */
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
+                    let preguntaTxt;
                     oca.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                     
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_CASILLA) {
                     oca.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre());
                     
                 } else {
                     oca.pasarTurno();
@@ -338,7 +341,6 @@ const jugarTurnoHandler = {
                 
             } else {
                 speakOutput += `<break time="3s"/> ${oca.anunciarGanadores()}`;
-                //speakOutput += 'Partida finalizada. '
                 //responseBuilder.endSession(); overwritten by False
             }
             responseBuilder.addDirective({
@@ -383,7 +385,6 @@ const preguntasVyFHandler = {
         const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaVF');
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const pregunta = sessionAttributes.preguntaActual;
-        const njugadores =  oca.getNumJugadores();
         const solucion = pregunta.answer;
         let jActual = oca.getJugadorActual();
         const hayEquipos = oca.getEquipos();
@@ -457,6 +458,49 @@ const preguntasCifrasHandler = {
             .getResponse();
     }
 };
+
+const preguntasCasillaHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasCasillaIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        const {intent} = requestEnvelope.request;
+        let speakOutput, repromptAudio;
+        let jActual = oca.getJugadorActual();
+        const solucion = jActual.getUltimaCasilla();
+        const hayEquipos = oca.getEquipos();
+        const respuestaCasilla = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCasilla');
+        
+        if (!respuestaCasilla) {
+            speakOutput = ` No pasa nada, para la próxima será. La respuesta correcta era: la casilla ${solucion}. `;
+   
+        } else {
+            const respuestaValidada = handlerInput.requestEnvelope.request.intent.slots.respuestaCasilla.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+            
+            if (respuestaValidada === solucion) {
+                jActual.addPuntos(25);
+                speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 25 puntos. \
+                                ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+            } else {
+                speakOutput = ` Lástima, es incorrecto. La respuesta era: la casilla ${solucion}. `;
+            }
+        }
+        
+        oca.pasarTurno();
+        oca.setEstado(EstadoJuego.TIRAR_DADO);
+        speakOutput += oca.anunciarTurno();
+        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
 /*
 const preguntasCompasHandler = {
     canHandle(handlerInput) {
@@ -595,7 +639,19 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-        const speakOutput = 'Sorry, I had trouble doing what you asked. Please try again.';
+        let speakOutput;
+        
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_COMPAS || oca.getEstado() === EstadoJuego.MINIJUEGO_VF || 
+            oca.getEstado() === EstadoJuego.MINIJUEGO_CIFRAS || oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
+                
+            const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+            const pregunta = sessionAttributes.preguntaActual;
+            speakOutput = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual(), pregunta.question);
+            
+        } else {
+            speakOutput = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual());
+        }
+
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
@@ -614,6 +670,7 @@ module.exports = {
     jugarTurnoHandler,
     preguntasVyFHandler,
     preguntasCifrasHandler,
+    preguntasCasillaHandler,
     //preguntasCompasHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,

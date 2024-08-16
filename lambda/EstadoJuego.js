@@ -39,15 +39,16 @@ function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') 
             break;
         case EstadoJuego.MINIJUEGO_FECHAS:
             mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con el día de la semana, mes o estación del año que considere ${hayEquipos ? 'n ' : ' '} \
-            adecuada. Si la respuesta es correcta, ${hayEquipos ? 'ganaréis' : 'ganarás'} 20 puntos. La pregunta es: ${pregunta}. `;
+                       adecuada. Si la respuesta es correcta, ${hayEquipos ? 'ganaréis' : 'ganarás'} 20 puntos. La pregunta es: ${pregunta}. `;
             break;
         case EstadoJuego.MINIJUEGO_CASILLA:
-            mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con el nombre de la casilla en la que estaba antes de caer en la actual. Si \
-            ${hayEquipos ? ' lográis acordaros ' : ' logras acordarte '} de la casilla anterior, ${hayEquipos ? 'ganaréis' : 'ganarás'} 25 puntos. `;
+            mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con el nombre de la casilla en la que estaba${hayEquipos ? 'n' : ''}, antes de caer en la actual. Si \
+                       ${hayEquipos ? ' acertáis, ganaréis ' : ' aciertas, ganarás '} 25 puntos. Si por el contrario, no  \
+                       ${hayEquipos ? ' os acordáis del ' : ' recuerdas el '} nombre, ${hayEquipos ? ' decid ' : ' di '} 'No me acuerdo de la casilla'. `;
             break;
         case EstadoJuego.MINIJUEGO_COMPAS:
             mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con 'sí' o 'no'. Si  el ${hayEquipos ? 'equipo ' : 'participante '} encargado \
-            de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. La pregunta es: ${pregunta}. `;
+                       de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. La pregunta es: ${pregunta}. `;
             break;
         case EstadoJuego.FINALIZADO:
             mensaje = 'El juego ha finalizado, gracias por jugar. Si quiere crear una partida nueva, diga: Nueva partida. ';

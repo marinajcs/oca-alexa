@@ -1,7 +1,8 @@
 const {EstadoJuego} = require('./EstadoJuego.js');
 const {Tablero} = require('./Tablero.js');
 const {Jugador} = require('./Jugador.js');
-const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaCifras} = require('./Casillas.js');
+const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion,
+       CasillaVyF, CasillaCifras, CasillaUltima, CasillaFechas} = require('./Casillas.js');
 const fc = require('./exports/frasesCasillas.json');
 
 class JuegoOca {
@@ -185,9 +186,12 @@ class JuegoOca {
                     
                 } else if (casillaNueva instanceof CasillaCifras) {
                     this.setEstado(EstadoJuego.MINIJUEGO_CIFRAS);
-                //} else if ...
-                 
+                    
+                } else if (casillaNueva instanceof CasillaUltima) {
+                    this.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
                 }
+                 
+                
                 if (casillaNueva.getId() === "META") {
                     this.setEstado(EstadoJuego.FINALIZADO);
                 }
@@ -221,7 +225,8 @@ class JuegoOca {
         let tablero = new Tablero()
         
         tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+        //tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+        tablero.addCasilla(new CasillaUltima("Minijuego última casilla", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
         tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
         
