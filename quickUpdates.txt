@@ -1,6 +1,6 @@
 - Resumen del juego (pos finales) y ranking de puntos (al terminar la partida)
-
-- Separar clases Casilla en ficheros .js distintos
+- Borrar archivos basura de GitHub
+- Separar clases Casilla en ficheros .js distintos -> PETA
 
 - Verdadero/Falso (Cultura general) -> HECHO
 - Arreglar preguntas compañeros (Colaborativo)

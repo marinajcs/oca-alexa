@@ -119,10 +119,10 @@ const ayudaReglasHandler = {
     }
 };
 
-const numJugadoresHandler = {
+const nuevaPartidaHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'numJugadoresIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'nuevaPartidaIntent';
     },
     handle(handlerInput) {
         const {requestEnvelope} = handlerInput;
@@ -229,10 +229,10 @@ const addJugadorHandler = {
     }
 };
 
-const tirarDadoHandler = {
+const jugarTurnoHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'tirarDadoIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'jugarTurnoIntent';
     },
     handle(handlerInput) {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
@@ -279,11 +279,10 @@ const tirarDadoHandler = {
         } else {
             sessionAttributes.valorDado = undefined;
             
-            const [casillaNueva, informe, finPartida, dobleTurno, minijuego] = oca.avanzaJugador(jActual, dado);
+            const jugEnCasilla = oca.getJugadoresCasilla(jActual.getPosActual(), jActual);
+
+            const [casillaNueva, informe, finPartida, dobleTurno, minijuego] = oca.avanzaJugador(jActual, dado, jugEnCasilla);
             speakOutput = informe;
-            
-            const [jugEnCasilla, mensaje] = oca.getJugadoresCasilla(jActual.getPosActual(), jActual);
-            speakOutput += mensaje;
             
             if (!finPartida) {
                 if (dobleTurno){
@@ -408,14 +407,14 @@ const preguntasVyFHandler = {
     }
 };
 
-const preguntasFechasHandler = {
+const preguntasCifrasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasFechasIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasCifrasIntent';
     },
     handle(handlerInput) {
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaFecha');
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCifra');
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const pregunta = sessionAttributes.preguntaActual;
         const hayEquipos = oca.getEquipos();
@@ -608,11 +607,11 @@ module.exports = {
     LaunchRequestHandler,
     configuracion1Handler,
     ayudaReglasHandler,
-    numJugadoresHandler,
+    nuevaPartidaHandler,
     addJugadorHandler,
-    tirarDadoHandler,
+    jugarTurnoHandler,
     preguntasVyFHandler,
-    preguntasFechasHandler,
+    preguntasCifrasHandler,
     //preguntasCompasHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,

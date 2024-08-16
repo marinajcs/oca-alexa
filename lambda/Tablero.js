@@ -1,3 +1,8 @@
+/*
+const {Casilla} = require('./casillas/Casilla.js');
+const {CasillaOca} = require('./casillas/CasillaOca.js');
+const {CasillaPuente} = require('./casillas/CasillaPuente.js');
+*/
 const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaFechas} = require('./Casillas.js')
 const fc = require('./exports/frasesCasillas.json')
 

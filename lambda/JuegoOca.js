@@ -1,7 +1,7 @@
 const {EstadoJuego} = require('./EstadoJuego.js');
 const {Tablero} = require('./Tablero.js');
 const {Jugador} = require('./Jugador.js');
-const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaFechas} = require('./Casillas.js');
+const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaVyF, CasillaCifras} = require('./Casillas.js');
 const fc = require('./exports/frasesCasillas.json');
 
 class JuegoOca {
@@ -61,16 +61,8 @@ class JuegoOca {
     
     getJugadoresCasilla(numCasilla, jActual) {
         const jugadoresEnCasilla = this.jugadores.filter(jugador => jugador.posicion === numCasilla && jugador !== jActual);
-        let mensaje = '';
-
-        if (jugadoresEnCasilla.length === 1) {
-            const nombreJugador = jugadoresEnCasilla[0].nombre;
-            mensaje += ` ¡Qué casualidad! En esta casilla también ${this.hayEquipos ? ' están ' : ' está '} ${nombreJugador}. `;
-        } else if (jugadoresEnCasilla.length > 1) {
-            const nombresJugadores = jugadoresEnCasilla.map(jugador => jugador.nombre).join(', ');
-            mensaje += ` ¡Qué casualidad! En esta casilla también están los siguientes ${this.hayEquipos ? ' equipos' : ' jugadores' }: ${nombresJugadores}. `;
-        }
-        return [jugadoresEnCasilla, mensaje];
+        
+        return jugadoresEnCasilla;
     }
     
     getNumJugadores() {
@@ -117,7 +109,7 @@ class JuegoOca {
         }
     }
     
-    avanzaJugador(jActual, tirada){
+    avanzaJugador(jActual, tirada, jugEnCasilla){
         if (this.estado === EstadoJuego.MOVER_FICHA) {
             let finPartida = false;
             let dobleTurno = false;
@@ -126,6 +118,7 @@ class JuegoOca {
             let posActual = jActual.getPosActual();
             let casillaNueva;
             let informe = `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} estaba en la casilla ${posActual}. `;
+            jActual.setUltimaCasilla(this.tablero.getCasilla(posActual).getId());
             
             if (this.tablero.getCasilla(posActual) instanceof CasillaPenalizacion && this.penalizaciones[jActual.id] > 0){
                 posNueva = posActual;
@@ -138,6 +131,14 @@ class JuegoOca {
                 casillaNueva = this.tablero.getCasilla(posNueva);
                 jActual.setPosActual(posNueva);
                 informe += `Tras moverse ${tirada} ${tirada === 1 ? 'casilla' : 'casillas'}, ahora está en la casilla ${posNueva}. `;
+
+                if (jugEnCasilla.length === 1) {
+                    const nombreJugador = jugEnCasilla[0].nombre;
+                    informe += ` ¡Qué casualidad! En esta casilla también ${this.hayEquipos ? ' están ' : ' está '} ${nombreJugador}. `;
+                } else if (jugEnCasilla.length > 1) {
+                    const nombresJugadores = jugEnCasilla.map(jugador => jugador.nombre).join(', ');
+                    informe += ` ¡Qué casualidad! En esta casilla también están los siguientes ${this.hayEquipos ? ' equipos' : ' jugadores' }: ${nombresJugadores}. `;
+                }
                 informe += casillaNueva.recibeJugador(jActual, this.hayEquipos);
                 
                 if (casillaNueva instanceof CasillaOca){
@@ -157,7 +158,7 @@ class JuegoOca {
                 } else if (casillaNueva instanceof CasillaVyF) {
                     minijuego = 1;
                     
-                } else if (casillaNueva instanceof CasillaFechas) {
+                } else if (casillaNueva instanceof CasillaCifras) {
                     minijuego = 2;
                 }
                 
@@ -181,7 +182,7 @@ class JuegoOca {
             for (let i = 0; i < n; i++) {
                 const color = colores[i];
                 const cod = codigos[i];
-                this.jugadores.push(new Jugador(i, color, cod, 0, 0, ''));
+                this.jugadores.push(new Jugador(i, color, cod, 0, 0, '', 'Salida'));
                 this.penalizaciones.push(0);
             }
             
@@ -197,7 +198,7 @@ class JuegoOca {
         //Salida[0] añadida en constructor de Tablero
         //...[1-3] (3)
         tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaFechas("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+        tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
         tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         //Oca[5]
@@ -298,7 +299,6 @@ class JuegoOca {
         
         return tablero;
     }
-    
 }
 
 module.exports = {

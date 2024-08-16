@@ -1,11 +1,12 @@
 class Jugador {
-    constructor(id, color, codigo, posicion, puntos, nombre){
+    constructor(id, color, codigo, posicion, puntos, nombre, ultimaCasilla){
         this.id = id;
         this.color = color;
         this.codigo = codigo;
         this.posicion = posicion;
         this.puntos = puntos;
         this.nombre = nombre;
+        this.ultimaCasilla = ultimaCasilla;
     }
     
     getPosActual() {
@@ -42,6 +43,14 @@ class Jugador {
     
     getPuntos() {
         return this.puntos;
+    }
+    
+    setUltimaCasilla(ultimaCasilla) {
+        this.ultimaCasilla = ultimaCasilla;
+    }
+    
+    getUltimaCasilla() {
+        return this.ultimaCasilla;
     }
 }
 

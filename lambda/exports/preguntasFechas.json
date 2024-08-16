@@ -1,138 +1,18 @@
 [
   {
-    "question": "¿En qué año fue en el que Cristóbal descubre América?",
-    "answer": "1492"
+    "type": "dayOfWeek",
+    "question": "¿En qué día de la semana estamos?"
   },
   {
-    "question": "¿Cuándo fue la toma de Granada?",
-    "answer": "1492"
+    "type": "month",
+    "question": "¿En qué mes estamos?"
   },
   {
-    "question": "¿En qué año fue la Revolución francesa?",
-    "answer": "1789"
+    "type": "season",
+    "question": "¿En qué estación del año estamos?"
   },
   {
-    "question": "¿En qué año se inicia la Primera Guerra Mundial?",
-    "answer": "1914"
-  },
-  {
-    "question": "¿En qué año produce la Revolución Rusa?",
-    "answer": "1917"
-  },
-  {
-    "question": "¿En qué año empezó la Guerra Civil Española?",
-    "answer": "1936"
-  },
-  {
-    "question": "¿En qué año llega el primer hombre a la Luna?",
-    "answer": "1969"
-  },
-  {
-    "question": "¿En qué año se inició la Segunda Guerra Mundial?",
-    "answer": "1939"
-  },
-  {
-    "question": "¿En qué año finalizó la Segunda Guerra Mundial?",
-    "answer": "1945"
-  },
-  {
-    "question": "¿Cuándo fue el golpe de estado de Tejero?",
-    "answer": "1981"
-  },
-  {
-    "question": "¿Cuándo entró España en la UE?",
-    "answer": "1986"
-  },
-  {
-    "question": "¿Cuándo se quitó la peseta y empezó el euro en España?",
-    "answer": "2002"
-  },
-  {
-    "question": "¿Cuándo se fundó la OTAN?",
-    "answer": "1949"
-  },
-  {
-    "question": "¿En qué año fue asesinado John F. Kennedy?",
-    "answer": "1963"
-  },
-  {
-    "question": "¿En qué año se celebraron las primeras elecciones bajo la nueva constitución?",
-    "answer": "1979"
-  },
-  {
-    "question": "¿En qué año murió Diana de Gales?",
-    "answer": "1997"
-  },
-  {
-    "question": "¿En qué año se casaron el rey Felipe VI y la reina Letizia?",
-    "answer": "2004"
-  },
-  {
-    "question": "¿En qué año se lanzó la primera bomba atómica?",
-    "answer": "1945"
-  },
-  {
-    "question": "¿En qué año se firmó el Tratado de Versalles?",
-    "answer": "1919"
-  },
-  {
-    "question": "¿En qué año se produjo el Desembarco de Normandía?",
-    "answer": "1944"
-  },
-  {
-    "question": "¿En qué año cayó el Muro de Berlín?",
-    "answer": "1989"
-  },
-  {
-    "question": "¿En qué año se fundó la ONU?",
-    "answer": "1945"
-  },
-  {
-    "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
-    "answer": "1776"
-  },
-  {
-    "question": "¿En qué año comenzó la Guerra de Vietnam?",
-    "answer": "1955"
-  },
-  {
-    "question": "¿En qué año se abolió la esclavitud en Estados Unidos?",
-    "answer": "1865"
-  },
-  {
-    "question": "¿En qué año se inauguró el Canal de Panamá?",
-    "answer": "1914"
-  },
-  {
-    "question": "¿En qué año se produjo la crisis de los misiles en Cuba?",
-    "answer": "1962"
-  },
-  {
-    "question": "¿En qué año comenzó la Revolución Mexicana?",
-    "answer": "1910"
-  },
-  {
-    "question": "¿En qué año se firmó el Tratado de Maastricht?",
-    "answer": "1992"
-  },
-  {
-    "question": "¿En qué día de febrero se celebra el Día de Andalucía?",
-    "answer": "28"
-  },
-  {
-    "question": "¿En qué día de diciembre se celebra el Día de la Constitución Española?",
-    "answer": "6"
-  },
-  {
-    "question": "¿En qué año comenzó la transición española?",
-    "answer": "1975"
-  },
-  {
-    "question": "¿En qué año se aprobó la Constitución Española?",
-    "answer": "1978"
-  },
-  {
-    "question": "¿En qué año se celebraron los Juegos Olímpicos de Barcelona?",
-    "answer": "1992"
+    "type": "year",
+    "question": "¿En qué año estamos?"
   }
 ]

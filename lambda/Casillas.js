@@ -1,12 +1,17 @@
 const preguntasVF = require('./exports/preguntasVF.json');
-const preguntasFechaActual = require('./exports/preguntasFechaActual.json')
+const preguntasCifras = require('./exports/preguntasCifras.json');
 const preguntasFechas = require('./exports/preguntasFechas.json');
+const preguntasCompas = require('./exports/preguntasCompas.json');
 
 class Casilla {
     constructor(id, url, frases) {
         this.id = id;
         this.url = url;
         this.frases = frases;
+    }
+    
+    getId() {
+        return this.id;
     }
 
     recibeJugador(jug, hayEquipos) {
@@ -85,33 +90,45 @@ class CasillaVyF extends Casilla {
     }
 }
 
+class CasillaCifras extends Casilla {
+    constructor(id, url, frases) {
+        super(id, url, frases);
+    }
+
+    getPreguntaRandom() {
+        const ind = Math.floor(Math.random() * preguntasCifras.length);
+        return preguntasCifras[ind];
+    }
+    
+    recibeJugador(jug, hayEquipos) {
+        let desc;
+        if (hayEquipos){
+            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Adivina la Cifra. ';
+        } else {
+            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la Cifra. ';
+        }
+        desc += 'Recordad que la respuesta debe ser solo un número. ';
+        return desc;
+    }
+}
+
 class CasillaFechas extends Casilla {
     constructor(id, url, frases) {
         super(id, url, frases);
     }
 
     getPreguntaRandom() {
-        let ind, pregunta;
-        //const tipo = Math.floor(Math.random() * 3);
-        const tipo = 1;
-        if (tipo !== 3) {
-            ind = Math.floor(Math.random() * preguntasFechas.length);
-            pregunta = preguntasFechas[ind]
-        } else {
-            ind = Math.floor(Math.random() * preguntasFechaActual.length);
-            pregunta = preguntasFechaActual[ind];
-        }
-        return pregunta;
+        const ind = Math.floor(Math.random() * preguntasFechas.length);
+        return preguntasFechas[ind];
     }
     
     recibeJugador(jug, hayEquipos) {
         let desc;
         if (hayEquipos){
-            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Adivina la fecha. ';
+            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Recuerda la fecha. ';
         } else {
-            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la fecha. ';
+            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Recuerda la fecha. ';
         }
-        desc += 'Recordad que la respuesta debe ser un número solo. ';
         return desc;
     }
     
@@ -127,7 +144,37 @@ class CasillaFechas extends Casilla {
             return 'invierno';
         }
     }
+}
+
+class CasillaUltima extends Casilla {
+    constructor(id, url, frases) {
+        super(id, url, frases);
+    }
     
+    recibeJugador(jug, hayEquipos) {
+        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de La Última Casilla. \
+                         ¿Cuál fue la última casilla en la que ${hayEquipos ? 'estabais' : 'estabas'}? Dime el nombre de la casilla. `;
+                         
+        return informe;
+    }
+}
+
+class CasillaCompas extends Casilla {
+    constructor(id, url, frases) {
+        super(id, url, frases);
+    }
+
+    getPreguntaRandom() {
+        const ind = Math.floor(Math.random() * preguntasCompas.length);
+        return preguntasCompas[ind]
+    }
+    
+    recibeJugador(jug, hayEquipos) {
+        if (hayEquipos){
+            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Conoce a tus compañeros. ';
+        }
+        return 'Oh, ¡sorpresa! Has caído en el minijuego de Conoce a tus compañeros. ';
+    }
 }
 
 module.exports = {
@@ -136,5 +183,8 @@ module.exports = {
     CasillaPuente,
     CasillaPenalizacion,
     CasillaVyF,
-    CasillaFechas
+    CasillaCifras,
+    CasillaFechas,
+    CasillaCompas,
+    CasillaUltima
 };

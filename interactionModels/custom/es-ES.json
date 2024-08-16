@@ -25,7 +25,7 @@
               }
             }
           ],
-          "name": "numJugadoresIntent",
+          "name": "nuevaPartidaIntent",
           "confirmationRequired": true,
           "prompts": {
             "confirmation": "Confirm.Intent.373965235974"
@@ -105,7 +105,7 @@
               ]
             }
           ],
-          "name": "numJugadoresIntent",
+          "name": "nuevaPartidaIntent",
           "samples": [
             "empezar una nueva partida",
             "empezar una partida",
@@ -114,7 +114,7 @@
         },
         {
           "slots": [],
-          "name": "tirarDadoIntent",
+          "name": "jugarTurnoIntent",
           "samples": [
             "muéveme",
             "mueve mi ficha",
@@ -200,13 +200,13 @@
         {
           "slots": [
             {
-              "name": "respuestaFecha",
+              "name": "respuestaCifra",
               "type": "AMAZON.NUMBER"
             }
           ],
-          "name": "preguntasFechasIntent",
+          "name": "preguntasCifrasIntent",
           "samples": [
-            "{respuestaFecha}"
+            "{respuestaCifra}"
           ]
         },
         {
