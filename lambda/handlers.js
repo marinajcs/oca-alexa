@@ -333,9 +333,7 @@ const jugarTurnoHandler = {
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre());
                     
                 } else {
-                    oca.pasarTurno();
-                    oca.setEstado(EstadoJuego.TIRAR_DADO);
-                    speakOutput += oca.anunciarTurno();
+                    speakOutput += oca.pasarTurno();
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
                 }
                 
@@ -397,9 +395,7 @@ const preguntasVyFHandler = {
             speakOutput = ` Lástima, es incorrecto. ${pregunta.explanation} `;
         }
         
-        oca.pasarTurno();
-        oca.setEstado(EstadoJuego.TIRAR_DADO);
-        speakOutput += oca.anunciarTurno();
+        speakOutput += oca.pasarTurno();
         repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
 
         return handlerInput.responseBuilder
@@ -428,9 +424,7 @@ const preguntasCifrasHandler = {
             speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 50 puntos. \
                             ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${oca.getJugador(rebote).getPuntos()}. `;
             
-            oca.pasarTurno();
-            oca.setEstado(EstadoJuego.TIRAR_DADO);
-            speakOutput += oca.anunciarTurno();
+            speakOutput += oca.pasarTurno();
             repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             
         } else {
@@ -442,9 +436,7 @@ const preguntasCifrasHandler = {
             } else {
                 speakOutput = `Parece que nadie ha acertado la pregunta. La respuesta correcta era: ${pregunta.answer}. `;
             
-                oca.pasarTurno();
-                oca.setEstado(EstadoJuego.TIRAR_DADO);
-                speakOutput += oca.anunciarTurno();
+                speakOutput += oca.pasarTurno();
                 repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             }
             sessionAttributes.reboteFechas = rebote;
@@ -488,9 +480,7 @@ const preguntasCasillaHandler = {
             }
         }
         
-        oca.pasarTurno();
-        oca.setEstado(EstadoJuego.TIRAR_DADO);
-        speakOutput += oca.anunciarTurno();
+        speakOutput += oca.pasarTurno();
         repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
 
         return handlerInput.responseBuilder

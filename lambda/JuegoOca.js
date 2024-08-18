@@ -90,8 +90,10 @@ class JuegoOca {
             sig = 0;
             this.ronda++;
         }
-            
         this.turno = sig;
+        this.setEstado(EstadoJuego.TIRAR_DADO);
+        
+        return this.anunciarTurno();
     }
     
     calcularRebote(jActual) {
@@ -104,9 +106,18 @@ class JuegoOca {
     
     anunciarTurno() {
         if (this.estado === EstadoJuego.TIRAR_DADO) {
-            let informe = `<break time="3s"/> Ahora es el turno de ${this.getNombreJActual()}. `;
-            if (this.getRonda() < 4) {
-                informe += ` Para poder tirar el dado, diga: 'Tirar dado'. `;
+            let jActual = this.getJugadorActual();
+            let informe = `<break time="3s"/> Ahora es el turno de ${jActual.getNombre()}. `;
+            
+            if (this.penalizaciones[jActual.getId()] > 0){
+                informe += `Vaya... ${this.hayEquipos ? 'El equipo' : ''} ${jActual.getNombre()} no puede moverse aún porque sigue en la casilla \
+                ${this.tablero.getCasilla(jActual.getPosActual()).getId()}. ${this.penalizaciones[jActual.getId()] === 1 ? ' Queda ' : ' Quedan '} \
+                ${this.penalizaciones[jActual.getId()]} ${this.penalizaciones[jActual.getId()] === 1 ? ' turno ' : ' turnos '} antes de poder volver a tirar el dado. `
+                this.penalizaciones[jActual.getId()] -= 1;
+                informe += this.pasarTurno();
+                
+            } else if (this.getRonda() < 4) {
+                informe += `Para poder tirar el dado, diga: 'Tirar dado'. `;
             } else {
                 informe += `Por favor, ${this.hayEquipos ? 'tiren' : 'tire'} el dado. `;
             }
@@ -160,7 +171,7 @@ class JuegoOca {
                 casillaNueva = this.tablero.getCasilla(posNueva);
                 informe += `${this.hayEquipos ? 'El equipo' : ''} ${jActual.nombre} no puede moverse aún. ${this.penalizaciones[jActual.id] === 1 ? 'Queda' : 'Quedan'} ${this.penalizaciones[jActual.id]} \
                             ${this.penalizaciones[jActual.id] === 1 ? 'turno' : 'turnos'} antes de poder volver a tirar el dado. `
-                this.penalizaciones[jActual.id] -= 1;
+
             } else {
                 posNueva += this.tablero.nuevaPosicion(posActual, tirada);
                 casillaNueva = this.tablero.getCasilla(posNueva);
@@ -174,7 +185,7 @@ class JuegoOca {
                     this.setEstado(EstadoJuego.TIRAR_DADO);
         
                 } else if (casillaNueva instanceof CasillaPenalizacion){
-                    this.penalizaciones[jActual.id] += casillaNueva.penaliza;
+                    this.penalizaciones[jActual.getId()] += casillaNueva.penaliza;
                     
                 } else if (casillaNueva instanceof CasillaPuente){
                     posNueva = this.tablero.buscarSiguientePuente(posNueva);
@@ -190,12 +201,12 @@ class JuegoOca {
                 } else if (casillaNueva instanceof CasillaUltima) {
                     this.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
                 }
-                 
                 
                 if (casillaNueva.getId() === "META") {
                     this.setEstado(EstadoJuego.FINALIZADO);
                 }
             }
+            
             return [casillaNueva, informe];
         } else {
             return null;
@@ -225,6 +236,7 @@ class JuegoOca {
         let tablero = new Tablero()
         
         tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
+        tablero.addCasilla(new CasillaPenalizacion("La posada", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[19], 2));
         //tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new CasillaUltima("Minijuego última casilla", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));

@@ -107,7 +107,7 @@ class CasillaCifras extends Casilla {
         } else {
             desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la Cifra. ';
         }
-        desc += 'Recordad que la respuesta debe ser solo un número. ';
+        desc += 'Recordad que la respuesta debe ser solo un número, y si es incorrecta, la pregunta rebotará al siguiente. ';
         return desc;
     }
 }
@@ -164,16 +164,18 @@ class CasillaCompas extends Casilla {
         super(id, url, frases);
     }
 
-    getPreguntaRandom() {
-        const ind = Math.floor(Math.random() * preguntasCompas.length);
-        return preguntasCompas[ind]
+    getPreguntaRandom(compas) {
+        const indP = Math.floor(Math.random() * preguntasCompas.length);
+        const indC = Math.floor(Math.random() * compas.length);
+        
+        return [preguntasCompas[indP], compas[indC]];
     }
     
     recibeJugador(jug, hayEquipos) {
-        if (hayEquipos){
-            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Conoce a tus compañeros. ';
-        }
-        return 'Oh, ¡sorpresa! Has caído en el minijuego de Conoce a tus compañeros. ';
+        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de Conoce a tus compañeros. \
+                         ${hayEquipos ? ' Recordad ' : ' Recuerda '} que la respuesta debe ser 'sí' o 'no'. `;
+        
+        return informe;
     }
 }
 

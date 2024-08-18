@@ -48,7 +48,7 @@ function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') 
             break;
         case EstadoJuego.MINIJUEGO_COMPAS:
             mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con 'sí' o 'no'. Si  el ${hayEquipos ? 'equipo ' : 'participante '} encargado \
-                       de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. La pregunta es: ${pregunta}. `;
+                       de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. `;
             break;
         case EstadoJuego.FINALIZADO:
             mensaje = 'El juego ha finalizado, gracias por jugar. Si quiere crear una partida nueva, diga: Nueva partida. ';

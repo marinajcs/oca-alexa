@@ -3,11 +3,14 @@ SOLO SI DA TIEMPO, AL FINAL DEL TODO:
 - Borrar archivos basura de GitHub
 - Separar clases Casilla en ficheros .js distintos -> PETA
 - Intent de consultar mis puntos
+- Explicar minijuegos las primeras veces que se cae, con un contador de minijuegos en JuegoOca
+- Arreglar frases de casilla penalización
 
 URGENTE:
 - Mensaje de final de la partida, anunciar ganadores -> HECHO
 - Añadir un enum con los distintos estados del juego: -> HECHO
 - Cada estado de juego está asociado a un repromptText -> HECHO
+- Si está en casilla de penalización, al pasar el turno lo dice antes de tu tirar el dado -> HECHO, PROBAR
 - Modificar explicación de tirar dado y mover ficha (repetir hasta 5ª rondas) -> HECHO
 
 MINIJUEGOS:
