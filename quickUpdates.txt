@@ -10,15 +10,15 @@ URGENTE:
 - Mensaje de final de la partida, anunciar ganadores -> HECHO
 - Añadir un enum con los distintos estados del juego: -> HECHO
 - Cada estado de juego está asociado a un repromptText -> HECHO
-- Si está en casilla de penalización, al pasar el turno lo dice antes de tu tirar el dado -> HECHO, PROBAR
+- Si está en casilla de penalización, al pasar el turno lo dice antes de tu tirar el dado -> HECHO
 - Modificar explicación de tirar dado y mover ficha (repetir hasta 5ª rondas) -> HECHO
 
 MINIJUEGOS:
 - Verdadero/Falso (Cultura general) -> HECHO
-- Arreglar preguntas compañeros (Colaborativo) -> EN PROCESO
+- Arreglar preguntas compañeros (Colaborativo) -> HECHO
 - Revisar preguntas difíciles y añadir más que no sean años en Adivina la Cifra (Competitivo)
 - Añadir preguntas de fecha actual (Memoria temporal actual?) -> EN PROCESO
-- Recuerda la última casilla (Memoria) -> HECHO, FALTA AÑADIR EN SLOTS EL RESTO DE CASILLAS
+- Recuerda la última casilla (Memoria) -> HECHO, FALTA AÑADIR EL RESTO DE SLOTS/CASILLAS
 
 BASE DE DATOS:
 - Hacer usuario IAM, modificar tiemout de función lambda

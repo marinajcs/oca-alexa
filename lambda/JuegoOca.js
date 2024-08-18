@@ -1,7 +1,7 @@
 const {EstadoJuego} = require('./EstadoJuego.js');
 const {Tablero} = require('./Tablero.js');
 const {Jugador} = require('./Jugador.js');
-const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion,
+const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaCompas,
        CasillaVyF, CasillaCifras, CasillaUltima, CasillaFechas} = require('./Casillas.js');
 const fc = require('./exports/frasesCasillas.json');
 
@@ -74,6 +74,12 @@ class JuegoOca {
     
     getNumJugadores() {
         return this.numJugadores;
+    }
+    
+    getCompas(jActual) {
+        const compas = this.jugadores.filter(jugador => jugador !== jActual);
+        
+        return compas; 
     }
     
     setPenalizaciones(idJugador, valor) {
@@ -200,6 +206,12 @@ class JuegoOca {
                     
                 } else if (casillaNueva instanceof CasillaUltima) {
                     this.setEstado(EstadoJuego.MINIJUEGO_CASILLA);
+                    
+                } else if (casillaNueva instanceof CasillaCompas) {
+                    this.setEstado(EstadoJuego.MINIJUEGO_COMPAS);
+                    
+                } else if ((casillaNueva instanceof CasillaOca)) {
+                    this.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
                 }
                 
                 if (casillaNueva.getId() === "META") {
@@ -236,7 +248,7 @@ class JuegoOca {
         let tablero = new Tablero()
         
         tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaPenalizacion("La posada", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[19], 2));
+        tablero.addCasilla(new CasillaCompas("Minijuego compañeros", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         //tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new CasillaUltima("Minijuego última casilla", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));

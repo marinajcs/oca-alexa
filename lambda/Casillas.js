@@ -172,8 +172,7 @@ class CasillaCompas extends Casilla {
     }
     
     recibeJugador(jug, hayEquipos) {
-        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de Conoce a tus compañeros. \
-                         ${hayEquipos ? ' Recordad ' : ' Recuerda '} que la respuesta debe ser 'sí' o 'no'. `;
+        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de Conoce a tus compañeros. Recordad que ambos podéis ganar puntos si acertáis. `;
         
         return informe;
     }

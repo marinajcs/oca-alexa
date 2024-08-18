@@ -316,13 +316,16 @@ const jugarTurnoHandler = {
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                  
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_COMPAS) {
-                    const pregunta = casillaNueva.getPreguntaRandom();
-                    /*
-                    sessionAttributes.sujetoRespuesta = false;
-                    sessionAttributes.sujetoPregunta = casillaNueva.getCompaRandom();
-                    speakOutput += 'La pregunta es: alguien del equipo...' + pregunta.question + ' ¿Sí o no?';
-                    repromptAudio = 'La pregunta para ' + jActual.nombre + ' es: ' + pregunta.question;
-                    */
+                    let [pregunta, sujetoPregunta] = casillaNueva.getPreguntaRandom(oca.getCompas(jActual));
+                    sessionAttributes.preguntaActual = pregunta;
+                    sessionAttributes.sujetoResponde = false;
+                    sessionAttributes.sujetoPregunta = sujetoPregunta.getId();
+                    handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                    const preguntaTxt = `<break time="2s"/> La pregunta es acerca de ${sujetoPregunta.getNombre()}. ${hayEquipos ? pregunta.questionE : pregunta.questionJ} \
+                                         <break time="1s"/> ${jActual.getNombre()}, ¿es esto correcto o incorrecto? `;
+                    speakOutput += preguntaTxt;
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
+                    
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
                     let preguntaTxt;
                     oca.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
@@ -491,7 +494,7 @@ const preguntasCasillaHandler = {
     }
 };
 
-/*
+
 const preguntasCompasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -501,31 +504,38 @@ const preguntasCompasHandler = {
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuesta');
+        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCompas');
+        const respuestaValidada  = intent.slots.respuestaCompas.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        const pregunta = sessionAttributes.preguntaActual;
         const sujetoPregunta = sessionAttributes.sujetoPregunta;
-        const sujetoRespuesta = sessionAttributes.sujetoRespuesta;
-        const njugadores =  sessionAttributes.numJugadores
-        let jActual = jugadores[turno];
-        
-        if (!sujetoRespuesta) {
-            speakOutput = `${jActual.nombre} ha contestado: ` + respuesta + `. ¿Es esto correcto, ${sujetoPregunta.nombre}?`;
-            sessionAttributes.sujetoRespuesta = true;
+        let sujetoResponde = sessionAttributes.sujetoResponde;
+        const hayEquipos = oca.getEquipos();
+        let jActual = oca.getJugadorActual();
+        let jPregunta = oca.getJugador(sujetoPregunta);
+
+        if (!sujetoResponde) {
+            speakOutput = `${jActual.getNombre()} ha${hayEquipos ? 'n' : ''} contestado que es ${respuesta}. Me pregunto si ha${hayEquipos ? 'n' : ''} acertado... \
+                           ${jPregunta.getNombre()}, ¿es esta repuesta correcta o incorrecta?`;
+            sessionAttributes.sujetoResponde = true;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+            const recordatorio = `A la pregunta acerca de ${hayEquipos ? ' vosotros' : ' ti'}: ${hayEquipos ? pregunta.questionE : pregunta.questionJ} ${jActual.getNombre()} \
+                                  dijeron que era '${respuesta}'. ¿Es su repuesta correcta o incorrecta? `
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jPregunta.getNombre(), recordatorio);
             
         } else {
-            if (respuesta === 'sí') {
-                jActual.puntos += 15;
-                sujetoPregunta.puntos += 5;
-                speakOutput = `¡Buen trabajo! Por conoceros bien, ${jActual.nombre} se lleva${hayEquipos ? 'n' : ''} \
-                                15 puntos y ${sujetoPregunta.nombre}, 5 puntos.  \
-                                Ahora vuestras puntuaciones son ${jActual.puntos} y ${sujetoPregunta.puntos} respectivamente.`;
+            if (respuestaValidada === 'correcto') {
+                jActual.addPuntos(15);
+                jPregunta.addPuntos(10);
+                speakOutput = `¡Buen trabajo! Por conoceros bien, ${jActual.getNombre()} se lleva${hayEquipos ? 'n' : ''} \
+                                15 puntos y ${jPregunta.getNombre()}, 10 puntos.  \
+                                Ahora vuestras puntuaciones son ${jActual.getPuntos()} y ${jPregunta.getPuntos()} respectivamente. `;
             } else {
-                speakOutput = 'Lástima, pero no os desaniméis, ya habrá otra oportunidad de conseguir puntos.';
+                speakOutput = 'Lástima, pero no os desaniméis, ya habrá otra oportunidad de conseguir puntos. ';
             }
-            turno = pasarTurno(turno, njugadores);
-            repromptAudio = `<break time="3s"/> Ahora es el turno de ${jActual.nombre}. Por favor, ${hayEquipos ? 'tiren' : 'tire'} el dado. `;
-            speakOutput += repromptAudio;
+            
+            speakOutput += oca.pasarTurno();
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
         }
         
         return handlerInput.responseBuilder
@@ -535,7 +545,7 @@ const preguntasCompasHandler = {
             .getResponse();
     }
 };
-*/
+
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -636,10 +646,10 @@ const ErrorHandler = {
                 
             const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
             const pregunta = sessionAttributes.preguntaActual;
-            speakOutput = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual(), pregunta.question);
+            speakOutput = 'Comando no válido. ' + informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual(), pregunta.question);
             
         } else {
-            speakOutput = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual());
+            speakOutput = 'Comando no válido. ' + informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual());
         }
 
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
@@ -661,7 +671,7 @@ module.exports = {
     preguntasVyFHandler,
     preguntasCifrasHandler,
     preguntasCasillaHandler,
-    //preguntasCompasHandler,
+    preguntasCompasHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     FallbackIntentHandler,

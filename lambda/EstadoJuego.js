@@ -47,8 +47,7 @@ function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') 
                        ${hayEquipos ? ' os acordáis del ' : ' recuerdas el '} nombre, ${hayEquipos ? ' decid ' : ' di '} 'No me acuerdo de la casilla'. `;
             break;
         case EstadoJuego.MINIJUEGO_COMPAS:
-            mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con 'sí' o 'no'. Si  el ${hayEquipos ? 'equipo ' : 'participante '} encargado \
-                       de confirmar la respuesta dice 'sí', entonces ambos ganaréis 15 puntos. `;
+            mensaje = `${nombreJ}, responda${hayEquipos ? 'n' : ''} con 'correcto' o 'incorrecto'. ${pregunta} `;
             break;
         case EstadoJuego.FINALIZADO:
             mensaje = 'El juego ha finalizado, gracias por jugar. Si quiere crear una partida nueva, diga: Nueva partida. ';

@@ -188,13 +188,14 @@
         {
           "slots": [
             {
-              "name": "respuestaSN",
-              "type": "SiNo"
+              "name": "respuestaCompas",
+              "type": "tipoRespuestaCompas"
             }
           ],
           "name": "preguntasCompasIntent",
           "samples": [
-            "{respuestaSN}"
+            "es {respuestaCompas}",
+            "{respuestaCompas}"
           ]
         },
         {
@@ -318,28 +319,6 @@
             {
               "name": {
                 "synonyms": [
-                  "no"
-                ],
-                "value": "No"
-              }
-            },
-            {
-              "name": {
-                "synonyms": [
-                  "sí",
-                  "si"
-                ],
-                "value": "Si"
-              }
-            }
-          ],
-          "name": "SiNo"
-        },
-        {
-          "values": [
-            {
-              "name": {
-                "synonyms": [
                   "jugadores individuales"
                 ],
                 "value": "jugadores"
@@ -427,6 +406,27 @@
             }
           ],
           "name": "estacion"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "incorrecta"
+                ],
+                "value": "incorrecto"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "correcta"
+                ],
+                "value": "correcto"
+              }
+            }
+          ],
+          "name": "tipoRespuestaCompas"
         }
       ],
       "invocationName": "probando oca"
