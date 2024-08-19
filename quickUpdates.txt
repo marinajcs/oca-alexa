@@ -10,13 +10,16 @@ URGENTE:
 - Cada estado de juego está asociado a un repromptText -> HECHO
 - Si está en casilla de penalización, al pasar el turno lo dice antes de tu tirar el dado -> HECHO
 - Modificar explicación de tirar dado y mover ficha (repetir hasta 5ª rondas) -> HECHO
+- Añadir más preguntas en el minijuego de las cifras y quitar las rebuscadas
+- Mejorar los recordatorios de estado del juego
+- Terminar de añadir todas las casillas a los slots 
 
 MINIJUEGOS:
-- Verdadero/Falso (Cultura general) -> HECHO
-- Arreglar preguntas compañeros (Colaborativo) -> HECHO
-- Revisar preguntas difíciles y añadir más que no sean años en Adivina la Cifra (Competitivo)
-- Añadir preguntas de fecha actual (Memoria temporal actual?) -> EN PROCESO
-- Recuerda la última casilla (Memoria) -> HECHO, FALTA AÑADIR EL RESTO DE SLOTS/CASILLAS
+- Verdadero o falso (Cultura general) -> HECHO
+- Conoce a tus compañeros (Colaborativo) -> HECHO
+- Adivina la cifra (Competitivo)
+- Recuerda la fecha (Memoria temporal actual?) -> HECHO
+- Recuerda la última casilla (Memoria) -> HECHO
 
 BASE DE DATOS:
 - Hacer usuario IAM, modificar tiemout de función lambda
@@ -32,7 +35,7 @@ BASE DE DATOS:
 - Eliminar código repetido -> EN PROCESO
 - Repasar las frases de las casillas
 - Repasar diálogos de Alexa (que sean fluidos pero bien articulados, con pausas adecuadas)
-- Completar la "ayuda de Alexa"
+- Completar la "ayuda de Alexa", reutilizar en manual de instrucciones
 - Revisar invocaciones (considerar todas las variantes de comandos de voz)
 - Control de errores (no acceder a funciones fuera de turno)
 - Arreglar frases de casilla penalización

@@ -1,18 +1,47 @@
 [
   {
-    "type": "dayOfWeek",
-    "question": "¿En qué día de la semana estamos?"
+    "type": "diaSemana",
+    "question": "¿En qué día de la semana estamos?",
+    "id": 0
   },
   {
-    "type": "month",
-    "question": "¿En qué mes estamos?"
+    "type": "diaSemana",
+    "question": "¿Qué día de la semana fue ayer?",
+    "id": -1
   },
   {
-    "type": "season",
-    "question": "¿En qué estación del año estamos?"
+    "type": "diaSemana",
+    "question": "¿Qué día de la semana será mañana?",
+    "id": 1
   },
   {
-    "type": "year",
-    "question": "¿En qué año estamos?"
+    "type": "mes",
+    "question": "¿En qué mes estamos?",
+    "id": 0
+  },
+  {
+    "type": "mes",
+    "question": "¿En qué mes estábamos el mes pasado?",
+    "id": -1
+  },
+  {
+    "type": "mes",
+    "question": "¿En qué mes estaremos el próximo mes?",
+    "id": 1
+  },
+  {
+    "type": "estacion",
+    "question": "¿En qué estación del año estamos?",
+    "id": 0
+  },
+  {
+    "type": "estacion",
+    "question": "¿En qué estación del año estábamos la estación pasada?",
+    "id": -1
+  },
+  {
+    "type": "estacion",
+    "question": "¿En qué estación del año estaremos la próxima estación?",
+    "id": 1
   }
 ]

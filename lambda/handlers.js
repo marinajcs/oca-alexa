@@ -45,6 +45,7 @@ const configuracion1Handler = {
         let responseBuilder = handlerInput.responseBuilder;
         let speakOutput, repromptAudio;
         
+        oca = new JuegoOca();
         oca.setEquipos(true);
         const hayEquipos = true;
         oca.setEstado(EstadoJuego.CONFIGURANDO);
@@ -327,8 +328,11 @@ const jugarTurnoHandler = {
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                     
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
-                    let preguntaTxt;
-                    oca.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
+                    const pregunta = casillaNueva.getPreguntaRandom();
+                    const preguntaTxt = 'La pregunta es: ' + pregunta.question;
+                    sessionAttributes.preguntaActual = pregunta;
+                    sessionAttributes.solucionFecha = casillaNueva.getSolucion(pregunta);
+                    speakOutput += preguntaTxt;
                     repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jActual.getNombre(), preguntaTxt);
                     
                 } else if (oca.getEstado() === EstadoJuego.MINIJUEGO_CASILLA) {
@@ -546,6 +550,53 @@ const preguntasCompasHandler = {
     }
 };
 
+const preguntasFechasHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasFechasIntent';
+    },
+    handle(handlerInput) {
+        const {requestEnvelope} = handlerInput;
+        const {intent} = requestEnvelope.request;
+        let speakOutput, repromptAudio;
+        let respuesta;
+        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+        const pregunta = sessionAttributes.preguntaActual;
+        const solucion = sessionAttributes.solucionFecha;
+        let jActual = oca.getJugadorActual();
+        const hayEquipos = oca.getEquipos();
+        
+        switch(pregunta.type) {
+            case 'diaSemana':
+                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaDiaSemana');
+                break;
+            case 'mes':
+                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaMes');
+                break;
+            case 'estacion':
+                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaEstacion');
+                break;
+        }
+        
+        if (respuesta === solucion) {
+            jActual.addPuntos(20);
+            speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+        } else {
+            speakOutput = ` Lástima, es incorrecto. La respuesta correcta era: ${solucion}. `;
+        }
+        
+        speakOutput += oca.pasarTurno();
+        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+};
+
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -576,11 +627,7 @@ const CancelAndStopIntentHandler = {
             .getResponse();
     }
 };
-/* *
- * FallbackIntent triggers when a customer says something that doesn’t map to any intents in your skill
- * It must also be defined in the language model (if the locale supports it)
- * This handler can be safely added but will be ingnored in locales that do not support it yet 
- * */
+
 const FallbackIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -595,11 +642,7 @@ const FallbackIntentHandler = {
             .getResponse();
     }
 };
-/* *
- * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open 
- * session is closed for one of the following reasons: 1) The user says "exit" or "quit". 2) The user does not 
- * respond or says something that does not match an intent defined in your voice model. 3) An error occurs 
- * */
+
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'SessionEndedRequest';
@@ -610,11 +653,7 @@ const SessionEndedRequestHandler = {
         return handlerInput.responseBuilder.getResponse(); // notice we send an empty response
     }
 };
-/* *
- * The intent reflector is used for interaction model testing and debugging.
- * It will simply repeat the intent the user said. You can create custom handlers for your intents 
- * by defining them above, then also adding them to the request handler chain below 
- * */
+
 const IntentReflectorHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
@@ -629,11 +668,7 @@ const IntentReflectorHandler = {
             .getResponse();
     }
 };
-/**
- * Generic error handling to capture any syntax or routing errors. If you receive an error
- * stating the request handler chain is not found, you have not implemented a handler for
- * the intent being invoked or included it in the skill builder below 
- * */
+
 const ErrorHandler = {
     canHandle() {
         return true;
@@ -672,6 +707,7 @@ module.exports = {
     preguntasCifrasHandler,
     preguntasCasillaHandler,
     preguntasCompasHandler,
+    preguntasFechasHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     FallbackIntentHandler,

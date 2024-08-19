@@ -210,7 +210,7 @@ class JuegoOca {
                 } else if (casillaNueva instanceof CasillaCompas) {
                     this.setEstado(EstadoJuego.MINIJUEGO_COMPAS);
                     
-                } else if ((casillaNueva instanceof CasillaOca)) {
+                } else if (casillaNueva instanceof CasillaFechas) {
                     this.setEstado(EstadoJuego.MINIJUEGO_FECHAS);
                 }
                 
@@ -248,7 +248,7 @@ class JuegoOca {
         let tablero = new Tablero()
         
         tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaCompas("Minijuego compañeros", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
+        tablero.addCasilla(new CasillaFechas("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         //tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new CasillaUltima("Minijuego última casilla", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
         tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));

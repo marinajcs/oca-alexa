@@ -84,9 +84,9 @@ class CasillaVyF extends Casilla {
     
     recibeJugador(jug, hayEquipos) {
         if (hayEquipos){
-            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Verdadero o Falso. ';
+            return 'Oh, ¡sorpresa! Habéis caído en el minijuego de Verdadero o falso. ';
         }
-        return 'Oh, ¡sorpresa! Has caído en el minijuego de Verdadero o Falso. ';
+        return 'Oh, ¡sorpresa! Has caído en el minijuego de Verdadero o falso. ';
     }
 }
 
@@ -103,9 +103,9 @@ class CasillaCifras extends Casilla {
     recibeJugador(jug, hayEquipos) {
         let desc;
         if (hayEquipos){
-            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Adivina la Cifra. ';
+            desc = 'Oh, ¡sorpresa! Habéis caído en el minijuego de Adivina la cifra. ';
         } else {
-            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la Cifra. ';
+            desc = 'Oh, ¡sorpresa! Has caído en el minijuego de Adiniva la cifra. ';
         }
         desc += 'Recordad que la respuesta debe ser solo un número, y si es incorrecta, la pregunta rebotará al siguiente. ';
         return desc;
@@ -132,18 +132,56 @@ class CasillaFechas extends Casilla {
         return desc;
     }
     
-    getSeason(date) {
-        const month = date.getMonth() + 1; // Enero es 0, ajustamos a 1-12
-        if (month >= 3 && month <= 5) {
-            return 'primavera';
-        } else if (month >= 6 && month <= 8) {
-            return 'verano';
-        } else if (month >= 9 && month <= 11) {
-            return 'otoño';
-        } else {
-            return 'invierno';
+    getSolucion(pregunta) {
+        const type = pregunta.type; 
+        const id = pregunta.id;
+        const hoy = new Date();
+    
+        switch (type) {
+            case 'diaSemana':
+                return this.getDiaSemana(hoy, id);
+            case 'mes':
+                return this.getMes(hoy, id);
+            case 'estacion':
+                return this.getEstacion(hoy, id);
+            default:
+                return 'Tipo de pregunta no reconocido.';
         }
     }
+    
+    getDiaSemana(fecha, id) {
+        const diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+        const diaActual = fecha.getDay(); // 0 (domingo) - 6 (sábado)
+        const diaCalculado = (diaActual + id + 7) % 7;
+        return diasSemana[diaCalculado];
+    }
+    
+    getMes(fecha, id) {
+        const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+        const mesActual = fecha.getMonth(); // 0 (enero) - 11 (diciembre)
+        const mesCalculado = (mesActual + id + 12) % 12;
+        return meses[mesCalculado];
+    }
+    
+    getEstacion(fecha, id) {
+        const estaciones = ['invierno', 'primavera', 'verano', 'otoño'];
+        const mesActual = fecha.getMonth();
+    
+        let estacionActual;
+        if (mesActual >= 2 && mesActual <= 4) {
+            estacionActual = 1; // primavera
+        } else if (mesActual >= 5 && mesActual <= 7) {
+            estacionActual = 2; // verano
+        } else if (mesActual >= 8 && mesActual <= 10) {
+            estacionActual = 3; // otoño
+        } else {
+            estacionActual = 0; // invierno
+        }
+    
+        const estacionCalculada = (estacionActual + id + 4) % 4;
+        return estaciones[estacionCalculada];
+    }
+   
 }
 
 class CasillaUltima extends Casilla {
@@ -152,7 +190,7 @@ class CasillaUltima extends Casilla {
     }
     
     recibeJugador(jug, hayEquipos) {
-        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de La Última Casilla. \
+        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de La última casilla. \
                          ¿Cuál fue la última casilla en la que ${hayEquipos ? 'estabais' : 'estabas'}? Dime el nombre de la casilla. `;
                          
         return informe;
@@ -172,7 +210,8 @@ class CasillaCompas extends Casilla {
     }
     
     recibeJugador(jug, hayEquipos) {
-        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de Conoce a tus compañeros. Recordad que ambos podéis ganar puntos si acertáis. `;
+        const informe = `Oh, ¡sorpresa! ${hayEquipos ? 'Habéis ' : 'Has '} caído en el minijuego de Conoce a tus compañeros. \
+                         Recordad que ambos podéis ganar puntos si acertáis. `;
         
         return informe;
     }
