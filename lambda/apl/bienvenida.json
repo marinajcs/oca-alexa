@@ -22,7 +22,7 @@
           },
           {
             "type": "Image",
-            "source": "https://i.ibb.co/Yfmk5mt/oca.png",
+            "source": "https://bucket-oca.s3.eu-west-1.amazonaws.com/oca.png",
             "width": "70%",
             "height": "70%",
             "scale": "best-fit"

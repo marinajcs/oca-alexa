@@ -1,3 +1,8 @@
+/**
+ * Emula una estructura de datos enum para los posibles estados del juego.
+ * @readonly
+ * @enum {string}
+ */
 const EstadoJuego = {
     INDETERMINADO: 'INDETERMINADO',
     CONFIGURANDO: 'CONFIGURANDO',
@@ -12,6 +17,14 @@ const EstadoJuego = {
     FINALIZADO: 'FINALIZADO'
 };
 
+/**
+ * Devuelve un mensaje de ayuda basado en el estado actual del juego.
+ * @param {EstadoJuego} estado El estado actual del juego.
+ * @param {boolean} [hayEquipos=false] Indica si los participantes van por equipos o no.
+ * @param {string} [nombreJ=''] El nombre del jugador o equipo actual.
+ * @param {string} [pregunta=''] Pregunta actual en caso de minijuegos que la requieran.
+ * @returns {string} Mensaje que indica el estado del juego y qué hacer a continuación.
+ */
 function informeEstado(estado, hayEquipos = false, nombreJ = '', pregunta = '') {
     let mensaje;
     switch (estado) {

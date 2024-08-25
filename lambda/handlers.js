@@ -1,4 +1,6 @@
 const Alexa = require('ask-sdk-core');
+const AWS = require('aws-sdk');
+const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const bienvenida = require('./apl/bienvenida.json');
 const fichas = require('./apl/fichas.json');
 const {JuegoOca} = require('./JuegoOca.js');
@@ -6,6 +8,7 @@ const {Jugador} = require('./Jugador.js')
 const {tirarDado, getUrlDado} = require('./Dado.js');
 const {reglasInfo, casillasInfo, minijuegosInfo, comandosInfo} = require('./exports/frasesAyuda.js');
 const {EstadoJuego, informeEstado} = require('./EstadoJuego.js');
+const {asumirRol, guardarPartida, cargarPartida} = require('./db.js');
 
 let oca = new JuegoOca();
 
@@ -52,11 +55,12 @@ const configuracion1Handler = {
         oca.crearJugadores(2);
         oca.getJugador(0).setNombre('los campeones rojos');
         oca.getJugador(1).setNombre('las divinas azules');
-        oca.getJugador(1).addPuntos(30);
+        oca.getJugador(0).setPuntos(15);
+        oca.getJugador(1).setPuntos(30);
         oca.setEstado(EstadoJuego.TIRAR_DADO);
         
-        speakOutput = `Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado' y después, \
-                       'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
+        speakOutput = ` Bien, sin más dilación, que comience la partida. Recuerden que en cada turno primero se debe decir 'tirar dado', y después \
+                       'mover ficha', para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
         
         repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
         
@@ -77,6 +81,57 @@ const configuracion1Handler = {
                 }
         })
         
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+}
+
+const guardarPartidaHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'guardarPartidaIntent';
+    },
+    async handle(handlerInput) {
+        const {request} = handlerInput.requestEnvelope.request;
+        let responseBuilder = handlerInput.responseBuilder;
+        let speakOutput, repromptAudio;
+        
+        const db = await asumirRol();
+        const dbTxt = await guardarPartida(db, oca);
+
+        speakOutput = dbTxt;
+        repromptAudio = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual());
+        
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(repromptAudio)
+            .withShouldEndSession(false)
+            .getResponse();
+    }
+}
+
+const cargarPartidaHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'cargarPartidaIntent';
+    },
+    async handle(handlerInput) {
+        const {request} = handlerInput.requestEnvelope.request;
+        let responseBuilder = handlerInput.responseBuilder;
+        let speakOutput, repromptAudio;
+        oca.setEstado(EstadoJuego.CONFIGURANDO);
+        
+        const db = await asumirRol();
+        const dbTxt = await cargarPartida(db, oca);
+        
+        speakOutput = dbTxt;
+        speakOutput += 'Bien, sin más dilación, continuemos la partida donde la dejamos. ';
+        repromptAudio = informeEstado(oca.getEstado(), oca.getEquipos(), oca.getNombreJActual());
+        speakOutput += repromptAudio;
+
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(repromptAudio)
@@ -172,7 +227,7 @@ const addJugadorHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'addJugadorIntent';
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         const {requestEnvelope} = handlerInput;
         let responseBuilder = handlerInput.responseBuilder;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
@@ -199,6 +254,9 @@ const addJugadorHandler = {
                 speakOutput += (`<break time="1s"/> ${hayEquipos ? 'Equipo' : 'Participante'} ${jugador.getNombre()}, cuyo color asignado es el ${jugador.getColor()}. `);
             });
             oca.setEstado(EstadoJuego.TIRAR_DADO);
+            
+            const db = await asumirRol();
+            await guardarPartida(db, oca);
             
             speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno: primero, se dice 'tirar dado' y después, \
                             'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
@@ -249,7 +307,7 @@ const jugarTurnoHandler = {
         if (dado === undefined && oca.getPenalizaciones(jActual.getId()) === 0){
             speakOutput = `${hayEquipos ? 'El equipo' : ''} ${oca.getNombreJActual()} ha tirado el dado. <break time="10s"/>`
             //dado = tirarDado();
-            dado = 2;
+            dado = 1;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -692,6 +750,7 @@ const ErrorHandler = {
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
+            .withShouldEndSession(false)
             .getResponse();
     }
 };
@@ -699,6 +758,8 @@ const ErrorHandler = {
 module.exports = {
     LaunchRequestHandler,
     configuracion1Handler,
+    guardarPartidaHandler,
+    cargarPartidaHandler,
     ayudaReglasHandler,
     nuevaPartidaHandler,
     addJugadorHandler,

@@ -10,9 +10,20 @@ URGENTE:
 - Cada estado de juego está asociado a un repromptText -> HECHO
 - Si está en casilla de penalización, al pasar el turno lo dice antes de tu tirar el dado -> HECHO
 - Modificar explicación de tirar dado y mover ficha (repetir hasta 5ª rondas) -> HECHO
+
+- Cambiar getters/setters por la nomenclatura Node.js y atributos a "_nombre"
 - Añadir más preguntas en el minijuego de las cifras y quitar las rebuscadas
 - Mejorar los recordatorios de estado del juego
-- Terminar de añadir todas las casillas a los slots 
+- Terminar de añadir todas las casillas a los slots
+- Añadir casillas especiales en tablero según imagen
+- Revisar frases de casilla y comprobar que se corresponden con el tablero
+- Distribuir las casillas de minijuegos de forma coherente
+- Hacer pruebas
+- Documentar código
+- Que alexa mencione la posibilidad de continuar partida anterior, y si
+  se opta por crear una nueva, avisa de que va a eliminar los datos de la
+  anterior
+- Guardar partida cada 3 rondas por ejemplo
 
 MINIJUEGOS:
 - Verdadero o falso (Cultura general) -> HECHO
@@ -22,9 +33,6 @@ MINIJUEGOS:
 - Recuerda la última casilla (Memoria) -> HECHO
 
 BASE DE DATOS:
-- Hacer usuario IAM, modificar tiemout de función lambda
-- Almacenar todas las fotos y vídeos en Amazon S3
-- Hacer base de datos para que pueda guardar la partida
 - Crear intents para: guardar (añadir guardado automático cada X tiempo) y terminar
   partida (elimina los datos de la actual y finaliza la partida), para cerrar skill
   se puede usar el intent por defecto de cierre de skill
@@ -38,4 +46,4 @@ BASE DE DATOS:
 - Completar la "ayuda de Alexa", reutilizar en manual de instrucciones
 - Revisar invocaciones (considerar todas las variantes de comandos de voz)
 - Control de errores (no acceder a funciones fuera de turno)
-- Arreglar frases de casilla penalización
+

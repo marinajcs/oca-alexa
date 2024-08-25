@@ -2,6 +2,8 @@ const Alexa = require('ask-sdk-core');
 const {
     LaunchRequestHandler,
     configuracion1Handler,
+    guardarPartidaHandler,
+    cargarPartidaHandler,
     ayudaReglasHandler,
     nuevaPartidaHandler,
     addJugadorHandler,
@@ -23,6 +25,8 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         configuracion1Handler,
+        guardarPartidaHandler,
+        cargarPartidaHandler,
         HelpIntentHandler,
         ayudaReglasHandler,
         nuevaPartidaHandler,

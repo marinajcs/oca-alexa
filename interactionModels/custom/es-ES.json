@@ -255,6 +255,12 @@
           ],
           "name": "preguntasFechasIntent",
           "samples": [
+            "estaremos en {respuestaMes}",
+            "estaremos en {respuestaEstacion}",
+            "estábamos en {respuestaMes}",
+            "estábamos en {respuestaEstacion}",
+            "fue {respuestaDiaSemana}",
+            "será {respuestaDiaSemana}",
             "estamos en {respuestaEstacion}",
             "estamos a {respuestaEstacion}",
             "estamos en {respuestaMes}",
@@ -264,6 +270,32 @@
             "{respuestaMes}",
             "{respuestaEstacion}",
             "{respuestaDiaSemana}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "guardarPartidaIntent",
+          "samples": [
+            "guarda la partida",
+            "guardar partida"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "cargarPartidaIntent",
+          "samples": [
+            "cargar la partida anterior",
+            "reanudar la partida anterior",
+            "continuar la partida anterior",
+            "cargar la última partida",
+            "reanudar la última partida",
+            "continuar la última partida",
+            "reanudar la partida",
+            "reanudar partida",
+            "continuar partida",
+            "continuar la partida",
+            "cargar la partida",
+            "cargar partida"
           ]
         }
       ],

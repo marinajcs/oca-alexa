@@ -5,7 +5,13 @@ const {Casilla, CasillaOca, CasillaPuente, CasillaPenalizacion, CasillaCompas,
        CasillaVyF, CasillaCifras, CasillaUltima, CasillaFechas} = require('./Casillas.js');
 const fc = require('./exports/frasesCasillas.json');
 
+/**
+ * Clase que representa un juego de la Oca.
+ */
 class JuegoOca {
+    /**
+     * Crea una nueva instancia del juego de la Oca.
+     */
     constructor() {
         this.hayEquipos = false;
         this.jugadores = [];
@@ -17,30 +23,67 @@ class JuegoOca {
         this.estado = EstadoJuego.INDETERMINADO;
     }
     
+    /**
+     * Establece si el modo de juego es por equipos o no.
+     * @param {boolean} hayEquipos - Indica si los participantes van en equipos.
+     */
     setEquipos(hayEquipos) {
         this.hayEquipos = hayEquipos;
     }
     
+    /**
+     * Obtiene el tipo de participantes.
+     * @returns {boolean} - Devuelve true si hay equipos, false en caso contrario.
+     */
     getEquipos() {
         return this.hayEquipos;
     }
     
-    getTurno() {
-       return this.turno;
+    /**
+     * Establece la ronda actual.
+     * @param {number} ronda - El número de ronda actual.
+     */
+    setRonda(ronda) {
+        this.ronda = ronda;
     }
     
+    /**
+     * Obtiene la ronda actual.
+     * @returns {number} - El número de la ronda actual.
+     */
     getRonda() {
         return this.ronda;
     }
     
+    /**
+     * Obtiene el turno actual.
+     * @returns {number} - El número del turno actual.
+     */
+    getTurno() {
+       return this.turno;
+    }
+    
+    /**
+     * Establece el estado actual del juego.
+     * @param {EstadoJuego} estado - El estado actual del juego.
+     */
     setEstado(estado) {
         this.estado = estado;
     }
     
+    /**
+     * Obtiene el estado actual del juego.
+     * @returns {EstadoJuego} - El estado actual del juego.
+     */
     getEstado() {
         return this.estado;
     }
     
+    /**
+     * Obtiene un participante específico por su índice o identificador.
+     * @param {number} i - El índice o identificador del participante.
+     * @returns {Jugador|null} - El participante si existe, null en caso contrario.
+     */
     getJugador(i) {
         if (i >= 0 && i < this.numJugadores)
             return this.jugadores[i];
@@ -48,48 +91,85 @@ class JuegoOca {
             return null;
     }
     
+    /**
+     * Obtiene el participante con el turno actual.
+     * @returns {Jugador} - El participante con el turno actual.
+     */
     getJugadorActual() {
         return this.jugadores[this.turno];
     }
     
+    /**
+     * Obtiene el nombre del participante con el turno actual.
+     * @returns {string} - El nombre del participante con el turno actual.
+     */
     getNombreJActual() {
         return this.jugadores[this.turno].getNombre();
     }
     
+    /**
+     * Obtiene el conjunto de participantes de la partida.
+     * @returns {Jugador[]} - Un array con todos los participantes.
+     */
     getJugadores() {
         return this.jugadores;
     }
     
+    /**
+     * Obtiene los participantes en una casilla específica.
+     * @param {number} numCasilla - El número de la casilla.
+     * @returns {Jugador[]} - Un array de los participantes en la casilla especificada.
+     */
     getJugadorCasilla(numCasilla) {
         const jugEnCasilla = this.jugadores.filter(jugador => jugador.posicion === numCasilla);
     
         return jugEnCasilla;
     }
     
+    /**
+     * Obtiene los participantes en una casilla específica, salvo el del turno actual.
+     * @param {number} numCasilla - El número de la casilla.
+     * @param {Jugador} jActual - El participante actual.
+     * @returns {Jugador[]} - Un array de participantes en la casilla especificada, salvo el actual.
+     */
     getJugadoresCasilla(numCasilla, jActual) {
         const jugadoresEnCasilla = this.jugadores.filter(jugador => jugador.posicion === numCasilla && jugador !== jActual);
         
         return jugadoresEnCasilla;
     }
     
+    /**
+     * Obtiene el número total de participantes.
+     * @returns {number} - El número total de participantes.
+     */
     getNumJugadores() {
         return this.numJugadores;
     }
     
+    /**
+     * Obtiene los compañeros de un participante (el resto de implicados en la partida).
+     * @param {Jugador} jActual - El participante actual.
+     * @returns {Jugador[]} - Un array con los compañeros del participante actual.
+     */
     getCompas(jActual) {
         const compas = this.jugadores.filter(jugador => jugador !== jActual);
         
-        return compas; 
+        return compas;
     }
     
-    setPenalizaciones(idJugador, valor) {
-        this.penalizaciones[valor];
-    }
-    
+    /**
+     * Obtiene los turnos penalizados de un participante específico.
+     * @param {number} idJugador - El índice o ID del participante.
+     * @returns {number} - El número de turnos de penalización del participante concreto.
+     */
     getPenalizaciones(idJugador) {
         return this.penalizaciones[idJugador];
     }
     
+    /**
+     * Avanza el turno al siguiente participante, incrementando el número de ronda si es preciso.
+     * @returns {string} - Un mensaje anunciando el turno del siguiente participante.
+     */
     pasarTurno() {
         let sig = this.turno + 1;
         if (sig >= this.numJugadores) {
@@ -102,6 +182,11 @@ class JuegoOca {
         return this.anunciarTurno();
     }
     
+    /**
+     * Calcula el siguiente participante en caso de rebote, sin modificar el turno actual.
+     * @param {number} jActual - El índice del participante actual.
+     * @returns {number} - El índice del siguiente participante.
+     */
     calcularRebote(jActual) {
         let sig = jActual + 1;
         if (sig >= this.numJugadores)
@@ -110,6 +195,10 @@ class JuegoOca {
         return sig;
     }
     
+    /**
+     * Devuelve un mensaje anunciando el turno del siguiente participante. Considera las posibles penalizaciones.
+     * @returns {string|null} - Un mensaje anunciando el siguiente turno o null si no es el turno de tirar el dado.
+     */
     anunciarTurno() {
         if (this.estado === EstadoJuego.TIRAR_DADO) {
             let jActual = this.getJugadorActual();
@@ -133,6 +222,10 @@ class JuegoOca {
         }
     }
     
+    /**
+     * Devuelve un mensaje anunciando los ganadores de la partida, en caso de que haya finalizado.
+     * @returns {string} - Un mensaje anunciando los ganadores o que la partida sigue en curso.
+     */
     anunciarGanadores() {
         let resultados;
 
@@ -161,7 +254,14 @@ class JuegoOca {
         return resultados;
     }
     
-    avanzaJugador(jActual, tirada, jugEnCasilla){
+    /**
+     * Avanza al participante actual una cantidad de casillas concreta, actualizando su posición y manejando los eventos en 
+     * función de la casilla en la que caerá.
+     * @param {Jugador} jActual - El participante actual.
+     * @param {number} tirada - El número de posiciones que debe moverse.
+     * @returns {[Casilla, string]|null} - Un array con la nueva casilla y un informe del movimiento, o null si no es el momento de mover la ficha.
+     */
+    avanzaJugador(jActual, tirada){
         if (this.estado === EstadoJuego.MOVER_FICHA) {
             let finPartida = false;
             let dobleTurno = false;
@@ -225,9 +325,15 @@ class JuegoOca {
         }
     }
     
+    /**
+     * Crea los participantes (equipos o jugadores) del juego.
+     * @param {number} n - El número de participantes a crear (máximo 5).
+     * @returns {boolean} - Devuelve true si los participantes fueron creados con éxito, false en caso contrario.
+     */
     crearJugadores(n) {
         let ok = false;
         if (n < 6 && this.estado === EstadoJuego.CONFIGURANDO) {
+            this.jugadores = [];
             const colores = ['Rojo', 'Azul', 'Verde', 'Morado', 'Naranja', 'Gris'];
             const codigos = ['#FF0000', '#0000FF', '#008000', '#AA00FD', '#FD7D00', '#8C8C8C'];
         
@@ -244,123 +350,99 @@ class JuegoOca {
         return ok;
     }
     
+    /**
+     * Crea una versión reducida del tablero para comprobar el funcionamiento correcto del juego.
+     * @returns {Tablero} - Un tablero de juego de prueba.
+     */
     crearTableroPrueba() { 
         let tablero = new Tablero()
         
-        tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaFechas("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new CasillaUltima("Minijuego última casilla", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
-        tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
+        tablero.addCasilla(new Casilla("trompo", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/1.jpg", fc[2]));
+        tablero.addCasilla(new CasillaFechas("Minijuego fechas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/2.jpg"));
+        tablero.addCasilla(new Casilla("dinero", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/3.jpg", fc[1]));
+        tablero.addCasilla(new Casilla("META", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/63.jpg"));
         
         return tablero;
     }
 
-    crearTablero() { //unas 44 normales+minijuegos aprox (20-22 cada una)
+    /**
+     * Crea el tablero completo del juego (63 casillas sin contar la de salida, que es la 0).
+     * @returns {Tablero} - El tablero definitvo del juego.
+     */
+    crearTablero() {
         let tablero = new Tablero()
         
-        //Salida[0] añadida en constructor de Tablero
-        //...[1-3] (3)
-        tablero.addCasilla(new Casilla("trompo", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[2]));
-        tablero.addCasilla(new CasillaCifras("Minijuego fechas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("tesoro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[1]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //Oca[5]
-        tablero.addCasilla(new CasillaOca("Oca 5", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //Puente[6]
-        tablero.addCasilla(new CasillaPuente("Puente 6", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
-        //...[7-8]
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("lentejas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[3]));
-        //Oca[9]
-        tablero.addCasilla(new CasillaOca("Oca 9", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[10-11]
-        tablero.addCasilla(new Casilla("queso", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[4]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //Puente[12]
-        tablero.addCasilla(new CasillaPuente("Puente 12", "https://i.ibb.co/QNCNpvZ/casilla-puente.jpg"));
-        //...[13]
-        tablero.addCasilla(new Casilla("banco", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[5]));
-        //Oca[14]
-        tablero.addCasilla(new CasillaOca("Oca 14", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[15-17]
-        tablero.addCasilla(new Casilla("jardín", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[6]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("jamón", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[7]));
-        //Oca[18]
-        tablero.addCasilla(new CasillaOca("Oca 18", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //Posada/hotel[19]
-        tablero.addCasilla(new CasillaPenalizacion("La posada", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[19], 2));
-        //...[20-22]
-        tablero.addCasilla(new Casilla("fútbol", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[8]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("paraguas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[9]));
-        //Oca[23]
-        tablero.addCasilla(new CasillaOca("Oca 23", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[24-26]
-        tablero.addCasilla(new Casilla("fruta", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[10]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("sombrero", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[11]));
-        //Oca[27]
-        tablero.addCasilla(new CasillaOca("Oca 27", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[28-30]
-        tablero.addCasilla(new Casilla("chocolate", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[12]));
-        tablero.addCasilla(new Casilla("paella", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[13]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //Pozo[31]
-        tablero.addCasilla(new CasillaPenalizacion("El pozo", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[20], 2));
-        //Oca[32]
-        tablero.addCasilla(new CasillaOca("Oca 32", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[33-35]
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("Granada", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[14]));
-        tablero.addCasilla(new Casilla("perro", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[15]));
-        //Oca[36]
-        tablero.addCasilla(new CasillaOca("Oca 36", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[37-40]
-        tablero.addCasilla(new Casilla("canicas", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[16]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("rayuela", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[17]));
-        tablero.addCasilla(new Casilla("biblioteca", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[18]));
-        //Oca[41]
-        tablero.addCasilla(new CasillaOca("Oca 41", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //Laberinto[42]
-        tablero.addCasilla(new CasillaPenalizacion("El laberinto", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[21], 3));
-        //...[43-44]
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("tarta", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[22]));
-        //Oca[45]
-        tablero.addCasilla(new CasillaOca("Oca 45", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[46-49]
-        tablero.addCasilla(new Casilla("calcetín", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[23]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("reloj", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[26]));
-        tablero.addCasilla(new Casilla("payaso", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[24]));
-        //Oca[50]
-        tablero.addCasilla(new CasillaOca("Oca 50", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[51]
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //Cárcel[52]
-        tablero.addCasilla(new CasillaPenalizacion("La cárcel", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[25], 3));
-        //...[53]
-        tablero.addCasilla(new Casilla("cámara", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[27]));
-        //Oca[54]
-        tablero.addCasilla(new CasillaOca("Oca 54", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[55-57]
-        tablero.addCasilla(new Casilla("piscina", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[28]));
-        tablero.addCasilla(new Casilla("árbol de Navidad", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[29]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        //Serpiente[58]
-        tablero.addCasilla(new CasillaPenalizacion("La serpiente", "https://i.ibb.co/PC2K0bL/casilla-pozo.jpg", fc[0], 3));
-        //Oca[59]
-        tablero.addCasilla(new CasillaOca("Oca 59", "https://i.ibb.co/N6ytQXr/casilla-oca.jpg", fc[0]));
-        //...[60-62]
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://i.ibb.co/gd6skr2/casilla-normal.jpg"));
-        tablero.addCasilla(new Casilla("gato", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[31]));
-        tablero.addCasilla(new Casilla("cometa", "https://i.ibb.co/gd6skr2/casilla-normal.jpg", fc[32]));
-        // Meta[63]
-        tablero.addCasilla(new Casilla("META", "https://i.ibb.co/MpFDM44/casilla-meta.jpg"));
+        tablero.addCasilla(new Casilla("trompo", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/1.jpg", fc[2]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/2.jpg"));
+        tablero.addCasilla(new Casilla("dinero", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/3.jpg", fc[1]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/4.jpg"));
+        tablero.addCasilla(new CasillaOca("Oca 5", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/5.jpg", fc[0]));
+        tablero.addCasilla(new CasillaPuente("Puente 6", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/6.jpg"));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/7.jpg"));
+        
+        tablero.addCasilla(new Casilla("lentejas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/8.jpg", fc[3]));
+        tablero.addCasilla(new CasillaOca("Oca 9", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/9.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("queso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/10.jpg", fc[4]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/11.jpg"));
+        tablero.addCasilla(new CasillaPuente("Puente 12", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/12.jpg"));
+        tablero.addCasilla(new Casilla("flor", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/13.jpg", fc[5]));
+        tablero.addCasilla(new CasillaOca("Oca 14", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/14.jpg", fc[0]));
+        
+        tablero.addCasilla(new Casilla("maceta", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/15.jpg", fc[6]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/16.jpg"));
+        tablero.addCasilla(new Casilla("jamón", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/17.jpg", fc[7]));
+        tablero.addCasilla(new CasillaOca("Oca 18", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/18.jpg", fc[0]));
+        tablero.addCasilla(new CasillaPenalizacion("El hotel", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/19.jpg", fc[19], 2));
+        tablero.addCasilla(new Casilla("fútbol", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/20.jpg", fc[8]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/21.jpg"));
+        
+        tablero.addCasilla(new Casilla("paraguas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/22.jpg", fc[9]));
+        tablero.addCasilla(new CasillaOca("Oca 23", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/23.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("fresa", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/24.jpg", fc[10]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/25.jpg"));
+        tablero.addCasilla(new Casilla("sombrero", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/26.jpg", fc[11]));
+        tablero.addCasilla(new CasillaOca("Oca 27", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/27.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("chocolate", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/28.jpg", fc[12]));
+        
+        tablero.addCasilla(new Casilla("paella", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/29.jpg", fc[13]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/30.jpg"));
+        tablero.addCasilla(new CasillaPenalizacion("El pozo", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/31.jpg", fc[20], 2));
+        tablero.addCasilla(new CasillaOca("Oca 32", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/32.jpg", fc[0]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/33.jpg"));
+        tablero.addCasilla(new Casilla("Alhambra", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/34.jpg", fc[14]));
+        tablero.addCasilla(new Casilla("perro", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/35.jpg", fc[15]));
+        
+        tablero.addCasilla(new CasillaOca("Oca 36", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/36.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("canicas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/37.jpg", fc[16]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/38.jpg"));
+        tablero.addCasilla(new Casilla("rayuela", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/39.jpg", fc[17]));
+        tablero.addCasilla(new Casilla("biblioteca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/40.jpg", fc[18]));
+        tablero.addCasilla(new CasillaOca("Oca 41", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/41.jpg", fc[0]));
+        tablero.addCasilla(new CasillaPenalizacion("El laberinto", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/42.jpg", fc[21], 3));
+        
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/43.jpg"));
+        tablero.addCasilla(new Casilla("tarta", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/44.jpg", fc[22]));
+        tablero.addCasilla(new CasillaOca("Oca 45", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/45.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("calcetín", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/46.jpg", fc[23]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/47.jpg"));
+        tablero.addCasilla(new Casilla("reloj", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/48.jpg", fc[26]));
+        tablero.addCasilla(new Casilla("payaso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/49.jpg", fc[24]));
+        
+        tablero.addCasilla(new CasillaOca("Oca 50", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/50.jpg", fc[0]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/51.jpg"));
+        tablero.addCasilla(new CasillaPenalizacion("La cárcel", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/52.jpg", fc[25], 3));
+        tablero.addCasilla(new Casilla("cámara", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/53.jpg", fc[27]));
+        tablero.addCasilla(new CasillaOca("Oca 54", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/54.jpg", fc[0]));
+        tablero.addCasilla(new Casilla("aceite", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/55.jpg", fc[28]));
+        tablero.addCasilla(new Casilla("árbol Navidad", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/56.jpg", fc[29]));
+        
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/57.jpg"));
+        tablero.addCasilla(new Casilla("limón", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/58.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("Oca 59", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/59.jpg", fc[0]));
+        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/60.jpg"));
+        tablero.addCasilla(new Casilla("gato", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/61.jpg", fc[31]));
+        tablero.addCasilla(new Casilla("cometa", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/62.jpg", fc[32]));
+        tablero.addCasilla(new Casilla("META", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/63.jpg"));
         
         return tablero;
     }
