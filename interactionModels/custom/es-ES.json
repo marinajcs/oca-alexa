@@ -226,6 +226,12 @@
           ],
           "name": "preguntasCasillaIntent",
           "samples": [
+            "la {respuestaCasilla}",
+            "el {respuestaCasilla}",
+            "la de la {respuestaCasilla}",
+            "la del {respuestaCasilla}",
+            "en la de la {respuestaCasilla}",
+            "en la del {respuestaCasilla}",
             "no me acuerdo",
             "no me acuerdo de la casilla",
             "en {respuestaCasilla}",
@@ -383,19 +389,267 @@
           "values": [
             {
               "name": {
-                "synonyms": [
-                  "la del tesoro",
-                  "el tesoro"
-                ],
-                "value": "tesoro"
+                "value": "cometa"
+              }
+            },
+            {
+              "name": {
+                "value": "gato"
               }
             },
             {
               "name": {
                 "synonyms": [
-                  "la del trompo",
-                  "el trompo"
+                  "árbol navidad",
+                  "árbol de navidad",
+                  "árbol de Navidad"
                 ],
+                "value": "árbol Navidad"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "aceite de oliva"
+                ],
+                "value": "aceite"
+              }
+            },
+            {
+              "name": {
+                "value": "limón"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cámara de fotos"
+                ],
+                "value": "cámara"
+              }
+            },
+            {
+              "name": {
+                "value": "cárcel"
+              }
+            },
+            {
+              "name": {
+                "value": "payaso"
+              }
+            },
+            {
+              "name": {
+                "value": "reloj"
+              }
+            },
+            {
+              "name": {
+                "value": "calcetín"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tarta de cumpleaños",
+                  "tarta de cumple"
+                ],
+                "value": "tarta"
+              }
+            },
+            {
+              "name": {
+                "value": "laberinto"
+              }
+            },
+            {
+              "name": {
+                "value": "biblioteca"
+              }
+            },
+            {
+              "name": {
+                "value": "rayuela"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "las canicas"
+                ],
+                "value": "canicas"
+              }
+            },
+            {
+              "name": {
+                "value": "perro"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ciudad de granada",
+                  "ciudad de Granada",
+                  "granada"
+                ],
+                "value": "Granada"
+              }
+            },
+            {
+              "name": {
+                "value": "fútbol"
+              }
+            },
+            {
+              "name": {
+                "value": "hotel"
+              }
+            },
+            {
+              "name": {
+                "value": "pozo"
+              }
+            },
+            {
+              "name": {
+                "value": "paella"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "minijuego de recuerda la fecha",
+                  "minijuego de recuerda la fecha actual",
+                  "minijuego recuerda la fecha actual",
+                  "minijuego de recordar la fecha actual",
+                  "minijuego de recordar la fecha"
+                ],
+                "value": "minijuego recuerda la fecha"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "minijuego de recordar la última casilla",
+                  "minijuego recuerda la última casilla",
+                  "minijuego última casilla",
+                  "minijuego de la última casilla",
+                  "minijuego de recordar la casilla",
+                  "minijuego de recuerda la casilla"
+                ],
+                "value": "minijuego recuerda la casilla"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "minijuego de averiguar la cifra",
+                  "minijuego adivinar las cifras",
+                  "minijuego de adivinar las cifras",
+                  "minijuego de adivina las cifras",
+                  "minijuego de cifras",
+                  "minijuego de la cifra",
+                  "minijuego de las cifras",
+                  "minijuego de adivina la cifra",
+                  "minijuego averigua la cifra"
+                ],
+                "value": "minijuego adivina la cifra"
+              }
+            },
+            {
+              "name": {
+                "value": "chocolate"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "las fresas",
+                  "fresas"
+                ],
+                "value": "fresa"
+              }
+            },
+            {
+              "name": {
+                "value": "paraguas"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "los sombreros",
+                  "sombreros"
+                ],
+                "value": "sombrero"
+              }
+            },
+            {
+              "name": {
+                "value": "jamón"
+              }
+            },
+            {
+              "name": {
+                "value": "maceta"
+              }
+            },
+            {
+              "name": {
+                "value": "flor"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "minijuego de compañeros",
+                  "minijuego compañeros",
+                  "minijuego de conoce a tus compañeros"
+                ],
+                "value": "minijuego conoce a tus compañeros"
+              }
+            },
+            {
+              "name": {
+                "value": "queso"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "las lentejas"
+                ],
+                "value": "lentejas"
+              }
+            },
+            {
+              "name": {
+                "value": "puente"
+              }
+            },
+            {
+              "name": {
+                "value": "oca"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "minijuego de verdadero o falso"
+                ],
+                "value": "minijuego verdadero o falso"
+              }
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bolsa de dinero"
+                ],
+                "value": "dinero"
+              }
+            },
+            {
+              "name": {
                 "value": "trompo"
               }
             }

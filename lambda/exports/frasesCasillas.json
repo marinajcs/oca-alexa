@@ -14,17 +14,17 @@
     ]
   },
   {
-    "id": "tesoro",
+    "id": "dinero",
     "num": 1,
     "jugador": [
-        "Vaya, ¡estás de enhorabuena! Todas estas riquezas son tuyas ahora.",
-        "¡Menuda suerte! ¿Qué harás con tanto oro?",
-        "La fortuna te sonríe, disfruta de las riquezas del baúl del tesoro."
+        "Vaya, ¡estás de enhorabuena! Todo este dinero es tuyo ahora.",
+        "¡Menuda suerte! ¿Qué harás con tanto dinero?",
+        "La fortuna te sonríe, disfruta de esta bolsa cargada de dinero."
     ],
     "equipo": [
-        "Vaya, ¡estáis de enhorabuena! Todas estas riquezas son vuestras ahora.",
-        "¡Menuda suerte! ¿Qué haréis con tanto oro?",
-        "La fortuna os sonríe, disfrutad de las riquezas del baúl del tesoro."
+        "Vaya, ¡estáis de enhorabuena! Todas este dinero es vuestro ahora.",
+        "¡Menuda suerte! ¿Qué haréis con tanto dinero?",
+        "La fortuna os sonríe, disfrutad de esta bolsa cargada de dinero."
     ]
   },
   {
@@ -46,12 +46,12 @@
     "num": 3,
     "jugador": [
         "Te has encontrado con un saco de lentejas, ¡a cocinar!",
-        "Un plato de lentejas, quien quiera las come y quien no las deja",
+        "Un plato de lentejas, quien quiera las come y quien no las deja.",
         "Un montón de lentejas para ti, ¡saludable y delicioso!"
     ],
     "equipo": [
         "Os habéis encontrado con un saco de lentejas, ¡a cocinar!",
-        "Un plato de lentejas, quien quiera las come y quien no las deja",
+        "Un plato de lentejas, quien quiera las come y quien no las deja.",
         "Un montón de lentejas para vosotros, ¡saludable y delicioso!"
     ]
   },
@@ -70,17 +70,17 @@
     ]
   },
   {
-    "id": "banco de dinero",
+    "id": "flor",
     "num": 5,
     "jugador": [
-        "Has llegado al banco, ¡es hora de contar tus ahorros!",
-        "El banco te recibe, ¿harás una inversión?",
-        "Dinero seguro en el banco, ¡buen trabajo!"
+        "Has encontrado una bonita flor con pétalos rosados en el camino.",
+        "No hay sorpresas aquí, solo un suave aroma a victoria en el aire.",
+        "Disfruta de un respiro floral mientras planeas tu próxima gran jugada."
     ],
     "equipo": [
-        "Habéis llegado al banco, ¡es hora de contar vuestros ahorros!",
-        "El banco os recibe, ¿haréis una inversión?",
-        "Dinero seguro en el banco, ¡buen trabajo!"
+        "Habéis encontrado una bonita flor con pétalos rosados en el camino.",
+        "No hay sorpresas aquí, solo un suave aroma a victoria en el aire.",
+        "Disfrutad de un respiro floral mientras planeáis vuestra próxima gran jugada."
     ]
   },
   {
@@ -101,13 +101,13 @@
     "id": "jamon",
     "num": 7,
     "jugador": [
-        "¡Qué delicia! Has encontrado un jamón.",
-        "El jamón es tuyo, ¡a disfrutarlo!",
+        "¡Qué delicia gastronómica! Has encontrado un jamón.",
+        "El jamón es tuyo, ¡a disfrutarlo con tus compañeros!",
         "Un sabroso jamón para ti, ¡buen provecho!"
     ],
     "equipo": [
-        "¡Qué delicia! Habéis encontrado un jamón.",
-        "El jamón es vuestro, ¡a disfrutarlo!",
+        "¡Qué delicia gastronómica! Habéis encontrado un jamón.",
+        "El jamón es vuestro, ¡a disfrutarlo con vuestros compañeros!",
         "Un sabroso jamón para vosotros, ¡buen provecho!"
     ]
   },
@@ -140,17 +140,17 @@
     ]
   },
   {
-    "id": "fruta",
+    "id": "fresa",
     "num": 10,
     "jugador": [
-        "Has encontrado fruta fresca, ¡a disfrutar!",
-        "Un montón de fruta para ti, ¡qué delicia!",
-        "Fruta saludable en tu camino, ¡aprovéchala!"
+        "Has encontrado una fresa recién cogida, ¡a disfrutar!",
+        "Encuentras una fresa en tu camino, ¡qué rica estaría con chocolate!",
+        "Las fresas están llenas de vitaminas, ¡aprovéchala!"
     ],
     "equipo": [
-        "Habéis encontrado fruta fresca, ¡a disfrutar!",
-        "Un montón de fruta para vosotros, ¡qué delicia!",
-        "Fruta saludable en vuestro camino, ¡aprovechadla!"
+        "Habéis encontrado fresa recién cogida, ¡a disfrutar!",
+        "Encontráis una fresa en vuestro camino, ¡qué rica estaría con chocolate!",
+        "Las fresas están llenas de vitaminas, ¡aprovechadla!"
     ]
   },
   {
@@ -158,13 +158,13 @@
     "num": 11,
     "jugador": [
         "Un elegante sombrero para ti, ¡póntelo!",
-        "Has encontrado un sombrero, ¡qué estilo!",
+        "Has encontrado un sombrero, ¡menudo estilo!",
         "Un sombrero aparece, ¡te queda perfecto!"
     ],
     "equipo": [
-        "Un elegante sombrero para vosotros, ¡póntelo!",
-        "Habéis encontrado un sombrero, ¡qué estilo!",
-        "Un sombrero aparece, ¡os queda perfecto!"
+        "Un elegante sombrero para cada uno, ¡ponéroslo!",
+        "Habéis encontrado unos sombreros, ¡menudo estilo!",
+        "Unos sombreros aparecen, ¡os quedan perfectos!"
     ]
   },
   {
@@ -196,17 +196,17 @@
     ]
   },
   {
-    "id": "granada",
+    "id": "Granada",
     "num": 14,
     "jugador": [
-        "Bienvenido a Granada, ¡explora sus maravillas!",
+        "Homenaje a la ciudad de Granada, ¡explora sus maravillas!",
         "Has llegado a Granada, ¡qué hermosa ciudad!",
-        "Granada te recibe, ¡disfruta del paisaje!"
+        "Granada te recibe con los brazos abiertos, ¡disfruta del paisaje de la Alhambra!"
     ],
     "equipo": [
-        "Bienvenidos a Granada, ¡explorad sus maravillas!",
+        "Homenaje a la ciudad de Granada, ¡explorad sus maravillas!",
         "Habéis llegado a Granada, ¡qué hermosa ciudad!",
-        "Granada os recibe, ¡disfrutad del paisaje!"
+        "Granada os recibe con los brazos abiertos, ¡disfrutad del paisaje de la Alhambra!"
     ]
   },
   {
@@ -214,27 +214,27 @@
     "num": 15,
     "jugador": [
         "Un perro amistoso aparece, ¡juega con él!",
-        "Has encontrado un perro, ¡qué compañía!",
-        "Un perro te acompaña, ¡diviértete!"
+        "Has encontrado un perro, ¡la mejor compañía del hombre!",
+        "Un perro se acerca a ti y ladra contento."
     ],
     "equipo": [
         "Un perro amistoso aparece, ¡jugad con él!",
-        "Habéis encontrado un perro, ¡qué compañía!",
-        "Un perro os acompaña, ¡divertíos!"
+        "Habéis encontrado un perro, ¡la mejor compañía del hombre!",
+        "Un perro se acerca a vosotros y ladra contento."
     ]
   },
   {
     "id": "canicas",
     "num": 16,
     "jugador": [
-        "Has encontrado un juego de canicas, ¡a jugar!",
-        "Las canicas son tuyas, ¡diviértete!",
-        "Unas canicas aparecen, ¡qué entretenimiento!"
+        "Has encontrado un nostálgico juego de canicas, ¡a jugar!",
+        "Las canicas son tuyas, ¡diviértete como en tu infancia!",
+        "Unas canicas aparecen, ¡qué entretenimiento más bueno!"
     ],
     "equipo": [
-        "Habéis encontrado un juego de canicas, ¡a jugar!",
-        "Las canicas son vuestras, ¡divertíos!",
-        "Unas canicas aparecen, ¡qué entretenimiento!"
+        "Habéis encontrado un nostálgico juego de canicas, ¡a jugar!",
+        "Las canicas son vuestras, ¡divertíos como en la infancia!",
+        "Unas canicas aparecen, ¡qué entretenimiento más bueno!"
     ]
   },
   {
@@ -255,28 +255,28 @@
     "id": "biblioteca",
     "num": 18,
     "jugador": [
-        "Has llegado a la biblioteca, ¡es hora de leer!",
-        "Un libro te espera en la biblioteca, ¡disfrútalo!",
+        "Maravilloso, el lugar donde puedes leer cualquier tipo de libro.",
+        "Docenas de géneros de novela te esperan en la biblioteca, ¡disfruta!",
         "La biblioteca está abierta, ¡a explorar sus libros!"
     ],
     "equipo": [
-        "Habéis llegado a la biblioteca, ¡es hora de leer!",
-        "Un libro os espera en la biblioteca, ¡disfrutadlo!",
+        "Maravilloso, el lugar donde podéis leer cualquier tipo de libro.",
+        "Docenas de géneros de novela os esperan en la biblioteca, ¡disfrutad!",
         "La biblioteca está abierta, ¡a explorar sus libros!"
     ]
   },
   {
-    "id": "la posada",
+    "id": "el hotel",
     "num": 19,
     "jugador": [
-        "Mala suerte, has caído en la posada.",
-        "Lástima, no vas a poder salir de la posada en un rato.",
-        "Vaya... Has caído en la posada."
+        "Mala suerte, has caído en el hotel.",
+        "Lástima, no vas a poder salir del hotel en un rato.",
+        "Vaya... Has caído en el hotel."
     ],
     "equipo": [
-        "Mala suerte, habéis caído en la posada.",
-        "Lástima, no vais a poder salir de la posada en un rato.",
-        "Vaya... Habéis caído en la posada."
+        "Mala suerte, habéis caído en el hotel.",
+        "Lástima, no vais a poder salir del hotelen un rato.",
+        "Vaya... Habéis caído en el hotel."
     ]
   },
   {
@@ -311,13 +311,13 @@
     "id": "tarta",
     "num": 22,
     "jugador": [
-        "¡Feliz cumpleaños! Una tarta para ti.",
-        "Has encontrado una tarta de cumpleaños, ¡a celebrarlo!",
+        "¡Feliz cumpleaños por adelantado! Una tarta para ti.",
+        "Has encontrado una tarta de cumpleaños, ¡hay que celebrar cada día!",
         "Una tarta deliciosa para ti, ¡felicidades!"
     ],
     "equipo": [
-        "¡Feliz cumpleaños! Una tarta para vosotros.",
-        "Habéis encontrado una tarta de cumpleaños, ¡a celebrarlo!",
+        "¡Feliz cumpleaños por adelantado! Una tarta para vosotros.",
+        "Habéis encontrado una tarta de cumpleaños, ¡hay que celebrar cada día!",
         "Una tarta deliciosa para vosotros, ¡felicidades!"
     ]
   },
@@ -350,7 +350,7 @@
     ]
   },
   {
-    "id": "carcel",
+    "id": "la carcel",
     "num": 25,
     "jugador": [
         "Oh no, ¡has caído en la cárcel!",
@@ -378,31 +378,31 @@
     ]
   },
   {
-    "id": "camara de fotos",
+    "id": "camara",
     "num": 27,
     "jugador": [
         "Una cámara de fotos para ti, ¡captura el momento!",
         "Has encontrado una cámara, ¡a sacar fotos!",
-        "Una cámara aparece, ¡qué recuerdos!"
+        "Una cámara aparece, ¡a inmortalizar recuerdos!"
     ],
     "equipo": [
         "Una cámara de fotos para vosotros, ¡capturad el momento!",
         "Habéis encontrado una cámara, ¡a sacar fotos!",
-        "Una cámara aparece, ¡qué recuerdos!"
+        "Una cámara aparece, ¡a inmortalizar recuerdos!"
     ]
   },
   {
-    "id": "piscina",
+    "id": "aceite",
     "num": 28,
     "jugador": [
-        "Una piscina te espera, ¡a nadar!",
-        "Has encontrado una piscina, ¡refrescate!",
-        "Una piscina aparece, ¡a disfrutar!"
+        "Menuda suerte, aceite de oliva virgen extra para aliñar tus comidas.",
+        "¡Bien! Encuentras una botella de aceite de oliva, producto de calidad.",
+        "Aceite de oliva de alta calidad para ti."
     ],
     "equipo": [
-        "Una piscina os espera, ¡a nadar!",
-        "Habéis encontrado una piscina, ¡refrescaos!",
-        "Una piscina aparece, ¡a disfrutar!"
+        "Menuda suerte, aceite de oliva virgen extra para aliñar vuestras comidas.",
+        "¡Bien! Encontráis una botella de aceite de oliva, producto de calidad.",
+        "Aceite de oliva de alta calidad para vosotros."
     ]
   },
   {
@@ -420,17 +420,17 @@
     ]
   },
   {
-    "id": "serpiente",
+    "id": "limón",
     "num": 30,
     "jugador": [
-        "¡Cuidado! Una serpiente aparece.",
-        "Una serpiente en tu camino, ¡mantén la calma!",
-        "Has encontrado una serpiente, ¡cuidado!"
+        "Encuentras un limón recién cogido del árbol, ¡su acidez es muy refrescante!",
+        "Ya sabes, si la vida te da limones, haz limonada.",
+        "¡Una dosis de vitamina C nunca viene mal!"
     ],
     "equipo": [
-        "¡Cuidado! Una serpiente aparece.",
-        "Una serpiente en vuestro camino, ¡mantened la calma!",
-        "Habéis encontrado una serpiente, ¡cuidado!"
+        "Encontráis un limón recién cogido del árbol, ¡su acidez es muy refrescante!",
+        "Ya sabéis, si la vida os da limones, haced limonada.",
+        "¡Una dosis de vitamina C nunca viene mal!"
     ]
   },
   {
@@ -439,24 +439,24 @@
     "jugador": [
         "Un gato amistoso aparece, ¡qué tierno!",
         "Has encontrado un gato, ¡a acariciarlo!",
-        "Un gato para ti, ¡qué adorable!"
+        "Un gato se acerca a ti, ¡qué adorable!"
     ],
     "equipo": [
         "Un gato amistoso aparece, ¡qué tierno!",
         "Habéis encontrado un gato, ¡a acariciarlo!",
-        "Un gato para vosotros, ¡qué adorable!"
+        "Un gato se acerca a vosotros, ¡qué adorable!"
     ]
   },
   {
     "id": "cometa",
     "num": 32,
     "jugador": [
-        "Una cometa aparece, ¡a volarlo!",
+        "Una cometa aparece, ¡a volarla por todo lo alto!",
         "Has encontrado una cometa, ¡qué divertido!",
         "Una cometa para ti, ¡a disfrutar del viento!"
     ],
     "equipo": [
-        "Una cometa aparece, ¡a volarlo!",
+        "Una cometa aparece, ¡a volarla por todo lo alto!",
         "Habéis encontrado una cometa, ¡qué divertido!",
         "Una cometa para vosotros, ¡a disfrutar del viento!"
     ]

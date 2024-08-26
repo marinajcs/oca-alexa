@@ -4,7 +4,7 @@
  */
 class Jugador {
     /**
-     * Crea una instancia de Jugador.
+     * Crea una instancia de Jugador (participante que puede ser un equipo o individuo)
      * @param {number} id - Identificador único del participante.
      * @param {string} color - Nombre del color asignado al participante.
      * @param {string} codigo - Código hexadecimal del color asociado al participante.
@@ -24,7 +24,7 @@ class Jugador {
     }
     
     /**
-     * Obtiene la posición actual del participante en el tablero.
+     * Devuelve la posición actual del participante en el tablero.
      * @returns {number} La posición actual del participante.
      */
     getPosActual() {
@@ -36,7 +36,7 @@ class Jugador {
      * @param {number} npos - La nueva posición del participante.
      */
     setPosActual(npos) {
-        this.posicion = npos;
+        this._posicion = npos;
     }
     
     /**
@@ -48,7 +48,7 @@ class Jugador {
     }
     
     /**
-     * Obtiene el nombre del participante.
+     * Devuelve el nombre del participante.
      * @returns {string} El nombre del participante.
      */
     getNombre() {
@@ -56,7 +56,7 @@ class Jugador {
     }
     
     /**
-     * Establece el color del participante.
+     * Establece el nombre del color del participante.
      * @param {string} color - El nuevo color del participante.
      */
     setColor(color) {
@@ -72,7 +72,7 @@ class Jugador {
     }
     
     /**
-     * Obtiene el nombre del color asociado al participante.
+     * Devuelve el nombre del color asociado al participante.
      * @returns {string} El nombre del color del participante.
      */
     getColor() {
@@ -80,7 +80,7 @@ class Jugador {
     }
     
     /**
-     * Obtiene el código hexadecimal del color asociado al participante.
+     * Devuelve el código hexadecimal del color asociado al participante.
      * @returns {string} El código hexadecimal del color del participante.
      */
     getCodigo() {
@@ -95,31 +95,54 @@ class Jugador {
         this.id = id;
     }
     
+    /**
+     * Devuelve el identificador del participante.
+     * @returns {number} El identificador del participante.
+     */
     getId() {
         return this.id;
     }
     
+    /**
+     * Establece los puntos del participante.
+     * @param {number} pts - Los nuevos puntos del participante.
+     */
     setPuntos(pts) {
         this.puntos = pts;
     }
     
+    /**
+     * Añade puntos a los puntos actuales del participante.
+     * @param {number} valor - Los puntos a añadir.
+     */
     addPuntos(valor) {
-        this.puntos += valor;
+        this._puntos += valor;
     }
     
+    /**
+     * Obtiene los puntos del participante.
+     * @returns {number} Los puntos actuales del participante.
+     */
     getPuntos() {
         return this.puntos;
     }
     
+    /**
+     * Establece la última casilla en la que estuvo el participante.
+     * @param {number} ultimaCasilla - La última casilla en la que cayó el participante.
+     */
     setUltimaCasilla(ultimaCasilla) {
         this.ultimaCasilla = ultimaCasilla;
     }
     
+    /**
+     * Devuelve la última casilla en la que estuvo el participante.
+     * @returns {number} La última casilla en la que cayó el participante.
+     */
     getUltimaCasilla() {
         return this.ultimaCasilla;
     }
 }
-
 
 module.exports = {
     Jugador

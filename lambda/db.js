@@ -3,6 +3,11 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const {Jugador} = require('./Jugador.js');
 const {JuegoOca} = require('./JuegoOca.js');
 
+/**
+ * Asume un rol IAM en AWS para obtener credenciales temporales.
+ * @returns {AWS.DynamoDB.DocumentClient} Un cliente de DynamoDB configurado con credenciales temporales.
+ * @throws {Error} Lanza un error si no puede asumir el rol correctamente.
+ */
 async function asumirRol() {
     const arnRol = 'arn:aws:iam::533267233233:role/rol-dynamo';
 
@@ -29,6 +34,12 @@ async function asumirRol() {
     return db;
 }
 
+/**
+ * Guarda los datos de una partida en DynamoDB, incluyendo la información de los participantes.
+ * @param {AWS.DynamoDB.DocumentClient} db - El cliente de DynamoDB.
+ * @param {Object} juegoOca - Objeto que contiene los datos del juego.
+ * @returns {string} Mensaje de resultado de la operación.
+ */
 async function guardarPartida(db, juegoOca) {
     let txt = '';
     const params = {
@@ -55,6 +66,12 @@ async function guardarPartida(db, juegoOca) {
     return txt;
 }
 
+/**
+ * Guarda los datos de los jugadores en DynamoDB.
+ * @param {AWS.DynamoDB.DocumentClient} db - El cliente de DynamoDB.
+ * @param {Object} juegoOca - Objeto que contiene los datos de la partida, incluyendo participantes.
+ * @returns {string} Mensaje de resultado de la operación.
+ */
 async function guardarJugadores(db, juegoOca) {
     const njugadores = juegoOca.getNumJugadores();
     let txt = '';
@@ -78,15 +95,21 @@ async function guardarJugadores(db, juegoOca) {
     
         try {
             await db.put(params).promise();
-            txt += 'Participante ' + i + ' guardado con éxito. ';
+            txt += 'Participante ' + jugador.color + ' guardado con éxito. ';
         } catch (error) {
-            console.error('Error al guardar participante ' + i + ' en DynamoDB:', error);
+            console.error('Error al guardar participante ' + jugador.color + ' en DynamoDB:', error);
             txt += `Error al guardar participante ${i}: ${error.message}`;
         }
     }
     return txt;
 }
 
+/**
+ * Carga los datos de una partida desde DynamoDB, incluyendo la información de los participantes.
+ * @param {AWS.DynamoDB.DocumentClient} db - El cliente de DynamoDB.
+ * @param {Object} juegoOca - Objeto que recibe y actualiza los datos de partida, incluyendo participantes.
+ * @returns {string} Mensaje de resultado de la operación.
+ */
 async function cargarPartida(db, juegoOca) {
     let txt = '';
     try {
@@ -121,6 +144,12 @@ async function cargarPartida(db, juegoOca) {
     return txt;
 }
 
+/**
+ * Carga los datos de los participantes desde DynamoDB.
+ * @param {AWS.DynamoDB.DocumentClient} db - El cliente de DynamoDB.
+ * @param {Object} juegoOca - Objeto que recibe y actualiza los datos cargados de los participantes.
+ * @returns {string} Mensaje de resultado de la operación.
+ */
 async function cargarJugadores(db, juegoOca) {
     const njugadores = juegoOca.getNumJugadores();
     let txt = '';
@@ -146,7 +175,7 @@ async function cargarJugadores(db, juegoOca) {
                 juegoOca.getJugador(i).setPuntos(datos.puntos);
                 juegoOca.getJugador(i).setUltimaCasilla(datos.ultimaCasilla);
                 
-                txt += `Datos de participante ${i} cargados con éxito. `;
+                txt += `Datos de participante ${datos.nombreColor} cargados con éxito. `;
             } else {
                 txt += 'Conexión exitosa, pero no hay ítem.';
             }

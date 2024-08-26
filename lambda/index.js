@@ -1,3 +1,10 @@
+/**
+ * Este módulo actúa como el entry point de la skill de Alexa. 
+ * Configura los manejadores (handlers) para los distintos intents y eventos de la skill.
+ *
+ * @module index
+ */
+
 const Alexa = require('ask-sdk-core');
 const {
     LaunchRequestHandler,

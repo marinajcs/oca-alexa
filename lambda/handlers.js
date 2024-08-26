@@ -12,13 +12,18 @@ const {asumirRol, guardarPartida, cargarPartida} = require('./db.js');
 
 let oca = new JuegoOca();
 
+/**
+ * Manejador para el lanzamiento de la skill. Se activa cada vez que se abre la skill.
+ */
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        let speakOutput = 'Bienvenidos y bienvenidas al juego de la oca. Si tiene dudas acerca del juego, pídame ayuda.\
-                           Para empezar una partida, di "Nueva partida"';
+        let speakOutput = 'Bienvenidos y bienvenidas al juego de la oca. Si tiene dudas acerca del juego, pídame ayuda. \
+                           Si quiere retomar la última partida, guardada en sesiones anteriores, diga: "Continuar partida". \
+                           Si por el contrario, quiere crear una nueva partida desde cero, diga: "Nueva partida". Ten en \
+                           cuenta que una vez empezada la nueva partida, se sobreescribirá la que fue guardada anteriormente.';
                            
         let responseBuilder = handlerInput.responseBuilder;
 
@@ -38,6 +43,10 @@ const LaunchRequestHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de configuración de prueba. 
+ * Establece unos datos de partida de prueba, omitiendo el proceso de configuración para agilizar los tests.
+ */
 const configuracion1Handler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -89,6 +98,10 @@ const configuracion1Handler = {
     }
 }
 
+/**
+ * Manejador para el intent de guardar partida. 
+ * Asume un rol temporal en AWS para poder conectar con DynamoDB y enviarle los datos de la partida.
+ */
 const guardarPartidaHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -113,6 +126,11 @@ const guardarPartidaHandler = {
     }
 }
 
+/**
+ * Manejador para el intent de cargar partida. 
+ * Asume un rol temporal en AWS para poder conectar con DynamoDB y cargar los datos de la partida,
+ * pudiendo retomarla desde el último turno guardado.
+ */
 const cargarPartidaHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -140,6 +158,10 @@ const cargarPartidaHandler = {
     }
 }
 
+/**
+ * Manejador para el intent de ayuda para las reglas del juego. 
+ * Permite a Alexa explicar las reglas del juego si el usuario tiene dudas acerca de un tema concreto.
+ */
 const ayudaReglasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -176,6 +198,10 @@ const ayudaReglasHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de nueva partida. 
+ * Inicia la configuración de una nueva partida, solicitando el número de participantes y modo de juego (por equipos o no).
+ */
 const nuevaPartidaHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -222,6 +248,10 @@ const nuevaPartidaHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de añadir jugador. 
+ * Procesa el registro de nombre de los participantes (equipos o jugadores individuales).
+ */
 const addJugadorHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -232,63 +262,73 @@ const addJugadorHandler = {
         let responseBuilder = handlerInput.responseBuilder;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         let speakOutput, repromptAudio, registroActual;
-        let nombreJugador = Alexa.getSlotValue(requestEnvelope, 'nombreJugador');
-        let nJugadoresSet = sessionAttributes.numJugadoresSet;
         const njugadores = oca.getNumJugadores();
         const hayEquipos = oca.getEquipos();
-
-        oca.getJugador(nJugadoresSet).setNombre(nombreJugador);
-        nJugadoresSet++;
-        sessionAttributes.numJugadoresSet = nJugadoresSet;
-        handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-
-        if (nJugadoresSet < njugadores) {
-            registroActual = `<break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()}. `
-            speakOutput = `Se ha registrado el nombre ${nombreJugador}. ` + registroActual;
-            repromptAudio = informeEstado(oca.getEstado(), hayEquipos) + registroActual;
-        } else {
-            speakOutput = `Se ha registrado el nombre ${nombreJugador}. Todos los participantes han sido añadidos. <break time="2s"/>`;
+        
+        if (oca.getEstado() === EstadoJuego.REGISTRO_NOMBRES) {
+            let nombreJugador = Alexa.getSlotValue(requestEnvelope, 'nombreJugador');
+            let nJugadoresSet = sessionAttributes.numJugadoresSet;
+            
+            oca.getJugador(nJugadoresSet).setNombre(nombreJugador);
+            nJugadoresSet++;
+            sessionAttributes.numJugadoresSet = nJugadoresSet;
+            handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+    
+            if (nJugadoresSet < njugadores) {
+                registroActual = `<break time="2s"/> Ahora, dime el nombre del ${hayEquipos ? 'equipo' : 'participante con color'} ${oca.getJugador(nJugadoresSet).getColor()}. `
+                speakOutput = `Se ha registrado el nombre ${nombreJugador}. ` + registroActual;
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos) + registroActual;
+            } else {
+                speakOutput = `Se ha registrado el nombre ${nombreJugador}. Todos los participantes han sido añadidos. <break time="2s"/>`;
+                    
+                speakOutput += `${njugadores === 1 ? `Este es el ${hayEquipos ? 'equipo' : 'jugador'} que va a participar` : `Estos son los ${hayEquipos ? 'equipos' : 'jugadores'} que van a participar <break time="2s"/>`}. `;
+                oca.getJugadores().forEach(jugador => {
+                    speakOutput += (`<break time="1s"/> ${hayEquipos ? 'Equipo' : 'Participante'} ${jugador.getNombre()}, cuyo color asignado es el ${jugador.getColor()}. `);
+                });
+                oca.setEstado(EstadoJuego.TIRAR_DADO);
                 
-            speakOutput += `${njugadores === 1 ? `Este es el ${hayEquipos ? 'equipo' : 'jugador'} que va a participar` : `Estos son los ${hayEquipos ? 'equipos' : 'jugadores'} que van a participar <break time="2s"/>`}. `;
-            oca.getJugadores().forEach(jugador => {
-                speakOutput += (`<break time="1s"/> ${hayEquipos ? 'Equipo' : 'Participante'} ${jugador.getNombre()}, cuyo color asignado es el ${jugador.getColor()}. `);
-            });
-            oca.setEstado(EstadoJuego.TIRAR_DADO);
-            
-            const db = await asumirRol();
-            await guardarPartida(db, oca);
-            
-            speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno: primero, se dice 'tirar dado' y después, \
-                            'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
-            
-            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
-            
-            responseBuilder.addDirective({
-                type: 'Alexa.Presentation.APL.RenderDocument',
-                token: 'jugadoresToken',
-                document: fichas,
-                datasources: {
-                    datosFichas: {
-                        type: 'object',
-                        properties: {
-                            jugadores: oca.getJugadores().map(jugador => ({
-                                nombre: jugador.nombre,
-                                codigo: jugador.codigo
-                            }))
+                const db = await asumirRol();
+                await guardarPartida(db, oca);
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual())
+                
+                speakOutput += `<break time="3s"/> Bien, sin más dilación, que comience la partida. Recuerden que en cada turno: primero, se dice 'tirar dado' y después, \
+                                'mover ficha' para poder realizar dichas acciones. ${hayEquipos ? 'Equipo' : ''} ${oca.getNombreJActual()}, proceda a tirar el dado`;
+                
+                responseBuilder.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    token: 'jugadoresToken',
+                    document: fichas,
+                    datasources: {
+                        datosFichas: {
+                            type: 'object',
+                            properties: {
+                                jugadores: oca.getJugadores().map(jugador => ({
+                                    nombre: jugador.nombre,
+                                    codigo: jugador.codigo
+                                }))
+                            }
                         }
                     }
-                }
-            })
+                })
+            }
+        } else {
+            const error = new Error('No se pueden registrar jugadores en este momento');
+            return ErrorHandler.handle(handlerInput, error);
         }
-
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt(repromptAudio)
             .withShouldEndSession(false)
             .getResponse();
     }
 };
 
+/**
+ * Manejador para el intent de jugar turno. 
+ * Procesa el lanzamiento de dado y el movimiento en el tablero del participante actual. Gestiona los estados
+ * de juego en función del tipo de casilla en el que se cae.
+ */
 const jugarTurnoHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -436,33 +476,40 @@ const jugarTurnoHandler = {
     }
 };
 
+/**
+ * Manejador para el intent del minijuego de verdadero o falso. 
+ * Procesa las respuestas de tipo verdadero o falso, sumando puntos en caso de acierto.
+ */
 const preguntasVyFHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasVyFIntent';
     },
     handle(handlerInput) {
-        const {requestEnvelope} = handlerInput;
-        const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaVF');
-        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        const pregunta = sessionAttributes.preguntaActual;
-        const solucion = pregunta.answer;
         let jActual = oca.getJugadorActual();
         const hayEquipos = oca.getEquipos();
         
-        if ((respuesta === 'verdadero' && solucion) || (respuesta === 'falso' && !solucion)) {
-            jActual.addPuntos(10);
-            speakOutput = ` ¡Correcto! ${pregunta.explanation} ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
-                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_VF) {
+            const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaVF');
+            const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+            const pregunta = sessionAttributes.preguntaActual;
+            const solucion = pregunta.answer;
+            
+            if ((respuesta === 'verdadero' && solucion) || (respuesta === 'falso' && !solucion)) {
+                jActual.addPuntos(10);
+                speakOutput = ` ¡Correcto! ${pregunta.explanation} ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+                                ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+            } else {
+                speakOutput = ` Lástima, es incorrecto. ${pregunta.explanation} `;
+            }
+            speakOutput += oca.pasarTurno();
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
         } else {
-            speakOutput = ` Lástima, es incorrecto. ${pregunta.explanation} `;
+            const error = new Error('No se puede jugar a este minijuego en estos momentos');
+            return ErrorHandler.handle(handlerInput, error);
         }
         
-        speakOutput += oca.pasarTurno();
-        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
-
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(repromptAudio)
@@ -471,6 +518,11 @@ const preguntasVyFHandler = {
     }
 };
 
+/**
+ * Manejador para el intent del minijuego de adivina la cifra. 
+ * Procesa las respuestas de tipo cifra o número. En caso de que el participante falle, la pregunta rebota
+ * al siguiente, y así sucesivamente hasta que alguien la acierte o todos la hayan fallado.
+ */
 const preguntasCifrasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -478,36 +530,43 @@ const preguntasCifrasHandler = {
     },
     handle(handlerInput) {
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCifra');
-        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        const pregunta = sessionAttributes.preguntaActual;
         const hayEquipos = oca.getEquipos();
-        let rebote = sessionAttributes.reboteFechas;
-
-        if (respuesta === pregunta.answer) {
-            oca.getJugador(rebote).addPuntos(50);
-            speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 50 puntos. \
-                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${oca.getJugador(rebote).getPuntos()}. `;
+        
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_CIFRAS) {
+            const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCifra');
+            const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+            const pregunta = sessionAttributes.preguntaActual;
             
-            speakOutput += oca.pasarTurno();
-            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
-            
-        } else {
-            speakOutput = ' Lástima, es incorrecto. ';
-            rebote = oca.calcularRebote(rebote);
-            if (rebote !== oca.getTurno()) {
-                speakOutput += `La pregunta rebota a ${oca.getJugador(rebote).getNombre()}: ${pregunta.question} `;
-                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getJugador(rebote).getNombre(), pregunta.question);
-            } else {
-                speakOutput = `Parece que nadie ha acertado la pregunta. La respuesta correcta era: ${pregunta.answer}. `;
-            
+            let rebote = sessionAttributes.reboteFechas;
+    
+            if (respuesta === pregunta.answer) {
+                oca.getJugador(rebote).addPuntos(50);
+                speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 50 puntos. \
+                                ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${oca.getJugador(rebote).getPuntos()}. `;
+                
                 speakOutput += oca.pasarTurno();
                 repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+                
+            } else {
+                speakOutput = ' Lástima, es incorrecto. ';
+                rebote = oca.calcularRebote(rebote);
+                if (rebote !== oca.getTurno()) {
+                    speakOutput += `La pregunta rebota a ${oca.getJugador(rebote).getNombre()}: ${pregunta.question} `;
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getJugador(rebote).getNombre(), pregunta.question);
+                } else {
+                    speakOutput = `Parece que nadie ha acertado la pregunta. La respuesta correcta era: ${pregunta.answer}. `;
+                
+                    speakOutput += oca.pasarTurno();
+                    repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+                }
+                sessionAttributes.reboteFechas = rebote;
+                handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
             }
-            sessionAttributes.reboteFechas = rebote;
-            handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+        } else {
+            const error = new Error('No se puede jugar a este minijuego en estos momentos');
+            return ErrorHandler.handle(handlerInput, error);
         }
-
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(repromptAudio)
@@ -516,38 +575,46 @@ const preguntasCifrasHandler = {
     }
 };
 
+/**
+ * Manejador para el intent del minijuego de recuerda la última casilla. 
+ * Procesa las respuestas de tipo casilla, comprobando si el nombre dado se corresponde con el de la última casilla o no.
+ */
 const preguntasCasillaHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasCasillaIntent';
     },
     handle(handlerInput) {
-        const {requestEnvelope} = handlerInput;
-        const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
         let jActual = oca.getJugadorActual();
         const solucion = jActual.getUltimaCasilla();
         const hayEquipos = oca.getEquipos();
-        const respuestaCasilla = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCasilla');
         
-        if (!respuestaCasilla) {
-            speakOutput = ` No pasa nada, para la próxima será. La respuesta correcta era: la casilla ${solucion}. `;
-   
-        } else {
-            const respuestaValidada = handlerInput.requestEnvelope.request.intent.slots.respuestaCasilla.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_CASILLA) {
+            const respuestaCasilla = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCasilla');
             
-            if (respuestaValidada === solucion) {
-                jActual.addPuntos(25);
-                speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 25 puntos. \
-                                ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+            if (!respuestaCasilla) {
+                speakOutput = ` No pasa nada, para la próxima será. La respuesta correcta era: la casilla ${solucion}. `;
+       
             } else {
-                speakOutput = ` Lástima, es incorrecto. La respuesta era: la casilla ${solucion}. `;
+                const respuestaValidada = handlerInput.requestEnvelope.request.intent.slots.respuestaCasilla.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+                
+                if (respuestaValidada === solucion) {
+                    jActual.addPuntos(25);
+                    speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 25 puntos. \
+                                    ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+                } else {
+                    speakOutput = ` Lástima, es incorrecto. La respuesta era: la casilla ${solucion}. `;
+                }
             }
+            
+            speakOutput += oca.pasarTurno();
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+        } else {
+            const error = new Error('No se puede jugar a este minijuego en estos momentos');
+            return ErrorHandler.handle(handlerInput, error);
         }
         
-        speakOutput += oca.pasarTurno();
-        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
-
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(repromptAudio)
@@ -556,7 +623,10 @@ const preguntasCasillaHandler = {
     }
 };
 
-
+/**
+ * Manejador para el intent del minijuego de conoce a tus compañeros. 
+ * Procesa las respuestas de tipo correcto o incorrecto, sumando puntos a ambos participantes implicados en caso de acierto.
+ */
 const preguntasCompasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -566,38 +636,44 @@ const preguntasCompasHandler = {
         const {requestEnvelope} = handlerInput;
         const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
-        const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCompas');
-        const respuestaValidada  = intent.slots.respuestaCompas.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        const pregunta = sessionAttributes.preguntaActual;
-        const sujetoPregunta = sessionAttributes.sujetoPregunta;
-        let sujetoResponde = sessionAttributes.sujetoResponde;
-        const hayEquipos = oca.getEquipos();
-        let jActual = oca.getJugadorActual();
-        let jPregunta = oca.getJugador(sujetoPregunta);
-
-        if (!sujetoResponde) {
-            speakOutput = `${jActual.getNombre()} ha${hayEquipos ? 'n' : ''} contestado que es ${respuesta}. Me pregunto si ha${hayEquipos ? 'n' : ''} acertado... \
-                           ${jPregunta.getNombre()}, ¿es esta repuesta correcta o incorrecta?`;
-            sessionAttributes.sujetoResponde = true;
-            handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
-            const recordatorio = `A la pregunta acerca de ${hayEquipos ? ' vosotros' : ' ti'}: ${hayEquipos ? pregunta.questionE : pregunta.questionJ} ${jActual.getNombre()} \
-                                  dijeron que era '${respuesta}'. ¿Es su repuesta correcta o incorrecta? `
-            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jPregunta.getNombre(), recordatorio);
-            
-        } else {
-            if (respuestaValidada === 'correcto') {
-                jActual.addPuntos(15);
-                jPregunta.addPuntos(10);
-                speakOutput = `¡Buen trabajo! Por conoceros bien, ${jActual.getNombre()} se lleva${hayEquipos ? 'n' : ''} \
-                                15 puntos y ${jPregunta.getNombre()}, 10 puntos.  \
-                                Ahora vuestras puntuaciones son ${jActual.getPuntos()} y ${jPregunta.getPuntos()} respectivamente. `;
+        
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_COMPAS) {
+            const respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaCompas');
+            const respuestaValidada  = intent.slots.respuestaCompas.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+            const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+            const pregunta = sessionAttributes.preguntaActual;
+            const sujetoPregunta = sessionAttributes.sujetoPregunta;
+            let sujetoResponde = sessionAttributes.sujetoResponde;
+            const hayEquipos = oca.getEquipos();
+            let jActual = oca.getJugadorActual();
+            let jPregunta = oca.getJugador(sujetoPregunta);
+    
+            if (!sujetoResponde) {
+                speakOutput = `${jActual.getNombre()} ha${hayEquipos ? 'n' : ''} contestado que es ${respuesta}. Me pregunto si ha${hayEquipos ? 'n' : ''} acertado... \
+                               ${jPregunta.getNombre()}, ¿es esta repuesta correcta o incorrecta?`;
+                sessionAttributes.sujetoResponde = true;
+                handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+                const recordatorio = `A la pregunta acerca de ${hayEquipos ? ' vosotros' : ' ti'}: ${hayEquipos ? pregunta.questionE : pregunta.questionJ} ${jActual.getNombre()} \
+                                      dijeron que era '${respuesta}'. ¿Es su repuesta correcta o incorrecta? `
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, jPregunta.getNombre(), recordatorio);
+                
             } else {
-                speakOutput = 'Lástima, pero no os desaniméis, ya habrá otra oportunidad de conseguir puntos. ';
+                if (respuestaValidada === 'correcto') {
+                    jActual.addPuntos(15);
+                    jPregunta.addPuntos(10);
+                    speakOutput = `¡Buen trabajo! Por conoceros bien, ${jActual.getNombre()} se lleva${hayEquipos ? 'n' : ''} \
+                                    15 puntos y ${jPregunta.getNombre()}, 10 puntos.  \
+                                    Ahora vuestras puntuaciones son ${jActual.getPuntos()} y ${jPregunta.getPuntos()} respectivamente. `;
+                } else {
+                    speakOutput = 'Lástima, pero no os desaniméis, ya habrá otra oportunidad de conseguir puntos. ';
+                }
+                
+                speakOutput += oca.pasarTurno();
+                repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             }
-            
-            speakOutput += oca.pasarTurno();
-            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+        } else {
+            const error = new Error('No se puede jugar a este minijuego en estos momentos');
+            return ErrorHandler.handle(handlerInput, error);
         }
         
         return handlerInput.responseBuilder
@@ -608,44 +684,53 @@ const preguntasCompasHandler = {
     }
 };
 
+/**
+ * Manejador para el intent del minijuego de recuerda la fecha. 
+ * Procesa las respuestas de tipo día de la semana, mes o estación del año, sumando puntos en caso de acierto.
+ */
 const preguntasFechasHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'preguntasFechasIntent';
     },
     handle(handlerInput) {
-        const {requestEnvelope} = handlerInput;
-        const {intent} = requestEnvelope.request;
         let speakOutput, repromptAudio;
         let respuesta;
-        const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-        const pregunta = sessionAttributes.preguntaActual;
-        const solucion = sessionAttributes.solucionFecha;
         let jActual = oca.getJugadorActual();
         const hayEquipos = oca.getEquipos();
         
-        switch(pregunta.type) {
-            case 'diaSemana':
-                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaDiaSemana');
-                break;
-            case 'mes':
-                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaMes');
-                break;
-            case 'estacion':
-                respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaEstacion');
-                break;
-        }
-        
-        if (respuesta === solucion) {
-            jActual.addPuntos(20);
-            speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
-                            ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+        if (oca.getEstado() === EstadoJuego.MINIJUEGO_FECHAS) {
+            const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+            const pregunta = sessionAttributes.preguntaActual;
+            const solucion = sessionAttributes.solucionFecha;
+
+            switch(pregunta.type) {
+                case 'diaSemana':
+                    respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaDiaSemana');
+                    break;
+                case 'mes':
+                    respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaMes');
+                    break;
+                case 'estacion':
+                    respuesta = Alexa.getSlotValue(handlerInput.requestEnvelope, 'respuestaEstacion');
+                    break;
+            }
+            
+            if (respuesta === solucion) {
+                jActual.addPuntos(20);
+                speakOutput = ` ¡Correcto! ${hayEquipos ? 'Habéis' : 'Has'} ganado 20 puntos. \
+                                ${hayEquipos ? 'Vuestra' : 'Tu'} puntuación es ahora ${jActual.getPuntos()}. `;
+            } else {
+                speakOutput = ` Lástima, es incorrecto. La respuesta correcta era: ${solucion}. `;
+            }
+            
+            speakOutput += oca.pasarTurno();
+            repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
+            
         } else {
-            speakOutput = ` Lástima, es incorrecto. La respuesta correcta era: ${solucion}. `;
+            const error = new Error('No se puede jugar a este minijuego en estos momentos');
+            return ErrorHandler.handle(handlerInput, error);
         }
-        
-        speakOutput += oca.pasarTurno();
-        repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -655,6 +740,9 @@ const preguntasFechasHandler = {
     }
 };
 
+/**
+ * Manejador para el intent del ayuda general. 
+ */
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -671,6 +759,9 @@ const HelpIntentHandler = {
     }
 };
 
+/**
+ * Manejador para cancelar y detener intent.
+ */
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -678,7 +769,7 @@ const CancelAndStopIntentHandler = {
                 || Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent');
     },
     handle(handlerInput) {
-        const speakOutput = 'Goodbye!';
+        const speakOutput = 'Adios!';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -686,6 +777,9 @@ const CancelAndStopIntentHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de fallback.
+ */
 const FallbackIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -701,17 +795,22 @@ const FallbackIntentHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de cierre de sesión.
+ */
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'SessionEndedRequest';
     },
     handle(handlerInput) {
         console.log(`~~~~ Session ended: ${JSON.stringify(handlerInput.requestEnvelope)}`);
-        // Any cleanup logic goes here.
-        return handlerInput.responseBuilder.getResponse(); // notice we send an empty response
+        return handlerInput.responseBuilder.getResponse();
     }
 };
 
+/**
+ * Manejador para el reflector de intent.
+ */
 const IntentReflectorHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
@@ -727,6 +826,10 @@ const IntentReflectorHandler = {
     }
 };
 
+/**
+ * Manejador para el intent de gestión de errores.
+ * Si el usuario ha intentado invocar un intent que no debería ser accesible en ese momento, saltará un mensaje de ayuda.
+ */
 const ErrorHandler = {
     canHandle() {
         return true;
