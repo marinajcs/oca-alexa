@@ -1,0 +1,1635 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{ArruebarrenaCabaco2020}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fa277d78e3f2ddf9f0a1019a50113353}{%
+           family={Arruebarrena},
+           familyi={A\bibinitperiod},
+           given={Aitor\bibnamedelima Vicente},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=470b3fbb472067a00d85a6ac2cb7ee31}{%
+           family={Cabaco},
+           familyi={C\bibinitperiod},
+           given={Antonio\bibnamedelima Sánchez},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{fullhash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{bibnamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authorbibnamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authornamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authorfullhash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studia Zamorensia}
+      \field{number}{19}
+      \field{title}{La soledad y el aislamiento social en las personas mayores}
+      \field{year}{2020}
+      \field{pages}{15\bibrangedash 32}
+      \range{pages}{18}
+    \endentry
+    \entry{intro3}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=72cdeef2d8cc9321e0d43751c4dbc1ae}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Margarida},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d91703637dd21f0943c891cad88649c7}{%
+           family={Lemos},
+           familyi={L\bibinitperiod},
+           given={Joao\bibnamedelima Lemos},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{fullhash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{bibnamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authorbibnamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authornamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authorfullhash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zincografía}
+      \field{title}{Ancianos activos, días divertidos. Diseño de juegos para personas mayores}
+      \field{year}{2022}
+      \field{pages}{124\bibrangedash 138}
+      \range{pages}{15}
+    \endentry
+    \entry{WorthPlay2012}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7a5adab79139a92e8b8b0fb6aea5ea1b}{%
+           family={Blat},
+           familyi={B\bibinitperiod},
+           given={Jose},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fda9e9581816573ec3acdfa21dcab6a}{%
+           family={Lluis\bibnamedelima Arcos},
+           familyi={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Josep\bibnamedelima LLuis},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3c48e5c4c677529364040ff27296fdd}{%
+           family={Sayago},
+           familyi={S\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3a53e858e57223ee040f087c7864fc3}
+      \strng{fullhash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{bibnamehash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{authorbibnamehash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{authornamehash}{b3a53e858e57223ee040f087c7864fc3}
+      \strng{authorfullhash}{d9fa6ff77da59681862613cb21b66e3d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Lychnos}
+      \field{title}{WorthPlay: Juegos digitales para un envejecimiento activo y saludable}
+      \field{volume}{8}
+      \field{year}{2012}
+      \field{pages}{16}
+      \range{pages}{1}
+    \endentry
+    \entry{intro4}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8f5b46c5e79b4f1dc6d4a89c67d238ea}{%
+           family={Bunbury\bibnamedelima Bustillo},
+           familyi={B\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Eva},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1293ce5e6feea6ade1aba7479c5e74a}{%
+           family={Osuna-Acedo},
+           familyi={O\bibinithyphendelim A\bibinitperiod},
+           given={Sara},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56c9f78d2f1cf7bb4b559fc337274dbc}{%
+           family={Pérez\bibnamedelima Calle},
+           familyi={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{062295976176e7686a6b23cd03a75b1e}
+      \strng{fullhash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{bibnamehash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{authorbibnamehash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{authornamehash}{062295976176e7686a6b23cd03a75b1e}
+      \strng{authorfullhash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Las competencias digitales en personas mayores: de amenaza a oportunidad}
+      \field{number}{No. ART-2022-131993}
+      \field{year}{2022}
+    \endentry
+    \entry{tfgAlexa3}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4c78493e6ba7a21f95e37fc4e68c3cc9}{%
+           family={Castillo\bibnamedelima Moreno},
+           familyi={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{fullhash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{bibnamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authorbibnamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authornamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authorfullhash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de juegos basados en Alexa orientados a la detección del deterioro cognitivo}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2022}
+    \endentry
+    \entry{juegosMem1}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7c32824c42a26f9707168ac0606ec430}{%
+           family={Cuidalian},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{fullhash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{bibnamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authorbibnamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authornamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authorfullhash}{7c32824c42a26f9707168ac0606ec430}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Juegos de memoria para personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
+      \endverb
+    \endentry
+    \entry{metodologiaAgil}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d850a433733aa7e9404cc9133fd9e39f}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Ailin\bibnamedelima Orjuela},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e623441c64981d363a158a6d8d9e82f}{%
+           family={Rojas},
+           familyi={R\bibinitperiod},
+           given={Mauricio},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{fullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{bibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authorbibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authornamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authorfullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Avances en Sistemas e Informática}
+      \field{number}{2}
+      \field{title}{Las metodologías de desarrollo ágil como una oportunidad para la ingeniería del software educativo}
+      \field{volume}{5}
+      \field{year}{2008}
+      \field{pages}{159\bibrangedash 171}
+      \range{pages}{13}
+    \endentry
+    \entry{juegosMem2}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5cb22578ee63ba21f03f362c6eab4864}{%
+           family={{El Confidencial}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{fullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{bibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorbibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authornamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorfullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Apps y juegos para la mente: Ejercitar memoria en personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cuideo.com/blog/apps-juegos-ejercitar-memoria-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://cuideo.com/blog/apps-juegos-ejercitar-memoria-personas-mayores/
+      \endverb
+    \endentry
+    \entry{celia-app}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5cb22578ee63ba21f03f362c6eab4864}{%
+           family={{El Confidencial}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{fullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{bibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorbibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authornamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorfullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Celia, la 'app' gallega que charla con mayores y detecta el Alzheimer}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.elconfidencial.com/espana/galicia/2024-01-08/celia-app-gallega-charla-mayores-detecta-alzheimer_3805293/
+      \endverb
+      \verb{url}
+      \verb https://www.elconfidencial.com/espana/galicia/2024-01-08/celia-app-gallega-charla-mayores-detecta-alzheimer_3805293/
+      \endverb
+    \endentry
+    \entry{juegosSerios}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=da519856ae91c9f23d77325d9d2e7b2e}{%
+           family={Ferrer},
+           familyi={F\bibinitperiod},
+           given={José\bibnamedelimb Ramón\bibnamedelima Calvo},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{fullhash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{bibnamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authorbibnamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authornamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authorfullhash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Miguel Hernández Communication Journal}
+      \field{number}{9}
+      \field{title}{Juegos, videojuegos y juegos serios: Análisis de los factores que favorecen la diversión del jugador}
+      \field{year}{2018}
+      \field{pages}{191\bibrangedash 226}
+      \range{pages}{36}
+    \endentry
+    \entry{tfgAlexa2}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2678209bd1c6f032028ab9f33c1f73af}{%
+           family={García\bibnamedelima Piñeiro},
+           familyi={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Fabián},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{fullhash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{bibnamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authorbibnamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authornamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authorfullhash}{2678209bd1c6f032028ab9f33c1f73af}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Skill de Alexa para monitorización de personas mayores}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2022}
+    \endentry
+    \entry{asistentesConv}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b065fefd65c35c684f91e4a515cf82a0}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={Pablo\bibnamedelima Ramires},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b7c92c15fbf865b057b05db3c13646d}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima Valle},
+           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{77648f30b318946905fae41de9b66785}
+      \strng{fullhash}{77648f30b318946905fae41de9b66785}
+      \strng{bibnamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authorbibnamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authornamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authorfullhash}{77648f30b318946905fae41de9b66785}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ReCIBE, Revista electrónica de Computación, Informática, Biomédica y Electrónica}
+      \field{number}{2}
+      \field{title}{Los asistentes virtuales basados en Inteligencia Artificial}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{C1\bibrangedash 11}
+      \range{pages}{-1}
+    \endentry
+    \entry{intro1}{thesis}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a7f5c8560838aeae3bf4ee3ef8e02127}{%
+           family={López\bibnamedelima Garzón},
+           familyi={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Catalina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=412592ee89fb133ac28389607cdf8e4f}{%
+           family={Rozo\bibnamedelima Barrera},
+           familyi={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{fullhash}{8184555933cd0c43b924e1082472edb7}
+      \strng{bibnamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authorbibnamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authornamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authorfullhash}{8184555933cd0c43b924e1082472edb7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Narrativa transmedia para ayudar a los adultos mayores a adquirir habilidades tecnológicas}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2023}
+    \endentry
+    \entry{juegosSerios3}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e10e136db2e8b63ffeba22df9e603c59}{%
+           family={Marcano},
+           familyi={M\bibinitperiod},
+           given={Beatriz},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{fullhash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{bibnamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authorbibnamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authornamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authorfullhash}{e10e136db2e8b63ffeba22df9e603c59}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Education in the knowledge society (EKS)}
+      \field{number}{3}
+      \field{title}{Juegos serios y entrenamiento en la sociedad digital}
+      \field{volume}{9}
+      \field{year}{2008}
+      \field{pages}{93\bibrangedash 107}
+      \range{pages}{15}
+    \endentry
+    \entry{diseño2017}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=719eeeff4915fbf0d173312ec4a31a77}{%
+           family={Mendoza},
+           familyi={M\bibinitperiod},
+           given={Gustavo\bibnamedelimb Adolfo\bibnamedelima Angulo},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9d25c99db885746813c0f52b0c45199a}{%
+           family={Sauvé},
+           familyi={S\bibinitperiod},
+           given={Louise},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31702d6e9869b69ded5b112933f47dae}{%
+           family={Plante},
+           familyi={P\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3c3dc74d9899995479a57b8803d88925}
+      \strng{fullhash}{ded41f0be18afe1607780106c4596d14}
+      \strng{bibnamehash}{ded41f0be18afe1607780106c4596d14}
+      \strng{authorbibnamehash}{ded41f0be18afe1607780106c4596d14}
+      \strng{authornamehash}{3c3dc74d9899995479a57b8803d88925}
+      \strng{authorfullhash}{ded41f0be18afe1607780106c4596d14}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Edutec, Revista Electrónica de Tecnología Educativa}
+      \field{number}{62}
+      \field{title}{Adultos mayores y juegos educativos digitales. ¿Qué consideraciones de diseño favorecen su uso?}
+      \field{year}{2017}
+      \field{pages}{104\bibrangedash 116}
+      \range{pages}{13}
+    \endentry
+    \entry{tfgAlexa1}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb15bbfb95e6329a87e268242c901ad9}{%
+           family={Menéndez\bibnamedelima Román},
+           familyi={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{fullhash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{bibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authorbibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authornamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authorfullhash}{eb15bbfb95e6329a87e268242c901ad9}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Creación de una skill de Alexa para la mejora de la inhibición de respuesta}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2023}
+    \endentry
+    \entry{introHU}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=47a02562416962f4257b9415533aad1c}{%
+           family={Menzinsky},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=54cb8f6e81aefa8174a86f7a7b2eb4d7}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={Gertrudis},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38d6ff8e936016742c7c478d770844eb}{%
+           family={Palacio},
+           familyi={P\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=23d7fc0ea71111f10e100fc642efefca}{%
+           family={Sobrino},
+           familyi={S\bibinitperiod},
+           given={Miguel\bibnamedelima Ángel},
+           giveni={M\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41e4659cdd560cfaa74d096ce3578ba2}{%
+           family={Álvarez},
+           familyi={Á\bibinitperiod},
+           given={Rubén},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=276d7b9b8d8707da5c0e60beda1221d1}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Verónica},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8a96247b4cead75c9c42ae3c000971f2}
+      \strng{fullhash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{bibnamehash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{authorbibnamehash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{authornamehash}{8a96247b4cead75c9c42ae3c000971f2}
+      \strng{authorfullhash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ingeniería de requisitos ágil}
+      \field{title}{Historias de usuario}
+      \field{year}{2018}
+    \endentry
+    \entry{experienciaOca}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8b36efbadc6edaf04d893f0123d98e90}{%
+           family={Ortín},
+           familyi={O\bibinitperiod},
+           given={Nuria\bibnamedelima Ureña},
+           giveni={N\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f65e9fcb999f2a35dd909eafac02bc0e}{%
+           family={Villanueva},
+           familyi={V\bibinitperiod},
+           given={Fernando\bibnamedelima Ureña},
+           giveni={F\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=938feadc71ac73ea5ebc3838c30b67e6}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={Francisco\bibnamedelima Alarcón},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b782eaa62d3f1f4436913ae86c9cbc54}
+      \strng{fullhash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{bibnamehash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{authorbibnamehash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{authornamehash}{b782eaa62d3f1f4436913ae86c9cbc54}
+      \strng{authorfullhash}{18ffeab2ee513cc9570c3178452c59ad}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Retos. Nuevas tendencias en Educación Física, Deporte y Recreación}
+      \field{number}{14}
+      \field{title}{Una propuesta de evaluación para las habilidades motrices básicas en Educación Primaria a través de un juego popular: la oca}
+      \field{year}{2008}
+      \field{pages}{35\bibrangedash 42}
+      \range{pages}{8}
+    \endentry
+    \entry{intro2}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=fcb339024724615a17abf63b148f4753}{%
+           family={Palacios-Rodríguez},
+           familyi={P\bibinithyphendelim R\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa8efe6a3fd00048c55a49ae07e834e3}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelimb María\bibnamedelima Romero},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fca679d00789370e3eea89cc26565ec2}{%
+           family={Gómez},
+           familyi={G\bibinitperiod},
+           given={Gerardo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea234ee2f649a1f71150a09ec34822e8}
+      \strng{fullhash}{6874190443486fe2e3fb722d89561d61}
+      \strng{bibnamehash}{6874190443486fe2e3fb722d89561d61}
+      \strng{authorbibnamehash}{6874190443486fe2e3fb722d89561d61}
+      \strng{authornamehash}{ea234ee2f649a1f71150a09ec34822e8}
+      \strng{authorfullhash}{6874190443486fe2e3fb722d89561d61}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Desafíos de investigación educativa durante la pandemia}
+      \field{title}{CAPÍTULO 2 AISLAMIENTO SOCIAL Y USO DE LAS TIC EN PERSONAS MAYORES EN ÉPOCA DE PANDEMIA. COVID 19. REVISIÓN SISTEMÁTICA}
+    \endentry
+    \entry{juegosSerios2}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=899f7f575789398024e34b9098031405}{%
+           family={Regalón},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelimb Antonio\bibnamedelima Leyva},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1d7ed5e4610c027d9ec7e241278f4d5}{%
+           family={Céspedes},
+           familyi={C\bibinitperiod},
+           given={Irisleydis\bibnamedelima Mayol},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{fullhash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{bibnamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authorbibnamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authornamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authorfullhash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Cubana de Informática Médica}
+      \field{number}{2}
+      \field{title}{Los juegos serios en el entrenamiento y la rehabilitación cognitiva}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{140\bibrangedash 157}
+      \range{pages}{18}
+    \endentry
+    \entry{arquitecturaSkill}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ac781879647f163502bf39cd8d016fa9}{%
+           family={Stafford},
+           familyi={S\bibinitperiod},
+           given={Gary},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{fullhash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{bibnamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authorbibnamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authornamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authorfullhash}{ac781879647f163502bf39cd8d016fa9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building Asynchronous, Serverless Alexa Skills with AWS Lambda, DynamoDB, S3, and Node.js}
+      \field{urlday}{8}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://programmaticponderings.com/2018/07/24/building-asynchronous-serverless-alexa-skills-with-aws-lambda-dynamodb-s3-and-node-js/
+      \endverb
+      \verb{url}
+      \verb https://programmaticponderings.com/2018/07/24/building-asynchronous-serverless-alexa-skills-with-aws-lambda-dynamodb-s3-and-node-js/
+      \endverb
+    \endentry
+    \entry{juegos-mesa}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7ced9231ed70641cdcf0ec688e0aba86}{%
+           family={{Teleasistencia Vital}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{fullhash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{bibnamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authorbibnamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authornamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authorfullhash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Los 10 mejores juegos de mesa para personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://teleasistenciavital.com/blog/10-juegos-mesa-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://teleasistenciavital.com/blog/10-juegos-mesa-personas-mayores/
+      \endverb
+    \endentry
+    \entry{ICTestudios}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b8231332820ea4402f6f1ea7ba2d3829}{%
+           family={Vanova},
+           familyi={V\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce3200c72694be5c268eb719c7d3e333}{%
+           family={Irazoki},
+           familyi={I\bibinitperiod},
+           given={Eider},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c65c179324d140716a01cd0e3f4c51}{%
+           family={García-Casal},
+           familyi={G\bibinithyphendelim C\bibinitperiod},
+           given={José\bibnamedelima Antonio},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9280c4a21cb4b75269ddb95aa7ace61f}{%
+           family={Botella},
+           familyi={B\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d44ee47e39e9cc4d3bae58043a8a20b8}
+      \strng{fullhash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{bibnamehash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{authorbibnamehash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{authornamehash}{d44ee47e39e9cc4d3bae58043a8a20b8}
+      \strng{authorfullhash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Trials}
+      \field{number}{19}
+      \field{title}{The effectiveness of ICT-based neurocognitive and psychosocial rehabilitation programmes in people with mild dementia and mild cognitive impairment using GRADIOR and ehcoBUTLER: study protocol for a randomised controlled trial}
+      \field{year}{2018}
+      \field{pages}{100}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{ArruebarrenaCabaco2020}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fa277d78e3f2ddf9f0a1019a50113353}{%
+           family={Arruebarrena},
+           familyi={A\bibinitperiod},
+           given={Aitor\bibnamedelima Vicente},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=470b3fbb472067a00d85a6ac2cb7ee31}{%
+           family={Cabaco},
+           familyi={C\bibinitperiod},
+           given={Antonio\bibnamedelima Sánchez},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{fullhash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{bibnamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authorbibnamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authornamehash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \strng{authorfullhash}{181db1c5ea77e6b3f6385d7cfd8b3e48}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studia Zamorensia}
+      \field{number}{19}
+      \field{title}{La soledad y el aislamiento social en las personas mayores}
+      \field{year}{2020}
+      \field{pages}{15\bibrangedash 32}
+      \range{pages}{18}
+    \endentry
+    \entry{intro3}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=72cdeef2d8cc9321e0d43751c4dbc1ae}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Margarida},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d91703637dd21f0943c891cad88649c7}{%
+           family={Lemos},
+           familyi={L\bibinitperiod},
+           given={Joao\bibnamedelima Lemos},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{fullhash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{bibnamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authorbibnamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authornamehash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \strng{authorfullhash}{7cd07ac5e7683454e9b205d6c331fa63}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zincografía}
+      \field{title}{Ancianos activos, días divertidos. Diseño de juegos para personas mayores}
+      \field{year}{2022}
+      \field{pages}{124\bibrangedash 138}
+      \range{pages}{15}
+    \endentry
+    \entry{WorthPlay2012}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7a5adab79139a92e8b8b0fb6aea5ea1b}{%
+           family={Blat},
+           familyi={B\bibinitperiod},
+           given={Jose},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fda9e9581816573ec3acdfa21dcab6a}{%
+           family={Lluis\bibnamedelima Arcos},
+           familyi={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Josep\bibnamedelima LLuis},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3c48e5c4c677529364040ff27296fdd}{%
+           family={Sayago},
+           familyi={S\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3a53e858e57223ee040f087c7864fc3}
+      \strng{fullhash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{bibnamehash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{authorbibnamehash}{d9fa6ff77da59681862613cb21b66e3d}
+      \strng{authornamehash}{b3a53e858e57223ee040f087c7864fc3}
+      \strng{authorfullhash}{d9fa6ff77da59681862613cb21b66e3d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Lychnos}
+      \field{title}{WorthPlay: Juegos digitales para un envejecimiento activo y saludable}
+      \field{volume}{8}
+      \field{year}{2012}
+      \field{pages}{16}
+      \range{pages}{1}
+    \endentry
+    \entry{intro4}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8f5b46c5e79b4f1dc6d4a89c67d238ea}{%
+           family={Bunbury\bibnamedelima Bustillo},
+           familyi={B\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Eva},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1293ce5e6feea6ade1aba7479c5e74a}{%
+           family={Osuna-Acedo},
+           familyi={O\bibinithyphendelim A\bibinitperiod},
+           given={Sara},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=56c9f78d2f1cf7bb4b559fc337274dbc}{%
+           family={Pérez\bibnamedelima Calle},
+           familyi={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{062295976176e7686a6b23cd03a75b1e}
+      \strng{fullhash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{bibnamehash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{authorbibnamehash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \strng{authornamehash}{062295976176e7686a6b23cd03a75b1e}
+      \strng{authorfullhash}{cd14bdc53ed32b7b69440280b88f25b9}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Las competencias digitales en personas mayores: de amenaza a oportunidad}
+      \field{number}{No. ART-2022-131993}
+      \field{year}{2022}
+    \endentry
+    \entry{tfgAlexa3}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4c78493e6ba7a21f95e37fc4e68c3cc9}{%
+           family={Castillo\bibnamedelima Moreno},
+           familyi={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{fullhash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{bibnamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authorbibnamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authornamehash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \strng{authorfullhash}{4c78493e6ba7a21f95e37fc4e68c3cc9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de juegos basados en Alexa orientados a la detección del deterioro cognitivo}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2022}
+    \endentry
+    \entry{juegosMem1}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7c32824c42a26f9707168ac0606ec430}{%
+           family={Cuidalian},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{fullhash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{bibnamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authorbibnamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authornamehash}{7c32824c42a26f9707168ac0606ec430}
+      \strng{authorfullhash}{7c32824c42a26f9707168ac0606ec430}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Juegos de memoria para personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
+      \endverb
+    \endentry
+    \entry{metodologiaAgil}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d850a433733aa7e9404cc9133fd9e39f}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Ailin\bibnamedelima Orjuela},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e623441c64981d363a158a6d8d9e82f}{%
+           family={Rojas},
+           familyi={R\bibinitperiod},
+           given={Mauricio},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{fullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{bibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authorbibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authornamehash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{authorfullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Avances en Sistemas e Informática}
+      \field{number}{2}
+      \field{title}{Las metodologías de desarrollo ágil como una oportunidad para la ingeniería del software educativo}
+      \field{volume}{5}
+      \field{year}{2008}
+      \field{pages}{159\bibrangedash 171}
+      \range{pages}{13}
+    \endentry
+    \entry{juegosMem2}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5cb22578ee63ba21f03f362c6eab4864}{%
+           family={{El Confidencial}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{fullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{bibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorbibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authornamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorfullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Apps y juegos para la mente: Ejercitar memoria en personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cuideo.com/blog/apps-juegos-ejercitar-memoria-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://cuideo.com/blog/apps-juegos-ejercitar-memoria-personas-mayores/
+      \endverb
+    \endentry
+    \entry{celia-app}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5cb22578ee63ba21f03f362c6eab4864}{%
+           family={{El Confidencial}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{fullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{bibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorbibnamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authornamehash}{5cb22578ee63ba21f03f362c6eab4864}
+      \strng{authorfullhash}{5cb22578ee63ba21f03f362c6eab4864}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Celia, la 'app' gallega que charla con mayores y detecta el Alzheimer}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.elconfidencial.com/espana/galicia/2024-01-08/celia-app-gallega-charla-mayores-detecta-alzheimer_3805293/
+      \endverb
+      \verb{url}
+      \verb https://www.elconfidencial.com/espana/galicia/2024-01-08/celia-app-gallega-charla-mayores-detecta-alzheimer_3805293/
+      \endverb
+    \endentry
+    \entry{juegosSerios}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=da519856ae91c9f23d77325d9d2e7b2e}{%
+           family={Ferrer},
+           familyi={F\bibinitperiod},
+           given={José\bibnamedelimb Ramón\bibnamedelima Calvo},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{fullhash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{bibnamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authorbibnamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authornamehash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \strng{authorfullhash}{da519856ae91c9f23d77325d9d2e7b2e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Miguel Hernández Communication Journal}
+      \field{number}{9}
+      \field{title}{Juegos, videojuegos y juegos serios: Análisis de los factores que favorecen la diversión del jugador}
+      \field{year}{2018}
+      \field{pages}{191\bibrangedash 226}
+      \range{pages}{36}
+    \endentry
+    \entry{tfgAlexa2}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2678209bd1c6f032028ab9f33c1f73af}{%
+           family={García\bibnamedelima Piñeiro},
+           familyi={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Fabián},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{fullhash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{bibnamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authorbibnamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authornamehash}{2678209bd1c6f032028ab9f33c1f73af}
+      \strng{authorfullhash}{2678209bd1c6f032028ab9f33c1f73af}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Skill de Alexa para monitorización de personas mayores}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2022}
+    \endentry
+    \entry{asistentesConv}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b065fefd65c35c684f91e4a515cf82a0}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={Pablo\bibnamedelima Ramires},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b7c92c15fbf865b057b05db3c13646d}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima Valle},
+           giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{77648f30b318946905fae41de9b66785}
+      \strng{fullhash}{77648f30b318946905fae41de9b66785}
+      \strng{bibnamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authorbibnamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authornamehash}{77648f30b318946905fae41de9b66785}
+      \strng{authorfullhash}{77648f30b318946905fae41de9b66785}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ReCIBE, Revista electrónica de Computación, Informática, Biomédica y Electrónica}
+      \field{number}{2}
+      \field{title}{Los asistentes virtuales basados en Inteligencia Artificial}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{C1\bibrangedash 11}
+      \range{pages}{-1}
+    \endentry
+    \entry{intro1}{thesis}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a7f5c8560838aeae3bf4ee3ef8e02127}{%
+           family={López\bibnamedelima Garzón},
+           familyi={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Catalina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=412592ee89fb133ac28389607cdf8e4f}{%
+           family={Rozo\bibnamedelima Barrera},
+           familyi={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{fullhash}{8184555933cd0c43b924e1082472edb7}
+      \strng{bibnamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authorbibnamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authornamehash}{8184555933cd0c43b924e1082472edb7}
+      \strng{authorfullhash}{8184555933cd0c43b924e1082472edb7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Narrativa transmedia para ayudar a los adultos mayores a adquirir habilidades tecnológicas}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2023}
+    \endentry
+    \entry{juegosSerios3}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e10e136db2e8b63ffeba22df9e603c59}{%
+           family={Marcano},
+           familyi={M\bibinitperiod},
+           given={Beatriz},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{fullhash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{bibnamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authorbibnamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authornamehash}{e10e136db2e8b63ffeba22df9e603c59}
+      \strng{authorfullhash}{e10e136db2e8b63ffeba22df9e603c59}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Education in the knowledge society (EKS)}
+      \field{number}{3}
+      \field{title}{Juegos serios y entrenamiento en la sociedad digital}
+      \field{volume}{9}
+      \field{year}{2008}
+      \field{pages}{93\bibrangedash 107}
+      \range{pages}{15}
+    \endentry
+    \entry{diseño2017}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=719eeeff4915fbf0d173312ec4a31a77}{%
+           family={Mendoza},
+           familyi={M\bibinitperiod},
+           given={Gustavo\bibnamedelimb Adolfo\bibnamedelima Angulo},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9d25c99db885746813c0f52b0c45199a}{%
+           family={Sauvé},
+           familyi={S\bibinitperiod},
+           given={Louise},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31702d6e9869b69ded5b112933f47dae}{%
+           family={Plante},
+           familyi={P\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3c3dc74d9899995479a57b8803d88925}
+      \strng{fullhash}{ded41f0be18afe1607780106c4596d14}
+      \strng{bibnamehash}{ded41f0be18afe1607780106c4596d14}
+      \strng{authorbibnamehash}{ded41f0be18afe1607780106c4596d14}
+      \strng{authornamehash}{3c3dc74d9899995479a57b8803d88925}
+      \strng{authorfullhash}{ded41f0be18afe1607780106c4596d14}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Edutec, Revista Electrónica de Tecnología Educativa}
+      \field{number}{62}
+      \field{title}{Adultos mayores y juegos educativos digitales. ¿Qué consideraciones de diseño favorecen su uso?}
+      \field{year}{2017}
+      \field{pages}{104\bibrangedash 116}
+      \range{pages}{13}
+    \endentry
+    \entry{tfgAlexa1}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb15bbfb95e6329a87e268242c901ad9}{%
+           family={Menéndez\bibnamedelima Román},
+           familyi={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{fullhash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{bibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authorbibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authornamehash}{eb15bbfb95e6329a87e268242c901ad9}
+      \strng{authorfullhash}{eb15bbfb95e6329a87e268242c901ad9}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Creación de una skill de Alexa para la mejora de la inhibición de respuesta}
+      \field{type}{Bachelor's thesis}
+      \field{year}{2023}
+    \endentry
+    \entry{introHU}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=47a02562416962f4257b9415533aad1c}{%
+           family={Menzinsky},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=54cb8f6e81aefa8174a86f7a7b2eb4d7}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={Gertrudis},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38d6ff8e936016742c7c478d770844eb}{%
+           family={Palacio},
+           familyi={P\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=23d7fc0ea71111f10e100fc642efefca}{%
+           family={Sobrino},
+           familyi={S\bibinitperiod},
+           given={Miguel\bibnamedelima Ángel},
+           giveni={M\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41e4659cdd560cfaa74d096ce3578ba2}{%
+           family={Álvarez},
+           familyi={Á\bibinitperiod},
+           given={Rubén},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=276d7b9b8d8707da5c0e60beda1221d1}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Verónica},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8a96247b4cead75c9c42ae3c000971f2}
+      \strng{fullhash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{bibnamehash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{authorbibnamehash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \strng{authornamehash}{8a96247b4cead75c9c42ae3c000971f2}
+      \strng{authorfullhash}{e3e3cbdfb8df62cea690b9d52dd77952}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ingeniería de requisitos ágil}
+      \field{title}{Historias de usuario}
+      \field{year}{2018}
+    \endentry
+    \entry{experienciaOca}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8b36efbadc6edaf04d893f0123d98e90}{%
+           family={Ortín},
+           familyi={O\bibinitperiod},
+           given={Nuria\bibnamedelima Ureña},
+           giveni={N\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f65e9fcb999f2a35dd909eafac02bc0e}{%
+           family={Villanueva},
+           familyi={V\bibinitperiod},
+           given={Fernando\bibnamedelima Ureña},
+           giveni={F\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=938feadc71ac73ea5ebc3838c30b67e6}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={Francisco\bibnamedelima Alarcón},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b782eaa62d3f1f4436913ae86c9cbc54}
+      \strng{fullhash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{bibnamehash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{authorbibnamehash}{18ffeab2ee513cc9570c3178452c59ad}
+      \strng{authornamehash}{b782eaa62d3f1f4436913ae86c9cbc54}
+      \strng{authorfullhash}{18ffeab2ee513cc9570c3178452c59ad}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Retos. Nuevas tendencias en Educación Física, Deporte y Recreación}
+      \field{number}{14}
+      \field{title}{Una propuesta de evaluación para las habilidades motrices básicas en Educación Primaria a través de un juego popular: la oca}
+      \field{year}{2008}
+      \field{pages}{35\bibrangedash 42}
+      \range{pages}{8}
+    \endentry
+    \entry{intro2}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=fcb339024724615a17abf63b148f4753}{%
+           family={Palacios-Rodríguez},
+           familyi={P\bibinithyphendelim R\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa8efe6a3fd00048c55a49ae07e834e3}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelimb María\bibnamedelima Romero},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fca679d00789370e3eea89cc26565ec2}{%
+           family={Gómez},
+           familyi={G\bibinitperiod},
+           given={Gerardo},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea234ee2f649a1f71150a09ec34822e8}
+      \strng{fullhash}{6874190443486fe2e3fb722d89561d61}
+      \strng{bibnamehash}{6874190443486fe2e3fb722d89561d61}
+      \strng{authorbibnamehash}{6874190443486fe2e3fb722d89561d61}
+      \strng{authornamehash}{ea234ee2f649a1f71150a09ec34822e8}
+      \strng{authorfullhash}{6874190443486fe2e3fb722d89561d61}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Desafíos de investigación educativa durante la pandemia}
+      \field{title}{CAPÍTULO 2 AISLAMIENTO SOCIAL Y USO DE LAS TIC EN PERSONAS MAYORES EN ÉPOCA DE PANDEMIA. COVID 19. REVISIÓN SISTEMÁTICA}
+    \endentry
+    \entry{juegosSerios2}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=899f7f575789398024e34b9098031405}{%
+           family={Regalón},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelimb Antonio\bibnamedelima Leyva},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1d7ed5e4610c027d9ec7e241278f4d5}{%
+           family={Céspedes},
+           familyi={C\bibinitperiod},
+           given={Irisleydis\bibnamedelima Mayol},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{fullhash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{bibnamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authorbibnamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authornamehash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \strng{authorfullhash}{ed0617987e2cee93b1edd8cc7267fe16}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Cubana de Informática Médica}
+      \field{number}{2}
+      \field{title}{Los juegos serios en el entrenamiento y la rehabilitación cognitiva}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{140\bibrangedash 157}
+      \range{pages}{18}
+    \endentry
+    \entry{arquitecturaSkill}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ac781879647f163502bf39cd8d016fa9}{%
+           family={Stafford},
+           familyi={S\bibinitperiod},
+           given={Gary},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{fullhash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{bibnamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authorbibnamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authornamehash}{ac781879647f163502bf39cd8d016fa9}
+      \strng{authorfullhash}{ac781879647f163502bf39cd8d016fa9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building Asynchronous, Serverless Alexa Skills with AWS Lambda, DynamoDB, S3, and Node.js}
+      \field{urlday}{8}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://programmaticponderings.com/2018/07/24/building-asynchronous-serverless-alexa-skills-with-aws-lambda-dynamodb-s3-and-node-js/
+      \endverb
+      \verb{url}
+      \verb https://programmaticponderings.com/2018/07/24/building-asynchronous-serverless-alexa-skills-with-aws-lambda-dynamodb-s3-and-node-js/
+      \endverb
+    \endentry
+    \entry{juegos-mesa}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7ced9231ed70641cdcf0ec688e0aba86}{%
+           family={{Teleasistencia Vital}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{fullhash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{bibnamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authorbibnamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authornamehash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \strng{authorfullhash}{7ced9231ed70641cdcf0ec688e0aba86}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Los 10 mejores juegos de mesa para personas mayores}
+      \field{urlday}{19}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://teleasistenciavital.com/blog/10-juegos-mesa-personas-mayores/
+      \endverb
+      \verb{url}
+      \verb https://teleasistenciavital.com/blog/10-juegos-mesa-personas-mayores/
+      \endverb
+    \endentry
+    \entry{ICTestudios}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b8231332820ea4402f6f1ea7ba2d3829}{%
+           family={Vanova},
+           familyi={V\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce3200c72694be5c268eb719c7d3e333}{%
+           family={Irazoki},
+           familyi={I\bibinitperiod},
+           given={Eider},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c65c179324d140716a01cd0e3f4c51}{%
+           family={García-Casal},
+           familyi={G\bibinithyphendelim C\bibinitperiod},
+           given={José\bibnamedelima Antonio},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9280c4a21cb4b75269ddb95aa7ace61f}{%
+           family={Botella},
+           familyi={B\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d44ee47e39e9cc4d3bae58043a8a20b8}
+      \strng{fullhash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{bibnamehash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{authorbibnamehash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \strng{authornamehash}{d44ee47e39e9cc4d3bae58043a8a20b8}
+      \strng{authorfullhash}{3baf16ffa48e1ca068b3a9890a21225d}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Trials}
+      \field{number}{19}
+      \field{title}{The effectiveness of ICT-based neurocognitive and psychosocial rehabilitation programmes in people with mild dementia and mild cognitive impairment using GRADIOR and ehcoBUTLER: study protocol for a randomised controlled trial}
+      \field{year}{2018}
+      \field{pages}{100}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

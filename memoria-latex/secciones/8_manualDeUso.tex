@@ -1,0 +1,103 @@
+\section{Manual de uso}
+Explicación de instrucciones del juego
+
+El primer paso es invocar y lanzar la skill, para lo que es necesario decir \textbf{\textit{<<Alexa, abre El Juego de la Oca>>}}.
+
+Alexa dará un mensaje de bienvenida a los jugadores. Para más información acerca del juego, se le puede pedir a Alexa que explique con más profundidad ciertos temas, diciendo: \textbf{\textit{<<Explícame [tema de ayuda]>>}}. Los temas de ayuda disponibles son: 
+\begin{enumerate}
+	\item \textbf{Las reglas del juego}: ...
+	\item \textbf{Las casillas}: consultar escenario C.
+	\item \textbf{Los minijuegos}: una explicación de cada minijuego que 
+	\item \textbf{Los comandos de voz}: comenta brevemente los comandos de voz que el usuario puede utilizar en cualquier momento.
+\end{enumerate}
+
+\vspace{1cm}
+\textbf{Escenario A: Iniciar una nueva partida.}
+Para comenzar una nueva partida, se debe decir \textbf{\textit{<<Iniciar nueva partida>>}}.
+
+Alexa procederá a pedir de forma secuencial los datos necesarios para empezar partida en el siguiente orden:
+\begin{enumerate}
+	\item El modo de juego: por equipos o jugadores individuales.
+	\item El número de participantes (equipos o jugadores) que van a competir.
+	\item El nombre de cada uno de los participantes, que se irá preguntado uno por uno.
+\end{enumerate}
+
+Una vez registrados todos los datos, Alexa hará un resumen general de la configuración de la partida y pedirá confirmación, tras lo cual se pasará al escenario C.
+
+\vspace{1cm}
+\textbf{Escenario B: Reanudar la partida anterior.}
+
+Si se ha guardado anteriormente una partida, al abrir la skill la próxima vez Alexa dará la opción al usuario de reanudar dicha partida, con la instrucción \textbf{\textit{<<Continuar partida>>}}.
+
+Se cargará el estado de la partida desde la base de datos y se podrá continuar el juego a partir del último turno registrado.
+
+\vspace{1cm}
+\textbf{Escenario C: Jugar un turno.}
+Durante la partida, Alexa anunciará el turno del jugador o equipo actual.
+Para tirar el dado, el participante o integrante del equipo debe decir \textbf{\textit{<<Tirar el dado>>}}, lo que llevará a mostrar la animación y el resultado de la tirada.
+
+Acto seguido, debe decir \textbf{\textit{<<Mover ficha>>}} para poder avanzar tantas posiciones como indique el dado.
+
+El juego lo colocará en la nueva casilla, que dependiendo de su tipo, puede implicar el final de dicho turno o una nueva acción:
+ \begin{itemize}
+ 	\item \textbf{Casilla normal}: se narra un evento concreto en función de la casilla en la que haya caído, que puede variar de un jugador a otro, y finaliza el turno.
+ 	\item \textbf{Casilla de oca}: se mueve a la siguiente casilla del mismo tipo y puede tirar de nuevo el dado. En el caso en el que haya caído en la oca anterior a la casilla de meta, se traslada a esta última y finaliza el juego.
+ 	\item \textbf{Casilla de puente}: solo existen dos de este tipo, y caer en una provoca el desplazamiento inevitable a la otra, tras lo cual finaliza el turno. 
+ 	\item \textbf{Casilla de penalización}: a su vez se distinguen cuatro tipos (pozo, laberinto, hotel y cárcel), en los que varía el número de turnos que hay que esperarse antes de poder avanzar de nuevo.
+ 	\item \textbf{Casilla de minijuego}: para un desglose de los tipos de juegos y respuestas aceptadas, consultar el escenario D.
+ 	\item \textbf{Casilla de meta}: se da la enhorabuena a quien haya llegado antes a la meta, se hace un recuento de puntos para ver quién ha acumulado la mayor cantidad, y se da por finalizada la partida.
+ \end{itemize}
+
+\vspace{0.5cm}
+\textbf{Escenario D: Respuesta a un minijuego}
+
+\vspace{1cm}
+\textbf{Escenario E: Terminar la partida}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Comando} & \textbf{Cuándo puede invocarse}\\
+		\hline
+		Explícame & En cualquier momento \\
+		\hline
+		Nueva partida & En cualquier momento \\
+		\hline
+		Reanudar partida & Al iniciar sesión, si hay una partida guardada \\
+		\hline
+		Guardar partida & En cualquier momento \\
+		\hline
+		Terminar partida & En cualquier momento \\
+		\hline
+		Tirar dado & Al inicio del turno de un participante \\
+		\hline
+		Mover ficha & Después de una tirada de dado \\
+		\hline
+	\end{tabular}
+	\caption{Lista de comandos de voz y ámbito de uso}
+	\label{tab:comandos-voz}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Minijuego} & \textbf{Tipo de respuesta esperada}\\
+		\hline
+		Trivial V/F & Verdadero o Falso \\
+		\hline
+		Conoce a los participantes & Sí o No \\
+		\hline
+		Adivina la fecha & Una cifra (día, año, etc), un día de la semana, un mes o una estación del año \\
+		\hline
+		Recuerda la última casilla & El nombre de la casilla en la que cayó el participante en el turno anterior \\
+		\hline
+		Secuencia de palabras & Una palabra de la lista cada vez \\
+		\hline
+	\end{tabular}
+	\caption{Tipos de respuestas del usuario a los minijuegos}
+	\label{tab:respuestas-minijuegos}
+\end{table}
+
