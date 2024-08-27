@@ -8,8 +8,15 @@ La idea detrás de este TFG podría resumirse con la siguiente cita: \enquote{La
 
 \subsection{Motivación y contexto}
 
-Según se menciona en el artículo \textit{La soledad y el aislamiento social en las personas mayores} \parencite{ArruebarrenaCabaco2020}, \enquote{El aislamiento social se define como una ausencia objetiva de relaciones/contactos sociales y la soledad
-como la experiencia subjetiva aversiva que se siente al valorar esas relaciones/contactos sociales como
+Este TFG se integra dentro del proyecto de investigación \enquote{Evaluación del uso de robots sociales y sistemas conversacionales en residencias y centros de día para promover el envejecimiento saludable} de la Universidad de Granada, con  la profesora Nuria Medina Medina como investigadora principal del mismo, y directora de este Trabajo de Fin de Grado.
+
+Este proyecto, con código C-ING-179-UGR23, \enquote{propone el uso y evaluación de Agentes Sociales Interactivos (SIA - Social Interactive Agent) (en particular de Robots Sociales apoyados por Asistentes Conversacionales) que promuevan el envejecimiento saludable y las interacciones sociales de los mayores en la residencia o centro de día, ya que estas interacciones son muy importantes para el mejoramiento de la salud y estado anímico de los mayores. Para maximizar su efectividad, la propuesta integrará experiencias lúdicas y técnicas de interacción multimodal}. 
+
+Dicho proyecto destaca por su metodología pionera en relación con el estado del arte ya que se focaliza en la utilización de los robots sociales para fomentar el envejecimiento saludable y mejorar la comunicación y los problemas de interacción social en las residencias. El proyecto también se centra en el diseño de experiencias lúdicas integradas en entornos sociales para favorecer los problemas de motivación y adopción de la tecnología.
+
+Que el uso de la tecnología puede ser un apoyo importante para lograr una mayor calidad de vida en los adultos mayores que viven en residencias o asisten a centros de día es una de las premisas en las que se apoya la investigación. \enquote{Consecuentemente, este proyecto propone el uso y evaluación de Agentes Sociales Interactivos (SIA - Social Interactive Agent) (en particular de Robots Sociales apoyados por Asistentes Conversacionales) que promuevan el envejecimiento saludable y las interacciones sociales de los mayores en la residencia o centro de día, ya que estas interacciones son muy importantes para el mejoramiento de la salud y estado anímico de los mayores. Para maximizar su efectividad, la propuesta integrará experiencias lúdicas y técnicas de interacción multimodal}.
+
+Según se menciona en el artículo \textit{La soledad y el aislamiento social en las personas mayores} \parencite{ArruebarrenaCabaco2020}, \enquote{El aislamiento social se define como una ausencia objetiva de relaciones/contactos sociales y la soledad como la experiencia subjetiva aversiva que se siente al valorar esas relaciones/contactos sociales como
 insuficiente en cantidad y/o calidad}
 
 En los últimos tiempos, el tema de la soledad en las personas mayores ha ganado atención en los medios de comunicación, describiéndose como una \enquote{epidemia} en aumento. Aunque no hay evidencia sólida que respalde la idea de una nueva epidemia, las dificultades metodológicas y la falta de consenso en la medición de la soledad limitan la capacidad de confirmar si las personas mayores se sienten más solas que antes.
@@ -43,14 +50,36 @@ Sin embargo, la transición a las tecnologías digitales también presentó desa
 
 A pesar de estos desafíos, la pandemia actuó como un catalizador para la adopción de tecnología entre las personas mayores, lo que les permitió permanecer conectados y participar en la sociedad de manera más activa, incluso en tiempos de crisis. Como resultado, muchas personas mayores han incorporado el uso de tecnologías digitales en su vida diaria incluso después de que levantaran las restricciones de la pandemia, lo que les brinda nuevas oportunidades de participación social y acceso a recursos y servicios en línea \parencite{intro2}.
 
+Según datos del Instituto Nacional de Estadística (INE), la población que usa Internet (en los últimos meses el uso de las tecnologías de información y comunicación (TIC) en los hogares ha crecido en los últimos años, si bien sigue existiendo una brecha entre los usuarios y no usuarios (brecha digital) que se puede atribuir a una serie de factores: la falta de infraestructura (en particular en las zonas rurales), la falta de conocimientos de informática y habilidades necesarias para participar en la sociedad de la información, o la falta de interés en lo que la sociedad de la información puede ofrecer).
+
+Al aumentar la edad desciende el uso de Internet, siendo el porcentaje más bajo el que corresponde al grupo de edad de 65 a 74 años (un 79,7\% para los hombres y un 80,5\% para las mujeres) \parencite{intro5}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/INE-grafica1.jpeg}
+	\caption{Población por grupos de edad que han usado Internet en los últimos tres meses (INE, 2018-23)}
+	\label{fig:grafica1-INE}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/INE-grafica2.jpeg}
+	\caption{Población de entre 16 y 74 años que ha usado Internet en los últimos tres meses en la UE (INE, 2020-23)}
+	\label{fig:grafica2-INE}
+\end{figure}
+
+Según una encuesta realizada por Canal Sénior, plataforma online de entretenimiento y aprendizaje para personas mayores de 55 años, entre sus usuarios, en el capítulo de juegos y aplicaciones de entretenimiento: \enquote{la mayoría de los encuestados prefieren los juegos que permiten el entrenamiento mental, como aplicaciones del tipo Trivial, Apalabrados, Scrabble, Wordle, etc. Esto es muy relevante en personas sénior, pues está probado que los juegos que retan a la mente y nos hacen pensar pueden retrasar el envejecimiento cognitivo durante más tiempo}.
+
+Todo hace indicar que cada vez hay una relación más estrecha entre mayores y ocio digital. \enquote{Es también relevante ver cómo algunos de sus gustos y preferencias son diferentes a los de otros grupos de edad, como por ejemplo su preferencia por la lectura al consumo de series y películas o de contenidos en las redes sociales. Por último, conviene destacar que el uso de las tecnologías digitales como parte de nuestro ocio pueden ayudarnos a tener un envejecimiento activo, sano y con participación elevada en la sociedad.} \parencite{intro6}.
+
 \subsection{Objetivos}
-El presente trabajo tiene como objetivo principal concebir, desarrollar y evaluar un juego digital como contribución al desarrollo de soluciones innovadoras y efectivas que aborden el problema del aislamiento social en las personas mayores.
+El presente trabajo tiene como objetivo desarrollar un juego digital, que contribuya al creciente conjunto de soluciones innovadoras para combatir el aislamiento social en los adultos mayores.
 
-Este juego no solo buscará proporcionar entretenimiento y diversión, sino que también se centrará en promover la interacción social, el compromiso cognitivo y emocional, y en general, mejorar la calidad de vida de las personas mayores.
-Para lograr este objetivo principal, se puede descomponer en varios subobjetivos más específicos que vienen ilustrados en la siguiente tabla:
+Este juego no solo buscará proporcionar entretenimiento y diversión, sino que también se centrará en promover la interacción social, el compromiso cognitivo y emocional, y en general, mejorar la calidad de vida de las personas mayores. 
 
-\newpage
-\begin{table}[t]
+Para lograr este objetivo principal, se puede descomponer en varios subobjetivos, recogidos en la siguiente tabla:
+
+\begin{table}[ht]
   \centering
   \begin{tabular}{| c | p{9.6cm} |}
     \hline
@@ -75,11 +104,11 @@ Para lograr este objetivo principal, se puede descomponer en varios subobjetivos
         3.3. Integrar funcionalidades de accesibilidad, como ajustes de tamaño de fuente y navegación simplificada \vspace{0.2cm} \\
     \hline
     4. Contribución al conocimiento & 
-    4.1. Contribuir al creciente cuerpo de conocimientos sobre cómo la tecnología puede mejorar la calidad de vida de las personas mayores, particularmente en el contexto del aislamiento social. 
+    4.1. Contribuir al creciente cuerpo de conocimientos sobre cómo la tecnología puede mejorar la calidad de vida de los adultos mayores, particularmente en el contexto del aislamiento social. 
     \vspace{0.2cm} \\
     \hline
-    5. Participación comunitaria (TBD) & 
-        5.1. Colaborar con comunidades de personas mayores para obtener retroalimentación durante el desarrollo del juego. \newline
+    5. Participación comunitaria & 
+        5.1. Colaborar con comunidades de personas mayores para obtener retroalimentación. \newline
         \vspace{0.2cm}
         5.2. Organizar pruebas piloto y grupos de enfoque para evaluar la experiencia del usuario. \vspace{0.2cm} \\
     \hline

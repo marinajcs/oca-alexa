@@ -19,6 +19,32 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
+    \entry{juegosSerios5}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ad2ba90555d896676085218fdb9a3074}{%
+           family={Abt},
+           familyi={A\bibinitperiod},
+           given={Clark},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{fullhash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{bibnamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authorbibnamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authornamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authorfullhash}{ad2ba90555d896676085218fdb9a3074}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{New York: Viking Press}
+      \field{title}{Serious games}
+      \field{year}{1970}
+    \endentry
     \entry{ArruebarrenaCabaco2020}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=fa277d78e3f2ddf9f0a1019a50113353}{%
@@ -165,6 +191,38 @@
       \field{journaltitle}{Las competencias digitales en personas mayores: de amenaza a oportunidad}
       \field{number}{No. ART-2022-131993}
       \field{year}{2022}
+    \endentry
+    \entry{intro6}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5300ae6e89887b2c2c1e9fd32f6da818}{%
+           family={{Canal Sénior}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{fullhash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{bibnamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authorbibnamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authornamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authorfullhash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La tecnología en el ocio sénior: de esta forma utilizamos nuestros dispositivos para entretenernos}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
+      \endverb
+      \verb{url}
+      \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
+      \endverb
     \endentry
     \entry{tfgAlexa3}{thesis}{}
       \name{author}{1}{}{%
@@ -377,6 +435,34 @@
       \field{type}{Bachelor's thesis}
       \field{year}{2022}
     \endentry
+    \entry{juegosSerios7}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=47a607e29161dc8ce41d185b2a1c9d80}{%
+           family={Gudmundsen},
+           familyi={G\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{fullhash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{bibnamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authorbibnamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authornamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authorfullhash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{USA Today}
+      \field{number}{19}
+      \field{title}{Movement aims to get serious about games}
+      \field{volume}{5}
+      \field{year}{2006}
+    \endentry
     \entry{asistentesConv}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=b065fefd65c35c684f91e4a515cf82a0}{%
@@ -412,6 +498,38 @@
       \field{year}{2023}
       \field{pages}{C1\bibrangedash 11}
       \range{pages}{-1}
+    \endentry
+    \entry{intro5}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a303d4390a16a468a0c541d209410697}{%
+           family={{Instituto Nacional de Estadística}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a303d4390a16a468a0c541d209410697}
+      \strng{fullhash}{a303d4390a16a468a0c541d209410697}
+      \strng{bibnamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authorbibnamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authornamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authorfullhash}{a303d4390a16a468a0c541d209410697}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Población que usa Internet (en los últimos tres meses). Tipo de actividades realizadas por Internet}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259925528782&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout
+      \endverb
+      \verb{url}
+      \verb https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259925528782&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout
+      \endverb
     \endentry
     \entry{intro1}{thesis}{}
       \name{author}{2}{}{%
@@ -711,6 +829,38 @@
       \field{pages}{140\bibrangedash 157}
       \range{pages}{18}
     \endentry
+    \entry{juegosSerios6}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9d85fc9393701d488866f14c497737d7}{%
+           family={Sawyer},
+           familyi={S\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a239a9c94e8576804be241fe87e19070}{%
+           family={Rejeski},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{fullhash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{bibnamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authorbibnamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authornamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authorfullhash}{2edf92f0fbdca4baede8c56278abc497}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Woodrow Wilson International Center for Scholars}
+      \field{title}{Serious games: Improving public policy through game-based learning and simulation}
+      \field{year}{2002}
+    \endentry
     \entry{arquitecturaSkill}{online}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ac781879647f163502bf39cd8d016fa9}{%
@@ -822,9 +972,67 @@
       \field{year}{2018}
       \field{pages}{100}
       \range{pages}{1}
+    \endentry
+    \entry{juegosSerios4}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=52d7e869683bb72c9b0e0a7fdf0499bc}{%
+           family={{Wilson Center}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{fullhash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{bibnamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authorbibnamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authornamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authorfullhash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Serious Games Initiative}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.wilsoncenter.org/publication-series/serious-games
+      \endverb
+      \verb{url}
+      \verb https://www.wilsoncenter.org/publication-series/serious-games
+      \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
+    \entry{juegosSerios5}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ad2ba90555d896676085218fdb9a3074}{%
+           family={Abt},
+           familyi={A\bibinitperiod},
+           given={Clark},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{fullhash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{bibnamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authorbibnamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authornamehash}{ad2ba90555d896676085218fdb9a3074}
+      \strng{authorfullhash}{ad2ba90555d896676085218fdb9a3074}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{New York: Viking Press}
+      \field{title}{Serious games}
+      \field{year}{1970}
+    \endentry
     \entry{ArruebarrenaCabaco2020}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=fa277d78e3f2ddf9f0a1019a50113353}{%
@@ -971,6 +1179,38 @@
       \field{journaltitle}{Las competencias digitales en personas mayores: de amenaza a oportunidad}
       \field{number}{No. ART-2022-131993}
       \field{year}{2022}
+    \endentry
+    \entry{intro6}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5300ae6e89887b2c2c1e9fd32f6da818}{%
+           family={{Canal Sénior}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{fullhash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{bibnamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authorbibnamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authornamehash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \strng{authorfullhash}{5300ae6e89887b2c2c1e9fd32f6da818}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La tecnología en el ocio sénior: de esta forma utilizamos nuestros dispositivos para entretenernos}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
+      \endverb
+      \verb{url}
+      \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
+      \endverb
     \endentry
     \entry{tfgAlexa3}{thesis}{}
       \name{author}{1}{}{%
@@ -1183,6 +1423,34 @@
       \field{type}{Bachelor's thesis}
       \field{year}{2022}
     \endentry
+    \entry{juegosSerios7}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=47a607e29161dc8ce41d185b2a1c9d80}{%
+           family={Gudmundsen},
+           familyi={G\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{fullhash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{bibnamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authorbibnamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authornamehash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \strng{authorfullhash}{47a607e29161dc8ce41d185b2a1c9d80}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{USA Today}
+      \field{number}{19}
+      \field{title}{Movement aims to get serious about games}
+      \field{volume}{5}
+      \field{year}{2006}
+    \endentry
     \entry{asistentesConv}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=b065fefd65c35c684f91e4a515cf82a0}{%
@@ -1218,6 +1486,38 @@
       \field{year}{2023}
       \field{pages}{C1\bibrangedash 11}
       \range{pages}{-1}
+    \endentry
+    \entry{intro5}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a303d4390a16a468a0c541d209410697}{%
+           family={{Instituto Nacional de Estadística}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a303d4390a16a468a0c541d209410697}
+      \strng{fullhash}{a303d4390a16a468a0c541d209410697}
+      \strng{bibnamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authorbibnamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authornamehash}{a303d4390a16a468a0c541d209410697}
+      \strng{authorfullhash}{a303d4390a16a468a0c541d209410697}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Población que usa Internet (en los últimos tres meses). Tipo de actividades realizadas por Internet}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259925528782&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout
+      \endverb
+      \verb{url}
+      \verb https://www.ine.es/ss/Satellite?L=es_ES&c=INESeccion_C&cid=1259925528782&p=1254735110672&pagename=ProductosYServicios%2FPYSLayout
+      \endverb
     \endentry
     \entry{intro1}{thesis}{}
       \name{author}{2}{}{%
@@ -1517,6 +1817,38 @@
       \field{pages}{140\bibrangedash 157}
       \range{pages}{18}
     \endentry
+    \entry{juegosSerios6}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9d85fc9393701d488866f14c497737d7}{%
+           family={Sawyer},
+           familyi={S\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a239a9c94e8576804be241fe87e19070}{%
+           family={Rejeski},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{fullhash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{bibnamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authorbibnamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authornamehash}{2edf92f0fbdca4baede8c56278abc497}
+      \strng{authorfullhash}{2edf92f0fbdca4baede8c56278abc497}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Woodrow Wilson International Center for Scholars}
+      \field{title}{Serious games: Improving public policy through game-based learning and simulation}
+      \field{year}{2002}
+    \endentry
     \entry{arquitecturaSkill}{online}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ac781879647f163502bf39cd8d016fa9}{%
@@ -1628,6 +1960,38 @@
       \field{year}{2018}
       \field{pages}{100}
       \range{pages}{1}
+    \endentry
+    \entry{juegosSerios4}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=52d7e869683bb72c9b0e0a7fdf0499bc}{%
+           family={{Wilson Center}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{fullhash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{bibnamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authorbibnamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authornamehash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \strng{authorfullhash}{52d7e869683bb72c9b0e0a7fdf0499bc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Serious Games Initiative}
+      \field{urlday}{15}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.wilsoncenter.org/publication-series/serious-games
+      \endverb
+      \verb{url}
+      \verb https://www.wilsoncenter.org/publication-series/serious-games
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
