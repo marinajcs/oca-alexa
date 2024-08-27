@@ -46,59 +46,55 @@ Pues aparte de las casillas originales y el objetivo de llegar a la meta, inclui
 También debe evaluarse la viabilidad de los minijuegos propuestos dentro del juego principal, que es la oca, para lo que se ha consultado con un equipo de psicólogos que han participado en varias experiencias de residencias.
 
 \subsubsection{Lista de minijuegos dentro de la oca}
-Dada la complejidad de implementación que conllevan algunos, y para evitar saturar a los participantes con demasiadas mecánicas nuevas, se han elegido los siguientes minijuegos:
+Dada la dificultad de implementar algunos en base a las limitaciones de los dispositivos Alexa, y para evitar saturar a los participantes con demasiadas mecánicas nuevas, se han elegido los siguientes cinco minijuegos:
 
 \begin{enumerate}
-	\item \textbf{Preguntas de Trivial V/F}: pondrán a prueba los conocimientos generales de los participantes. Se abordarán categorías distintas (geografía, historia, ciencia, arte y cultura…) pero siempre habrá dos opciones de respuesta, verdadero o falso.
+	\item \textbf{Preguntas de Trivial V/F}: pondrán a prueba los conocimientos generales de los participantes. Se abordarán categorías distintas (geografía, historia, ciencia, arte y cultura…) pero siempre habrá dos opciones de respuesta, \textit{verdadero} o \textit{falso}. Si se acierta, se obtienen puntos, y si no, Alexa proporcionará una breve explicación de la respuesta correcta.
 	\begin{itemize}
 		\item Alexa: \textit{¿Oceanía es el continente más pequeño de todos?}
-		\item Jugador/a: \textit{Verdadero.}
-		\item Alexa: \textit{¡Correcto! Has ganado 'x' puntos.}
+		\item Agustín: \textit{Verdadero.}
+		\item Alexa: \textit{¡Correcto! Has ganado 10 puntos.}
 		
 		Alternativamente...
-		\item Jugador/a: \textit{Falso.}
+		\item Agustín: \textit{Falso.}
 		\item Alexa: \textit{Incorrecto, el continente más pequeño del mundo es Oceanía, con 9.000.000 km² de superficie.}
 	\end{itemize}
 	
-	\item \textbf{Conoce a los participantes}: Alexa hace preguntas de "Sí o No" acerca de los otros jugadores, quienes deberán luego confirmar si las respuestas proporcionadas son correctas o no.
+	\item \textbf{Conoce a tus compañeros}: Alexa planteará una pregunta acerca de otro participante, quien deberá colaborar, ya que luego tendrá que confirmar si la respuesta proporcionada por el primer participante es correcta o no. Siempre habrá dos tipos de respuestas, \textit{correcto/a} o \textit{incorrecto/a}.
 	\begin{itemize}
-		\item Alexa: \textit{Jugador Rojo, ¿Jugadora Verde ha viajado fuera de su país alguna vez?}
-		\item Jugador Rojo: \textit{Sí / No}
-		\item Alexa: \textit{Jugadora Verde, ¿es correcta la respuesta?}
-		\item Jugadora Verde: \textit{Sí / No}
+		\item Alexa: \textit{Agustín, ¿Roberta ha viajado fuera del país alguna vez? Dime si es correcto o incorrecto.}
+		\item Agustín: \textit{Correcto}
+		\item Alexa: \textit{Roberta, ¿es esta respuesta correcta o incorrecta?}
+		\item Roberta: \textit{Correcta}
+		\item Alexa: \textit{¡Bien! Por conoceros tan bien, ambos ganáis puntos.}
 	\end{itemize}
 	
-	\item \textbf{Adivina la fecha}: Alexa hace preguntas sobre fechas emblemáticas en las que sucedió algún hecho importante, o del estilo "¿a qué día estamos?", para poner a prueba la memoria de los participantes. Si el primero en responder falla, se pasará al segundo y así sucesivamente hasta llegar de nuevo al primero.
+	\item \textbf{Adivina la cifra}: Alexa hará preguntas de todo tipo, cuya única respuesta es un número. Puede ser un año, la cantidad de algo... Es de modalidad competitiva, por lo que si el primero en responder la falla, la pregunta rebotará al siguiente, y así sucesivamente hasta que alguien acierte o se llegue de nuevo al primer participante, en cuyo caso Alexa desvelará la solución.
 	\begin{itemize}
-		\item Alexa: \textit{J1, ¿en qué año se descubrió América?}
-		\item J1: \textit{1520}
-		\item Alexa: \textit{Incorrecto, la pregunta rebota a J2. ¿En qué año se descubrió América?}
-		\item J2: \textit{1492}
-		\item Alexa: \textit{¡Correcto! J2 gana 'x' puntos.}
+		\item Alexa: \textit{Agustín, ¿en qué año se descubrió América?}
+		\item Agustín: \textit{1520}
+		\item Alexa: \textit{Incorrecto, la pregunta rebota a Roberta. ¿En qué año se descubrió América?}
+		\item Roberta: \textit{1492}
+		\item Alexa: \textit{¡Correcto! Roberta gana 30 puntos.}
 	\end{itemize}
 	
 	\item \textbf{Recuerda la última casilla}: Alexa preguntará por la casilla más reciente previa a la última tirada de dado; es decir, la casilla donde cayó en el turno anterior.
 	\begin{itemize}
 		\item Alexa: \textit{¿Cuál fue la última casilla en la que caíste en el turno anterior?}
-		\item Jugador/a: \textit{La casilla del sombrero}
+		\item Roberta: \textit{La casilla del sombrero}
 		\item Alexa: \textit{¡Correcto! Has ganado 'x' puntos.}
 		
 		Alternativamente...
-		\item Alexa: \textit{Incorrecto, la casilla en la que caíste en el turno anterior fue la casilla del paraguas.}
+		\item Roberta: \textit{Incorrecto, la respuesta correcta era: la casilla del paraguas.}
 	\end{itemize}
 	
-	\item \textbf{Secuencia de palabras}: Alexa dirá una secuencia de 5 palabras que pueden o no estar relacionadas entre sí, y el jugador irá diciendo una por una las palabras que recuerde en el orden original. Si logra acertar un mínimo de 3 palabras, gana la prueba, y si acierta más de 3, conseguirá puntos de bonificación adicionales.
+	\item \textbf{Recuerda la fecha}: Alexa hará preguntas para poner a prueba la memoria de los participantes en relación con la orientación temporal, es decir, la forma en la que alguien mantiene la noción del tiempo. Las respuestas siempre serán días de la semana, meses o estaciones del año.
 	\begin{itemize}
-		\item Alexa: \textit{La secuencia de palabras es: GATO, MAR, CASA, SOL y BALÓN}
-		\item Jugador/a: \textit{GATO}
-		\item Alexa: \textit{Correcto, ¿siguiente palabra?}
-		\item Jugador/a: \textit{MAR}
-		\item Alexa: \textit{Correcto, ¿siguiente palabra?}
-		\item Jugador/a: \textit{CASA}
-		\item Alexa: \textit{Correcto, ¿siguiente palabra?}
-		\item Jugador/a: \textit{BALÓN}
-		\item Alexa: \textit{Incorrecto, la siguiente palabra era: SOL. Como has acertado 3 sobre 5, has ganado 'x' puntos, enhorabuena.}
-		\item ...
+		\item Alexa: \textit{¿Qué día de la semana fue ayer?}
+		\item Agustín: \textit{Jueves}
+		...
+		\item Alexa: \textit{¿En qué mes estamos?}
+		\item Roberta: \textit{Julio}
 	\end{itemize}
 \end{enumerate}
 
@@ -128,7 +124,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\textbf{HU01}: Iniciar el juego} \\
         \hline
@@ -145,15 +141,15 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|p{14cm}|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU02}: Creación de una partida nueva} \\
+		\multicolumn{2}{|c|}{\textbf{HU02}: Creación de una nueva partida} \\
 		\hline
 		\textbf{Como} & jugador/a \\
 		\hline
-		\textbf{Quiero} & poder iniciar un juego nuevo, pudiendo elegir cuántos jugadores van a participar, y si va ser por equipos o individualmente \\
+		\textbf{Quiero} & poder iniciar un juego de la oca nuevo, pudiendo elegir cuántos jugadores van a participar, y si va ser por equipos o individualmente \\
 		\hline
-		\textbf{Para} & adaptar el juego a la cantidad y tipo de participantes \\
+		\textbf{Para} & adaptar el juego a la cantidad y el tipo de participantes \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 2}
@@ -162,15 +158,15 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\textbf{HU03}: Escuchar las reglas} \\
         \hline
-        \textbf{Como} & nuevo jugador/a \\
+        \textbf{Como} & jugador/a \\
         \hline
-        \textbf{Quiero} & pedirle a Alexa que me explique las reglas del juego \\
+        \textbf{Quiero} & pedirle a Alexa que me explique las reglas y cualquier otro aspecto relevante del juego \\
         \hline
-        \textbf{Para} & entender cómo jugar antes de comenzar \\
+        \textbf{Para} & entender cómo jugar antes de comenzar o recordar alguna explicación durante la partida \\
         \hline
     \end{tabular}
     \caption{Historia de usuario nº 3}
@@ -179,13 +175,13 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
         \multicolumn{2}{|c|}{\textbf{HU04}: Jugar un turno} \\
         \hline
         \textbf{Como} & jugador/a \\
         \hline
-        \textbf{Quiero} & que Alexa tire los dados por mí y mueva mi ficha \\
+        \textbf{Quiero} & que Alexa tire los dados por mí y también mueva mi ficha \\
         \hline
         \textbf{Para} & jugar mi turno \\
         \hline
@@ -196,13 +192,13 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{HU05}: Guardar/reanudar la partida} \\
+        \multicolumn{2}{|c|}{\textbf{HU05}: Guardar la partida} \\
         \hline
-        \textbf{Como} & usuario/a \\
+        \textbf{Como} & jugador/a \\
         \hline
-        \textbf{Quiero} & que Alexa tenga la capacidad de guardar y cargar el progreso de la partida actual \\
+        \textbf{Quiero} & que Alexa tenga la capacidad de guardar el progreso de la partida actual \\
         \hline
         \textbf{Para} & poder retomar el juego más tarde sin perder el avance \\
         \hline
@@ -213,15 +209,15 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{HU06}: Finalizar el juego} \\
+        \multicolumn{2}{|c|}{\textbf{HU06}: Continuar la partida anterior} \\
         \hline
-        \textbf{Como} & usuario/a \\
+        \textbf{Como} & jugador/a \\
         \hline
-        \textbf{Quiero} & poder finalizar el juego en cualquier momento \\
+        \textbf{Quiero} & poder continuar con la partida anterior si abro una nueva sesión \\
         \hline
-        \textbf{Para} & terminar la partida cuando lo desee \\
+        \textbf{Para} & reanudar la última partida donde la dejé \\
         \hline
     \end{tabular}
     \caption{Historia de usuario nº 6}
@@ -230,53 +226,53 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|p{10cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{HU07}: Recibir ayuda} \\
+        \multicolumn{2}{|c|}{\textbf{HU07}: Recibir ayuda activa} \\
         \hline
-        \textbf{Como} & adulto/a mayor \\
+        \textbf{Como} & jugador/a \\
         \hline
         \textbf{Quiero} & que Alexa me ofrezca ayuda activa durante el juego \\
         \hline
-        \textbf{Para} & saber qué hacer por si me pierdo en algún momento \\
+        \textbf{Para} & saber qué hacer por si me pierdo en cualquier momento \\
         \hline
     \end{tabular}
     \caption{Historia de usuario nº 7}
     \label{tab:HU07}
 \end{table}
 
-En el desarrollo del juego interactivo para Alexa, se han diseñado una serie de minijuegos que tienen como objetivo poner a prueba los conocimientos y la memoria de los participantes. Estos son los listados en la sección \textit{4.1.1}. 
-
-A continuación, se presentan las historias de usuario para cada uno de estos minijuegos, que abarcan desde trivias de conocimiento general hasta desafíos de memoria y observación.
-
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU08}: Minijuego verdadero o falso} \\
+		\multicolumn{2}{|c|}{\textbf{HU08}: Finalizar el juego} \\
 		\hline
 		\textbf{Como} & jugador/a \\
 		\hline
-		\textbf{Quiero} & responder preguntas de conocimiento general con opciones de verdadero o falso  \\
+		\textbf{Quiero} & poder finalizar el juego en cualquier momento \\
 		\hline
-		\textbf{Para} & poner a prueba mis conocimientos en diversas categorías y ganar puntos \\
+		\textbf{Para} & terminar la partida cuando lo desee \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 8}
 	\label{tab:HU08}
 \end{table}
 
+En el desarrollo del juego interactivo para Alexa, se han diseñado una serie de minijuegos que tienen como objetivo poner a prueba los conocimientos y la memoria de los participantes. Estos son los listados en la sección \textit{4.1.1}. 
+
+A continuación, se presentan las historias de usuario para cada uno de estos minijuegos, que abarcan desde trivial de conocimiento general hasta desafíos de memoria y observación.
+
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU09}: Minijuego conoce a los participantes} \\
+		\multicolumn{2}{|c|}{\textbf{HU09}: Minijuego verdadero o falso} \\
 		\hline
-		\textbf{Como} & jugador/a \\
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de verdadero o falso \\
 		\hline
-		\textbf{Quiero} & responder preguntas sobre otros jugadores con respuestas de sí o no  \\
+		\textbf{Quiero} & responder a la pregunta planteada por Alexa con verdadero o falso y que me diga si he acertado \\
 		\hline
-		\textbf{Para} & para demostrar cuánto conozco a mis compañeros y ganar puntos \\
+		\textbf{Para} & poner a prueba mis conocimientos y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 9}
@@ -285,15 +281,15 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU10}: Minijuego adivina la fecha} \\
+		\multicolumn{2}{|c|}{\textbf{HU10}: Minijuego conoce a tus compañeros} \\
 		\hline
-		\textbf{Como} & jugador/a \\
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de conoce a tus compañeros \\
 		\hline
-		\textbf{Quiero} & responder preguntas sobre fechas emblemáticas o la fecha actual\\
+		\textbf{Quiero} & responder a la pregunta acerca de otro jugador planteada por Alexa y que me confirmen si es correcto o no \\
 		\hline
-		\textbf{Para} & poner a prueba mi memoria histórica y de la actualidad y ganar puntos \\
+		\textbf{Para} & para demostrar cuánto conozco a mis compañeros y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 10}
@@ -302,15 +298,15 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU11}: Minijuego recuerda la última casilla} \\
+		\multicolumn{2}{|c|}{\textbf{HU11}: Minijuego adivina la cifra} \\
 		\hline
-		\textbf{Como} & jugador/a \\
+		\textbf{Como} & jugador/a en una ronda del minijuego de adivina la cifra \\
 		\hline
-		\textbf{Quiero} & que Alexa me pregunte por la casilla en la que caí en el turno anterior \\
+		\textbf{Quiero} & responder a la preguntas planteada por Alexa con un número y que me diga si he acertado o no \\
 		\hline
-		\textbf{Para} & poner a prueba mi memoria y ganar puntos \\
+		\textbf{Para} & poner a prueba mis conocimientos y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 11}
@@ -319,13 +315,13 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{10cm}|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{HU12}: Minijuego secuencia de palabras} \\
+		\multicolumn{2}{|c|}{\textbf{HU12}: Minijuego recuerda la última casilla} \\
 		\hline
-		\textbf{Como} & jugador/a \\
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de recuerda la última casilla \\
 		\hline
-		\textbf{Quiero} & recordar y repetir una secuencia de palabras en el orden original \\
+		\textbf{Quiero} & que responder con el nombre de la casilla en la que caí en el turno anterior \\
 		\hline
 		\textbf{Para} & poner a prueba mi memoria y ganar puntos \\
 		\hline
@@ -334,6 +330,24 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\label{tab:HU12}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{10cm}|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{HU13}: Minijuego recuerda la fecha} \\
+		\hline
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de recuerda la fecha \\
+		\hline
+		\textbf{Quiero} & responder a la pregunta planteada por Alexa con el nombre de un día de la semana, mes o estación del año  \\
+		\hline
+		\textbf{Para} & poner a prueba mi noción del tiempo y ganar puntos \\
+		\hline
+	\end{tabular}
+	\caption{Historia de usuario nº 13}
+	\label{tab:HU13}
+\end{table}
+
+\newpage
 \subsubsection{Requisitos funcionales}
 
 Esta sección define y describe las características de alto nivel (requisitos
@@ -362,9 +376,9 @@ Se debe poder lanzar la skill mediante el comando de invocación.
 \textbf{RF4: Gestión del estado del juego}
 \begin{itemize}
     \item \textbf{RF4.1}: La skill debe ser capaz de guardar el estado actual del juego.
-    \item \textbf{RF4.2}: Relacionado con el anterior, se debe poder reanudar la partida con el estado con el que se ha guardado.
-    \item \textbf{RF4.3}: Poder finalizar la partida en cualquier momento (borrando los datos del juego actual).
-    \item \textbf{RF4.4}: Poder iniciar una nueva partida en cualquier momento (borrando los datos de la actual).
+    \item \textbf{RF4.2}: Relacionado con el anterior, se debe poder reanudar la última partida con el estado con el que se ha guardado.
+    \item \textbf{RF4.3}: Poder finalizar la partida en cualquier momento (borrando los datos del juego actual a no ser que se haya guardado previamente).
+    \item \textbf{RF4.4}: Poder iniciar una nueva partida en cualquier momento (sobrescribiendo los datos guardados de la anterior).
 \end{itemize}
 
 \textbf{RF5: Explicación del juego}
@@ -377,14 +391,14 @@ Se debe poder lanzar la skill mediante el comando de invocación.
 
 \textbf{RF6: Interacción continua}
 \begin{itemize}
-	\item \textbf{RF6.1}: La skill debe ser capaz de mantener una interacción continua con el usuario.
-    \item \textbf{RF6.2}: La skill debe ofrecer asistencia en todo momento, en casos de que los participantes no sepan qué hacer a continuación o pase cierto tiempo sin recibir una respuesta.
+	\item \textbf{RF6.1}: La skill debe ser capaz de mantener una interacción continua con el usuario, a la espera de una respuesta en todo momento.
+    \item \textbf{RF6.2}: La skill debe ofrecer asistencia en todo momento, en caso de que los participantes no sepan qué hacer a continuación y pase cierto tiempo sin recibir una respuesta, o que esta última no sea válida.
 \end{itemize}
 
 \textbf{RF7: Participar en un minijuego}
 \begin{itemize}
 	\item \textbf{RF7.1}: Cuando se cae en una casilla de minijuego, Alexa debe sacar un elemento aleatorio de la batería de preguntas correspondiente a dicho minijuego.
-	\item \textbf{RF7.2}: La skill debe poder capturar la respuesta del participante y verificar si es correcta o no.
+	\item \textbf{RF7.2}: La skill debe poder capturar la respuesta del participante y verificar si es correcta o no, actualizando sus puntos si es necesario.
 \end{itemize}
 
 
@@ -418,7 +432,69 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
 
 \newpage
 \subsection{Casos de uso y sus correspondientes diagramas}
+
+Una vez se han detallado las historias y usuario y los requisitos del sistema, el siguiente paso es elaborar los casos de uso, asociados a los requisitos definidos previamente e incluso otros casos de uso. Esta técnica de ingeniería de software permite establecer la forma de interactuar entre los actores, entendidos como las entidades o sistema implicados en cada funcionalidad.  
+
 \subsubsection{Casos de uso}
+
+Como los actores siempre van a ser las personas usuarias y la asistente conversacional Alexa, se ha omitido esta fila en la plantilla de casos de uso, manteniendo únicamente en ella los aspectos fundamentales para comprender el curso normal de eventos y excepciones.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{CU01}: Iniciar la skill} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria interactúa con Alexa para abrir la skill \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La skill está desplegada en la cuenta de Amazon vinculada al dispositivo Echo Show, que además debe tener acceso a Internet. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & El dispositivo muestra la pantalla de inicio \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF1 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria dice \enquote{Alexa, abre probando oca} para abrir la skill. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa realiza el lanzamiento de la skill, dando la bienvenida y una breve introducción al juego.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} Si la persona usuaria intenta jugar antes de haber lanzado la skill, Alexa dirá que no reconoce ninguno de los comandos. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 1}
+	\label{tab:CU01}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{CU02}: Handler 2} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria interactúa con Alexa para abrir la skill \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La skill está desplegada en la cuenta de Amazon vinculada al dispositivo Echo Show, que además debe tener acceso a Internet. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & El dispositivo muestra la pantalla de inicio \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF1 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria dice \enquote{Alexa, abre probando oca} para abrir la skill. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa realiza el lanzamiento de la skill, dando la bienvenida y una breve introducción al juego.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} Si la persona usuaria intenta jugar antes de haber lanzado la skill, Alexa dirá que no reconoce ninguno de los comandos. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 2}
+	\label{tab:CU02}
+\end{table}
+
 \subsubsection{Matriz de cobertura de requisitos funcionales}
 \subsubsection{Diagramas de secuencia}
 
