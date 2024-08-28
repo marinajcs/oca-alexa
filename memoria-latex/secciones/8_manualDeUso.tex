@@ -57,19 +57,22 @@ El juego lo colocará en la nueva casilla, que dependiendo de su tipo, puede imp
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{7cm}|}
 		\hline
+		\rowcolor{lightgray}
 		\textbf{Comando} & \textbf{Cuándo puede invocarse}\\
+		\hline
+		Abrir la skill & En cualquier momento \\
 		\hline
 		Explícame & En cualquier momento \\
 		\hline
 		Nueva partida & En cualquier momento \\
 		\hline
-		Reanudar partida & Al iniciar sesión, si hay una partida guardada \\
+		Reanudar partida & En cualquier momento \\
 		\hline
-		Guardar partida & En cualquier momento \\
+		Guardar partida & Al inicio de cualquier turno, antes de tirar el dado \\
 		\hline
-		Terminar partida & En cualquier momento \\
+		Cerrar la skill & En cualquier momento \\
 		\hline
 		Tirar dado & Al inicio del turno de un participante \\
 		\hline
@@ -82,19 +85,20 @@ El juego lo colocará en la nueva casilla, que dependiendo de su tipo, puede imp
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|p{7cm}|}
 		\hline
+		\rowcolor{lightgray}
 		\textbf{Minijuego} & \textbf{Tipo de respuesta esperada}\\
 		\hline
-		Trivial V/F & Verdadero o Falso \\
+		Trivial V/F & Verdadero o falso \\
 		\hline
-		Conoce a los participantes & Sí o No \\
+		Conoce a los participantes & Correcto/a o incorrecto/a \\
 		\hline
-		Adivina la fecha & Una cifra (día, año, etc), un día de la semana, un mes o una estación del año \\
+		Adivina la fecha & Un número \\
 		\hline
-		Recuerda la última casilla & El nombre de la casilla en la que cayó el participante en el turno anterior \\
+		Recuerda la última casilla & El nombre de la casilla en la que cayó en el turno anterior \\
 		\hline
-		Secuencia de palabras & Una palabra de la lista cada vez \\
+		Recuerda la fecha & Un día de la semana, mes o estación del año \\
 		\hline
 	\end{tabular}
 	\caption{Tipos de respuestas del usuario a los minijuegos}

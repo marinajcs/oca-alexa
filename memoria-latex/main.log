@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.6.20)  27 AUG 2024 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.6.20)  28 AUG 2024 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,12 +345,47 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 765
 \RaggedLeftParindent=\skip65
 \RaggedRightParindent=\skip66
 \JustifyingParindent=\skip67
+) (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+
+(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen160
+\ar@mcellbox=\box54
+\extrarowheight=\dimen161
+\NC@list=\toks26
+\extratabsurround=\skip68
+\backup@length=\skip69
+\ar@cellbox=\box55
+)
+\everycr=\toks27
+\minrowclearance=\skip70
+\rownum=\count287
+)
+LaTeX Info: Redefining \color on input line 711.
+
+(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
-
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count287
+\lrq@indent=\count288
 
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -358,63 +393,63 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count288
-\c@listtotal=\count289
-\c@listcount=\count290
-\c@liststart=\count291
-\c@liststop=\count292
-\c@citecount=\count293
-\c@citetotal=\count294
-\c@multicitecount=\count295
-\c@multicitetotal=\count296
-\c@instcount=\count297
-\c@maxnames=\count298
-\c@minnames=\count299
-\c@maxitems=\count300
-\c@minitems=\count301
-\c@citecounter=\count302
-\c@maxcitecounter=\count303
-\c@savedcitecounter=\count304
-\c@uniquelist=\count305
-\c@uniquename=\count306
-\c@refsection=\count307
-\c@refsegment=\count308
-\c@maxextratitle=\count309
-\c@maxextratitleyear=\count310
-\c@maxextraname=\count311
-\c@maxextradate=\count312
-\c@maxextraalpha=\count313
-\c@abbrvpenalty=\count314
-\c@highnamepenalty=\count315
-\c@lownamepenalty=\count316
-\c@maxparens=\count317
-\c@parenlevel=\count318
-\blx@tempcnta=\count319
-\blx@tempcntb=\count320
-\blx@tempcntc=\count321
-\c@blx@maxsection=\count322
-\blx@maxsegment@0=\count323
-\blx@notetype=\count324
-\blx@parenlevel@text=\count325
-\blx@parenlevel@foot=\count326
-\blx@sectionciteorder@0=\count327
-\blx@sectionciteorderinternal@0=\count328
-\blx@entrysetcounter=\count329
-\blx@biblioinstance=\count330
-\labelnumberwidth=\skip68
-\labelalphawidth=\skip69
-\biblabelsep=\skip70
-\bibitemsep=\skip71
-\bibnamesep=\skip72
-\bibinitsep=\skip73
-\bibparsep=\skip74
-\bibhang=\skip75
+\c@tabx@nest=\count289
+\c@listtotal=\count290
+\c@listcount=\count291
+\c@liststart=\count292
+\c@liststop=\count293
+\c@citecount=\count294
+\c@citetotal=\count295
+\c@multicitecount=\count296
+\c@multicitetotal=\count297
+\c@instcount=\count298
+\c@maxnames=\count299
+\c@minnames=\count300
+\c@maxitems=\count301
+\c@minitems=\count302
+\c@citecounter=\count303
+\c@maxcitecounter=\count304
+\c@savedcitecounter=\count305
+\c@uniquelist=\count306
+\c@uniquename=\count307
+\c@refsection=\count308
+\c@refsegment=\count309
+\c@maxextratitle=\count310
+\c@maxextratitleyear=\count311
+\c@maxextraname=\count312
+\c@maxextradate=\count313
+\c@maxextraalpha=\count314
+\c@abbrvpenalty=\count315
+\c@highnamepenalty=\count316
+\c@lownamepenalty=\count317
+\c@maxparens=\count318
+\c@parenlevel=\count319
+\blx@tempcnta=\count320
+\blx@tempcntb=\count321
+\blx@tempcntc=\count322
+\c@blx@maxsection=\count323
+\blx@maxsegment@0=\count324
+\blx@notetype=\count325
+\blx@parenlevel@text=\count326
+\blx@parenlevel@foot=\count327
+\blx@sectionciteorder@0=\count328
+\blx@sectionciteorderinternal@0=\count329
+\blx@entrysetcounter=\count330
+\blx@biblioinstance=\count331
+\labelnumberwidth=\skip71
+\labelalphawidth=\skip72
+\biblabelsep=\skip73
+\bibitemsep=\skip74
+\bibnamesep=\skip75
+\bibinitsep=\skip76
+\bibparsep=\skip77
+\bibhang=\skip78
 \blx@bcfin=\read3
 \blx@bcfout=\write4
 \blx@langwohyphens=\language80
-\c@mincomprange=\count331
-\c@maxcomprange=\count332
-\c@mincompwidth=\count333
+\c@mincomprange=\count332
+\c@maxcomprange=\count333
+\c@mincompwidth=\count334
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -429,98 +464,98 @@ File: apa.dbx 2023/03/20 v9.17 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count334
-\c@savedafterword=\count335
-\c@annotator=\count336
-\c@savedannotator=\count337
-\c@author=\count338
-\c@savedauthor=\count339
-\c@bookauthor=\count340
-\c@savedbookauthor=\count341
-\c@commentator=\count342
-\c@savedcommentator=\count343
-\c@editor=\count344
-\c@savededitor=\count345
-\c@editora=\count346
-\c@savededitora=\count347
-\c@editorb=\count348
-\c@savededitorb=\count349
-\c@editorc=\count350
-\c@savededitorc=\count351
-\c@foreword=\count352
-\c@savedforeword=\count353
-\c@holder=\count354
-\c@savedholder=\count355
-\c@introduction=\count356
-\c@savedintroduction=\count357
-\c@namea=\count358
-\c@savednamea=\count359
-\c@nameb=\count360
-\c@savednameb=\count361
-\c@namec=\count362
-\c@savednamec=\count363
-\c@translator=\count364
-\c@savedtranslator=\count365
-\c@shortauthor=\count366
-\c@savedshortauthor=\count367
-\c@shorteditor=\count368
-\c@savedshorteditor=\count369
-\c@narrator=\count370
-\c@savednarrator=\count371
-\c@execproducer=\count372
-\c@savedexecproducer=\count373
-\c@execdirector=\count374
-\c@savedexecdirector=\count375
-\c@with=\count376
-\c@savedwith=\count377
-\c@labelname=\count378
-\c@savedlabelname=\count379
-\c@institution=\count380
-\c@savedinstitution=\count381
-\c@lista=\count382
-\c@savedlista=\count383
-\c@listb=\count384
-\c@savedlistb=\count385
-\c@listc=\count386
-\c@savedlistc=\count387
-\c@listd=\count388
-\c@savedlistd=\count389
-\c@liste=\count390
-\c@savedliste=\count391
-\c@listf=\count392
-\c@savedlistf=\count393
-\c@location=\count394
-\c@savedlocation=\count395
-\c@organization=\count396
-\c@savedorganization=\count397
-\c@origlocation=\count398
-\c@savedoriglocation=\count399
-\c@origpublisher=\count400
-\c@savedorigpublisher=\count401
-\c@publisher=\count402
-\c@savedpublisher=\count403
-\c@language=\count404
-\c@savedlanguage=\count405
-\c@origlanguage=\count406
-\c@savedoriglanguage=\count407
-\c@citation=\count408
-\c@savedcitation=\count409
-\c@pageref=\count410
-\c@savedpageref=\count411
-\shorthandwidth=\skip76
-\shortjournalwidth=\skip77
-\shortserieswidth=\skip78
-\shorttitlewidth=\skip79
-\shortauthorwidth=\skip80
-\shorteditorwidth=\skip81
-\locallabelnumberwidth=\skip82
-\locallabelalphawidth=\skip83
-\localshorthandwidth=\skip84
-\localshortjournalwidth=\skip85
-\localshortserieswidth=\skip86
-\localshorttitlewidth=\skip87
-\localshortauthorwidth=\skip88
-\localshorteditorwidth=\skip89
+\c@afterword=\count335
+\c@savedafterword=\count336
+\c@annotator=\count337
+\c@savedannotator=\count338
+\c@author=\count339
+\c@savedauthor=\count340
+\c@bookauthor=\count341
+\c@savedbookauthor=\count342
+\c@commentator=\count343
+\c@savedcommentator=\count344
+\c@editor=\count345
+\c@savededitor=\count346
+\c@editora=\count347
+\c@savededitora=\count348
+\c@editorb=\count349
+\c@savededitorb=\count350
+\c@editorc=\count351
+\c@savededitorc=\count352
+\c@foreword=\count353
+\c@savedforeword=\count354
+\c@holder=\count355
+\c@savedholder=\count356
+\c@introduction=\count357
+\c@savedintroduction=\count358
+\c@namea=\count359
+\c@savednamea=\count360
+\c@nameb=\count361
+\c@savednameb=\count362
+\c@namec=\count363
+\c@savednamec=\count364
+\c@translator=\count365
+\c@savedtranslator=\count366
+\c@shortauthor=\count367
+\c@savedshortauthor=\count368
+\c@shorteditor=\count369
+\c@savedshorteditor=\count370
+\c@narrator=\count371
+\c@savednarrator=\count372
+\c@execproducer=\count373
+\c@savedexecproducer=\count374
+\c@execdirector=\count375
+\c@savedexecdirector=\count376
+\c@with=\count377
+\c@savedwith=\count378
+\c@labelname=\count379
+\c@savedlabelname=\count380
+\c@institution=\count381
+\c@savedinstitution=\count382
+\c@lista=\count383
+\c@savedlista=\count384
+\c@listb=\count385
+\c@savedlistb=\count386
+\c@listc=\count387
+\c@savedlistc=\count388
+\c@listd=\count389
+\c@savedlistd=\count390
+\c@liste=\count391
+\c@savedliste=\count392
+\c@listf=\count393
+\c@savedlistf=\count394
+\c@location=\count395
+\c@savedlocation=\count396
+\c@organization=\count397
+\c@savedorganization=\count398
+\c@origlocation=\count399
+\c@savedoriglocation=\count400
+\c@origpublisher=\count401
+\c@savedorigpublisher=\count402
+\c@publisher=\count403
+\c@savedpublisher=\count404
+\c@language=\count405
+\c@savedlanguage=\count406
+\c@origlanguage=\count407
+\c@savedoriglanguage=\count408
+\c@citation=\count409
+\c@savedcitation=\count410
+\c@pageref=\count411
+\c@savedpageref=\count412
+\shorthandwidth=\skip79
+\shortjournalwidth=\skip80
+\shortserieswidth=\skip81
+\shorttitlewidth=\skip82
+\shortauthorwidth=\skip83
+\shorteditorwidth=\skip84
+\locallabelnumberwidth=\skip85
+\locallabelalphawidth=\skip86
+\localshorthandwidth=\skip87
+\localshortjournalwidth=\skip88
+\localshortserieswidth=\skip89
+\localshorttitlewidth=\skip90
+\localshortauthorwidth=\skip91
+\localshorteditorwidth=\skip92
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -531,19 +566,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count412
-\c@textcitetotal=\count413
-\c@textcitemaxnames=\count414
-\c@biburlbigbreakpenalty=\count415
-\c@biburlbreakpenalty=\count416
-\c@biburlnumpenalty=\count417
-\c@biburlucpenalty=\count418
-\c@biburllcpenalty=\count419
+\c@textcitecount=\count413
+\c@textcitetotal=\count414
+\c@textcitemaxnames=\count415
+\c@biburlbigbreakpenalty=\count416
+\c@biburlbreakpenalty=\count417
+\c@biburlnumpenalty=\count418
+\c@biburlucpenalty=\count419
+\c@biburllcpenalty=\count420
 \biburlbigskip=\muskip17
 \biburlnumskip=\muskip18
 \biburlucskip=\muskip19
 \biburllcskip=\muskip20
-\c@smartand=\count420
+\c@smartand=\count421
 )
 Package biblatex Info: Trying to load bibliography style 'apa'...
 Package biblatex Info: ... file 'apa.bbx' found.
@@ -555,8 +590,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count421
-\c@bbx:relatedtotal=\count422
+\c@bbx:relatedcount=\count422
+\c@bbx:relatedtotal=\count423
 )
 Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defin
 ed, overwriting.
@@ -607,8 +642,8 @@ Package: expl3 2023-03-30 L3 programming layer (loader)
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count423
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count424
+\l__pdf_internal_box=\box56
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2023-03-30 L3 programming layer (loader) 
@@ -628,15 +663,15 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box55
-\beforetitleunit=\skip90
-\aftertitleunit=\skip91
-\ttl@plus=\dimen160
-\ttl@minus=\dimen161
-\ttl@toksa=\toks26
-\titlewidth=\dimen162
-\titlewidthlast=\dimen163
-\titlewidthfirst=\dimen164
+\ttl@box=\box57
+\beforetitleunit=\skip93
+\aftertitleunit=\skip94
+\ttl@plus=\dimen162
+\ttl@minus=\dimen163
+\ttl@toksa=\toks28
+\titlewidth=\dimen164
+\titlewidthlast=\dimen165
+\titlewidthfirst=\dimen166
 )
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -650,41 +685,23 @@ nd its extensions (msharpe)
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
-(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-
-(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 227.
-LaTeX Info: Redefining \color on input line 711.
-(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+(C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks27
-\XKV@tempa@toks=\toks28
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
 )
-\XKV@depth=\count424
+\XKV@depth=\count425
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count425
-\xs_countb=\count426
+\xs_counta=\count426
+\xs_countb=\count427
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty
@@ -694,8 +711,8 @@ LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/generic/binhex\binhex.tex)
-\ntx@tmpcnta=\count427
-\ntx@cnt=\count428
+\ntx@tmpcnta=\count428
+\ntx@cnt=\count429
 
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/fontaxes\fontaxes.sty
 Package: fontaxes 2020/07/21 v1.0e Font selection axes
@@ -710,20 +727,20 @@ LaTeX Info: Redefining \textsw on input line 47.
 LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
 )
-\tx@sixem=\dimen165
-\tx@y=\dimen166
-\tx@x=\dimen167
-\tx@tmpdima=\dimen168
-\tx@tmpdimb=\dimen169
-\tx@tmpdimc=\dimen170
-\tx@tmpdimd=\dimen171
-\tx@tmpdime=\dimen172
-\tx@tmpdimf=\dimen173
-\tx@dimA=\dimen174
-\tx@dimAA=\dimen175
-\tx@dimB=\dimen176
-\tx@dimBB=\dimen177
-\tx@dimC=\dimen178
+\tx@sixem=\dimen167
+\tx@y=\dimen168
+\tx@x=\dimen169
+\tx@tmpdima=\dimen170
+\tx@tmpdimb=\dimen171
+\tx@tmpdimc=\dimen172
+\tx@tmpdimd=\dimen173
+\tx@tmpdime=\dimen174
+\tx@tmpdimf=\dimen175
+\tx@dimA=\dimen176
+\tx@dimAA=\dimen177
+\tx@dimB=\dimen178
+\tx@dimBB=\dimen179
+\tx@dimC=\dimen180
 LaTeX Info: Redefining \oldstylenums on input line 902.
 )
 Package csquotes Info: Checking for multilingual support...
@@ -731,12 +748,12 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 38.
+ 45.
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 38.
+(Font)              scaled to size 12.0pt on input line 45.
 
 (main.aux
 LaTeX Info: Redefining \. on input line 23.
@@ -744,24 +761,24 @@ LaTeX Info: Redefining \% on input line 23.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -801,17 +818,17 @@ LaTeX Font Info:    ... okay on input line 38.
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count429
-\scratchdimen=\dimen179
-\scratchbox=\box56
-\nofMPsegments=\count430
-\nofMParguments=\count431
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count432
-\MPscratchDim=\dimen180
-\MPnumerator=\count433
-\makeMPintoPDFobject=\count434
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count430
+\scratchdimen=\dimen181
+\scratchbox=\box58
+\nofMPsegments=\count431
+\nofMParguments=\count432
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count433
+\MPscratchDim=\dimen182
+\MPnumerator=\count434
+\makeMPintoPDFobject=\count435
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -823,14 +840,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
-Package hyperref Info: Link coloring ON on input line 38.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+Package hyperref Info: Link coloring ON on input line 45.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-Package ragged2e Info: ABD: executing \RaggedRight on input line 38.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 45.
 Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
 Package biblatex Info: ... file 'spanish-apa.lbx' found.
 
@@ -859,40 +876,40 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
-\c@mv@tabular=\count435
-\c@mv@boldtabular=\count436
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
+\c@mv@tabular=\count436
+\c@mv@boldtabular=\count437
 <./imgs//UGR-Logo.png, id=255, 1284.8pt x 722.7pt>
 File: ./imgs//UGR-Logo.png Graphic file (type png)
 <use ./imgs//UGR-Logo.png>
-Package pdftex.def Info: ./imgs//UGR-Logo.png  used on input line 43.
+Package pdftex.def Info: ./imgs//UGR-Logo.png  used on input line 50.
 (pdftex.def)             Requested size: 234.87769pt x 132.10944pt.
 <./imgs//ETSIIT-logo.png, id=257, 891.33pt x 411.136pt>
 File: ./imgs//ETSIIT-logo.png Graphic file (type png)
 <use ./imgs//ETSIIT-logo.png>
-Package pdftex.def Info: ./imgs//ETSIIT-logo.png  used on input line 44.
+Package pdftex.def Info: ./imgs//ETSIIT-logo.png  used on input line 51.
 (pdftex.def)             Requested size: 230.18271pt x 106.17139pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 45.
+(Font)              <12> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 45.
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 45
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 52
 .
 
 (C:\Users\marin\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 49.
+(Font)              scaled to size 20.74pt on input line 56.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 52.
+(Font)              scaled to size 17.28pt on input line 59.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 59.
+(Font)              scaled to size 24.88pt on input line 66.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 67.
+(Font)              scaled to size 17.28pt on input line 74.
 
 [1
 
@@ -900,13 +917,13 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./imgs//
 UGR-Logo.png> <./imgs//ETSIIT-logo.png>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 77.
+(Font)              scaled to size 12.0pt on input line 84.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.91 \newpage
+l.98 \newpage
               [1] (main.toc
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
@@ -949,7 +966,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
  [6]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 19.
-<imgs/piramide-poblacion.jpg, id=457, 896.34875pt x 228.855pt>
+<imgs/piramide-poblacion.jpg, id=459, 896.34875pt x 228.855pt>
 File: imgs/piramide-poblacion.jpg Graphic file (type jpg)
 <use imgs/piramide-poblacion.jpg>
 Package pdftex.def Info: imgs/piramide-poblacion.jpg  used on input line 28.
@@ -961,12 +978,12 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.34 
       <./imgs/piramide-poblacion.jpg>] [8]
-<imgs/INE-grafica1.jpeg, id=475, 271.0125pt x 220.57407pt>
+<imgs/INE-grafica1.jpeg, id=477, 271.0125pt x 220.57407pt>
 File: imgs/INE-grafica1.jpeg Graphic file (type jpg)
 <use imgs/INE-grafica1.jpeg>
 Package pdftex.def Info: imgs/INE-grafica1.jpeg  used on input line 59.
 (pdftex.def)             Requested size: 271.01183pt x 220.57352pt.
-<imgs/INE-grafica2.jpeg, id=476, 259.7203pt x 373.395pt>
+<imgs/INE-grafica2.jpeg, id=478, 259.7203pt x 373.395pt>
 File: imgs/INE-grafica2.jpeg Graphic file (type jpg)
 <use imgs/INE-grafica2.jpeg>
 Package pdftex.def Info: imgs/INE-grafica2.jpeg  used on input line 66.
@@ -989,9 +1006,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.104 \newpage
+l.111 \newpage
               ] (secciones/2_estadoDelArte.tex [12] [13]
-<imgs/gradior.jpg, id=516, 943.525pt x 530.98375pt>
+<imgs/gradior.jpg, id=518, 943.525pt x 530.98375pt>
 File: imgs/gradior.jpg Graphic file (type jpg)
 <use imgs/gradior.jpg>
 Package pdftex.def Info: imgs/gradior.jpg  used on input line 57.
@@ -1003,7 +1020,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.66 \newpage
               <./imgs/gradior.jpg>] [15]
-<imgs/digital1.jpg, id=533, 147.4308pt x 98.2872pt>
+<imgs/digital1.jpg, id=535, 147.4308pt x 98.2872pt>
 File: imgs/digital1.jpg Graphic file (type jpg)
 <use imgs/digital1.jpg>
 Package pdftex.def Info: imgs/digital1.jpg  used on input line 115.
@@ -1014,116 +1031,122 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.136 
-       <./imgs/digital1.jpg>] [18]
-<imgs/grafico-asistentes.jpeg, id=554, 1204.5pt x 1204.5pt>
-File: imgs/grafico-asistentes.jpeg Graphic file (type jpg)
-<use imgs/grafico-asistentes.jpeg>
-Package pdftex.def Info: imgs/grafico-asistentes.jpeg  used on input line 192.
-(pdftex.def)             Requested size: 281.8561pt x 281.84451pt.
- [19
+       <./imgs/digital1.jpg>] [18] [19
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.198 
-      ] [20
+l.190 
+      ]
+<imgs/grafico-asistentes.jpeg, id=560, 1204.5pt x 1204.5pt>
+File: imgs/grafico-asistentes.jpeg Graphic file (type jpg)
+<use imgs/grafico-asistentes.jpeg>
+Package pdftex.def Info: imgs/grafico-asistentes.jpeg  used on input line 193.
+(pdftex.def)             Requested size: 281.8561pt x 281.84451pt.
+ [20
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.210 
-       <./imgs/grafico-asistentes.jpeg>]
-<imgs/celia.jpg, id=568, 1026.83624pt x 684.5575pt>
+l.204 P
+       or los motivos mencionados anteriormente, se va a elegir a Alexa como...
+ <./imgs/grafico-asistentes.jpeg>]
+<imgs/celia.jpg, id=570, 1026.83624pt x 684.5575pt>
 File: imgs/celia.jpg Graphic file (type jpg)
 <use imgs/celia.jpg>
-Package pdftex.def Info: imgs/celia.jpg  used on input line 215.
+Package pdftex.def Info: imgs/celia.jpg  used on input line 216.
 (pdftex.def)             Requested size: 305.33812pt x 203.56175pt.
  [21
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.227 
-       <./imgs/celia.jpg>]
-<imgs/mockupTFG1.JPG, id=578, 321.2pt x 164.615pt>
+l.225 E
+       s compatible y accesible a través de cualquier dispositivo de la fam...
+ <./imgs/celia.jpg>]
+<imgs/mockupTFG1.JPG, id=579, 321.2pt x 164.615pt>
 File: imgs/mockupTFG1.JPG Graphic file (type jpg)
 <use imgs/mockupTFG1.JPG>
-Package pdftex.def Info: imgs/mockupTFG1.JPG  used on input line 238.
+Package pdftex.def Info: imgs/mockupTFG1.JPG  used on input line 239.
 (pdftex.def)             Requested size: 305.33812pt x 156.49136pt.
 ) [22
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.107 \newpage
-               <./imgs/mockupTFG1.JPG>] (secciones/3_planificacion.tex [23]
-LaTeX Font Info:    Faking \texteuro for font family ntxtlf
-(Font)              in TS1 encoding on input line 43.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.39996pt on input line 43.
-LaTeX Font Info:    Faking \texteuro for font family ntxtlf
-(Font)              in TS1 encoding on input line 61.
-LaTeX Font Info:    Faking \texteuro for font family ntxtlf
-(Font)              in TS1 encoding on input line 79.
+l.113 
+       <./imgs/mockupTFG1.JPG>] [23] (secciones/3_planificacion.tex
+Overfull \hbox (3.57547pt too wide) in paragraph at lines 11--52
+[][] 
+ []
 
-[24
+[24] [25]
+LaTeX Font Info:    Faking \texteuro for font family ntxtlf
+(Font)              in TS1 encoding on input line 84.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.39996pt on input line 84.
+ [26]
+LaTeX Font Info:    Faking \texteuro for font family ntxtlf
+(Font)              in TS1 encoding on input line 103.
+LaTeX Font Info:    Faking \texteuro for font family ntxtlf
+(Font)              in TS1 encoding on input line 122.
+LaTeX Font Info:    Faking \texteuro for font family ntxtlf
+(Font)              in TS1 encoding on input line 151.
+) [27
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 
-     
+l.116 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 
-     ]
-LaTeX Font Info:    Faking \texteuro for font family ntxtlf
-(Font)              in TS1 encoding on input line 107.
-) [25
+l.116 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.110 \newpage
-              
+l.116 
+      ] [28
 pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.110 \newpage
+l.117 \newpage
               ] (secciones/4_analisisProblema.tex
-<imgs/casillas-oca-primaria.JPG, id=605, 360.84813pt x 170.13562pt>
+<imgs/casillas-oca-primaria.JPG, id=619, 360.84813pt x 170.13562pt>
 File: imgs/casillas-oca-primaria.JPG Graphic file (type jpg)
 <use imgs/casillas-oca-primaria.JPG>
 Package pdftex.def Info: imgs/casillas-oca-primaria.JPG  used on input line 15.
 
 (pdftex.def)             Requested size: 469.75539pt x 221.4852pt.
-<imgs/oca-primaria.JPG, id=608, 221.32687pt x 181.67876pt>
+<imgs/oca-primaria.JPG, id=622, 221.32687pt x 181.67876pt>
 File: imgs/oca-primaria.JPG Graphic file (type jpg)
 <use imgs/oca-primaria.JPG>
 Package pdftex.def Info: imgs/oca-primaria.JPG  used on input line 22.
 (pdftex.def)             Requested size: 211.38849pt x 173.53082pt.
- [26
+ [29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.25 \end{figure}
                   <./imgs/casillas-oca-primaria.JPG>]
-<imgs/oca-tradicional.jpg, id=615, 2015.53pt x 2055.68pt>
+<imgs/oca-tradicional.jpg, id=629, 2015.53pt x 2055.68pt>
 File: imgs/oca-tradicional.jpg Graphic file (type jpg)
 <use imgs/oca-tradicional.jpg>
 Package pdftex.def Info: imgs/oca-tradicional.jpg  used on input line 36.
 (pdftex.def)             Requested size: 328.82733pt x 335.37715pt.
- [27
+ [30
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.40 
-      <./imgs/oca-primaria.JPG>] [28
+      <./imgs/oca-primaria.JPG>] [31
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1134,109 +1157,115 @@ l.54 		\item
 Package textcomp Info: Symbol \texttwosuperior not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
 (textcomp)             Default family used instead on input line 60.
- [29]
-<imgs/formatoHU.jpg, id=633, 267.49937pt x 23.58812pt>
+ [32]
+<imgs/formatoHU.jpg, id=648, 267.49937pt x 23.58812pt>
 File: imgs/formatoHU.jpg Graphic file (type jpg)
 <use imgs/formatoHU.jpg>
 Package pdftex.def Info: imgs/formatoHU.jpg  used on input line 110.
 (pdftex.def)             Requested size: 413.38702pt x 36.45644pt.
- [30
+ [33
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.118 
-       <./imgs/formatoHU.jpg>] [31
+       <./imgs/formatoHU.jpg>] [34
 pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.209 
+l.196 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.209 
+l.196 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.209 
-      
+l.196 
+      ] [35
 pdfTeX warning (ext4): destination with the same identifier (name{table.10}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.209 
-      ] [32
+l.270 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.11}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 
+l.270 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.12}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 
+l.270 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.13}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 
+l.270 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.14}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 
-      
+l.270 
+      ] [36
 pdfTeX warning (ext4): destination with the same identifier (name{table.15}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.298 
-      ] [33
+l.344 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.16}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.350 \newpage
-              
+l.344 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.17}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.350 \newpage
-              
+l.344 
+      ] [37
 pdfTeX warning (ext4): destination with the same identifier (name{table.18}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.350 \newpage
+l.363 \newpage
               
 pdfTeX warning (ext4): destination with the same identifier (name{table.19}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.350 \newpage
-              ] [34] [35] [36]) [37
+l.363 \newpage
+              ] [38] [39] [40] [41
 pdfTeX warning (ext4): destination with the same identifier (name{table.20}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.113 \newpage
+l.512 
+      ]) [42
+pdfTeX warning (ext4): destination with the same identifier (name{table.21}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.120 \newpage
               ] (secciones/5_diseño.tex
-<imgs/arquitectura-skill.png, id=671, 782.925pt x 523.9575pt>
+<imgs/arquitectura-skill.png, id=694, 782.925pt x 523.9575pt>
 File: imgs/arquitectura-skill.png Graphic file (type png)
 <use imgs/arquitectura-skill.png>
 Package pdftex.def Info: imgs/arquitectura-skill.png  used on input line 13.
 (pdftex.def)             Requested size: 460.35826pt x 308.08492pt.
- [38
+ [43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1244,12 +1273,12 @@ as been already used, duplicate ignored
 l.22 	\item D
              iseñar de la interfaz, solo en caso de que se vaya a desplegar...
  <./imgs/arquitectura-skill.png>]
-<imgs/arquitectura-apl.png, id=679, 976.64874pt x 415.5525pt>
+<imgs/arquitectura-apl.png, id=702, 976.64874pt x 415.5525pt>
 File: imgs/arquitectura-apl.png Graphic file (type png)
 <use imgs/arquitectura-apl.png>
 Package pdftex.def Info: imgs/arquitectura-apl.png  used on input line 35.
 (pdftex.def)             Requested size: 460.35826pt x 195.88037pt.
- [39
+ [44
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1257,80 +1286,75 @@ as been already used, duplicate ignored
 l.42 	\item \textbf
                    {La propia skill}: es la que inicia el proceso al enviar ...
  <./imgs/arquitectura-apl.png>]
-<imgs/tablero-oca.jpg, id=696, 1106.1325pt x 1179.40625pt>
+<imgs/tablero-oca.jpg, id=719, 1106.1325pt x 1179.40625pt>
 File: imgs/tablero-oca.jpg Graphic file (type jpg)
 <use imgs/tablero-oca.jpg>
 Package pdftex.def Info: imgs/tablero-oca.jpg  used on input line 67.
 (pdftex.def)             Requested size: 460.35826pt x 490.84819pt.
- [40] [41
+ [45] [46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.73 
       <./imgs/tablero-oca.jpg>]
-<imgs/boceto-bienvenida.JPG, id=705, 370.38374pt x 190.7125pt>
+<imgs/boceto-bienvenida.JPG, id=728, 370.38374pt x 190.7125pt>
 File: imgs/boceto-bienvenida.JPG Graphic file (type jpg)
 <use imgs/boceto-bienvenida.JPG>
 Package pdftex.def Info: imgs/boceto-bienvenida.JPG  used on input line 78.
 (pdftex.def)             Requested size: 281.8561pt x 145.13214pt.
-<imgs/boceto-casilla.JPG, id=707, 369.38pt x 191.71625pt>
+<imgs/boceto-casilla.JPG, id=730, 369.38pt x 191.71625pt>
 File: imgs/boceto-casilla.JPG Graphic file (type jpg)
 <use imgs/boceto-casilla.JPG>
 Package pdftex.def Info: imgs/boceto-casilla.JPG  used on input line 85.
 (pdftex.def)             Requested size: 281.8561pt x 146.29092pt.
- [42
+ [47
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.120 
+l.121 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.120 
-       <./imgs/boceto-bienvenida.JPG> <./imgs/boceto-casilla.JPG>]) [43
-pdfTeX warning (ext4): destination with the same identifier (name{table.21}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.116 \newpage
-              ] (secciones/6_analisisTecnologico.tex
-<imgs/apl-example.JPG, id=720, 246.9225pt x 181.17688pt>
-File: imgs/apl-example.JPG Graphic file (type jpg)
-<use imgs/apl-example.JPG>
-Package pdftex.def Info: imgs/apl-example.JPG  used on input line 32.
-(pdftex.def)             Requested size: 281.8561pt x 206.82022pt.
- [44]) [45
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.119 \newpage
-               <./imgs/apl-example.JPG>] (secciones/7_desarrollo.tex) [46]
-(secciones/8_manualDeUso.tex
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 4.
- [47] [48]
-Overfull \hbox (44.88869pt too wide) in paragraph at lines 85--100
- [][] 
- []
-
-) [49
+l.121 
+       <./imgs/boceto-bienvenida.JPG> <./imgs/boceto-casilla.JPG>]) [48
 pdfTeX warning (ext4): destination with the same identifier (name{table.22}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 \newpage
-              
+l.123 \newpage
+              ] (secciones/6_analisisTecnologico.tex
+<imgs/apl-example.JPG, id=743, 246.9225pt x 181.17688pt>
+File: imgs/apl-example.JPG Graphic file (type jpg)
+<use imgs/apl-example.JPG>
+Package pdftex.def Info: imgs/apl-example.JPG  used on input line 32.
+(pdftex.def)             Requested size: 281.8561pt x 206.82022pt.
+ [49]) [50
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.126 \newpage
+               <./imgs/apl-example.JPG>] (secciones/7_desarrollo.tex) [51]
+(secciones/8_manualDeUso.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
+(Font)              scaled to size 12.0pt on input line 4.
+ [52] [53]) [54
 pdfTeX warning (ext4): destination with the same identifier (name{table.23}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 \newpage
-              ] (secciones/9_conclusiones.tex) [50] [51] [52] [53] (main.aux
+l.132 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.24}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.132 \newpage
+              ] (secciones/9_conclusiones.tex) [55] [56] [57] [58] (main.aux
 LaTeX Info: Redefining \sptext on input line 23.
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
@@ -1350,13 +1374,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22779 strings out of 476331
- 406020 string characters out of 5787765
- 1866660 words of memory out of 5000000
- 42650 multiletter control sequences out of 15000+600000
+ 22923 strings out of 476331
+ 408419 string characters out of 5787765
+ 1870660 words of memory out of 5000000
+ 42781 multiletter control sequences out of 15000+600000
  549444 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,866b,3760s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,76p,866b,3764s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gy
 re/qtmr.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ne
@@ -1364,9 +1388,9 @@ wtx/ztmb.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public/n
 ewtx/ztmbi.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /newtx/ztmr.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/newtx/ztmri.pfb>
-Output written on main.pdf (54 pages, 3715047 bytes).
+Output written on main.pdf (59 pages, 3723151 bytes).
 PDF statistics:
- 861 PDF objects out of 1000 (max. 8388607)
- 213 named destinations out of 1000 (max. 500000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 219 named destinations out of 1000 (max. 500000)
  605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
