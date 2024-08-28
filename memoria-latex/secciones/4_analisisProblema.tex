@@ -425,12 +425,16 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
     \item \textbf{RNF1.1}: La skill debe ser fácil de usar y entender, especialmente diseñada para personas mayores.
     \item \textbf{RNF1.2}: Para evitar dudas, que Alexa explique de forma clara y fácil de entender lo que deben hacer los jugadores.
     \item \textbf{RNF1.3}: Alexa debe dejar un margen flexible de tiempo para esperar una respuesta y si no lo hace, repite la pregunta.
+    \item \textbf{RNF1.4}: La interfaz debe ser simple y limitarse a mostrar los elementos relevantes de la partida para evitar saturar a los jugadores y jugadoras.
+    \item \textbf{RNF1.5}: La fuente y disposición de elementos debe estar adaptada para la compresión y comodidad de los y las participantes.
 \end{itemize}
 
-\textbf{RNF2: Accesibilidad e interfaz}
+\textbf{RNF2: Accesibilidad y compatibilidad}
 \begin{itemize}
-    \item \textbf{RNF2.1}: La interfaz debe ser simple y limitarse a mostrar los elementos relevantes de la partida para evitar saturar a los jugadores y jugadoras.
-    \item \textbf{RNF2.2}: La fuente y disposición de elementos debe estar adaptada para la compresión y comodidad de los y las participantes.
+    \item \textbf{RNF2.1}: Es necesaria una cuenta de Amazon para instalar la skill y poder interactuar con Alexa.
+    \item \textbf{RNF2.2}: Es necesario un dispositivo de Alexa con pantalla rectangular (como un Echo Show).
+    \item \textbf{RNF2.3}: El dispositivo de Alexa debe tener una conexión estable a Internet.
+    \item \textbf{RNF2.4}: La skill solo es compatible con el idioma español.
 \end{itemize}
 
 \textbf{RNF3: Rendimiento}
@@ -441,6 +445,11 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
 \textbf{RNF4: Fiabilidad}
 \begin{itemize}
     \item \textbf{RNF4.1}: La skill debe funcionar correctamente en la mayoría de las interacciones, minimizando errores y malentendidos en el reconocimiento de voz.
+\end{itemize}
+
+\textbf{RNF5: Seguridad}
+\begin{itemize}
+	\item \textbf{RNF5.1}: Seguir las prácticas recomendadas basadas en principio de mínimo privilegio a la hora de utilizar los servicios de AWS.
 \end{itemize}
 
 \newpage
@@ -486,31 +495,416 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{CU02}: Handler 2} \\
+		\multicolumn{2}{|c|}{\textbf{CU02}: Pedir ayuda} \\
 		\hline
-		\textbf{Descripción} & La persona usuaria interactúa con Alexa para abrir la skill \vspace{0.2cm} \\
+		\textbf{Descripción} & La persona usuaria interactúa con Alexa para pedirle ayuda \vspace{0.2cm} \\
 		\hline
-		\textbf{Precondiciones} & La skill está desplegada en la cuenta de Amazon vinculada al dispositivo Echo Show, que además debe tener acceso a Internet. \vspace{0.2cm} \\
+		\textbf{Precondiciones} & La skill está iniciada. \vspace{0.2cm} \\
 		\hline
-		\textbf{Postcondiciones} & El dispositivo muestra la pantalla de inicio \vspace{0.2cm} \\
+		\textbf{Postcondiciones} & Alexa ofrece un listado de temas que puede explicar. \vspace{0.2cm} \\
 		\hline
-		\textbf{Referencias} & RF1 \vspace{0.2cm} \\
+		\textbf{Referencias} & RF5.1, RF5.2, RF5.3 y RF5.4 \vspace{0.2cm} \\
 		\hline
 		\textbf{Flujo normal de eventos} &
-		\textbf{1.} La persona usuaria dice \enquote{Alexa, abre probando oca} para abrir la skill. \newline
+		\textbf{1.} La persona usuaria dice \enquote{Ayuda} para que Alexa pueda asistirle. \newline
 		\vspace{0.2cm}
-		\textbf{2.} Alexa realiza el lanzamiento de la skill, dando la bienvenida y una breve introducción al juego.
-		\vspace{0.2cm} \\
+		\textbf{2.} Alexa ofrece una lista de temas que puede explicar: las reglas y objetivos del juego, los tipos de casillas, los minijuegos y todos los comandos disponibles. Alexa dice que para aclarar uno de los temas, se debe decir \enquote{Explícame \textit{<tema>}}. \newline
+		\vspace{0.2cm}
+		\textbf{3.} La persona usuaria dice \enquote{Explícame \textit{<tema>}}, siendo \textit{<tema>} uno de los de la lista ofrecida por Alexa. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} Alexa procede a explicar de forma clara el \textit{<tema>} preguntado por la persona usuaria.
+		\vspace{0.2cm}\\
 		\hline
 		\textbf{Flujo alterno de eventos} &
-		\textbf{1.a.} Si la persona usuaria intenta jugar antes de haber lanzado la skill, Alexa dirá que no reconoce ninguno de los comandos. \vspace{0.2cm} \\
+		\textbf{3.a.} Si la persona usuaria intenta preguntar por un tema que no viene en la lista ofrecida por Alexa, repetirá la lista de temas que puede explicar. \vspace{0.2cm} \\
 		\hline
 	\end{tabular}
 	\caption{Caso de uso nº 2}
 	\label{tab:CU02}
 \end{table}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU03}: Crear una nueva partida} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria interactúa con Alexa para crear una nueva partida del juego de la oca. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La skill está iniciada. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Alexa crea una nueva partida con las configuraciones proporcionadas por la persona usuaria. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF2.1, RF2.2, RF4.4, RF6.1 y RF6.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria le dice \enquote{Nueva partida} a Alexa. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa pregunta si los participantes van a jugar por equipos o individualmente. \newline
+		\vspace{0.2cm}
+		\textbf{3.} La persona usuaria responde: \enquote{por equipos} o \enquote{por jugadores individuales}. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} Alexa pide confirmación, y después pregunta por el número de equipos/jugadores que van a participar en el juego. \newline
+		\vspace{0.2cm}
+		\textbf{5.} La persona usuaria responde con el número de participantes o equipos.\newline
+		\vspace{0.2cm}
+		\textbf{6.} Alexa confirma la respuesta, y después pide proceder con el registro de nombre de los equipos/participantes, dando instrucciones de cómo hacerlo.
+		\vspace{0.2cm}\\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{3.a.} Si la persona usuaria dice un comando distinto a las dos posibles opciones, Alexa vuelve a preguntarle por el tipo de participantes. \vspace{0.2cm} \newline
+		\textbf{5.a.} Si la persona usuaria responde con algo que no es un número, o es una cifra no válida (menor que 1 y mayor que 5), Alexa repite la pregunta del número de participantes. \vspace{0.2cm} \newline
+		\textbf{4.a.} y \textbf{6.a.} Si la persona usuaria no le confirma su respuesta a Alexa, le volverá a formular la pregunta. \vspace{0.2cm}\\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 3}
+	\label{tab:CU03}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU04}: Registro de participantes} \\
+		\hline
+		\textbf{Descripción} & Todos los equipos/participantes interactúan con Alexa para registrar sus nombres en el juego. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & Se está creando una nueva partida y ya se han configurado los siguientes datos: tipo y número de participantes. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Alexa anuncia el nombre de cada participante o equipo, muestra sus colores y nombres por pantalla, y anuncia el comienzo de la partida. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF2.3, RF6.1 y RF6.2  |  CU03 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} El primer equipo/participante dice \enquote{Nuestro/Mi nombre es \textit{<nombre}>} para que Alexa pueda registrarlo. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa confirma el nombre registrado y pide el del siguiente equipo/participante. \newline
+		\vspace{0.2cm}
+		\textbf{3.} El siguiente equipo/participante registra su nombre de la misma forma que el primero. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} Alexa sigue pidiendo nombres hasta que se hayan registrado todos, en cuyo caso hace un resumen de los equipos/participantes registrados y los muestra por pantalla. Después hace una copia de los datos de la partida en la base de datos.
+		\vspace{0.2cm}\\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} y \textbf{3.a}. Si el equipo/participante no anuncia su nombre de la forma correcta establecida por Alexa, o Alexa no recibe respuesta en un rato, le recuerda que registre su nombre y cómo hacerlo. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 4}
+	\label{tab:CU04}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU05}: Jugar un turno} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual juega su turno, compuesto por dos partes: tirar el dado y mover su ficha. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La partida ya está configurada y es el comienzo del turno del equipo/participante actual, quien no debe estar atrapado en alguna casilla de penalización. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Alexa muestra por pantalla el color y nombre del equipo/participante actual y la casilla en la que ha caído, explicando el evento que esta ha desencadenado. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF3.1, RF3.2, RF6.1 y RF6.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} El equipo/participante actual dice \enquote{Tirar dado}. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa muestra la tira de dado por pantalla y anuncia el número del 1 al 6 que ha salido. Después le indica que mueva su ficha. \newline
+		\vspace{0.2cm}
+		\textbf{3.} El equipo/participante actual dice \enquote{Mover ficha}. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} Alexa informa sobre su movimiento, mostrando por pantalla el nombre y color del equipo/participante actual, así como en la casilla que ha caído. Alexa la describe y da las instrucciones adicionales necesarias en caso de ser una casilla especial.
+		\vspace{0.2cm}\\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} y \textbf{3.a}. Si el equipo/participante actual dice un comando no accesible en ese momento o distinto al especificado, Alexa le repetirá lo que debe decir para avanzar en el juego. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 5}
+	\label{tab:CU05}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU06}: Guardar la partida} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria guarda el estado de la partida actual para que persista de una sesión a otra. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La partida actual ya está configurada, y solo puede guardarse al comienzo de turno de cualquier jugador, es decir, antes de tirar el dado. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Alexa anuncia que se han guardado los datos correctamente, al haber sido enviados con éxito a la base de datos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF4.1 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria dice \enquote{Guardar partida}. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa envía los datos de la partida y de los jugadores a la base de datos de DynamoDB y anuncia que la operación tuvo éxito.
+		\vspace{0.2cm}\\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} No dejará guardar la partida si se encuentra en mitad de un turno (moviendo la ficha o participando en un minijuego). \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 6}
+	\label{tab:CU06}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU07}: Continuar la partida} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria le indica que cargue los datos de la anterior partida que fueron guardados en la base de datos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & Tiene que haber una partida guardada de sesiones anteriores \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se carga los datos de la última partida guardada y se retoma el juego desde el punto en el que se dejó. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF4.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria dice \enquote{Continuar última partida}. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa carga los datos de la partida guardada en sesiones anteriores y recuerda el turno en el que se quedó el juego.
+		\vspace{0.2cm}\\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{1.a.} Si no hay datos guardados, no podrá cargarlos y habrá que crear una partida nueva. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 7}
+	\label{tab:CU07}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU08}: Minijuego verdadero o falso} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de verdadero o falso para la posibilidad de ganar 10 puntos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla del minijuego verdadero o falso. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se actualizan los puntos del equipo/participante actual si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF6.1, RF6.2, RF7.1 y RF7.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} Alexa le hace una pregunta de trivial de verdadero o falso al equipo/participante actual. \newline
+		\vspace{0.2cm}
+		\textbf{2.} El equipo/participante actual responde con \enquote{verdadero} o \enquote{falso}. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o dando una breve explicación de la respuesta correcta en caso contrario. \newline
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} Si la respuesta proporcionada no es del tipo verdadero o falso, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\vspace{0.2cm} 
+		\textbf{2.b.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 8}
+	\label{tab:CU08}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU09}: Minijuego conoce a tus compañeros} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de conoce a tus compañeros para la posibilidad de ganar 15 puntos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla del minijuego conoce a tus compañeros. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se actualizan los puntos de los equipos/participantes involucrados si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF6.1, RF6.2, RF7.1 y RF7.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} Alexa le hace una pregunta al equipo/participante actual, acerca de otro equipo/participante aleatorio. \newline
+		\vspace{0.2cm}
+		\textbf{2.} El equipo/participante actual responde con \enquote{correcto/a} o \enquote{incorrecto/a}. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Alexa le pide al equipo/participante sobre el que iba la pregunta que confirme si la respuesta dada es correcta o incorrecta. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} El sujeto de la pregunta confirma si es correcta o incorrecta la respuesta del equipo/participante actual. \newline
+		\vspace{0.2cm} 
+		\textbf{5.} Si es correcta, Alexa otorga puntos a ambas partes implicadas y pasa al siguiente turno. Si ha fallado, pasa de turno directamente.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} Si la respuesta proporcionada no es del tipo correcto/a o incorrecto/a, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\vspace{0.2cm} 
+		\textbf{2.b.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 9}
+	\label{tab:CU09}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU10}: Minijuego adivina la cifra} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de conoce a adivina la cifra para la posibilidad de ganar 30 puntos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla del minijuego adivina la cifra. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se actualizan los puntos del equipo/participante que ha acertado si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF6.1, RF6.2, RF7.1 y RF7.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} Alexa le hace una pregunta al equipo/participante actual, cuya respuesta debe ser únicamente un número. \newline
+		\vspace{0.2cm}
+		\textbf{2.} El equipo/participante actual responde con una cifra. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Alexa verifica si es correcta, dándole puntos en caso afirmativo. En caso de fallo, repetirá la pregunta al siguiente equipo/participante. \newline
+		\vspace{0.2cm} 
+		\textbf{4.} El siguiente responde con una cifra distinta que piense que pueda ser la correcta. \newline
+		\vspace{0.2cm} 
+		\textbf{5.} Alexa continúa preguntando al siguiente, así hasta que alguien acierte o se haya dado una vuelta completa por todos los equipos/participantes, en cuyo caso desvelará la solución.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} y \textbf{4.a.} Si la respuesta proporcionada no es un número, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\vspace{0.2cm} 
+		\textbf{2.b.} y \textbf{4.a.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 10}
+	\label{tab:CU10}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU11}: Minijuego recuerda la última casilla} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de recuerda la última casilla para la posibilidad de ganar 25 puntos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla de recuerda la última casilla. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se actualizan los puntos del equipo/participante actual si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF6.1, RF6.2, RF7.1 y RF7.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} Alexa le pregunta al equipo/participante actual el nombre de la última casilla en la que estaba, previa a la actual. \newline
+		\vspace{0.2cm}
+		\textbf{2.} El equipo/participante actual responde con el nombre de la casilla en la que piensa que estaba en el turno anterior. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o desvelando el nombre de la casilla correcta en caso contrario. \newline
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} Si la respuesta proporcionada no es un nombre de casilla válido, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\vspace{0.2cm} 
+		\textbf{2.b.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar. Si no recuerda ningún nombre de casilla, le indica que diga \enquote{No me acuerdo de la casilla} para pasar de turno.
+		\vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 11}
+	\label{tab:CU11}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU12}: Minijuego recuerda la fecha} \\
+		\hline
+		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de recuerda la fecha para la posibilidad de ganar 20 puntos. \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla de recuerda la fecha. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se actualizan los puntos del equipo/participante actual si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF6.1, RF6.2, RF7.1 y RF7.2 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} Alexa le hace una pregunta sobre un día de la semana, mes o estación del año concreto. \newline
+		\vspace{0.2cm}
+		\textbf{2.} El equipo/participante actual responde con el nombre del día de la semana, mes o estación del año que piense que es la correcta. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Alexa verifica si se ha acordado bien o no, actualizando sus puntos en caso afirmativo, o recordando la solución en caso contrario. \newline
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} Si la respuesta proporcionada no es un día de la semana, mes o estación del año, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\vspace{0.2cm} 
+		\textbf{2.b.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar.
+		\vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 12}
+	\label{tab:CU12}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{CU13}: Cerrar la skill} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria interactúa con Alexa para cerrar la skill \vspace{0.2cm} \\
+		\hline
+		\textbf{Precondiciones} & La skill está iniciada. \vspace{0.2cm} \\
+		\hline
+		\textbf{Postcondiciones} & Se cierra la skill del juego de la oca, borrando los datos de la partida actual a no ser que se hayan guardado en la base de datos antes. \vspace{0.2cm} \\
+		\hline
+		\textbf{Referencias} & RF4.3 \vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo normal de eventos} &
+		\textbf{1.} La persona usuaria dice \enquote{Cierra probando oca} para cerrar la skill. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Alexa manda la orden de terminar la sesión, marcando el fin de la partida y cerrando la skill.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Flujo alterno de eventos} &
+		\textbf{2.a.} Si la persona usuaria intenta jugar después de haber cerrado la skill, Alexa dirá que no reconoce ninguno de los comandos y habrá que abrir la skill de nuevo. \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Caso de uso nº 13}
+	\label{tab:CU13}
+\end{table}
+
+\newpage
 \subsubsection{Matriz de cobertura de requisitos funcionales}
+
+A continuación, se comprueba que todos los casos de uso definidos en la sección anterior referencian a un requisitos funcionales como mínimo. 
+
+Dicho de otra forma, todos los requisitos funcionales deben estar cubiertos por al menos un caso de uso.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/matriz-requisitos.JPG}
+	\caption{Matriz de cobertura de requisitos funcionales}
+	\label{fig:matriz-requisitos}
+\end{figure}
+
 \subsubsection{Diagramas de secuencia}
 
 

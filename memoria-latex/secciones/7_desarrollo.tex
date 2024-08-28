@@ -29,6 +29,17 @@ Fase de desarrollo...
 + validación
 + correspondencia CU
 
-\subsection{Seguridad...}
+\subsection{Seguridad}
 
-\subsection{Reuniones con el cliente (opcional)}
+La seguridad es uno de los requisitos no funcionales más importantes, junto con la usabilidad. Si bien es cierto que en un juego de la oca no se tratan datos de alta importancia que haya que cifrar, es una skill que hace uso de servicios de \textit{Amazon Web Server} (AWS). Estos últimos están vinculados a una cuenta administradora que gestiona los métodos de pago de los servicios cuando estos superan una determinada cuota de uso. Por tanto, para proteger estos servicios y limitar su uso a skills personalizadas concretas, es necesario controlar quién tiene acceso, siguiendo el principio de mínimo privilegio. Esto puede lograrse de forma eficiente mediante los roles de \textit{Identity and Access Management} (IAM).
+
+Estos roles son similares a los usuarios IAM, en el sentido de que permite gestionar el acceso a determinados servicios de AWS de forma centralizada; sin embargo, es más conveniente ya que en lugar de estar asociada a una única entidad, proporciona credenciales a cualquier persona usuaria con duración de una sesión. Además, facilitan el seguimiento de registros (o \textit{logs}) de acciones entre usuarios y servicios.
+
+%https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
+importancia de los roles para la administración de acceso y la seguridad en AWS.
+
+Aunque Amazon ofrece los servicios de DynamoDB y Amazon S3 de manera gratuita para las Alexa-hosted skills, no es sin limitaciones: solo puede crearse una tabla en Dynamo y hay un límite de almacenamiento y operaciones para el bucket de S3. Es por este motivo que se ha optado expandir los recursos de la skill con dichos servicios alojados en una cuenta personal de AWS. 
+
+Para ello, se han seguido los pasos detallados en la doucmentación oficial de Alexa Developer:
+
+https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html

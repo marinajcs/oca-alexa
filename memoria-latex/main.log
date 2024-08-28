@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.6.20)  28 AUG 2024 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.6.20)  28 AUG 2024 21:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,12 +880,12 @@ Package biblatex Info: Reference section=0 on input line 45.
 Package biblatex Info: Reference segment=0 on input line 45.
 \c@mv@tabular=\count436
 \c@mv@boldtabular=\count437
-<./imgs//UGR-Logo.png, id=255, 1284.8pt x 722.7pt>
+<./imgs//UGR-Logo.png, id=251, 1284.8pt x 722.7pt>
 File: ./imgs//UGR-Logo.png Graphic file (type png)
 <use ./imgs//UGR-Logo.png>
 Package pdftex.def Info: ./imgs//UGR-Logo.png  used on input line 50.
 (pdftex.def)             Requested size: 234.87769pt x 132.10944pt.
-<./imgs//ETSIIT-logo.png, id=257, 891.33pt x 411.136pt>
+<./imgs//ETSIIT-logo.png, id=253, 891.33pt x 411.136pt>
 File: ./imgs//ETSIIT-logo.png Graphic file (type png)
 <use ./imgs//ETSIIT-logo.png>
 Package pdftex.def Info: ./imgs//ETSIIT-logo.png  used on input line 51.
@@ -958,92 +958,92 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 
 
 [5{C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.
-enc}] (secciones/1_introduccion.tex
+enc}] [6] (secciones/1_introduccion.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 9.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 9.
- [6]
+ [7]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 19.
-<imgs/piramide-poblacion.jpg, id=459, 896.34875pt x 228.855pt>
+<imgs/piramide-poblacion.jpg, id=482, 896.34875pt x 228.855pt>
 File: imgs/piramide-poblacion.jpg Graphic file (type jpg)
 <use imgs/piramide-poblacion.jpg>
 Package pdftex.def Info: imgs/piramide-poblacion.jpg  used on input line 28.
 (pdftex.def)             Requested size: 460.35826pt x 117.53862pt.
- [7
+ [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.34 
-      <./imgs/piramide-poblacion.jpg>] [8]
-<imgs/INE-grafica1.jpeg, id=477, 271.0125pt x 220.57407pt>
+      <./imgs/piramide-poblacion.jpg>] [9]
+<imgs/INE-grafica1.jpeg, id=500, 271.0125pt x 220.57407pt>
 File: imgs/INE-grafica1.jpeg Graphic file (type jpg)
 <use imgs/INE-grafica1.jpeg>
 Package pdftex.def Info: imgs/INE-grafica1.jpeg  used on input line 59.
 (pdftex.def)             Requested size: 271.01183pt x 220.57352pt.
-<imgs/INE-grafica2.jpeg, id=478, 259.7203pt x 373.395pt>
+<imgs/INE-grafica2.jpeg, id=501, 259.7203pt x 373.395pt>
 File: imgs/INE-grafica2.jpeg Graphic file (type jpg)
 <use imgs/INE-grafica2.jpeg>
 Package pdftex.def Info: imgs/INE-grafica2.jpeg  used on input line 66.
 (pdftex.def)             Requested size: 259.71967pt x 373.39409pt.
- [9
+ [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.70 
-      <./imgs/INE-grafica1.jpeg>] [10
+      <./imgs/INE-grafica1.jpeg>] [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.78 E
       ste juego no solo buscará proporcionar entretenimiento y diversión, ...
- <./imgs/INE-grafica2.jpeg>]) [11
+ <./imgs/INE-grafica2.jpeg>]) [12
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.111 \newpage
-              ] (secciones/2_estadoDelArte.tex [12] [13]
-<imgs/gradior.jpg, id=518, 943.525pt x 530.98375pt>
+              ] (secciones/2_estadoDelArte.tex [13] [14]
+<imgs/gradior.jpg, id=541, 943.525pt x 530.98375pt>
 File: imgs/gradior.jpg Graphic file (type jpg)
 <use imgs/gradior.jpg>
 Package pdftex.def Info: imgs/gradior.jpg  used on input line 57.
 (pdftex.def)             Requested size: 375.80574pt x 211.49039pt.
- [14
+ [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.66 \newpage
-              <./imgs/gradior.jpg>] [15]
-<imgs/digital1.jpg, id=535, 147.4308pt x 98.2872pt>
+              <./imgs/gradior.jpg>] [16]
+<imgs/digital1.jpg, id=558, 147.4308pt x 98.2872pt>
 File: imgs/digital1.jpg Graphic file (type jpg)
 <use imgs/digital1.jpg>
 Package pdftex.def Info: imgs/digital1.jpg  used on input line 115.
 (pdftex.def)             Requested size: 258.36688pt x 172.2721pt.
- [16] [17
+ [17] [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.136 
-       <./imgs/digital1.jpg>] [18] [19
+       <./imgs/digital1.jpg>] [19] [20
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.190 
       ]
-<imgs/grafico-asistentes.jpeg, id=560, 1204.5pt x 1204.5pt>
+<imgs/grafico-asistentes.jpeg, id=583, 1204.5pt x 1204.5pt>
 File: imgs/grafico-asistentes.jpeg Graphic file (type jpg)
 <use imgs/grafico-asistentes.jpeg>
 Package pdftex.def Info: imgs/grafico-asistentes.jpeg  used on input line 193.
 (pdftex.def)             Requested size: 281.8561pt x 281.84451pt.
- [20
+ [21
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1051,12 +1051,12 @@ s been already used, duplicate ignored
 l.204 P
        or los motivos mencionados anteriormente, se va a elegir a Alexa como...
  <./imgs/grafico-asistentes.jpeg>]
-<imgs/celia.jpg, id=570, 1026.83624pt x 684.5575pt>
+<imgs/celia.jpg, id=593, 1026.83624pt x 684.5575pt>
 File: imgs/celia.jpg Graphic file (type jpg)
 <use imgs/celia.jpg>
 Package pdftex.def Info: imgs/celia.jpg  used on input line 216.
 (pdftex.def)             Requested size: 305.33812pt x 203.56175pt.
- [21
+ [22
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1064,35 +1064,35 @@ s been already used, duplicate ignored
 l.225 E
        s compatible y accesible a través de cualquier dispositivo de la fam...
  <./imgs/celia.jpg>]
-<imgs/mockupTFG1.JPG, id=579, 321.2pt x 164.615pt>
+<imgs/mockupTFG1.JPG, id=602, 321.2pt x 164.615pt>
 File: imgs/mockupTFG1.JPG Graphic file (type jpg)
 <use imgs/mockupTFG1.JPG>
 Package pdftex.def Info: imgs/mockupTFG1.JPG  used on input line 239.
 (pdftex.def)             Requested size: 305.33812pt x 156.49136pt.
-) [22
+) [23
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.113 
-       <./imgs/mockupTFG1.JPG>] [23] (secciones/3_planificacion.tex
+       <./imgs/mockupTFG1.JPG>] [24] (secciones/3_planificacion.tex
 Overfull \hbox (3.57547pt too wide) in paragraph at lines 11--52
 [][] 
  []
 
-[24] [25]
+[25] [26]
 LaTeX Font Info:    Faking \texteuro for font family ntxtlf
 (Font)              in TS1 encoding on input line 84.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 8.39996pt on input line 84.
- [26]
+ [27]
 LaTeX Font Info:    Faking \texteuro for font family ntxtlf
 (Font)              in TS1 encoding on input line 103.
 LaTeX Font Info:    Faking \texteuro for font family ntxtlf
 (Font)              in TS1 encoding on input line 122.
 LaTeX Font Info:    Faking \texteuro for font family ntxtlf
 (Font)              in TS1 encoding on input line 151.
-) [27
+) [28
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1110,43 +1110,43 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.116 
-      ] [28
+      ] [29
 pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.117 \newpage
               ] (secciones/4_analisisProblema.tex
-<imgs/casillas-oca-primaria.JPG, id=619, 360.84813pt x 170.13562pt>
+<imgs/casillas-oca-primaria.JPG, id=642, 360.84813pt x 170.13562pt>
 File: imgs/casillas-oca-primaria.JPG Graphic file (type jpg)
 <use imgs/casillas-oca-primaria.JPG>
 Package pdftex.def Info: imgs/casillas-oca-primaria.JPG  used on input line 15.
 
 (pdftex.def)             Requested size: 469.75539pt x 221.4852pt.
-<imgs/oca-primaria.JPG, id=622, 221.32687pt x 181.67876pt>
+<imgs/oca-primaria.JPG, id=645, 221.32687pt x 181.67876pt>
 File: imgs/oca-primaria.JPG Graphic file (type jpg)
 <use imgs/oca-primaria.JPG>
 Package pdftex.def Info: imgs/oca-primaria.JPG  used on input line 22.
 (pdftex.def)             Requested size: 211.38849pt x 173.53082pt.
- [29
+ [30
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.25 \end{figure}
                   <./imgs/casillas-oca-primaria.JPG>]
-<imgs/oca-tradicional.jpg, id=629, 2015.53pt x 2055.68pt>
+<imgs/oca-tradicional.jpg, id=653, 2015.53pt x 2055.68pt>
 File: imgs/oca-tradicional.jpg Graphic file (type jpg)
 <use imgs/oca-tradicional.jpg>
 Package pdftex.def Info: imgs/oca-tradicional.jpg  used on input line 36.
 (pdftex.def)             Requested size: 328.82733pt x 335.37715pt.
- [30
+ [31
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.40 
-      <./imgs/oca-primaria.JPG>] [31
+      <./imgs/oca-primaria.JPG>] [32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1157,19 +1157,19 @@ l.54 		\item
 Package textcomp Info: Symbol \texttwosuperior not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
 (textcomp)             Default family used instead on input line 60.
- [32]
-<imgs/formatoHU.jpg, id=648, 267.49937pt x 23.58812pt>
+ [33]
+<imgs/formatoHU.jpg, id=671, 267.49937pt x 23.58812pt>
 File: imgs/formatoHU.jpg Graphic file (type jpg)
 <use imgs/formatoHU.jpg>
 Package pdftex.def Info: imgs/formatoHU.jpg  used on input line 110.
 (pdftex.def)             Requested size: 413.38702pt x 36.45644pt.
- [33
+ [34
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.118 
-       <./imgs/formatoHU.jpg>] [34
+       <./imgs/formatoHU.jpg>] [35
 pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1187,7 +1187,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.196 
-      ] [35
+      ] [36
 pdfTeX warning (ext4): destination with the same identifier (name{table.10}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1217,7 +1217,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.270 
-      ] [36
+      ] [37
 pdfTeX warning (ext4): destination with the same identifier (name{table.15}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1235,7 +1235,7 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.344 
-      ] [37
+      ] [38
 pdfTeX warning (ext4): destination with the same identifier (name{table.18}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1247,114 +1247,203 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.363 \newpage
-              ] [38] [39] [40] [41
+              ] [39] [40] [41] [42
 pdfTeX warning (ext4): destination with the same identifier (name{table.20}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.512 
-      ]) [42
+l.525 
+      ] [43
 pdfTeX warning (ext4): destination with the same identifier (name{table.21}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
+l.564 
+      ] [44
+pdfTeX warning (ext4): destination with the same identifier (name{table.22}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.597 
+      ] [45
+pdfTeX warning (ext4): destination with the same identifier (name{table.23}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.630 
+      ] [46
+pdfTeX warning (ext4): destination with the same identifier (name{table.24}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.659 
+      ] [47
+pdfTeX warning (ext4): destination with the same identifier (name{table.25}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.722 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.26}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.722 
+      ] [48
+pdfTeX warning (ext4): destination with the same identifier (name{table.27}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.759 
+      ] [49
+pdfTeX warning (ext4): destination with the same identifier (name{table.28}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.796 
+      ] [50
+pdfTeX warning (ext4): destination with the same identifier (name{table.29}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.830 
+      ] [51
+pdfTeX warning (ext4): destination with the same identifier (name{table.30}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.864 
+      ] [52
+pdfTeX warning (ext4): destination with the same identifier (name{table.31}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.893 
+      ] [53
+pdfTeX warning (ext4): destination with the same identifier (name{table.32}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.894 \newpage
+              ]
+<imgs/matriz-requisitos.JPG, id=758, 347.79938pt x 356.33125pt>
+File: imgs/matriz-requisitos.JPG Graphic file (type jpg)
+<use imgs/matriz-requisitos.JPG>
+Package pdftex.def Info: imgs/matriz-requisitos.JPG  used on input line 903.
+(pdftex.def)             Requested size: 347.79852pt x 356.33037pt.
+) [54
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
 l.120 \newpage
-              ] (secciones/5_diseño.tex
-<imgs/arquitectura-skill.png, id=694, 782.925pt x 523.9575pt>
+               <./imgs/matriz-requisitos.JPG>] (secciones/5_diseño.tex
+<imgs/arquitectura-skill.png, id=764, 782.925pt x 523.9575pt>
 File: imgs/arquitectura-skill.png Graphic file (type png)
 <use imgs/arquitectura-skill.png>
 Package pdftex.def Info: imgs/arquitectura-skill.png  used on input line 13.
 (pdftex.def)             Requested size: 460.35826pt x 308.08492pt.
- [43
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+
+[55
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.22 	\item D
              iseñar de la interfaz, solo en caso de que se vaya a desplegar...
  <./imgs/arquitectura-skill.png>]
-<imgs/arquitectura-apl.png, id=702, 976.64874pt x 415.5525pt>
+<imgs/arquitectura-apl.png, id=772, 976.64874pt x 415.5525pt>
 File: imgs/arquitectura-apl.png Graphic file (type png)
 <use imgs/arquitectura-apl.png>
 Package pdftex.def Info: imgs/arquitectura-apl.png  used on input line 35.
 (pdftex.def)             Requested size: 460.35826pt x 195.88037pt.
- [44
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+ [56
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.42 	\item \textbf
                    {La propia skill}: es la que inicia el proceso al enviar ...
  <./imgs/arquitectura-apl.png>]
-<imgs/tablero-oca.jpg, id=719, 1106.1325pt x 1179.40625pt>
+<imgs/tablero-oca.jpg, id=789, 1106.1325pt x 1179.40625pt>
 File: imgs/tablero-oca.jpg Graphic file (type jpg)
 <use imgs/tablero-oca.jpg>
 Package pdftex.def Info: imgs/tablero-oca.jpg  used on input line 67.
 (pdftex.def)             Requested size: 460.35826pt x 490.84819pt.
- [45] [46
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+ [57] [58
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.73 
       <./imgs/tablero-oca.jpg>]
-<imgs/boceto-bienvenida.JPG, id=728, 370.38374pt x 190.7125pt>
+<imgs/boceto-bienvenida.JPG, id=798, 370.38374pt x 190.7125pt>
 File: imgs/boceto-bienvenida.JPG Graphic file (type jpg)
 <use imgs/boceto-bienvenida.JPG>
 Package pdftex.def Info: imgs/boceto-bienvenida.JPG  used on input line 78.
 (pdftex.def)             Requested size: 281.8561pt x 145.13214pt.
-<imgs/boceto-casilla.JPG, id=730, 369.38pt x 191.71625pt>
+<imgs/boceto-casilla.JPG, id=800, 369.38pt x 191.71625pt>
 File: imgs/boceto-casilla.JPG Graphic file (type jpg)
 <use imgs/boceto-casilla.JPG>
 Package pdftex.def Info: imgs/boceto-casilla.JPG  used on input line 85.
 (pdftex.def)             Requested size: 281.8561pt x 146.29092pt.
- [47
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.121 
-      
+ [59
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.121 
-       <./imgs/boceto-bienvenida.JPG> <./imgs/boceto-casilla.JPG>]) [48
-pdfTeX warning (ext4): destination with the same identifier (name{table.22}) ha
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 
+       <./imgs/boceto-bienvenida.JPG> <./imgs/boceto-casilla.JPG>]) [60
+pdfTeX warning (ext4): destination with the same identifier (name{table.33}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.123 \newpage
               ] (secciones/6_analisisTecnologico.tex
-<imgs/apl-example.JPG, id=743, 246.9225pt x 181.17688pt>
+<imgs/apl-example.JPG, id=813, 246.9225pt x 181.17688pt>
 File: imgs/apl-example.JPG Graphic file (type jpg)
 <use imgs/apl-example.JPG>
 Package pdftex.def Info: imgs/apl-example.JPG  used on input line 32.
 (pdftex.def)             Requested size: 281.8561pt x 206.82022pt.
- [49]) [50
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+ [61]) [62
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.126 \newpage
-               <./imgs/apl-example.JPG>] (secciones/7_desarrollo.tex) [51]
-(secciones/8_manualDeUso.tex
+               <./imgs/apl-example.JPG>] (secciones/7_desarrollo.tex [63])
+Overfull \hbox (26.72942pt too wide) in paragraph at lines 45--128
+[]\T1/ntxtlf/m/n/12 https://developer.amazon.com/en-US/docs/alexa/hosted-skills
+/alexa-hosted-skills-personal-aws.html
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--128
+
+ []
+
+[64] (secciones/8_manualDeUso.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 4.
- [52] [53]) [54
-pdfTeX warning (ext4): destination with the same identifier (name{table.23}) ha
+ [65] [66]) [67
+pdfTeX warning (ext4): destination with the same identifier (name{table.34}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.132 \newpage
               
-pdfTeX warning (ext4): destination with the same identifier (name{table.24}) ha
+pdfTeX warning (ext4): destination with the same identifier (name{table.35}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.132 \newpage
-              ] (secciones/9_conclusiones.tex) [55] [56] [57] [58] (main.aux
+              ] (secciones/9_conclusiones.tex) [68] [69] [70] [71] (main.aux
 LaTeX Info: Redefining \sptext on input line 23.
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
@@ -1363,7 +1452,7 @@ LaTeX Info: Redefining \% on input line 23.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CA8498B82563993B638B1EEC6A5F26BC;12905.
+(rerunfilecheck)             Checksum: 6EABCA528AC1773A7D0F43B801C2E8CF;12639.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                main
@@ -1374,10 +1463,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22923 strings out of 476331
- 408419 string characters out of 5787765
+ 22969 strings out of 476331
+ 408998 string characters out of 5787765
  1870660 words of memory out of 5000000
- 42781 multiletter control sequences out of 15000+600000
+ 42802 multiletter control sequences out of 15000+600000
  549444 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,866b,3764s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1388,9 +1477,9 @@ wtx/ztmb.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public/n
 ewtx/ztmbi.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /newtx/ztmr.pfb><C:/Users/marin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/newtx/ztmri.pfb>
-Output written on main.pdf (59 pages, 3723151 bytes).
+Output written on main.pdf (72 pages, 3832093 bytes).
 PDF statistics:
- 888 PDF objects out of 1000 (max. 8388607)
- 219 named destinations out of 1000 (max. 500000)
- 605 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 966 PDF objects out of 1000 (max. 8388607)
+ 243 named destinations out of 1000 (max. 500000)
+ 602 words of extra memory for PDF output out of 10000 (max. 10000000)
 
