@@ -1,29 +1,40 @@
 \section{Análisis tecnológico}
 
+
 \subsection{Fundamentos de una skill}
 
-- terminología
-+ utterances
-+ Memoria de datos
-+ AWS
-+ APL
-+ S3 + IAM
+Qué es una skill
 
-\subsubsection{Alexa Skills Kit (ASK)}
+\subsubsection{Términos comunes en el desarrollo de skills}
+
+intents
+
+utterances
+
+handlers 
+
+slots
+
+\subsubsection{Memoria y persistencia de datos}
+
+session attributes y DynamoDB entre sesiones.
+
+\subsection{Alexa Skills Kit (ASK)}
 
 ASK es un conjunto de APIs y herramientas que facilitan la integración de nuevas habilidades en Alexa, permitiendo crear distintas clases de skills, desde personalizadas hasta otras específicas para vídeo, listas y hogar inteligente.
 
 El tipo de skill que mejor se ajusta a los objetivos preestablecidos es la personalizada o \textit{Custom Skill}, pues esta permite más flexibilidad a los desarrolladores, permitiéndoles adaptarla a las necesidades de la aplicación a desarrollar.
 
-\subsubsection{AWS Serverless Platform}
+\subsection{AWS Serverless Platform}
 
 Para el desarrollo de skills de Alexa, se puede optar o bien por la función Lambda de AWS, o bien por un servicio web distinto. La primera opción pertenece a un conjunto de herramientas de desarrollador y servicios en la nube de alto rendimiento que componen la Plataforma sin Servidor de AWS.
 
 Se va a utilizar \textbf{AWS Lambda} para la creación de este juego digital, aprovechando así las múltiples funcionalidades y material de apoyo para encaminar el proceso de desarrollo. Además, al poder hacer uso de los otros servicios incluidos en esta plataforma (DynamoDB, Amazon S3, etc), se garantiza cierta centralización y absoluta compatibilidad entre ellos.
 
-\subsubsection{Alexa Presentation Language (APL)}
+\subsection{Alexa Presentation Language (APL)}
 
 La parte visual de la skill se gestiona mediante el lenguaje de presentación de Alexa (APL), a través del envío de documentos APL al dispositivo en forma de una directiva que se verá más adelante.
+
 Un documento APL consiste en un fichero JSON que define la estructura y disposición de elementos a mostrar por la pantalla del dispositivo de Alexa.
 A continuación se muestra un ejemplo básico de documento APL que imprime por pantalla una cadena de texto:
 
@@ -34,9 +45,3 @@ A continuación se muestra un ejemplo básico de documento APL que imprime por p
 	\label{fig:apl-ejemplo}
 \end{figure}
 
-
-\subsection{Estructura de una skill de Alexa}
-
-+ frontend (VUI)
-
-+ backend (lógica proc. órdenes)

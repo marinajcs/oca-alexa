@@ -49,25 +49,54 @@ Los anteriores pueden ser complementados por agentes opcionales como:
 	\item \textbf{Los proveedores de contenido}: como Amazon S3, que incluyen archivos multimedia externos, que se almacenan públicamente en la red y son referenciados desde la skill mediante URLs. 
 \end{itemize}
 
-\subsection{GDD - Documento de Diseño del Juego}
+\subsection{GDD: Documento de Diseño del Juego}
 
-https://www.tokioschool.com/noticias/que-es-necesario-poner-en-un-gdd/
+Como bien se menciona en el libro \textit{Game design workshop: a playcentric approach to creating innovative games} \parencite{fullerton2008game}, el Game Design Document (GDD) es un documento que integra todos los aspectos relevantes de un videojuego, desde la mecánica y la narrativa hasta los elementos visuales y de audio. 
 
+Es útil porque sirve como roadmap (plan estratégico para alcanzar unos determinados objetivos a largo plazo) para todo el proceso de desarrollo, así como una guía para coordinar las tareas de los miembros del equipo a lo largo del camino hacia alcanzar dichos objetivos.
 
-\subsection{Modelo conceptual: diagrama de clases del juego}
-
-\subsection{Diseño de la interfaz de usuario}
-
-
+Se ha hecho una adaptación a una plantilla de uso gratuito para elaborar el documento de diseño del juego. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.98\textwidth]{imgs/tablero-oca.jpg}
-	\caption{Tablero de la oca}
+	\includegraphics{imgs/GDD-1.jpg}
+	\caption{Game Design Document página 1}
+	\label{fig:GDD-1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/GDD-2.jpg}
+	\caption{Game Design Document página 2}
+	\label{fig:GDD-2}
+\end{figure}
+
+\subsection{Modelo conceptual del juego de la oca}
+
+Aunque en una skill de Alexa los modelos conceptuales no se ajustan de la misma forma que lo harían en un sistema orientado a objetos tradicional, sí se puede plantear un diagrama de conceptos que encapsule las clases del juego de la oca y cómo se relacionan entre sí.
+
+Se ha ilustrado el diagrama conceptual de forma aislada a la estructura particular de la skill:
+
+\vline
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/DConcep.jpg}
+	\caption{Diagrama conceptual del juego de la oca (\href{https://www.visual-paradigm.com/}{\textit{Visual Paradigm}})}
+	\label{fig:DConcep-1}
+\end{figure}
+
+\subsection{Diseño de la interfaz de usuario}
+
+Aunque no se vaya a mostrar en la pantalla del dispositivo de Alexa, se ha realizado un diseño con Adobe Photoshop del tablero personalizado que utilizará la skill de la oca, lo que ha ayudado en gran medida a visualizarlo para poder implementarlo con mayor facilidad más adelante.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/tablero-oca.jpg}
+	\caption{Tablero personalizado para la skill del juego de la oca}
 	\label{fig:tablero-oca}
 \end{figure}
  
-La distribución de las casillas es la siguiente: 18 especiales tomadas del juego tradicional (oca, puente, laberinto, pozo, cárcel y hotel), 15 de tipo minijuego y 30 normales. Por tanto, las probabilidades redondeadas a la centésima de caer en cada una son 28,57\%, 23,81\% y 47,62\%, respectivamente. 
+La distribución de las casillas es la siguiente: 18 especiales tomadas del juego tradicional (oca, puente, laberinto, pozo, cárcel y hotel), 15 de tipo minijuego y 30 normales (no desencadenan ninguna acción especial, salvo la de meta). Por tanto, los porcentajes redondeados de las proporciones de cada una son: 28,57\%, 23,81\% y 47,62\%, respectivamente. 
 
 \subsubsection{Bocetos y mockups}
 

@@ -409,6 +409,34 @@
       \field{pages}{191\bibrangedash 226}
       \range{pages}{36}
     \endentry
+    \entry{fullerton2008game}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c51420d20fba5efcd249760a7b5f9a80}{%
+           family={Fullerton},
+           familyi={F\bibinitperiod},
+           given={Tracy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CRC press}%
+      }
+      \strng{namehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{fullhash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{bibnamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authorbibnamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authornamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authorfullhash}{c51420d20fba5efcd249760a7b5f9a80}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Game design workshop: a playcentric approach to creating innovative games}
+      \field{year}{2008}
+    \endentry
     \entry{tfgAlexa2}{thesis}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=2678209bd1c6f032028ab9f33c1f73af}{%
@@ -1396,6 +1424,34 @@
       \field{year}{2018}
       \field{pages}{191\bibrangedash 226}
       \range{pages}{36}
+    \endentry
+    \entry{fullerton2008game}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c51420d20fba5efcd249760a7b5f9a80}{%
+           family={Fullerton},
+           familyi={F\bibinitperiod},
+           given={Tracy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CRC press}%
+      }
+      \strng{namehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{fullhash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{bibnamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authorbibnamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authornamehash}{c51420d20fba5efcd249760a7b5f9a80}
+      \strng{authorfullhash}{c51420d20fba5efcd249760a7b5f9a80}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Game design workshop: a playcentric approach to creating innovative games}
+      \field{year}{2008}
     \endentry
     \entry{tfgAlexa2}{thesis}{}
       \name{author}{1}{}{%
