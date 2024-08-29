@@ -7,14 +7,20 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Ranking de asistentes de voz según el VPIR en 2020 (\href {https://es.statista.com/grafico/22578/clasificacion-de-los-asistentes-de-voz/}{statista})}}{21}{figure.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Celia, una asistente todoterreno 24 horas al día.}}{22}{figure.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Interfaz gráfica del juego colores v2}}{23}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Diseño de la oca para evaluar las habilidades motoras en Educación Primaria \blx@tocontentsinit {0}\parencite {experienciaOca}}}{30}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Tablero completo correspondiente a las casillas de la figura superior \blx@tocontentsinit {0}\parencite {experienciaOca}}}{31}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Un tablero del juego tradicional de la oca}}{32}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Patrón general de una historia de usuario}}{34}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Matriz de cobertura de requisitos funcionales}}{54}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Arquitectura de una skill de Alexa con las tecnologías AWS \blx@tocontentsinit {0}\parencite {arquitecturaSkill}}}{55}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Arquitectura de una APL con los cuatro actores principales (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Documentation})}}{56}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Tablero de la oca}}{58}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Boceto de la pantalla de inicio de la skill (\href {https://www.lucidchart.com/pages/es}{Lucidchart})}}{59}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Boceto de la pantalla de turno de jugador (\href {https://www.lucidchart.com/pages/es}{Lucidchart})}}{59}{figure.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Ejemplo de documento APL básico (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Documentation})}}{62}{figure.19}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Planificación temporal en el calendario}}{25}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Leyenda de la planificación temporal por (sub)tareas}}{26}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Diseño de la oca para evaluar las habilidades motoras en Educación Primaria \blx@tocontentsinit {0}\parencite {experienciaOca}}}{31}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Tablero completo correspondiente a las casillas de la figura superior \blx@tocontentsinit {0}\parencite {experienciaOca}}}{32}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Un tablero del juego tradicional de la oca}}{33}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Patrón general de una historia de usuario}}{35}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Matriz de cobertura de requisitos funcionales}}{55}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de secuencia de CU01 y CU02.}}{56}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama de secuencia de CU03, CU04 y CU05.}}{57}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de secuencia de CU06 y CU07 y CU13.}}{58}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de secuencia de CU08, CU09, CU10, CU11 y CU12.}}{59}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Arquitectura de una skill de Alexa con las tecnologías AWS \blx@tocontentsinit {0}\parencite {arquitecturaSkill}}}{60}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Arquitectura de una APL con los cuatro actores principales (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Documentation})}}{61}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Tablero de la oca}}{63}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Boceto de la pantalla de inicio de la skill (\href {https://www.lucidchart.com/pages/es}{Lucidchart})}}{64}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Boceto de la pantalla de turno de jugador (\href {https://www.lucidchart.com/pages/es}{Lucidchart})}}{64}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Ejemplo de documento APL básico (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Documentation})}}{67}{figure.25}%

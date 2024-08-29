@@ -4,7 +4,7 @@ En esta etapa de la metodología ágil, se debe elaborar un diseño que responda
 
 \subsection{Diseño de la arquitectura}
 
-La arquitectura completa de la skill se construirá sobre varias herramientas de \textit{Amazon Web Server} (AWS) que serán explicadas con mayor detalle en la sección 6. Estas se encuentran englobadas en \textit{AWS Serverless Platform}, una plataforma que permite la creación de skills sin necesidad de disponer de un servidor propio. 
+La arquitectura completa de la skill se construirá sobre varias herramientas de \textit{Amazon Web Services} (AWS) que serán explicadas con mayor detalle en la sección 6. Estas se encuentran englobadas en \textit{AWS Serverless Platform}, una plataforma que permite la creación de skills sin necesidad de disponer de un servidor propio. 
 
 Las tecnologías avanzadas de AWS más relevantes en el desarrollo de skills son: AWS Lambda, Amazon DynamoDB y Amazon S3.
 
@@ -19,7 +19,7 @@ Las tecnologías avanzadas de AWS más relevantes en el desarrollo de skills son
 El proceso de creación de la habilidad para Alexa implica varios pasos clave \parencite{arquitecturaSkill}:
 \begin{enumerate}
 	\item Definir el modelo de interacción por voz; es decir, cómo los usuarios pueden invocar la skill con diversas intenciones mediante comandos de voz.
-	\item Diseñar de la interfaz, solo en caso de que se vaya a desplegar en dispositivos con pantallas, para mejorar la experiencia de usuario al mostrar información visual complementaria al audio.
+	\item Diseñar la interfaz, solo en caso de que se vaya a desplegar en dispositivos con pantallas, para mejorar la experiencia de usuario al mostrar información visual complementaria al audio.
 	\item Configurar las tablas en DynamoDB: para el almacenamiento persistente de información, usando una base de datos.
 	\item Crear un bucket en S3 donde se alojarán las imágenes y vídeos requeridos para el paso 2.
 	\item Programar la skill de Alexa, con funciones que permitan gestionar el flujo de conversación entre los usuarios y Alexa.
@@ -54,9 +54,7 @@ Los anteriores pueden ser complementados por agentes opcionales como:
 https://www.tokioschool.com/noticias/que-es-necesario-poner-en-un-gdd/
 
 
-\subsection{Diseño conceptual}
-
-\subsection{Modelo E/R}
+\subsection{Modelo conceptual: diagrama de clases del juego}
 
 \subsection{Diseño de la interfaz de usuario}
 
