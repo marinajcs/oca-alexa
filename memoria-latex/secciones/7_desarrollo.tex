@@ -10,7 +10,7 @@ Este proceso implica la creación de la skill, el desarrollo de código y la rea
 
 \subsection{Creación de la skill y el modelo de interacción}
 
-Hay una gran cantidad de guías disponibles para aprender a crear una skill desde cero, y la propia \href{https://developer.amazon.com/en-US/docs/alexa/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html}{página oficial de desarrolladores Alexa} ofrece diversos documentos de apoyo, los cuales se han utilizado como material de referencia en esta etapa del proyecto.
+Hay una gran cantidad de guías disponibles para aprender a crear una skill desde cero, y la propia página oficial de desarrolladores Alexa \parencite{alexaHosted} ofrece diversos documentos de apoyo, los cuales se han utilizado como material de referencia en esta etapa del proyecto.
 
 \begin{enumerate}
 	\item Una vez iniciada la sesión en la consola de desarrolladores de Alexa, se abre el menú de creación de skills.
@@ -728,8 +728,73 @@ Leva a cabo el proceso anterior pero en sentido contrario, dicho en otras palabr
 + validación
 + correspondencia CU
 
-- simulador de alexa de dev console
-- echo show 5
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{8.5cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU01}: Iniciar la skill} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria dice: <<Alexa, abre probando oca>> \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Se inicia la skill, mostrando la pantalla de inicio y un mensaje de bienvenida. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Alexa da un mensaje de bienvenida, indicaciones básicas para empezar a jugar y se muestra por pantalla el logo del juego con un texto de bienvenida. \vspace{0.2cm} \\
+		\hline
+		\textbf{CU referenciado(s)} & CU01 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Lista de comandos de voz y ámbito de uso}
+	\label{tab:PU01}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{8.5cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU02}: Crear y configurar una nueva partida} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria dice: <<Nueva partida>> \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa va preguntando los datos para configurar la partida, . \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Alexa da un mensaje de bienvenida, indicaciones básicas para empezar a jugar y se muestra por pantalla el logo del juego con un texto de bienvenida. \vspace{0.2cm} \\
+		\hline
+		\textbf{CU referenciado(s)} & CU01 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Lista de comandos de voz y ámbito de uso}
+	\label{tab:PU02}
+\end{table}
+
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{8.5cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU0}: Cerrar la skill} \\
+		\hline
+		\textbf{Descripción} & La persona usuaria dice: <<Cierra probando oca>> \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & La partida finaliza y se cierra la skill de Alexa. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & La partida termina y se cierra la skill del juego de la oca, la pantalla vuelve a la de inicio por defecto. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU13 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Lista de comandos de voz y ámbito de uso}
+	\label{tab:PU0}
+\end{table}
 
 \begin{figure}[H]
 	\centering

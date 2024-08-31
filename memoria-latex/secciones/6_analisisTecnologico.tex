@@ -1,23 +1,42 @@
 \section{Análisis tecnológico}
 
+En esta sección se van a examinar algunas de las herramientas y conocimentos tecnológicos necesarios para el desarrollo posterior de la skill, de los que se ha podido generar una idea clara con el apoyo de la documentación oficial de Alexa \parencite{alexaDocs}.
 
 \subsection{Fundamentos de una skill}
 
-Qué es una skill
+Familiarizarse con los fundamentos de una skill implica comprender los conceptos clave usados en el contexto de una interacción entre una persona usuaria y Alexa, así como el funcionamiento general de la persistencia de datos dentro del código de la skill.
 
 \subsubsection{Términos comunes en el desarrollo de skills}
 
-intents
+Para comprender mejor la terminología en la documentación de este proyecto, se explican los conceptos siguientes:
 
-utterances
-
-handlers 
-
-slots
+\begin{itemize}
+	\item \textit{\textbf{Intents}}: representan las intenciones de las personas usuarias, entendidas como las acciones llevadas a cabo con una finalidad, las cuales son llamadas a través determinadas frases. Por ejemplo, el intent \textit{guardarPartidaIntent} cumple con el objetivo de guardar el estado de la partida.
+	\item \textit{\textbf{Utterances}}: son precisamente las frases de activación que se mencionaban antes. Explicado de otra forma, serían los comandos de voz que pueden utilizarse para invocar intents específicos, por lo que deben ser frases intuitivas y que difieran entre sí. Siguiendo el caso anterior, si se quiere llamar a \textit{guardarPartidaIntent}, las utterances podrían ser <<guarda mi partida>>, <<guárdame la partida>>, etc.
+	\item \textit{\textbf{Handlers}}: son funciones encargadas de implementar la lógica de una skill. Están asociados a un intent para ejecutar el código que procese la respuesta esperada de dicho intent. Por ejemplo, el manejador \textit{guardarPartidaHandler}, que encapsula la lógica necesaria para el intent de ejemplo.
+	\item \textit{\textbf{Slots}}: los intents pueden tener definidos slots de manera opcional. Se podrían describir como argumentos que Alexa captura de una determinada solicitud o respuesta de la persona usuaria, y que permiten guardar valores concretos para completar la lógica de los manejadores. Un ejemplo es si se tiene un intent, \textit{crearJugadoresIntent}, que cualquier usuario/a puede invocar diciendo <<Crea [tres] jugadores>>. Tres es capturado por el slot configurado para guardar el número de jugadores a crear.
+\end{itemize}
 
 \subsubsection{Memoria y persistencia de datos}
 
-session attributes y DynamoDB entre sesiones.
+Entender cómo funciona la persistencia de datos en las skills es esencial para saber cómo abordar su desarrollo y garantizar que se mantiene un contexto adecuado durante toda la interacción con Alexa.
+
+Se distinguen los dos mecanismos principales para la memoria de datos en skills que serán considerados para este proyecto: los atributos de sesión (\textit{session attributes}) y las bases de datos.
+
+Los atributos de sesión, como da a entender el nombre, se ubican en el contexto de la sesión activa actual. Resultan útiles cuando se quiere mantener cierta información de un handler a otro, pero de manera temporal.
+
+A continuación, se muestran los métodos básicos de consulta (o acceso) y modificación de un atributo de sesión, facilitados por la clase gestora de atributos que proporciona el SDK de Alexa (biblioteca específica de ASK, ver sección \textit{6.2.}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.93\textwidth]{imgs/sesion-atrib.jpg}
+	\caption{Métodos básicos del gestor de atributos}
+	\label{fig:sesion-atrib}
+\end{figure}
+
+Por otro lado, las bases de datos se diferencian en que sí permiten mantener información entre sesiones, de forma escalable y a largo plazo. Es la alternativa a tomar si se manejan estructuras de datos más complejas y/o necesarias en el contexto de futuras interacciones.
+
+Las bases de dato pueden ser relacionales o no, aunque para las skills de Alexa es común optar por la opción NoSQL de \textit{DynamoDB}, puesto que es un servicio que ya viene integrado en AWS (ver sección \textit{6.3.}), adecuado gracias a su alta disponibilidad y buen rendimiento.
 
 \subsection{Alexa Skills Kit (ASK)}
 
