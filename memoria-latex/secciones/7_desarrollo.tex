@@ -84,15 +84,21 @@ Por otro lado, los dos ficheros restantes (\textit{local-debugger.js} y \textit{
 
 \subsection{Configuración de servicios de AWS}
 
+La plataforma de servicios AWS ofrece una amplia gama de mecanismos de monitorización, almacenamiento, gestión de políticas, computación, etc. Se caracteriza, entre otras cosas, por la flexibilidad y escalabilidad que permite gracias a su modelo de \enquote{pagar solo lo que se usa}.
+
+En la consola de desarrolladores de AWS aparecen todos los servicios usados recientemente, facilitando la navegación entre ellos.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{imgs/aws-console-1.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/aws-console-1.jpg}
 	\caption{Menú de la consola de desarrolladores de AWS}
 	\label{fig:aws-console-1}
 \end{figure}
 
 
 \subsubsection{Identity and Access Management (IAM)}
+
+El primer servicio utilizado es IAM, con el objetivo de crear un rol capaz de otorgar permisos temporales de acceso a DynamoDB a skills de Alexa.
 
 \begin{figure}[H]
 	\centering
@@ -101,7 +107,7 @@ Por otro lado, los dos ficheros restantes (\textit{local-debugger.js} y \textit{
 	\label{fig:aws-iam-2}
 \end{figure}
 
-Se ha creado un rol de IAM con la finalidad de otorgar permisos temporales de operaciones de DynamoDB a la skill que se está desarrollando.
+En el menú de creación del rol, hay que rellenar los siguientes parámetros de configuración: el tipo de entidad de confianza (un servicio de AWS), el caso de uso (la función de Lambda), las políticas de permisos a agregar (\textit{AmazonDynamoDBFullAccess}) y el nombre del rol que se está creando.
 
 \begin{figure}[H]
 	\centering
@@ -145,27 +151,574 @@ Para este proyecto, se ha creado un bucket de nombre \textit{bucket-oca} para gu
 
 \subsubsection{DynamoDB}
 
-Como se ha mencionado en la sección 6.X, los datos de una skill no persisten de una sesión a otra, por lo que es necesario un mecanismo para guardarlos. Aquí entra el papel de las bases de datos, en particular DynamoDB, también intergado en AWS.
+Como se ha mencionado en la sección \textit{6.1.2.}, los datos de una skill no persisten de una sesión a otra, por lo que es necesario un mecanismo para guardarlos. Aquí entra el papel de las bases de datos, en particular DynamoDB, también intergado en AWS.
 
 Esta base de datos es de tipo NoSQL y es una alternativa interesante no solo por su total compatibilidad con las herramientas actuales del proyecto debido a que es otro servicio Amazon, sino también por su alta capacidad de adaptación a cualquier volumen de datos. 
 
 Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado automático en función del tráfico, gracias a su esquema NoSQL, cuyos elementos de las tablas se identifican mediante claves primarias únicas. Estas últimas pueden ser de partición o compuestas (unión de una clave de partición con una de ordenamiento).
 
+Para este proyecto, se han creado dos tablas: 
+\begin{itemize}
+	\item \textbf{JuegoOca}: su clave primaria es \textit{idJuego}, que siempre valdrá 0 debido a que se pretende guardar los datos de una sola partida entre sesiones. Tiene los elementos generales de un juego de la oca, que son el estado, el turno y ronda actual, el número de jugadores, el tipo de participantes...
+	\item \textbf{Jugador}: identificada por la clave primaria \textit{idJugador}, que a la vez determina el orden de turno, y será un valor entero único entre 0 y el el numero de total de participantes menos uno. Los atributos de cada elemento son: el nombre, el color, los puntos, la posición y penalizaciones actuales, etc.
+\end{itemize} 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/aws-db-1.jpg}
+	\caption{Tablas \textit{JuegoOca} y \textit{Jugador} creadas en DynamoDB}
+	\label{fig:aws-db-1}
+\end{figure}
+
+Desde la consola de AWS, dentro del servicio de DynamoDB, se pueden explorar los elementos guardados en las tablas, así como consultar las unidades de lectura/escritura consumidas hasta el momento.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/aws-db-2.jpg}
+	\caption{Información de la tabla \textit{Jugador} de DynamoDB}
+	\label{fig:aws-db-2}
+\end{figure}
 
 \subsection{Implementación y estructura del código}
 
+La estructura de archivos del código de la función de Lambda que ejecuta la skill del juego es la siguiente:
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{imgs/estructura-codigo.jpg}
+	\caption{Estructura del código de la función Lambda}
+	\label{fig:estructura-codigo}
+\end{figure}
 
-- Alexa Developer Console
-+ Config. skill
-+ Simulador Alexa
+A continuación se explicarán los contenidos de los ficheros, salvo: \textit{local-debugger.js}, \textit{package.json} y \textit{util.js}, que ya fueron descritos en la sección \textit{7.1.}
 
-- APL
-+ docs
-+ envío datasources
+\subsubsection{Lógica del juego de la oca}
 
-- Estructura del código (carpetas, ficheros, funciones, etc)
+Consiste en la implementación de las clases definidas en el modelo conceptual de la sección \textit{5.3}, que cubren las funcionalidades del juego de la oca.
+
+\paragraph{Fichero \enquote{Jugador.js}}
+
+Define la clase encargada de representar a cada participante, ya sea un equipo o jugador/a individual, que va a competir en el juego de la oca.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imgs/codigo-jugador.jpg}
+	\caption{Clase jugador junto con su constructor}
+	\label{fig:codigo-jugador}
+\end{figure}
+
+También incluye \textit{setters} y \textit{getters} para poder modificar y consultar cada atributo de clase.
+
+\paragraph{Fichero \enquote{Dado.js}}
+
+Está constituido por dos funciones auxiliares: la primera, que realiza un lanzamiento de dado, devolviendo un número aleatorio entre 1 y 6, y la segunda, para obtener la dirección URL del vídeo asociado a cada resultado posible de una tirada. Esto será especialmente útil cuando se vaya a implementar el APL más adelante.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-dado.jpg}
+	\caption{Funciones que componen el módulo del dado}
+	\label{fig:codigo-dado}
+\end{figure}
+
+\paragraph{Fichero \enquote{Casillas.js}}
+
+En las primeras líneas se realizan las importaciones necesarias de los datos de las preguntas que se usarán para los minijuegos, así como las frases de carácter descriptivo que se invocarán cuando se caiga en cualquier casilla.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imgs/codigo-casillas-1.jpg}
+	\caption{Importaciones de las baterías de preguntas de los minijuegos}
+	\label{fig:codigo-casillas-1}
+\end{figure}
+
+Luego, se define la clase que representa una casilla general (o de carácter normal); es decir, aquella que no desencadena ningún evento especial como desplazarse a otra casilla, tirar el dado de nuevo, iniciar un minijuego, etc.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/codigo-casillas-2.jpg}
+	\caption{Declaración de la clase de una casilla normal}
+	\label{fig:codigo-casillas-2}
+\end{figure}
+
+Se puede ver cómo hay dos métodos: \textit{getFraseRandom()}, encargado de devolver una descripción aleatoria de la casilla normal, habiendo tres posibles opciones para cada una, y \textit{recibeJugador()}, que informa al participante sobre dónde ha caído, incluyendo la descripción de la misma. 
+Este último método será sobrescrito en las distintas clases que heredan de \textit{Casilla}, para adaptar los informes en función del tipo de la instancia. Por ejemplo, si es una casilla de oca, dirá \enquote{de oca en oca y tiro porque me toca}, si es una de minijuego, anunciará qué tipo de pregunta hará y cómo jugar, etc.
+
+\subparagraph{Casillas especiales tradicionales: oca, puente y penalización}
+
+Siguiendo el esquema del juego de mesa tradicional, las casillas de oca permiten moverse a la siguiente del mismo y tirar el dado de nuevo; las casillas de puente, transportan a la otra casilla del mismo tipo independientemente de si dicho movimiento supone un avance o retroceso en el tablero; y las casillas de penalización, como la del pozo y el laberinto, hacen perder turnos a cualquiera que caiga en ellas.
+
+Las casillas de oca y de puente mantienen una estructura similar a su superclase, con los mismos atributos y la única diferencia en el método sobrescrito de \textit{recibeJugador()}; sin embargo, la clase \textit{CasillaPenalizacion} incluye un nuevo atributo (\textit{penaliza}) que representa el número de turnos que deben pasar antes de poder avanzar de nuevo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-casillas-3.jpg}
+	\caption{Declaración de la clase de casillas de penalización}
+	\label{fig:codigo-casillas-3}
+\end{figure}
+
+\subparagraph{Casillas de minijuegos personalizadas}
+
+Se caracterizan porque además de los métodos heredados de las casillas normales, cuentan con un método llamado \textit{getPreguntaRandom()}, que devuelve un elemento aleatorio de la batería de preguntas del tipo correspondiente, con la excepción del minijuego de \enquote{recuerda la última casilla}, que no necesita el método porque la pregunta siempre es la misma.
+
+Por tanto, la clase que define la casilla del minijuego de verdadero o falso tendría la siguiente apariencia:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-casillas-4.jpg}
+	\caption{Clase para casilla del minijuego verdadero o falso}
+	\label{fig:codigo-casillas-4}
+\end{figure}
+
+En el minijuego de \enquote{conoce a tus compañeros} también se necesita guardar el nombre del equipo/participante sobre el que va la pregunta, así que sehace una ligera modificación, pasándole como argumento un arreglo con todos los compañeros del jugador o jugadora actual.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-casillas-5.jpg}
+	\caption{Método para obtener una pregunta aleatoria sobre un compañero}
+	\label{fig:codigo-casillas-5}
+\end{figure}
+
+Las clase para la casilla del minijuego \enquote{adivina la cifra} es parecida a la de la figura 44. Por otro lado, como en el minijuego de \enquote{recuerda la fecha} se manejan tres tipos distintos de preguntas y respuestas (día de la semana, mes o estación del año), y la solución correcta se calcula a partir de la fecha actual, o lo que es lo mismo, no es un valor estático, entonces requiere añadir una serie de métodos adicionales:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-casillas-6.jpg}
+	\caption{Método para obtener la solución de una pregunta de fecha}
+	\label{fig:codigo-casillas-6}
+\end{figure}
+
+En la figura anterior, aparecen invocaciones a tres métodos auxiliares que permiten el cálculo correcto de la respuesta pasándole como argumentos el valor de la fecha actual y un id o número de desplazamiento partiendo del actual. Si el id es igual a 0, entonces la solución es el día/mes/estación actual; si el id es 1, la respuesta es el día/mes/estación siguiente al actual; si el id es -1, el anterior al actual... Y así sucesivamente. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/codigo-casillas-7.jpg}
+	\caption{Cálculo de días de la semana o meses a partir de la fecha actual}
+	\label{fig:codigo-casillas-7}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-casillas-8.jpg}
+	\caption{Cálculo de la estación del año partiendo de la fecha actual}
+	\label{fig:codigo-casillas-8}
+\end{figure}
+
+\paragraph{Fichero \enquote{Tablero.js}}
+
+Es la estructura que almacena todas las casillas del juego en un arreglo con el mismo nombre, y hace operaciones básicas de gestión como añadir nuevas casillas u obtener una concreta a partir de un índice.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-tablero-1.jpg}
+	\caption{Declaración de la clase Tablero}
+	\label{fig:codigo-tablero-1}
+\end{figure}
+
+Además, es la encargada de calcular una nueva posición a partir del índice de la casilla actual y el número de desplazamiento, asegurándose de que si es mayor que el número de casillas restantes hasta la meta, pueda retroceder y no salirse del límite.
+
+Otra de sus funcionalidades es la de buscar la siguiente casilla de tipo oca, dada la posición de la actual, útil para manejar el evento cuando se cae en una. También cuenta con un método para obtener la otra casilla de puente.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-tablero-2.jpg}
+	\caption{Métodos para calcular una posición y buscar un tipo de casilla}
+	\label{fig:codigo-tablero-2}
+\end{figure}
+
+\paragraph{Fichero \enquote{EstadoJuego.js}}
+
+Aquí va el contenido del párrafo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-estado-1.jpg}
+	\caption{Simula la estructura de datos \textit{enum} de los estados del juego}
+	\label{fig:codigo-estado-1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-estado-2.jpg}
+	\caption{Función que devuelve un mensaje de ayuda según el estado del juego}
+	\label{fig:codigo-estado-2}
+\end{figure}
+
+\paragraph{Fichero \enquote{JuegoOca.js}}
+
+Es la clase más extensa de todas, haciendo uso del resto de clases definidas anteriormente, lo que puede observarse en los módulos que han tenido que importarse.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-oca-1.jpg}
+	\caption{Importaciones y declaración de la clase del juego de la oca}
+	\label{fig:codigo-oca-1}
+\end{figure}
+
+Esta clase dispone de varios de métodos para implementar la lógica del juego:
+
+\begin{itemize}
+	\item \textbf{crearJugadores()}: crea un número específico de jugadores (hasta 5), asignándoles colores y códigos únicos (salvo los nombres, que serán añadidos más tarde), inicializándolos con los valores de partida predeterminados, y actualizando el estado de juego.
+	\begin{figure}[H]
+		\centering
+		\includegraphics{imgs/codigo-oca-2.jpg}
+		\caption{Método de inicialización de participantes del juego}
+		\label{fig:codigo-oca-2}
+	\end{figure}
+	
+	\item \textbf{crearTablero()}: genera un tablero completo con 63 casillas, con diferentes tipos como CasillaOca, CasillaPenalizacion, CasillaVyF, entre otras, para un juego completo de la oca.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{imgs/codigo-oca-3.jpg}
+		\caption{Método de inicialización del tablero de la oca}
+		\label{fig:codigo-oca-3}
+	\end{figure}
+	
+	\item \textbf{pasarTurno()}: avanza el turno, recalcula el número de ronda, actualiza el estado del juego y devuelve un mensaje anunciando el turno del siguiente participante. comprobando antes si tiene penalizaciones de turno o no.
+	\begin{figure}[H]
+		\centering
+		\includegraphics{imgs/codigo-oca-5.jpg}
+		\caption{Método para pasar al siguiente turno}
+		\label{fig:codigo-oca-5}
+	\end{figure} 
+	
+	\item \textbf{anunciarGanadores()}: si el juego ha finalizado, devuelve u mensaje anunciando las dos modalidades de ganadores: quien haya llegado antes a la meta y quien haya obtenido más puntos gracias a los minijuegos.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{imgs/codigo-oca-6.jpg}
+		\caption{Método para anunciar los ganadores al final del juego}
+		\label{fig:codigo-oca-6}
+	\end{figure} 
+	 
+	\item \textbf{avanzarJugador()}: mueve al participante actual una cantidad determinada de casillas, actualizando su posición y manejando eventos específicos basados en el tipo de casilla en la que cae. También genera un informe sobre el movimiento realizado y actualiza el estado de la partida.
+	\begin{figure}[H]
+		\centering
+		\includegraphics{imgs/codigo-oca-4.jpg}
+		\caption{Primeras líneas del método para avanzar las fichas}
+		\label{fig:codigo-oca-4}
+	\end{figure}
+	
+	\item Métodos \textit{getters} y \textit{setters} de todos los atributos de la clase.
+	\item Métodos adicionales para calcular y hallar: un participante de índice concreto, el equipo o jugador/a del turno actual, sus compañeros de juego, los que se encuentran en una casilla determinada, las penalizaciones de alguno en particular, etc.
+\end{itemize}
+
+\subsubsection{Fichero \enquote{handlers.js}}
+
+Con diferencia el fichero más extenso, con unas 900 líneas de código
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/codigo-handlers-1.jpg}
+	\caption{Importaciones de bibliotecas y módulos para los handlers}
+	\label{fig:codigo-handlers-1}
+\end{figure}
+
+De la siguiente lista de handlers definidos, se van a explicar todos los que han sido personalizados de alguna forma, exceptuando aquellos mencionados en la sección \textit{7.1.} que no hayan sufrido ningún cambio.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{imgs/codigo-handlers-2.jpg}
+	\caption{Todos los handlers que se exportan al \textit{index.js}}
+	\label{fig:codigo-handlers-2}
+\end{figure}
+
+Cabe mencionar que cada handler está vinculado a un intent con el mismo nombre, que es invocado mediante utterances. Por ejemplo: con la utterance \enquote{Nueva partida}, se activa la intención \textit{nuevaPartidaIntent}, que provocará la ejecución del manejador \textit{nuevaPartidaHandler}, devolviendo una respuesta procesada a la persona usuaria.
+
+\paragraph{\textit{LaunchRequestHandler}}
+
+Este handler se activa cuando el usuario abre la skill por primera vez, mediante el comando \enquote{Alexa, abre probando oca}. Su función principal es dar una bienvenida al usuario y proporcionar opciones iniciales sobre cómo comenzar una partida. Informa al usuario sobre la posibilidad de continuar una partida previamente guardada o iniciar una nueva, advirtiendo que al comenzar una nueva se sobrescribirá la partida anterior. 
+
+Si el dispositivo donde se ejecuta dispone de pantalla, se muestra la pantalla de inicio/bienvenida. Finalmente, el handler prepara una respuesta para que el usuario se sienta guiado sobre los próximos pasos, manteniendo la sesión activa para una interacción más fluida.
+
+\paragraph{\textit{configuracion1Handler}}
+
+Se invoca cuando el usuario solicita un intent específico para configurar una partida de prueba, útil para el proceso de depuración de errores y testeo de la skill. Este handler omite el proceso normal de configuración del juego y establece un estado predeterminado con dos equipos ficticios con nombres y puntos predefinidos para facilitar las pruebas. 
+
+A continuación, notifica al usuario que la partida ha comenzado y le recuerda los comandos necesarios para jugar. Además, muestra información visual sobre los jugadores utilizando directivas APL.
+
+\paragraph{\textit{guardarPartidaHandler} y \textit{cargarPartidaHandler}}
+
+El primero responde a la solicitud de guardar el progreso actual del juego. A través de un rol temporal en AWS, accede a DynamoDB y almacena los datos de la partida en curso. Una vez que la partida se guarda correctamente, confirma el éxito o fracaso de la operación.
+
+El segundo realiza el proceso inverso, pues se activa cuando el usuario desea cargar una partida previamente guardada. Vuelve a asumir un rol IAM temporal para conectarse con DynamoDB y recuperar los datos de la partida guardada. Así, permite continuar jugando desde el última punto guardado. 
+
+\paragraph{\textit{ayudasReglasHandler}}
+
+Invocado cuando la persona usuaria solicita ayuda, mediante el comando \enquote{Explícame <tema>}.
+
+Dependiendo del tema específico sobre el que se quiere recibir información (como reglas generales, casillas del tablero, minijuegos o comandos), el handler proporciona una explicación detallada. Como en el resto de handlers, mantiene la sesión activa para ofrecer asistencia continua y mejorar la experiencia del usuario.
+
+\paragraph{\textit{nuevaPartidaHandler}}
+
+Se encarga de crear una nueva partida cuando el usuario lo solicita. Primero, pregunta por el tipo de participación (individual o en equipos) y luego por el número de participantes desde los slots del intent. 
+
+Una vez se han recibido los datos, y confirmado que son correctos, se actualiza el estado del juego y se proporciona una explicación sobre cómo proceder al registro los nombres, indicando el formato correcto y sugiriendo ejemplos. 
+
+A partir de este punto, se tiene en cuenta el tipo de participación para ajustar todas las respuestas con menciones a los equipos o jugadores individuales. 
+
+\paragraph{\textit{addJugadorHandler}}
+
+Es el paso obligatorio que sigue al anterior handler, este gestiona el registro de nombres de los jugadores en el juego. Se activa cuando cada participante proporciona su nombre a través del comando \enquote{Mi/Nuestro nombre es <nombre>}. 
+
+Primero, verifica si el estado del juego está en la fase de registro de nombres y después, guarda el nombre. Si aún faltan participantes por registrar, solicita el siguiente nombre, y una vez que haya recibido todos, hace un resumen de los jugadores o equipos y guarda los datos de partida configurados en DynamoDB. También muestra en pantalla mediante APL los nombres y colores de los participantes recién registrados.
+
+Por último, informa al usuario que la partida está lista para comenzar y guía sobre los próximos pasos: el lanzamiento de dado y movimiento de ficha.
+
+\paragraph{\textit{jugarTurnoHandler}}
+
+Procesa el turno del participante actual, dividido en dos fases: tirar el dado y mover la ficha. Primero, revisa si el dado ha sido lanzado (el valor del dado de atributo de sesión no es nulo) y en caso contrario, lo lanza y guarda el resultado.
+
+Si el dado ya fue lanzado,realiza el movimiento del jugador en el tablero, avazando su ficha tantas casillas indica el dado y describiendo la casilla en la que ha caído. Dependiendo del tipo que sea, presenta instrucciones específicas sobre cómo proceder.
+
+Por no mencionar que es el encargado de actualizar la interfaz de usuario con información visual sobre la casilla actual y quién está en ella. 
+Una vez gestionados los eventos de la nueva casilla, se actualiza el turno actual junto con el estado del juego.
+
+\paragraph{Handlers de minijuegos}
+
+Los cinco handlers que gestionan las preguntadas de cada tipo de minijuego se rigen por un esquema general similar.
+
+\begin{enumerate}
+	\item Se comprueba que el estado del juego se corresponde con el del minijuego invocado, para evitar acceder a estos handlers fuera de turno. Si el estado no es el esperado, lanza un mensaje de error y recordatorio de cómo se debe proceder.
+	\item Se obtiene la respuesta del participante a través del sistema de slots del intent, que permiten capturar tipos de datos predefinidos.
+	\item Se recuperan los datos de la pregunta si es necesario, mediante atributos de sesión, en caso de que Alexa tenga que formularla de nuevo.
+	\item Se procede con la verificación de la respuesta.
+\end{enumerate}
+
+Es en el paso 4 de la secuencia anterior donde la implementación difiere según el tipo de minijuego del que se trata:
+
+\begin{itemize}
+	\item \textbf{preguntasVyFHandler}: compara la respuesta del participante actual (verdadero o falso) con la solución almacenada en forma de booleano. Si coinciden, se suman 10 puntos, si no, ofrece una breve explicación de la respuesta correcta.
+	\item \textbf{preguntasCifrasHandler}: compara el número indicado por el participante actual con la solución en formato de entero. Si coinciden, obtiene 30 puntos, y si no, vuelve a formular la pregunta al siguiente. Así hasta que alguien acierte o se haya preguntado a todos y ninguna respuesta haya sido la correcta, en cuyo caso se revela la solución.
+	\item \textbf{preguntasCasillaHandler}: compara la respuesta proporcionada, que es un nombre de casilla, con el ID de su última casilla almacenada. Si coinciden, suma 25 puntos, si no, Alexa revela cuál era.
+	\item \textbf{preguntasCompasHandler}: primero se guarda la respuesta (formato: correcto/a o incorrecto/a) del participante, y después Alexa le pide al compañero sobre el que iba la pregunta que valide si la respuesta ofrecida era correcta o incorrecta. Si es correcta, ambos ganan 15 puntos.
+	\item \textbf{preguntasFechasHandler}: compara la respuesta del participante actual (día, mes o estación), con la fecha calculada correcta. Si coincide, se suman 20 puntos.
+\end{itemize}
+
+\paragraph{\textit{ErrorHandler}}
+
+Se ha incluido una comprobación del estado actual del juego, para que pueda adaptar correctamente el mensaje de error a cada situación.
+
+Si el estado indica que uno de los minijuegos está en curso, el mensaje de error incluirá información específica sobre la pregunta actual, y si no, serán instrucciones más fijas en base a dicho estado. Por ejemplo, si es el inicio del turno de algún participante, pero Alexa no recibe respuesta en un tiempo determinado o se intenta acceder a un comando no permitido, Alexa le recordará que es tiene que tirar el dado y cómo debe hacerlo.
+
+\subsubsection{Fichero \enquote{index.js}}
+
+Explicado previamente en la sección 7.1., se ha modificado para incluir todas las funciones manejadoras definidas hasta ahora.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-index.jpg}
+	\caption{Exportación de manejadores a la función Lambda}
+	\label{fig:codigo-index}
+\end{figure}
+
+\subsubsection{Directorio \enquote{apl}}
+
+Se tiene la siguiente estructura de ficheros JSON para la configuración de directivas de APL dentro de la respuesta de los manejadores:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{imgs/apl-carpeta.jpg}
+	\caption{Directorio de ficheros JSON para APL}
+	\label{fig:apl-carpeta}
+\end{figure}
+
+\paragraph{\textit{bienvenida.json}}
+
+Es la pantalla de inicio, es decir, el aspecto que toma nada más iniciar la skill, compuesto por una imagen y un texto de bienvenida.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{imgs/apl-bienvenida.jpg}
+	\caption{Documento APL para la pantalla de inicio}
+	\label{fig:apl-bienvenida}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/interfaz-1.jpg}
+	\caption{Pantalla de bienvenida de la skill}
+	\label{fig:interfaz-1}
+\end{figure}
+
+\paragraph{\textit{fichas.json}}
+
+Aparece tras configurar la partida que se va a jugar, con los participante ya registrados. Simplemente muestra los nombres de cada equipo o jugador/a, junto con el color que tienen asociado.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imgs/apl-fichas.jpg}
+	\caption{Documento APL para mostrar los participantes del juego}
+	\label{fig:apl-fichas}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imgs/interfaz-2.jpg}
+	\caption{Pantalla postconfiguración mostrando a los participante}
+	\label{fig:interfaz-2}
+\end{figure}
+
+\paragraph{\textit{dado.json}}
+
+Utilizado después de cada lanzamiento de dado para reproducir la animación correspondiente al número obtenido en la tirada (hay seis vídeos en total, uno para cada resultado).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{imgs/apl-dado.jpg}
+	\caption{Documento APL para mostrar la animación del dado}
+	\label{fig:apl-dado}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/interfaz-3.jpg}
+	\caption{Pantalla mostrando un lanzamiento de dado}
+	\label{fig:interfaz-3}
+\end{figure}
+
+\paragraph{\textit{casilla.json}}
+
+Muestra en la mitad izquierda los participantes que están en esa casilla, pudiendo haber más de uno en la misma, y en la mitad derecha, la imagen asociada a la casilla con su número o índice dentro del tablero.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{imgs/apl-casilla.jpg}
+	\caption{Documento APL para mostrar la casilla y participante actuales}
+	\label{fig:apl-casilla}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imgs/interfaz-4.jpg}
+	\caption{Pantalla mostrando la casilla y participante actuales}
+	\label{fig:interfaz-4}
+\end{figure}
+
+\subsubsection{Directorio \enquote{exports}}
+
+En esta carpeta se encuentran aquellos datos que van a ser importados en otros módulos, como por ejemplo las baterías de preguntas de los minijuegos o las frases aleatorias de las casillas normales.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{imgs/exp-carpeta.jpg}
+	\caption{Directorio de ficheros exportados a otros módulos}
+	\label{fig:exp-carpeta}
+\end{figure}
+
+\paragraph{\textit{frasesAyuda.js}}
+
+Contiene las descripciones de los distintos temas de los que puede solicitarse una explicación a través de \textit{ayudaReglasIntent}. Hay una variable constante en formato cadena de texto para cada tema posible: las reglas del juego, los tipos de casilla, los minijuegos y los comandos disponibles.
+
+\paragraph{\textit{frasesCasillas.json}}
+
+Es donde viene almacenada la información de las casillas de tipo normal. Los datos relevantes son: el identificador (id) o nombre de la casilla, el número o índice dentro del tablero y un arreglo de frases posibles para recibir a cada modalidad de participante (individual o equipo).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{imgs/exp-casillas.jpg}
+	\caption{Ejemplo de objeto con la información de una casilla normal}
+	\label{fig:exp-casillas}
+\end{figure}
+
+\paragraph{\textit{preguntasCifras.json}}
+
+El conjunto de preguntas posibles para el minijuego de adivinar la cifra, compuestas por el texto de la pregunta en sí y su solución, que siempre es un número entero.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{imgs/exp-cifras.jpg}
+	\caption{Ejemplos de preguntas en \enquote{Adivina la cifra}}
+	\label{fig:exp-cifras}
+\end{figure}
+
+\paragraph{\textit{preguntasVF.json}}
+
+La batería de preguntas de tipo trivial verdadero o falso, compuestas por el texto de la pregunta en, su solución (booleano) y una explicación de la respuesta que se mencionará si se falla.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{imgs/exp-vyf.jpg}
+	\caption{Ejemplos de preguntas de \enquote{Verdadero o falso}}
+	\label{fig:exp-vyf}
+\end{figure}
+
+\paragraph{\textit{preguntasCompas.json}}
+
+Todas las preguntas acerca del resto de participantes que pueden salir en el minijuego de conoce a tus compañeros. Cada objeto se compone de un texto de la pregunta para cada tipo de participante (equipos o individuales).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{imgs/exp-compas.jpg}
+	\caption{Ejemplos de preguntas acerca de los compañeros de juego}
+	\label{fig:exp-compas}
+\end{figure}
+
+\paragraph{\textit{preguntasFechas.json}}
+
+El conjunto de posibles preguntas de fechas, cada objeto definido por tres atributos: el tipo de pregunta, que indica a su vez el tipo de respuesta esperada (día de la semana, mes o estación del año), el texto de la pregunta y el id o número de desplazamiento que hay que aplicar sobre la fecha actual para calcular la respuesta correcta.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{imgs/exp-fechas.jpg}
+	\caption{Ejemplos de preguntas acerca en \enquote{Recuerda la fecha}}
+	\label{fig:exp-fechas}
+\end{figure}
+
+En los tres ejemplos anteriores, las soluciones son dinámicas y se calcularían empleando los métodos de la clase \textit{CasillaFechas} encargados de aplicar el desplazamiento indicado por el id sobre el valor de la fecha actual (una instancia nueva de \textit{Date}). Por ejemplo, si se hace la pregunta el primer jueves de enero en España, la respuesta a cada una sería: viernes, diciembre e invierno.
+
+\subsubsection{Fichero \enquote{db.js}}
+
+Como indica el nombre del fichero, incluirá todas las funciones relativas a operaciones con elementos de las tablas alojadas en DynamoDB. Se destacan las tres principales:
+
+\paragraph{\textit{asumirRol()}}
+
+Permite asumir un rol de AWS para obtener credenciales temporales para poder acceder a DynamoDB de forma segura. Se han seguido los pasos de una de las guías de la \href{https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html}{documentación oficial de Alexa}:
+
+\begin{enumerate}
+	\item Crear una instancia de cliente STS (\textit{Security Token Service}) usando \textit{AWS.STS}.
+	\item Se llama al método \textit{assumeRole()} del cliente STS, proporcionando el ARN del rol que se desea asumir y un nombre para la sesión. Este devuelve credenciales temporales (\textit{AccessKeyId}, \textit{SecretAccessKey} y \textit{SessionToken}).
+	\item Se termina de configurar el nuevo cliente \textit{DynamoDB.DocumentClient}, utilizando las credenciales temporales obtenidas en el paso previo, que será el objeto que devuelve la función.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-db-1.jpg}
+	\caption{Función para asumir un rol IAM con permisos temporales}
+	\label{fig:codigo-db-1}
+\end{figure}
+
+\paragraph{\textit{guardarPartida()}}
+
+Almacena los detalles de una partida en la tabla \textit{JuegoOca} y la información de los jugadores en la tabla \textit{Jugador} en DynamoDB, de la siguiente forma:
+\begin{enumerate}
+	\item Prepara un objeto \textit{params} para guardar los datos generales de la partida en la tabla \textit{JuegoOca}: estado, número de jugadores, ronda y turno. 
+	\item Se usa el método \textit{put} del cliente DynamoDB para guardar la información de la partida en la tabla, permitiendo capturar cualquier error que surja durante este proceso.
+	\item Llama a la función \textit{guardarJugadores()}, encargada de repetir el mismo proceso seguido en los dos pasos anteriores, pero esta vez con los datos de cada participante: nombre, color, puntos, posición, etc.
+	\item Los resultados de ambas operaciones de guardado se concatenan en un mensaje de texto puramente informativo que será el devuelto por la función.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-db-2.jpg}
+	\caption{Función para guardar los datos de la partida en DynamoDB}
+	\label{fig:codigo-db-2}
+\end{figure}
+
+\paragraph{\textit{cargarPartida()}}
+
+Leva a cabo el proceso anterior pero en sentido contrario, dicho en otras palabras, recupera la información desde la tabla de DynamoDB y la carga en en contexto de la skill de Alexa.
+\begin{enumerate}
+	\item Se configura un objeto \textit{params} para obtener los datos generales de la partida con la clave primaria, \textit{idJuego}, de la tabla \textit{JuegoOca}. 
+	\item Se usa el método \textit{get} del cliente DynamoDB para cargar la información de la partida, y si esta es válida, se actualizan los datos de la instancia actual de \textit{JuegoOca}.
+	\item Invoca la función \textit{cargarJugadores()}, para repetir el proceso de los pasos 1 y 2, esta vez usando la clave primaria \textit{idJugador}, que coincide con el ID de cada participante.
+	\item La función devuelve los informes de éxito o fracaso de ambas operaciones de carga de datos.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{imgs/codigo-db-3.jpg}
+	\caption{Función para cargar los datos de la partida desde DynamoDB}
+	\label{fig:codigo-db-3}
+\end{figure}
+
+\newpage
 
 \subsection{Pruebas}
 - hacer tablas
@@ -175,17 +728,21 @@ Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado a
 + validación
 + correspondencia CU
 
+- simulador de alexa de dev console
+- echo show 5
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{imgs/test-1.jpg}
+	\caption{Función para cargar los datos de la partida desde DynamoDB}
+	\label{fig:test-1}
+\end{figure}
+
 \subsection{Seguridad}
 
 La seguridad es uno de los requisitos no funcionales más importantes, junto con la usabilidad. Si bien es cierto que en un juego de la oca no se tratan datos de alta importancia que haya que cifrar, es una skill que hace uso de servicios de \textit{Amazon Web Services} (AWS). Estos últimos están vinculados a una cuenta administradora que gestiona los métodos de pago de los servicios cuando estos superan una determinada cuota de uso. Por tanto, para proteger estos servicios y limitar su uso a skills personalizadas concretas, es necesario controlar quién tiene acceso, siguiendo el principio de mínimo privilegio. Esto puede lograrse de forma eficiente mediante los roles de \textit{Identity and Access Management} (IAM).
 
 Estos roles son similares a los usuarios IAM, en el sentido de que permite gestionar el acceso a determinados servicios de AWS de forma centralizada; sin embargo, es más conveniente ya que en lugar de estar asociada a una única entidad, proporciona credenciales a cualquier persona usuaria con duración de una sesión. Además, facilitan el seguimiento de registros (o \textit{logs}) de acciones entre usuarios y servicios.
 
-%https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
-importancia de los roles para la administración de acceso y la seguridad en AWS.
+Aunque Amazon ofrece los servicios de DynamoDB y Amazon S3 de manera gratuita para las skills alojadas en Alexa, no es sin limitaciones: solo puede crearse una tabla en Dynamo y hay un límite de almacenamiento y operaciones para el bucket de S3. Es por este motivo que se ha optado expandir los recursos de la skill con los servicios de una cuenta personal de AWS, para lo que se siguieron los pasos detallados en la sección \textit{7.2.1}.
 
-Aunque Amazon ofrece los servicios de DynamoDB y Amazon S3 de manera gratuita para las Alexa-hosted skills, no es sin limitaciones: solo puede crearse una tabla en Dynamo y hay un límite de almacenamiento y operaciones para el bucket de S3. Es por este motivo que se ha optado expandir los recursos de la skill con dichos servicios alojados en una cuenta personal de AWS. 
-
-Para ello, se han seguido los pasos detallados en la doucmentación oficial de Alexa Developer:
-
-https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html

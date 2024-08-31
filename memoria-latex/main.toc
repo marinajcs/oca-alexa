@@ -1,68 +1,104 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Introducción}{9}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Motivación y contexto}{9}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Impacto social y tecnológico de la pandemia de COVID-19}{11}{subsubsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.2}Objetivos}{14}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Estado del arte}{15}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Juegos serios}{15}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Origen de los juegos serios}{15}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Concepto de juego serio}{16}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Juegos serios en la rehabilitación neuropsicológica}{17}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Juegos tradicionales en grupo y sus ventajas cognitivas}{18}{subsubsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.2}Juegos digitales para adultos mayores}{18}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}El proyecto WorthPlay}{20}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}Estado del arte de los asistentes virtuales}{21}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Influencia de la IA y clasificación}{21}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Alexa, el asistente conversacional más extendido hoy en día}{23}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}Aplicaciones similares}{24}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}CELIA, mucho más que una asistente}{24}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Juego de los trayectos orientado a la detección del deterioro cognitivo}{24}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Skill de Alexa para la mejora de la inhibición de respuesta}{25}{subsubsection.2.4.3}%
-\contentsline {section}{\numberline {3}Planificación, metodología y presupuesto}{27}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Planificación temporal}{27}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Metodología}{30}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Presupuesto}{30}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Recursos humanos}{31}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{31}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Software}{31}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Resumen de presupuesto}{32}{subsubsection.3.3.4}%
-\contentsline {section}{\numberline {4}Análisis del problema}{33}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Elección de la temática: el juego de la oca}{33}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Lista de minijuegos dentro de la oca}{35}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Historias de usuario y requisitos}{37}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Historias de usuario}{38}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Requisitos funcionales}{42}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Requisitos no funcionales}{43}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Casos de uso y sus correspondientes diagramas}{45}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Casos de uso}{45}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Matriz de cobertura de requisitos funcionales}{57}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Diagramas de secuencia de casos de uso}{58}{subsubsection.4.3.3}%
-\contentsline {section}{\numberline {5}Diseño}{62}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Diseño de la arquitectura}{62}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}GDD: Documento de Diseño del Juego}{64}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Modelo conceptual del juego de la oca}{67}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Diseño de la interfaz de usuario}{67}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Bocetos y mockups}{69}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Diagrama de flujo entre pantallas}{69}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Cuestiones de estética, usabilidad y accesibilidad}{69}{subsubsection.5.4.3}%
-\contentsline {section}{\numberline {6}Análisis tecnológico}{71}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Fundamentos de una skill}{71}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Términos comunes en el desarrollo de skills}{71}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Memoria y persistencia de datos}{71}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Alexa Skills Kit (ASK)}{71}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}AWS Serverless Platform}{71}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Alexa Presentation Language (APL)}{72}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Desarrollo}{73}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Creación de la skill y el modelo de interacción}{73}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Configuración de servicios de AWS}{77}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Identity and Access Management (IAM)}{78}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Amazon Simple Storage Service (S3)}{81}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}DynamoDB}{82}{subsubsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.3}Implementación y estructura del código}{83}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Pruebas}{83}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Seguridad}{83}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Manual de uso}{84}{section.8}%
-\contentsline {section}{\numberline {9}Conclusiones y trabajos futuros}{87}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Consecución de objetivos}{87}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Trabajos futuros}{88}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Bibliografía}{89}{section.10}%
+\contentsline {section}{\numberline {1}Introducción}{10}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivación y contexto}{10}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Impacto social y tecnológico de la pandemia de COVID-19}{12}{subsubsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objetivos}{15}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Estado del arte}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Juegos serios}{16}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Origen de los juegos serios}{16}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Concepto de juego serio}{17}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Juegos serios en la rehabilitación neuropsicológica}{18}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Juegos tradicionales en grupo y sus ventajas cognitivas}{19}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Juegos digitales para adultos mayores}{19}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}El proyecto WorthPlay}{21}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Estado del arte de los asistentes virtuales}{22}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Influencia de la IA y clasificación}{22}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Alexa, el asistente conversacional más extendido hoy en día}{24}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Aplicaciones similares}{25}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}CELIA, mucho más que una asistente}{25}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Juego de los trayectos orientado a la detección del deterioro cognitivo}{25}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Skill de Alexa para la mejora de la inhibición de respuesta}{26}{subsubsection.2.4.3}%
+\contentsline {section}{\numberline {3}Planificación, metodología y presupuesto}{28}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Planificación temporal}{28}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Metodología}{31}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Presupuesto}{31}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Recursos humanos}{32}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Hardware}{32}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Software}{32}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Resumen de presupuesto}{33}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Análisis del problema}{34}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Elección de la temática: el juego de la oca}{34}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Lista de minijuegos dentro de la oca}{36}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Historias de usuario y requisitos}{38}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Historias de usuario}{39}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Requisitos funcionales}{43}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Requisitos no funcionales}{44}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Casos de uso y sus correspondientes diagramas}{46}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Casos de uso}{46}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Matriz de cobertura de requisitos funcionales}{58}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Diagramas de secuencia de casos de uso}{59}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {5}Diseño}{63}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Diseño de la arquitectura}{63}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GDD: Documento de Diseño del Juego}{65}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Modelo conceptual del juego de la oca}{68}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Diseño de la interfaz de usuario}{68}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Bocetos y mockups}{70}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Diagrama de flujo entre pantallas}{71}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Cuestiones de estética, usabilidad y accesibilidad}{72}{subsubsection.5.4.3}%
+\contentsline {section}{\numberline {6}Análisis tecnológico}{74}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Fundamentos de una skill}{74}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Términos comunes en el desarrollo de skills}{74}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Memoria y persistencia de datos}{74}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Alexa Skills Kit (ASK)}{74}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}AWS Serverless Platform}{74}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Alexa Presentation Language (APL)}{75}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Desarrollo}{76}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Creación de la skill y el modelo de interacción}{76}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Configuración de servicios de AWS}{80}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Identity and Access Management (IAM)}{81}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Amazon Simple Storage Service (S3)}{84}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}DynamoDB}{85}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Implementación y estructura del código}{87}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Lógica del juego de la oca}{88}{subsubsection.7.3.1}%
+\contentsline {paragraph}{Fichero \enquote {Jugador.js}}{88}{subsubsection.7.3.1}%
+\contentsline {paragraph}{Fichero \enquote {Dado.js}}{88}{figure.44}%
+\contentsline {paragraph}{Fichero \enquote {Casillas.js}}{89}{figure.45}%
+\contentsline {subparagraph}{Casillas especiales tradicionales: oca, puente y penalización}{90}{figure.47}%
+\contentsline {subparagraph}{Casillas de minijuegos personalizadas}{91}{figure.48}%
+\contentsline {paragraph}{Fichero \enquote {Tablero.js}}{94}{figure.53}%
+\contentsline {paragraph}{Fichero \enquote {EstadoJuego.js}}{96}{figure.55}%
+\contentsline {paragraph}{Fichero \enquote {JuegoOca.js}}{97}{figure.57}%
+\contentsline {subsubsection}{\numberline {7.3.2}Fichero \enquote {handlers.js}}{100}{subsubsection.7.3.2}%
+\contentsline {paragraph}{\textit {LaunchRequestHandler}}{101}{figure.65}%
+\contentsline {paragraph}{\textit {configuracion1Handler}}{102}{figure.65}%
+\contentsline {paragraph}{\textit {guardarPartidaHandler} y \textit {cargarPartidaHandler}}{102}{figure.65}%
+\contentsline {paragraph}{\textit {ayudasReglasHandler}}{102}{figure.65}%
+\contentsline {paragraph}{\textit {nuevaPartidaHandler}}{102}{figure.65}%
+\contentsline {paragraph}{\textit {addJugadorHandler}}{102}{figure.65}%
+\contentsline {paragraph}{\textit {jugarTurnoHandler}}{103}{figure.65}%
+\contentsline {paragraph}{Handlers de minijuegos}{103}{figure.65}%
+\contentsline {paragraph}{\textit {ErrorHandler}}{104}{Item.29}%
+\contentsline {subsubsection}{\numberline {7.3.3}Fichero \enquote {index.js}}{104}{subsubsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.4}Directorio \enquote {apl}}{105}{subsubsection.7.3.4}%
+\contentsline {paragraph}{\textit {bienvenida.json}}{106}{figure.67}%
+\contentsline {paragraph}{\textit {fichas.json}}{107}{figure.69}%
+\contentsline {paragraph}{\textit {dado.json}}{109}{figure.71}%
+\contentsline {paragraph}{\textit {casilla.json}}{110}{figure.73}%
+\contentsline {subsubsection}{\numberline {7.3.5}Directorio \enquote {exports}}{112}{subsubsection.7.3.5}%
+\contentsline {paragraph}{\textit {frasesAyuda.js}}{112}{figure.76}%
+\contentsline {paragraph}{\textit {frasesCasillas.json}}{113}{figure.76}%
+\contentsline {paragraph}{\textit {preguntasCifras.json}}{113}{figure.77}%
+\contentsline {paragraph}{\textit {preguntasVF.json}}{113}{figure.78}%
+\contentsline {paragraph}{\textit {preguntasCompas.json}}{114}{figure.79}%
+\contentsline {paragraph}{\textit {preguntasFechas.json}}{114}{figure.80}%
+\contentsline {subsubsection}{\numberline {7.3.6}Fichero \enquote {db.js}}{115}{subsubsection.7.3.6}%
+\contentsline {paragraph}{\textit {asumirRol()}}{115}{subsubsection.7.3.6}%
+\contentsline {paragraph}{\textit {guardarPartida()}}{116}{figure.82}%
+\contentsline {paragraph}{\textit {cargarPartida()}}{117}{figure.83}%
+\contentsline {subsection}{\numberline {7.4}Pruebas}{119}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Seguridad}{119}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Manual de uso de la skill}{121}{section.8}%
+\contentsline {section}{\numberline {9}Conclusiones y trabajos futuros}{125}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Consecución de objetivos}{125}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Trabajos futuros}{126}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Bibliografía}{127}{section.10}%
