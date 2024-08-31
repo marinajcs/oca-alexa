@@ -14,14 +14,16 @@
           {
             "type": "Image",
             "source": "${payload.datosCasilla.properties.casillaImg}",
-            "width": "50%",
+            "width": "53%",
             "height": "100%",
             "position": "absolute",
-            "right": "1dp"
+            "right": "0dp",
+            "objectFit": "contain",
+            "scale": "best-fit"
           },
           {
             "type": "Frame",
-            "width": "50%",
+            "width": "47%",
             "height": "30%",
             "backgroundColor": "${payload.datosCasilla.properties.circleColor}",
             "alignSelf": "left",

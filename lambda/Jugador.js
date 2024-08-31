@@ -36,7 +36,7 @@ class Jugador {
      * @param {number} npos - La nueva posición del participante.
      */
     setPosActual(npos) {
-        this._posicion = npos;
+        this.posicion = npos;
     }
     
     /**

@@ -1,5 +1,109 @@
 [
   {
+    "question": "¿Cuántos huevos hay en media docena?",
+    "answer": "6"
+  },
+  {
+    "question": "¿Cuántos días tiene un año bisiesto?",
+    "answer": "366"
+  },
+  {
+    "question": "¿Cuántos metros mide una piscina olímpica?",
+    "answer": "50"
+  },
+  {
+    "question": "¿Cuántos cursos dura la ESO?",
+    "answer": "4"
+  },
+  {
+    "question": "¿Cuántos satélites tenemos orbitando alrededor de la Tierra?",
+    "answer": "1"
+  },
+  {
+    "question": "¿Cuántos continentes hay en la Tierra?",
+    "answer": "7"
+  },
+  {
+    "question": "¿Cuántas islas hay en Canarias?",
+    "answer": "7"
+  },
+  {
+    "question": "¿Cuántas provincias tiene Andalucía?",
+    "answer": "8"
+  },
+  {
+    "question": "¿Cuántas provincias hay en Galicia?",
+    "answer": "4"
+  },
+  {
+    "question": "¿Cuántas provincias hay en Cataluña?",
+    "answer": "4"
+  },
+  {
+    "question": "¿Cuántas provincias hay en Extremadura?",
+    "answer": "2"
+  },
+  {
+    "question": "¿Cuántas hijas tienen los Reyes?",
+    "answer": "2"
+  },
+  {
+    "question": "¿Cuántos hijos tuvieron Adán y Eva?",
+    "answer": "3"
+  },
+  {
+    "question": "¿Cuántos caballos tiene el ajedrez?",
+    "answer": "2"
+  },
+  {
+    "question": "¿Cuántos días tiene una semana?",
+    "answer": "7"
+  },
+  {
+    "question": "¿Cuántos continentes hay en el mundo?",
+    "answer": "7"
+  },
+  {
+    "question": "¿Cuántos huesos tiene el cuerpo humano?",
+    "answer": "206"
+  },
+  {
+    "question": "¿Cuántos colores hay en el arcoíris?",
+    "answer": "7"
+  },
+  {
+    "question": "¿Cuántos planetas hay en el sistema solar?",
+    "answer": "8"
+  },
+  {
+    "question": "¿Cuántos minutos hay en una hora?",
+    "answer": "60"
+  },
+  {
+    "question": "¿Cuántos meses tiene un año?",
+    "answer": "12"
+  },
+  {
+    "question": "¿Cuántos litros de agua se recomienda beber al día?",
+    "answer": "2"
+  },
+  {
+    "question": "¿Cuántos lados tiene un triángulo?",
+    "answer": "3"
+  },
+  {
+    "question": "¿Cuántos centímetros hay en un metro?",
+    "answer": "100"
+  },
+  {
+    "question": "¿Cuántos reyes ha tenido España desde la llegada de la democracia?",
+    "answer": "2"
+  },
+  {
+    "question": "¿Cuántos años duró la dictadura de Francisco Franco?",
+    "answer": "36"
+  },
+  {
     "question": "¿En qué año fue en el que Cristóbal descubre América?",
     "answer": "1492"
   },
@@ -16,24 +120,16 @@
     "answer": "1914"
   },
   {
-    "question": "¿En qué año produce la Revolución Rusa?",
-    "answer": "1917"
-  },
-  {
-    "question": "¿En qué año empezó la Guerra Civil Española?",
-    "answer": "1936"
-  },
-  {
-    "question": "¿En qué año llega el primer hombre a la Luna?",
-    "answer": "1969"
-  },
-  {
     "question": "¿En qué año se inició la Segunda Guerra Mundial?",
     "answer": "1939"
   },
   {
     "question": "¿En qué año finalizó la Segunda Guerra Mundial?",
     "answer": "1945"
+  },
+  {
+    "question": "¿En qué año llega el primer hombre a la Luna?",
+    "answer": "1969"
   },
   {
     "question": "¿Cuándo fue el golpe de estado de Tejero?",
@@ -48,16 +144,8 @@
     "answer": "2002"
   },
   {
-    "question": "¿Cuándo se fundó la OTAN?",
-    "answer": "1949"
-  },
-  {
     "question": "¿En qué año fue asesinado John F. Kennedy?",
     "answer": "1963"
-  },
-  {
-    "question": "¿En qué año se celebraron las primeras elecciones bajo la nueva constitución?",
-    "answer": "1979"
   },
   {
     "question": "¿En qué año murió Diana de Gales?",
@@ -66,10 +154,6 @@
   {
     "question": "¿En qué año se casaron el rey Felipe VI y la reina Letizia?",
     "answer": "2004"
-  },
-  {
-    "question": "¿En qué año se lanzó la primera bomba atómica?",
-    "answer": "1945"
   },
   {
     "question": "¿En qué año se firmó el Tratado de Versalles?",
@@ -90,10 +174,6 @@
   {
     "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
     "answer": "1776"
-  },
-  {
-    "question": "¿En qué año comenzó la Guerra de Vietnam?",
-    "answer": "1955"
   },
   {
     "question": "¿En qué año se abolió la esclavitud en Estados Unidos?",
