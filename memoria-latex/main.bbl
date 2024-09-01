@@ -105,6 +105,34 @@
       \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html
       \endverb
     \endentry
+    \entry{alexaHosted2}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
+           family={{Amazon Web Services}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{fullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{bibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Alexa Hosted Skills Personal AWS Resources}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html
+      \endverb
+      \verb{url}
+      \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html
+      \endverb
+    \endentry
     \entry{ArruebarrenaCabaco2020}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=fa277d78e3f2ddf9f0a1019a50113353}{%
@@ -1179,6 +1207,34 @@
       \endverb
       \verb{url}
       \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html
+      \endverb
+    \endentry
+    \entry{alexaHosted2}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3eb2c1a57a8160029f036e3dcbf84bf1}{%
+           family={{Amazon Web Services}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{fullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{bibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorbibnamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authornamehash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \strng{authorfullhash}{3eb2c1a57a8160029f036e3dcbf84bf1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Alexa Hosted Skills Personal AWS Resources}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html
+      \endverb
+      \verb{url}
+      \verb https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html
       \endverb
     \endentry
     \entry{ArruebarrenaCabaco2020}{article}{}

@@ -60,7 +60,7 @@ Dada la dificultad de implementar algunos en base a las limitaciones de los disp
 		\item Alexa: \textit{Incorrecto, el continente más pequeño del mundo es Oceanía, con 9.000.000 km² de superficie.}
 	\end{itemize}
 	
-	\item \textbf{Conoce a tus compañeros}: Alexa planteará una pregunta acerca de otro participante, quien deberá colaborar, ya que luego tendrá que confirmar si la respuesta proporcionada por el primer participante es correcta o no. Siempre habrá dos tipos de respuestas, \textit{correcto/a} o \textit{incorrecto/a}.
+	\item \textbf{Conoce a tus compañeros}: Alexa planteará una pregunta acerca de otro participante, quien deberá a continuación confirmar si la respuesta proporcionada por el primero es correcta o no. Siempre habrá dos tipos de respuestas, \textit{correcto/a} o \textit{incorrecto/a}.
 	\begin{itemize}
 		\item Alexa: \textit{Agustín, ¿Roberta ha viajado fuera del país alguna vez? Dime si es correcto o incorrecto.}
 		\item Agustín: \textit{Correcto}
@@ -98,7 +98,6 @@ Dada la dificultad de implementar algunos en base a las limitaciones de los disp
 	\end{itemize}
 \end{enumerate}
 
-
 \subsection{Historias de usuario y requisitos}
 
 Las historias de usuario son imprescindibles en el desarrollo ágil de software, pero también resultan valiosas en cualquier otra metodología de desarrollo, ya sea tradicional o no. Pues a través de un formato sencillo, recogen de forma clara las necesidades y expectativas de los usuarios y clientes, facilitando la comunicación entre integrantes del equipo de desarrollo y clientes. Un ambiente colaborativo donde las ideas pueden fluctuar a medida que se avanza aumenta las probabilidades de éxito de cualquier proyecto \parencite{introHU}.
@@ -116,6 +115,8 @@ Esta estructura facilita empatizar con la persona usuaria, entender qué pretend
 
 Las historias de usuario ofrecen una perspectiva más centrada en los usuarios finales, mientras que los requisitos funcionales se limitan a describir el comportamiento del sistema. Entonces, merece la pena considerar ambos para que el producto final no solo cumpla con las especificaciones técnicas, sino que también otorgue valor real a quienes va dirigido.
 
+\newpage
+
 \subsubsection{Historias de usuario}
 
 Las siguientes historias de usuario establecen los requisitos de sistema del juego de la oca controlada por Alexa.
@@ -124,7 +125,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|p{10cm}|}
+    \begin{tabular}{|c|p{12cm}|}
         \hline
         \rowcolor{lightgray}
         \multicolumn{2}{|c|}{\textbf{HU01}: Iniciar el juego} \\
@@ -142,7 +143,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c|p{10cm}|}
+	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\rowcolor{lightgray}
 		\multicolumn{2}{|c|}{\textbf{HU02}: Creación de una nueva partida} \\
@@ -160,7 +161,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|p{10cm}|}
+    \begin{tabular}{|c|p{12cm}|}
         \hline
         \rowcolor{lightgray}
         \multicolumn{2}{|c|}{\textbf{HU03}: Escuchar las reglas} \\
@@ -178,7 +179,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|p{10cm}|}
+    \begin{tabular}{|c|p{12cm}|}
         \hline
         \rowcolor{lightgray}
         \multicolumn{2}{|c|}{\textbf{HU04}: Jugar un turno} \\
@@ -360,7 +361,6 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\label{tab:HU13}
 \end{table}
 
-\newpage
 \subsubsection{Requisitos funcionales}
 
 Esta sección define y describe las características de alto nivel (requisitos
@@ -414,7 +414,7 @@ Se debe poder lanzar la skill mediante el comando de invocación.
 	\item \textbf{RF7.2}: La skill debe poder capturar la respuesta del participante y verificar si es correcta o no, actualizando sus puntos si es necesario.
 \end{itemize}
 
-
+\newpage
 \subsubsection{Requisitos no funcionales}
 
 En este apartado se pueden ver las diferentes cualidades y restricciones del sistema (requisitos no funcionales) que no se relacionan de forma directa con el comportamiento del mismo.
@@ -422,7 +422,7 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
 
 \textbf{RNF1: Usabilidad}
 \begin{itemize}
-    \item \textbf{RNF1.1}: La skill debe ser fácil de usar y entender, especialmente diseñada para personas mayores.
+    \item \textbf{RNF1.1}: La skill debe ser fácil de usar y entender, diseñada para personas mayores.
     \item \textbf{RNF1.2}: Para evitar dudas, que Alexa explique de forma clara y fácil de entender lo que deben hacer los jugadores.
     \item \textbf{RNF1.3}: Alexa debe dejar un margen flexible de tiempo para esperar una respuesta y si no lo hace, repite la pregunta.
     \item \textbf{RNF1.4}: La interfaz debe ser simple y limitarse a mostrar los elementos relevantes de la partida para evitar saturar a los jugadores y jugadoras.
@@ -431,15 +431,15 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
 
 \textbf{RNF2: Accesibilidad y compatibilidad}
 \begin{itemize}
-    \item \textbf{RNF2.1}: Es necesaria una cuenta de Amazon para instalar la skill y poder interactuar con Alexa.
-    \item \textbf{RNF2.2}: Es necesario un dispositivo de Alexa con pantalla rectangular (como un Echo Show).
+    \item \textbf{RNF2.1}: Es necesaria una cuenta de Amazon para instalar la skill de Alexa.
+    \item \textbf{RNF2.2}: Es necesario un dispositivo Alexa con pantalla rectangular (como Echo Show).
     \item \textbf{RNF2.3}: El dispositivo de Alexa debe tener una conexión estable a Internet.
     \item \textbf{RNF2.4}: La skill solo es compatible con el idioma español.
 \end{itemize}
 
 \textbf{RNF3: Rendimiento}
 \begin{itemize}
-    \item \textbf{RNF3.1}: Las respuestas a los comandos de voz deben ser rápidas, idealmente no superando los 5 segundos.
+    \item \textbf{RNF3.1}: Los tiempos de respuesta deben ser rápidos, idealmente menos de 5 segundos.
 \end{itemize}
 
 \textbf{RNF4: Fiabilidad}
@@ -707,7 +707,7 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 		\vspace{0.2cm}
 		\textbf{2.} El equipo/participante actual responde con \enquote{verdadero} o \enquote{falso}. \newline
 		\vspace{0.2cm}
-		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o dando una breve explicación de la respuesta correcta en caso contrario. \newline
+		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o dando una breve explicación de la respuesta correcta en caso contrario.
 		\vspace{0.2cm} \\
 		\hline
 		\textbf{Flujo alterno de eventos} &
@@ -814,7 +814,7 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 		\vspace{0.2cm}
 		\textbf{2.} El equipo/participante actual responde con el nombre de la casilla en la que piensa que estaba en el turno anterior. \newline
 		\vspace{0.2cm}
-		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o desvelando el nombre de la casilla correcta en caso contrario. \newline
+		\textbf{3.} Alexa verifica si su respuesta es correcta o no, actualizando sus puntos en caso afirmativo, o desvelando el nombre de la casilla correcta en caso contrario.
 		\vspace{0.2cm} \\
 		\hline
 		\textbf{Flujo alterno de eventos} &
@@ -837,7 +837,7 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 		\hline
 		\textbf{Descripción} & El equipo/participante actual participa en el minijuego de recuerda la fecha para la posibilidad de ganar 20 puntos. \vspace{0.2cm} \\
 		\hline
-		\textbf{Precondiciones} & El equipo/participante actual ha caído en una casilla de recuerda la fecha. \vspace{0.2cm} \\
+		\textbf{Precondiciones} & Ha caído en una casilla de recuerda la fecha. \vspace{0.2cm} \\
 		\hline
 		\textbf{Postcondiciones} & Se actualizan los puntos del equipo/participante actual si es necesario, y se anuncia el siguiente turno. \vspace{0.2cm} \\
 		\hline
@@ -848,11 +848,11 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 		\vspace{0.2cm}
 		\textbf{2.} El equipo/participante actual responde con el nombre del día de la semana, mes o estación del año que piense que es la correcta. \newline
 		\vspace{0.2cm}
-		\textbf{3.} Alexa verifica si se ha acordado bien o no, actualizando sus puntos en caso afirmativo, o recordando la solución en caso contrario. \newline
-		\vspace{0.2cm} \\
+		\textbf{3.} Alexa verifica si se ha acordado bien o no, actualizando sus puntos en caso afirmativo, o recordando la solución en caso contrario.
+		\vspace{0.1cm} \\
 		\hline
 		\textbf{Flujo alterno de eventos} &
-		\textbf{2.a.} Si la respuesta proporcionada no es un día de la semana, mes o estación del año, Alexa repetirá la pregunta, aclarando el formato de respuesta que debe dar. \newline
+		\textbf{2.a.} Si la respuesta no es un día de la semana, mes o estación del año, Alexa repetirá la pregunta y formato de respuesta. \newline
 		\vspace{0.2cm} 
 		\textbf{2.b.} Si Alexa no recibe una respuesta válida en un rato, repetirá la pregunta, aclarando el tipo de respuesta que debe dar.
 		\vspace{0.2cm} \\
@@ -894,13 +894,13 @@ Como los actores siempre van a ser las personas usuarias y la asistente conversa
 \newpage
 \subsubsection{Matriz de cobertura de requisitos funcionales}
 
-A continuación, se comprueba que todos los casos de uso definidos en la sección anterior referencian a un requisitos funcionales como mínimo. 
+A continuación, se comprueba que todos los casos de uso definidos en la sección anterior referencian a un requisito funcionales como mínimo. 
 
 Dicho de otra forma, todos los requisitos funcionales deben estar cubiertos por al menos un caso de uso.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{imgs/matriz-requisitos.JPG}
+	\includegraphics[width=0.93\textwidth]{imgs/matriz-requisitos.JPG}
 	\caption{Matriz de cobertura de requisitos funcionales}
 	\label{fig:matriz-requisitos}
 \end{figure}

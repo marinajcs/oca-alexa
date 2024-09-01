@@ -15,6 +15,7 @@ Las tecnologías avanzadas de AWS más relevantes en el desarrollo de skills son
 	\label{fig:arquitectura-skill}
 \end{figure}
 
+\newpage
 
 El proceso de creación de la habilidad para Alexa implica varios pasos clave \parencite{arquitecturaSkill}:
 \begin{enumerate}
@@ -33,7 +34,7 @@ Adicionalmente, para gestionar los elementos visuales que serán mostrados en la
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.98\textwidth]{imgs/arquitectura-apl.png}
-	\caption{Arquitectura de una APL con los cuatro actores principales (\href{https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Documentation})}
+	\caption{Arquitectura de una APL con los cuatro actores principales (\href{https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Docs})}
 \label{fig:arquitectura-apl}
 \end{figure}
 
@@ -59,7 +60,7 @@ Se ha hecho una adaptación a una plantilla de uso gratuito para elaborar el doc
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{imgs/GDD-1.jpg}
+	\includegraphics[width=0.68\textwidth]{imgs/GDD-1.jpg}
 	\caption{Game Design Document página 1}
 	\label{fig:GDD-1}
 \end{figure}
@@ -85,9 +86,11 @@ Se ha ilustrado el diagrama conceptual de forma aislada a la estructura particul
 	\label{fig:DConcep-1}
 \end{figure}
 
+\newpage 
+
 \subsection{Diseño de la interfaz de usuario}
 
-Aunque no se vaya a mostrar en la pantalla del dispositivo de Alexa, se ha realizado un diseño con Adobe Photoshop del tablero personalizado que utilizará la skill de la oca, lo que ha ayudado en gran medida a visualizarlo para poder implementarlo con mayor facilidad más adelante.
+Aunque no se vaya a mostrar entero en la pantalla del dispositivo, se ha realizado un diseño con Adobe Photoshop del tablero que utilizará la skill, lo que ha ayudado a visualizarlo y facilitar su implementación más adelante.
 
 \begin{figure}[H]
 	\centering
@@ -96,7 +99,7 @@ Aunque no se vaya a mostrar en la pantalla del dispositivo de Alexa, se ha reali
 	\label{fig:tablero-oca}
 \end{figure}
  
-La distribución de las casillas es la siguiente: 18 especiales tomadas del juego tradicional (oca, puente, laberinto, pozo, cárcel y hotel), 15 de tipo minijuego y 30 normales (no desencadenan ninguna acción especial, salvo la de meta). Por tanto, los porcentajes redondeados de las proporciones de cada una son: 28,57\%, 23,81\% y 47,62\%, respectivamente. 
+Entonces, la distribución de las casillas es la siguiente: 18 especiales tomadas del juego tradicional (oca, puente, laberinto, pozo, cárcel y hotel), 15 de tipo minijuego y 30 normales (no desencadenan ninguna acción especial, salvo la de meta). Por tanto, los porcentajes redondeados de las proporciones de cada una son: 28,57\%, 23,81\% y 47,62\%, respectivamente. 
 
 \subsubsection{Bocetos y mockups}
 
@@ -132,6 +135,8 @@ Es lo que se ha tratado de lograr con los siguientes bocetos, que definen la apa
 	\label{fig:boceto-casilla}
 \end{figure}
 
+\newpage
+
 \subsubsection{Diagrama de flujo entre pantallas}
 
 Debido a que solo existen cuatro tipos de pantallas en todo el juego, el diagrama de flujo entre ellas es igual de simple. Pues se pretende que la navegación entre pantallas sea automática e intuitiva, mostrando únicamente los elementos que pueden ayudar a los participantes a visualizar mejor la progresión del juego.
@@ -142,6 +147,8 @@ Debido a que solo existen cuatro tipos de pantallas en todo el juego, el diagram
 	\caption{Diagrama de flujo entre pantallas}
 	\label{fig:diagrama-pantallas}
 \end{figure}
+
+\newpage
 
 \subsubsection{Cuestiones de estética, usabilidad y accesibilidad}
 

@@ -129,7 +129,7 @@ El texto censurado es el ARN (Amazon Resource Name) o identificador del rol de e
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{imgs/aws-iam-4.png}
+	\includegraphics[width=0.75\textwidth]{imgs/aws-iam-4.png}
 	\caption{El AWS Lambda Execution Role ARN de la skill}
 	\label{fig:aws-iam-4}
 \end{figure}
@@ -155,9 +155,7 @@ Como se ha mencionado en la sección \textit{6.1.2.}, los datos de una skill no 
 
 Esta base de datos es de tipo NoSQL y es una alternativa interesante no solo por su total compatibilidad con las herramientas actuales del proyecto debido a que es otro servicio Amazon, sino también por su alta capacidad de adaptación a cualquier volumen de datos. 
 
-Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado automático en función del tráfico, gracias a su esquema NoSQL, cuyos elementos de las tablas se identifican mediante claves primarias únicas. Estas últimas pueden ser de partición o compuestas (unión de una clave de partición con una de ordenamiento).
-
-Para este proyecto, se han creado dos tablas: 
+Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado automático en función del tráfico, gracias a su esquema NoSQL, cuyos elementos de las tablas se identifican mediante claves primarias únicas. Estas últimas pueden ser de partición o compuestas (unión de una clave de partición con una de ordenamiento). Para este proyecto, se han creado dos tablas: 
 \begin{itemize}
 	\item \textbf{JuegoOca}: su clave primaria es \textit{idJuego}, que siempre valdrá 0 debido a que se pretende guardar los datos de una sola partida entre sesiones. Tiene los elementos generales de un juego de la oca, que son el estado, el turno y ronda actual, el número de jugadores, el tipo de participantes...
 	\item \textbf{Jugador}: identificada por la clave primaria \textit{idJugador}, que a la vez determina el orden de turno, y será un valor entero único entre 0 y el el numero de total de participantes menos uno. Los atributos de cada elemento son: el nombre, el color, los puntos, la posición y penalizaciones actuales, etc.
@@ -165,7 +163,7 @@ Para este proyecto, se han creado dos tablas:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{imgs/aws-db-1.jpg}
+	\includegraphics[width=0.8\textwidth]{imgs/aws-db-1.jpg}
 	\caption{Tablas \textit{JuegoOca} y \textit{Jugador} creadas en DynamoDB}
 	\label{fig:aws-db-1}
 \end{figure}
@@ -231,6 +229,7 @@ En las primeras líneas se realizan las importaciones necesarias de los datos de
 	\label{fig:codigo-casillas-1}
 \end{figure}
 
+\newpage
 Luego, se define la clase que representa una casilla general (o de carácter normal); es decir, aquella que no desencadena ningún evento especial como desplazarse a otra casilla, tirar el dado de nuevo, iniciar un minijuego, etc.
 
 \begin{figure}[H]
@@ -298,7 +297,7 @@ En la figura anterior, aparecen invocaciones a tres métodos auxiliares que perm
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{imgs/codigo-casillas-8.jpg}
+	\includegraphics[width=0.82\textwidth]{imgs/codigo-casillas-8.jpg}
 	\caption{Cálculo de la estación del año partiendo de la fecha actual}
 	\label{fig:codigo-casillas-8}
 \end{figure}
@@ -309,22 +308,24 @@ Es la estructura que almacena todas las casillas del juego en un arreglo con el 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{imgs/codigo-tablero-1.jpg}
+	\includegraphics[width=0.82\textwidth]{imgs/codigo-tablero-1.jpg}
 	\caption{Declaración de la clase Tablero}
 	\label{fig:codigo-tablero-1}
 \end{figure}
 
+\newpage
 Además, es la encargada de calcular una nueva posición a partir del índice de la casilla actual y el número de desplazamiento, asegurándose de que si es mayor que el número de casillas restantes hasta la meta, pueda retroceder y no salirse del límite.
 
 Otra de sus funcionalidades es la de buscar la siguiente casilla de tipo oca, dada la posición de la actual, útil para manejar el evento cuando se cae en una. También cuenta con un método para obtener la otra casilla de puente.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics{imgs/codigo-tablero-2.jpg}
+	\includegraphics[width=0.9\textwidth]{imgs/codigo-tablero-2.jpg}
 	\caption{Métodos para calcular una posición y buscar un tipo de casilla}
 	\label{fig:codigo-tablero-2}
 \end{figure}
 
+\newpage
 \paragraph{Fichero \enquote{EstadoJuego.js}}
 
 Aquí va el contenido del párrafo.
@@ -389,7 +390,8 @@ Esta clase dispone de varios de métodos para implementar la lógica del juego:
 		\label{fig:codigo-oca-6}
 	\end{figure} 
 	 
-	\item \textbf{avanzarJugador()}: mueve al participante actual una cantidad determinada de casillas, actualizando su posición y manejando eventos específicos basados en el tipo de casilla en la que cae. También genera un informe sobre el movimiento realizado y actualiza el estado de la partida.
+	\item \textbf{avanzarJugador()}: mueve al participante actual una cantidad determinada de casillas, actualizando su posición y manejando eventos específicos basados en el tipo de casilla en la que cae. También genera un informe sobre el movimiento realizado y actualiza el estado de la partida. \newline
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics{imgs/codigo-oca-4.jpg}
@@ -612,7 +614,7 @@ Es donde viene almacenada la información de las casillas de tipo normal. Los da
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{imgs/exp-casillas.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/exp-casillas.jpg}
 	\caption{Ejemplo de objeto con la información de una casilla normal}
 	\label{fig:exp-casillas}
 \end{figure}
@@ -623,18 +625,19 @@ El conjunto de preguntas posibles para el minijuego de adivinar la cifra, compue
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{imgs/exp-cifras.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/exp-cifras.jpg}
 	\caption{Ejemplos de preguntas en \enquote{Adivina la cifra}}
 	\label{fig:exp-cifras}
 \end{figure}
 
+\newpage
 \paragraph{\textit{preguntasVF.json}}
 
 La batería de preguntas de tipo trivial verdadero o falso, compuestas por el texto de la pregunta en, su solución (booleano) y una explicación de la respuesta que se mencionará si se falla.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{imgs/exp-vyf.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/exp-vyf.jpg}
 	\caption{Ejemplos de preguntas de \enquote{Verdadero o falso}}
 	\label{fig:exp-vyf}
 \end{figure}
@@ -645,7 +648,7 @@ Todas las preguntas acerca del resto de participantes que pueden salir en el min
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{imgs/exp-compas.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/exp-compas.jpg}
 	\caption{Ejemplos de preguntas acerca de los compañeros de juego}
 	\label{fig:exp-compas}
 \end{figure}
@@ -656,7 +659,7 @@ El conjunto de posibles preguntas de fechas, cada objeto definido por tres atrib
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{imgs/exp-fechas.jpg}
+	\includegraphics[width=0.7\textwidth]{imgs/exp-fechas.jpg}
 	\caption{Ejemplos de preguntas acerca en \enquote{Recuerda la fecha}}
 	\label{fig:exp-fechas}
 \end{figure}
@@ -669,7 +672,7 @@ Como indica el nombre del fichero, incluirá todas las funciones relativas a ope
 
 \paragraph{\textit{asumirRol()}}
 
-Permite asumir un rol de AWS para obtener credenciales temporales para poder acceder a DynamoDB de forma segura. Se han seguido los pasos de una de las guías de la \href{https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-personal-aws.html}{documentación oficial de Alexa}:
+Permite asumir un rol de AWS para obtener credenciales temporales para poder acceder a DynamoDB de forma segura. Se han seguido los pasos de una de las guías de la documentación oficial de Alexa \parencite{alexaHosted2}:
 
 \begin{enumerate}
 	\item Crear una instancia de cliente STS (\textit{Security Token Service}) usando \textit{AWS.STS}.
@@ -721,88 +724,297 @@ Leva a cabo el proceso anterior pero en sentido contrario, dicho en otras palabr
 \newpage
 
 \subsection{Pruebas}
-- hacer tablas
-+ nombre prueba
-+ descripción
-+ respuesta esperada
-+ validación
-+ correspondencia CU
+
+Para verificar la correcta implementación de la skill, es vital probar cada uno de los módulos por separado (pruebas unitarias), y después en conjunto (pruebas de intergación).
+
+\subsubsection{Unitarias}
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|p{8.5cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{PU01}: Iniciar la skill} \\
+		\multicolumn{2}{|c|}{\textbf{PU01}: Lanzar skill y pantalla de inicio} \\
 		\hline
-		\textbf{Descripción} & La persona usuaria dice: <<Alexa, abre probando oca>> \vspace{0.2cm} \\
+		\textbf{Descripción} & Se dice: <<Alexa, abre probando oca>> \vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta esperada} & Se inicia la skill, mostrando la pantalla de inicio y un mensaje de bienvenida. \vspace{0.2cm} \\
+		\textbf{Resultado esperado} & Se inicia la skill, mostrando la pantalla de inicio y un mensaje de bienvenida. \vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta obtenida} & Alexa da un mensaje de bienvenida, indicaciones básicas para empezar a jugar y se muestra por pantalla el logo del juego con un texto de bienvenida. \vspace{0.2cm} \\
+		\textbf{Resultado obtenido} & Alexa da un mensaje de bienvenida, indicaciones básicas para empezar a jugar y se muestra por pantalla el logo del juego con un texto de bienvenida. \vspace{0.2cm} \\
 		\hline
 		\textbf{CU referenciado(s)} & CU01 \vspace{0.2cm} \\
 		\hline
 		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
 		\hline
 	\end{tabular}
-	\caption{Lista de comandos de voz y ámbito de uso}
+	\caption{Prueba unitaria nº 1}
 	\label{tab:PU01}
 \end{table}
 
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|p{8.5cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{PU02}: Crear y configurar una nueva partida} \\
+		\multicolumn{2}{|c|}{\textbf{PU02}: Probar los comandos de ayuda} \\
 		\hline
-		\textbf{Descripción} & La persona usuaria dice: <<Nueva partida>> \vspace{0.2cm} \\
+		\textbf{Descripción} & Se dice <<Ayuda>>, y después <<Explícame las reglas>> \vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta esperada} & Alexa va preguntando los datos para configurar la partida, . \vspace{0.2cm} \\
+		\textbf{Resultado esperado} & Un listado de los temas de ayuda disponibles, y la explicación de las reglas. \vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta obtenida} & Alexa da un mensaje de bienvenida, indicaciones básicas para empezar a jugar y se muestra por pantalla el logo del juego con un texto de bienvenida. \vspace{0.2cm} \\
+		\textbf{Resultado obtenido} & Primero Alexa lista los temas que puede elaborar. Luego procede a explicar el tema que se ha pedido (las reglas del juego), detallando los objetivos principales del juego. \vspace{0.2cm} \\
 		\hline
-		\textbf{CU referenciado(s)} & CU01 \vspace{0.2cm} \\
+		\textbf{CU referenciado(s)} & CU02 \vspace{0.2cm} \\
 		\hline
 		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
 		\hline
 	\end{tabular}
-	\caption{Lista de comandos de voz y ámbito de uso}
+	\caption{Prueba unitaria nº 2}
 	\label{tab:PU02}
 \end{table}
 
-
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{8.5cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU03}: Crear una partida nueva} \\
+		\hline
+		\textbf{Descripción} & Se dice: <<Nueva partida>> \vspace{0.2cm} \\
+		\hline
+		\textbf{Resultado esperado} & Alexa va preguntando los datos necesarios para configurar la partida. Cuando tenga todos, muestra a los y las participantes, y marca el inicio del juego.  \vspace{0.2cm} \\
+		\hline
+		\textbf{Resultado obtenido} & Alexa pregunta por los datos de la partida, en el siguiente orden: tipo de participante, número de ellos y el nombre de cada uno. Tras lo cual hace un resumen de los participantes, mostrando por pantalla la información de cada uno, y anuncia el primer turno. \vspace{0.2cm} \\
+		\hline
+		\textbf{CU referenciado(s)} & CU03 y CU04 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 3}
+	\label{tab:PU03}
+\end{table}
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|p{8.5cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{PU0}: Cerrar la skill} \\
+		\multicolumn{2}{|c|}{\textbf{PU04}: Guardar y cargar la partida} \\
 		\hline
-		\textbf{Descripción} & La persona usuaria dice: <<Cierra probando oca>> \vspace{0.2cm} \\
+		\textbf{Descripción} & 
+		\textbf{1.} Con la partida ya configurada, pero antes de tirar el dado, se dice <<Guardar partida>>. \newline
+		\vspace{0.2cm}
+		\textbf{2.} Se cierra la skill diciendo: <<Cierra probando oca>>. \newline
+		\vspace{0.2cm}
+		\textbf{3.} Se vuelve a abrir la skill, y se dice: <<Continuar partida>>. \newline
+		\vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta esperada} & La partida finaliza y se cierra la skill de Alexa. \vspace{0.2cm} \\
+		\textbf{Resultado esperado} & Se puede retomar la partida con los datos guardados antes de cerrar la skill.  \vspace{0.2cm} \\
 		\hline
-		\textbf{Respuesta obtenida} & La partida termina y se cierra la skill del juego de la oca, la pantalla vuelve a la de inicio por defecto. \\
+		\textbf{Resultado obtenido} & Alexa da un mensaje de éxito, y tras volver a iniciarse la skill y escuchar el comando de carga de datos, confirma el éxito de la operación. Después, recuerda por qué turno se quedó la partida y a quién le toca continuar. \vspace{0.2cm} \\
 		\hline
-		\textbf{CU referenciado(s)} & CU13 \vspace{0.2cm} \\
+		\textbf{CU referenciado(s)} & CU01, CU06, CU07 y CU13 \vspace{0.2cm} \\
 		\hline
 		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
 		\hline
 	\end{tabular}
-	\caption{Lista de comandos de voz y ámbito de uso}
-	\label{tab:PU0}
+	\caption{Prueba unitaria nº 4}
+	\label{tab:PU04}
 \end{table}
+
+Las pruebas realizadas a partir de este punto dan por hecho que se ha iniciado previamente la skill y se ha invocado a \textit{configurarPruebaIntent}, que está asociado a \textit{configuracion1Handler}, que lo que hace es crear una partida con los datos de configuración ya inicializados (un supuesto en el que existen 2 equipos, llamados rojo y azul). 
+De esta forma, se evitar tener que repetir la prueba PU03 (ya completada), ahorrando así tiempo para testear el resto de funcionalidades.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{8.5cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU05}: Jugar un turno} \\
+		\hline
+		\textbf{Descripción} & Llegado su turno, el equipo rojo dice <<Tirar dado>>, después, dice <<Mover ficha>>. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Primero se muestra el lanzamiento del dado y después, la casilla en la que ha caído junto con la información del equipo. A continuación, se dan indicaciones de cómo proceder. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Alexa anuncia el resultado de la tirada de dado (un 1) a la vez que muestra dicha animación. Acto seguido, informa sobre el movimiento del equipo rojo desde la casilla actual (salida) a la nueva (casilla normal del trompo en la posición 1 del tablero). 
+		
+		Se muestra por pantalla la imagen de la casilla del trompo al lado de la ficha del equipo (con su color y nombre) y Alexa dice una de las frases aleatorias para recibir al equipo en esa determinada casilla. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU05 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 5}
+	\label{tab:PU05}
+\end{table}
+
+Para probar cada minijuego, se ha creado un tablero de prueba reducido con 5 casillas, una de cada minijuego, y se ha forzado el resultado del lanzamiento de dado al valor necesario para caer en cada una de ellas, obligando así a desencadenar el evento a validar.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{9.3cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU06}: Minijuego verdadero o falso} \\
+		\hline
+		\textbf{Descripción} & El equipo rojo cae en la casilla de dicho minijuego y Alexa le hace una pregunta de verdadero o falso que debe responder.
+		 \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa verifica si la respuesta del equipo es correcta y actualiza los puntos en caso afirmativo. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Si el equipo acierta la pregunta, Alexa da la enhorabuena y suma 10 puntos a su marcador.
+		
+		Si el equipo la falla, Alexa da una breve explicación de la solución.
+		
+		En caso de que no reciba respuesta o esta sea de formato incorrecto, Alexa repite la pregunta y el tipo de respuesta válido. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU08 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 6}
+	\label{tab:PU06}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{9.3cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU07}: Minijuego conoce a tus compañeros} \\
+		\hline
+		\textbf{Descripción} & El equipo rojo cae en la casilla de dicho minijuego y Alexa le hace una pregunta acerca del equipo azul, que debe responder con <<correcto>> o <<incorrecto>>. Será el propio equipo azul quien valide la respuesta.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa guarda la respuesta del equipo rojo y después le pregunta al equipo azul si es correcto lo que han dicho, actualizando los puntos de ambos en caso afirmativo. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Si el equipo azul confirma que la respuesta del equipo rojo es correcta, Alexa da la enhorabuena y suma puntos a ambos.
+		
+		Si el equipo azul dice que es incorrecto, Alexa da un mensaje de ánimo antes de pasar al siguiente turno.
+		
+		En caso de que no reciba respuesta o esta sea de formato incorrecto, Alexa repite la pregunta y el tipo de respuesta válido. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU09 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 7}
+	\label{tab:PU07}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{9.3cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU08}: Minijuego adivina la cifra} \\
+		\hline
+		\textbf{Descripción} & El equipo rojo cae en la casilla de dicho minijuego y Alexa le hace una pregunta cuya solución es un cifra.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa comprueba si la respuesta del equipo es correcta, dándole puntos en caso afirmativo, y si no lo es, pasa a preguntarle al siguiente equipo. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Si el equipo azul acierta la cifra, Alexa da la enhorabuena y le suma 30 puntos.
+		
+		Si ha fallado, Alexa redirige la pregunta al equipo azul. Si aciertan, se llevan los puntos y si no, Alexa concluye que nadie sabía la solución así que la revela para todos.
+		
+		En caso de que no reciba respuesta o esta sea de formato incorrecto, Alexa repite la pregunta y el tipo de respuesta válido. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU10 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 8}
+	\label{tab:PU08}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{9.3cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU09}: Minijuego recuerda la última casilla} \\
+		\hline
+		\textbf{Descripción} & El equipo rojo, que estaba en la casilla de salida, ahora cae en la casilla de dicho minijuego y Alexa le pregunta cuál fue la última casilla en la que estuvo.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa comprueba si la respuesta del equipo es correcta, dándole puntos en caso afirmativo. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Si el equipo azul responde con <<la casilla de salida>>, habrá acertado, por tanto ganará 25 puntos.
+		
+		Si no sabe la respuesta o se equivoca de casilla, Alexa revelará la solución.
+		
+		En caso de que la respuesta sea de formato incorrecto, Alexa repite la pregunta y el tipo de respuesta válido. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU11 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 9}
+	\label{tab:PU09}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{9cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{PU10}: Minijuego recuerda la fecha} \\
+		\hline
+		\textbf{Descripción} & El equipo rojo cae en la casilla de dicho minijuego y Alexa le pregunta por un día de la semana, mes o estación que puede ser la actual o calcularse a partir de ella.
+		\vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta esperada} & Alexa comprueba si la respuesta del equipo es correcta, dándole puntos en caso afirmativo. \vspace{0.2cm} \\
+		\hline
+		\textbf{Respuesta obtenida} & Si el equipo azul responde con el día de la semana, mes o estación correcta, significará que se ha acordado bien de la fecha actual, y por tanto ganará 20 puntos.
+		
+		Si falla la pregunta, Alexa revelará la respuesta correcta.
+		
+		En caso de que la respuesta sea de formato incorrecto, Alexa repite la pregunta y el tipo de respuesta válido. \\
+		\hline
+		\textbf{CU referenciado(s)} & CU12 \vspace{0.2cm} \\
+		\hline
+		\textbf{Estado de validación} & Aprobado \vspace{0.2cm} \\
+		\hline
+	\end{tabular}
+	\caption{Prueba unitaria nº 10}
+	\label{tab:PU10}
+\end{table}
+
+\subsubsection{De integración}
+
+Sirven para validar el funcionamiento en conjunto de los distintos componentes de la skill. Para ello, una vez probados todos los módulos por separado, se han realizado simulaciones de partidas desde cero. Los pasos seguidos han sido:
+\begin{enumerate}
+	\item Abrir la skill del juego de la oca.
+	\item Decir que cree una nueva partida.
+	\item Ir proporcionando los parámetros de configuración: el tipo de participante (por equipos), el número total de ellos (2) y sus nombres (<<los campeones rojos>> y <<las divinas azules>>).
+	\item El equipo rojo dice <<tirar dado>>.
+	\item Tras obtener un resultado del 1 al 6, dice <<mover ficha>>.
+	\item El equipo rojo cae en una casilla normal. Pasa el turno al equipo azul.
+	\item El equipo azul tira el dado y mueve su ficha de la misma forma que lo hizo el rojo.
+	\item Se gestiona el evento de la casilla en la que ha caído, y pasan a la ronda 2, empezado otra vez por el turno del equipo rojo.
+	\item Siguen avanzando por el tablero hasta que uno de ellos llega a la casilla de meta.
+\end{enumerate}
+
+Una forma eficiente de probar la skill en su totalidad es usando el propio simular de Alexa de la consola de desarrollo.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{imgs/test-1.jpg}
-	\caption{Función para cargar los datos de la partida desde DynamoDB}
+	\caption{Ejemplo de testing en el simulador online de Alexa}
 	\label{fig:test-1}
 \end{figure}
 
+También se ha probado a jugar partidas completa con un dispositivo Amazon Echo Show 5, orobando la persistencia de datos de una sesión a otra mediante las opciones de guardado.
+
+\newpage
 \subsection{Seguridad}
 
 La seguridad es uno de los requisitos no funcionales más importantes, junto con la usabilidad. Si bien es cierto que en un juego de la oca no se tratan datos de alta importancia que haya que cifrar, es una skill que hace uso de servicios de \textit{Amazon Web Services} (AWS). Estos últimos están vinculados a una cuenta administradora que gestiona los métodos de pago de los servicios cuando estos superan una determinada cuota de uso. Por tanto, para proteger estos servicios y limitar su uso a skills personalizadas concretas, es necesario controlar quién tiene acceso, siguiendo el principio de mínimo privilegio. Esto puede lograrse de forma eficiente mediante los roles de \textit{Identity and Access Management} (IAM).
