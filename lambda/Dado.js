@@ -16,22 +16,22 @@ function getUrlDado(n) {
     let url;
     switch(n) {
         case 1:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-1.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-1.mp4";
             break;
         case 2:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-2.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-2.mp4";
             break;
         case 3:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-3.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-3.mp4";
             break;
         case 4:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-4.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-4.mp4";
             break;
         case 5:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-5.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-5.mp4";
             break;
         case 6:
-            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-6.mp4";
+            url = "https://bucket-oca.s3.eu-west-1.amazonaws.com/videos-dado/dado-num-6.mp4";
             break;
     }
     return url;

@@ -11,7 +11,7 @@ class Tablero {
      */
     constructor() {
         this.tablero = [];
-        this.addCasilla(new Casilla("Salida"));
+        this.addCasilla(new Casilla("Salida", "https://i.ibb.co/Yfmk5mt/oca.png"));
     }
 
     /**

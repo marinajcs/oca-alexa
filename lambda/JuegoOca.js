@@ -18,7 +18,7 @@ class JuegoOca {
         this.numJugadores = 0;
         this.turno = 0;
         this.penalizaciones = [];
-        this.tablero = this.crearTableroPrueba();
+        this.tablero = this.crearTablero();
         this.ronda = 1;
         this.estado = EstadoJuego.INDETERMINADO;
     }
@@ -375,71 +375,71 @@ class JuegoOca {
         tablero.addCasilla(new Casilla("trompo", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/1.jpg", fc[2]));
         tablero.addCasilla(new CasillaVyF("minijuego verdadero o falso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/2.jpg"));
         tablero.addCasilla(new Casilla("dinero", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/3.jpg", fc[1]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/4.jpg"));
-        tablero.addCasilla(new CasillaOca("Oca 5", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/5.jpg", fc[0]));
-        tablero.addCasilla(new CasillaPuente("Puente 6", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/6.jpg"));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/7.jpg"));
+        tablero.addCasilla(new CasillaCifras("minijuego adivina la cifra", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/4.jpg"));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/5.jpg", fc[0]));
+        tablero.addCasilla(new CasillaPuente("puente", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/6.jpg"));
+        tablero.addCasilla(new CasillaCompas("minijuego conoce a tus compañeros", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/7.jpg"));
         
         tablero.addCasilla(new Casilla("lentejas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/8.jpg", fc[3]));
-        tablero.addCasilla(new CasillaOca("Oca 9", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/9.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/9.jpg", fc[0]));
         tablero.addCasilla(new Casilla("queso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/10.jpg", fc[4]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/11.jpg"));
-        tablero.addCasilla(new CasillaPuente("Puente 12", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/12.jpg"));
+        tablero.addCasilla(new CasillaUltima("minijuego recuerda la casilla", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/11.jpg"));
+        tablero.addCasilla(new CasillaPuente("puente", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/12.jpg"));
         tablero.addCasilla(new Casilla("flor", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/13.jpg", fc[5]));
-        tablero.addCasilla(new CasillaOca("Oca 14", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/14.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/14.jpg", fc[0]));
         
         tablero.addCasilla(new Casilla("maceta", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/15.jpg", fc[6]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/16.jpg"));
+        tablero.addCasilla(new CasillaFechas("minijuego recuerda la fecha", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/16.jpg"));
         tablero.addCasilla(new Casilla("jamón", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/17.jpg", fc[7]));
-        tablero.addCasilla(new CasillaOca("Oca 18", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/18.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/18.jpg", fc[0]));
         tablero.addCasilla(new CasillaPenalizacion("hotel", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/19.jpg", fc[19], 2));
         tablero.addCasilla(new Casilla("fútbol", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/20.jpg", fc[8]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/21.jpg"));
+        tablero.addCasilla(new CasillaVyF("minijuego verdadero o falso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/21.jpg"));
         
         tablero.addCasilla(new Casilla("paraguas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/22.jpg", fc[9]));
-        tablero.addCasilla(new CasillaOca("Oca 23", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/23.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/23.jpg", fc[0]));
         tablero.addCasilla(new Casilla("fresa", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/24.jpg", fc[10]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/25.jpg"));
+        tablero.addCasilla(new CasillaCifras("minijuego adivina la cifra", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/25.jpg"));
         tablero.addCasilla(new Casilla("sombrero", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/26.jpg", fc[11]));
-        tablero.addCasilla(new CasillaOca("Oca 27", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/27.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/27.jpg", fc[0]));
         tablero.addCasilla(new Casilla("chocolate", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/28.jpg", fc[12]));
         
         tablero.addCasilla(new Casilla("paella", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/29.jpg", fc[13]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/30.jpg"));
+        tablero.addCasilla(new CasillaCompas("minijuego conoce a tus compañeros", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/30.jpg"));
         tablero.addCasilla(new CasillaPenalizacion("El pozo", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/31.jpg", fc[20], 2));
-        tablero.addCasilla(new CasillaOca("Oca 32", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/32.jpg", fc[0]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/33.jpg"));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/32.jpg", fc[0]));
+        tablero.addCasilla(new CasillaUltima("minijuego recuerda la casilla", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/33.jpg"));
         tablero.addCasilla(new Casilla("Granada", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/34.jpg", fc[14]));
         tablero.addCasilla(new Casilla("perro", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/35.jpg", fc[15]));
         
-        tablero.addCasilla(new CasillaOca("Oca 36", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/36.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/36.jpg", fc[0]));
         tablero.addCasilla(new Casilla("canicas", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/37.jpg", fc[16]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/38.jpg"));
+        tablero.addCasilla(new CasillaFechas("minijuego recuerda la fecha", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/38.jpg"));
         tablero.addCasilla(new Casilla("rayuela", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/39.jpg", fc[17]));
         tablero.addCasilla(new Casilla("biblioteca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/40.jpg", fc[18]));
-        tablero.addCasilla(new CasillaOca("Oca 41", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/41.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/41.jpg", fc[0]));
         tablero.addCasilla(new CasillaPenalizacion("laberinto", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/42.jpg", fc[21], 3));
         
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/43.jpg"));
+        tablero.addCasilla(new CasillaVyF("minijuego verdadero o falso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/43.jpg"));
         tablero.addCasilla(new Casilla("tarta", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/44.jpg", fc[22]));
-        tablero.addCasilla(new CasillaOca("Oca 45", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/45.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/45.jpg", fc[0]));
         tablero.addCasilla(new Casilla("calcetín", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/46.jpg", fc[23]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/47.jpg"));
+        tablero.addCasilla(new CasillaCifras("minijuego adivina la cifra", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/47.jpg"));
         tablero.addCasilla(new Casilla("reloj", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/48.jpg", fc[26]));
         tablero.addCasilla(new Casilla("payaso", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/49.jpg", fc[24]));
         
-        tablero.addCasilla(new CasillaOca("Oca 50", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/50.jpg", fc[0]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/51.jpg"));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/50.jpg", fc[0]));
+        tablero.addCasilla(new CasillaCompas("minijuego conoce a tus compañeros", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/51.jpg"));
         tablero.addCasilla(new CasillaPenalizacion("cárcel", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/52.jpg", fc[25], 3));
         tablero.addCasilla(new Casilla("cámara", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/53.jpg", fc[27]));
-        tablero.addCasilla(new CasillaOca("Oca 54", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/54.jpg", fc[0]));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/54.jpg", fc[0]));
         tablero.addCasilla(new Casilla("aceite", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/55.jpg", fc[28]));
         tablero.addCasilla(new Casilla("árbol Navidad", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/56.jpg", fc[29]));
         
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/57.jpg"));
+        tablero.addCasilla(new CasillaUltima("minijuego recuerda la casilla", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/57.jpg"));
         tablero.addCasilla(new Casilla("limón", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/58.jpg", fc[30]));
-        tablero.addCasilla(new CasillaOca("Oca 59", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/59.jpg", fc[0]));
-        tablero.addCasilla(new CasillaVyF("Minijuego VyF", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/60.jpg"));
+        tablero.addCasilla(new CasillaOca("oca", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/59.jpg", fc[0]));
+        tablero.addCasilla(new CasillaFechas("minijuego recuerda la fecha", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/60.jpg"));
         tablero.addCasilla(new Casilla("gato", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/61.jpg", fc[31]));
         tablero.addCasilla(new Casilla("cometa", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/62.jpg", fc[32]));
         tablero.addCasilla(new Casilla("META", "https://bucket-oca.s3.eu-west-1.amazonaws.com/casillas-oca/63.jpg"));

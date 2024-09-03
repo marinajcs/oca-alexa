@@ -11,7 +11,6 @@ const {EstadoJuego, informeEstado} = require('./EstadoJuego.js');
 const {asumirRol, guardarPartida, cargarPartida} = require('./db.js');
 
 let oca = new JuegoOca();
-
 /**
  * Manejador para el lanzamiento de la skill. Se activa cada vez que se abre la skill.
  */
@@ -345,9 +344,9 @@ const jugarTurnoHandler = {
         const hayEquipos = oca.getEquipos();
         
         if (dado === undefined && oca.getPenalizaciones(jActual.getId()) === 0){
-            speakOutput = `${hayEquipos ? 'El equipo' : ''} ${oca.getNombreJActual()} ha tirado el dado. <break time="10s"/>`
-            //dado = tirarDado();
-            dado = 1;
+            speakOutput = `${hayEquipos ? 'El equipo' : ''} ${oca.getNombreJActual()} ha tirado el dado. <break time="9s"/>`
+            dado = tirarDado();
+            //dado = 4;
             sessionAttributes.valorDado = dado;
             handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 
@@ -374,11 +373,12 @@ const jugarTurnoHandler = {
             } else {
                 speakOutput += ` Por favor proceda${hayEquipos ? 'n' : ''} a mover su ficha. `;
             }
+            
             repromptAudio = informeEstado(oca.getEstado(), hayEquipos, oca.getNombreJActual());
             
         } else {
             sessionAttributes.valorDado = undefined;
-            
+
             const [casillaNueva, informe] = oca.avanzaJugador(jActual, dado);
             const jugEnCasilla = oca.getJugadoresCasilla(jActual.getPosActual(), jActual);
             speakOutput = informe;

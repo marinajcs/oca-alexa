@@ -24,7 +24,7 @@
           {
             "type": "Frame",
             "width": "47%",
-            "height": "30%",
+            "height": "45%",
             "backgroundColor": "${payload.datosCasilla.properties.circleColor}",
             "alignSelf": "left",
             "alignItems": "left",
@@ -41,7 +41,7 @@
             "type": "Sequence",
             "id": "fichaSequence",
             "width": "40%",
-            "height": "70%",
+            "height": "55%",
             "scrollDirection": "vertical",
             "data": "${payload.datosCasilla.properties.fichas}",
             "items": [
