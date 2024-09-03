@@ -725,9 +725,11 @@ Leva a cabo el proceso anterior pero en sentido contrario, dicho en otras palabr
 
 \subsection{Pruebas}
 
-Para verificar la correcta implementación de la skill, es vital probar cada uno de los módulos por separado (pruebas unitarias), y después en conjunto (pruebas de intergación).
+Para verificar la correcta implementación de la skill, es vital probar cada uno de los módulos por separado (pruebas unitarias), y después en conjunto (pruebas de integración). Dichas pruebas se enumeran en las siguientes secciones.
 
-\subsubsection{Unitarias}
+\subsubsection{Pruebas unitarias}
+
+Las pruebas unitarias permiten verificar que cada componente, en este caso, cada función manejadora o handler de la skill, funciona correctamente al ejecutarse de forma aislada.
 
 \begin{table}[H]
 	\centering
@@ -988,9 +990,9 @@ Para probar cada minijuego, se ha creado un tablero de prueba reducido con 5 cas
 	\label{tab:PU10}
 \end{table}
 
-\subsubsection{De integración}
+\subsubsection{Pruebas de integración}
 
-Sirven para validar el funcionamiento en conjunto de los distintos componentes de la skill. Para ello, una vez probados todos los módulos por separado, se han realizado simulaciones de partidas desde cero. Los pasos seguidos han sido:
+Las pruebas de integración sirven para validar el funcionamiento en conjunto de los distintos componentes de la skill. Para ello, una vez probados todos los módulos por separado, se han realizado simulaciones de partidas desde cero. Los pasos seguidos han sido:
 \begin{enumerate}
 	\item Abrir la skill del juego de la oca.
 	\item Decir que cree una nueva partida.
@@ -1000,10 +1002,10 @@ Sirven para validar el funcionamiento en conjunto de los distintos componentes d
 	\item El equipo rojo cae en una casilla normal. Pasa el turno al equipo azul.
 	\item El equipo azul tira el dado y mueve su ficha de la misma forma que lo hizo el rojo.
 	\item Se gestiona el evento de la casilla en la que ha caído, y pasan a la ronda 2, empezado otra vez por el turno del equipo rojo.
-	\item Siguen avanzando por el tablero hasta que uno de ellos llega a la casilla de meta.
+	\item Siguen avanzando por el tablero hasta que uno de ellos llega a la casilla de meta, o si se quiere pausar la partida, se guarda el progreso actual para después retomarlo.
 \end{enumerate}
 
-Una forma eficiente de probar la skill en su totalidad es usando el propio simular de Alexa de la consola de desarrollo.
+Una forma eficiente de probar la skill en su totalidad es usando el propio simular de Alexa de la consola de desarrollo, tal y como se muestra en la \autoref{fig:test-1}.
 
 \begin{figure}[H]
 	\centering
@@ -1012,7 +1014,7 @@ Una forma eficiente de probar la skill en su totalidad es usando el propio simul
 	\label{fig:test-1}
 \end{figure}
 
-También se ha probado a jugar partidas completa con un dispositivo Amazon Echo Show 5, orobando la persistencia de datos de una sesión a otra mediante las opciones de guardado.
+También se ha probado a jugar partidas completas con un dispositivo Amazon Echo Show 5, probando la persistencia de datos de una sesión a otra mediante las opciones de guardado.
 
 \newpage
 \subsection{Seguridad}

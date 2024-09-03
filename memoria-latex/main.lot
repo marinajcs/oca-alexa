@@ -1,46 +1,48 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Subobjetivos del trabajo.}}{15}{table.1}%
+\contentsline {table}{\numberline {1}{\ignorespaces Subobjetivos del trabajo.}}{16}{table.1}%
 \contentsline {table}{\numberline {2}{\ignorespaces Clasificación de asistentes virtuales}}{23}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Presupuesto para recursos humanos}}{30}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Presupuesto para hardware}}{30}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Presupuesto para software}}{31}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces Tabla general de presupuestos}}{31}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces Historia de usuario nº 1}}{37}{table.7}%
-\contentsline {table}{\numberline {8}{\ignorespaces Historia de usuario nº 2}}{37}{table.8}%
-\contentsline {table}{\numberline {9}{\ignorespaces Historia de usuario nº 3}}{37}{table.9}%
-\contentsline {table}{\numberline {10}{\ignorespaces Historia de usuario nº 4}}{37}{table.10}%
-\contentsline {table}{\numberline {11}{\ignorespaces Historia de usuario nº 5}}{38}{table.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Historia de usuario nº 6}}{38}{table.12}%
-\contentsline {table}{\numberline {13}{\ignorespaces Historia de usuario nº 7}}{38}{table.13}%
-\contentsline {table}{\numberline {14}{\ignorespaces Historia de usuario nº 8}}{38}{table.14}%
-\contentsline {table}{\numberline {15}{\ignorespaces Historia de usuario nº 9}}{39}{table.15}%
-\contentsline {table}{\numberline {16}{\ignorespaces Historia de usuario nº 10}}{39}{table.16}%
-\contentsline {table}{\numberline {17}{\ignorespaces Historia de usuario nº 11}}{39}{table.17}%
-\contentsline {table}{\numberline {18}{\ignorespaces Historia de usuario nº 12}}{39}{table.18}%
-\contentsline {table}{\numberline {19}{\ignorespaces Historia de usuario nº 13}}{40}{table.19}%
-\contentsline {table}{\numberline {20}{\ignorespaces Caso de uso nº 1}}{43}{table.20}%
-\contentsline {table}{\numberline {21}{\ignorespaces Caso de uso nº 2}}{44}{table.21}%
-\contentsline {table}{\numberline {22}{\ignorespaces Caso de uso nº 3}}{45}{table.22}%
-\contentsline {table}{\numberline {23}{\ignorespaces Caso de uso nº 4}}{46}{table.23}%
-\contentsline {table}{\numberline {24}{\ignorespaces Caso de uso nº 5}}{47}{table.24}%
-\contentsline {table}{\numberline {25}{\ignorespaces Caso de uso nº 6}}{48}{table.25}%
-\contentsline {table}{\numberline {26}{\ignorespaces Caso de uso nº 7}}{48}{table.26}%
-\contentsline {table}{\numberline {27}{\ignorespaces Caso de uso nº 8}}{49}{table.27}%
-\contentsline {table}{\numberline {28}{\ignorespaces Caso de uso nº 9}}{50}{table.28}%
-\contentsline {table}{\numberline {29}{\ignorespaces Caso de uso nº 10}}{51}{table.29}%
-\contentsline {table}{\numberline {30}{\ignorespaces Caso de uso nº 11}}{52}{table.30}%
-\contentsline {table}{\numberline {31}{\ignorespaces Caso de uso nº 12}}{53}{table.31}%
-\contentsline {table}{\numberline {32}{\ignorespaces Caso de uso nº 13}}{53}{table.32}%
-\contentsline {table}{\numberline {33}{\ignorespaces Dimensiones y variables de la ergonomía de la app}}{69}{table.33}%
-\contentsline {table}{\numberline {34}{\ignorespaces Prueba unitaria nº 1}}{116}{table.34}%
-\contentsline {table}{\numberline {35}{\ignorespaces Prueba unitaria nº 2}}{116}{table.35}%
-\contentsline {table}{\numberline {36}{\ignorespaces Prueba unitaria nº 3}}{117}{table.36}%
-\contentsline {table}{\numberline {37}{\ignorespaces Prueba unitaria nº 4}}{117}{table.37}%
-\contentsline {table}{\numberline {38}{\ignorespaces Prueba unitaria nº 5}}{118}{table.38}%
-\contentsline {table}{\numberline {39}{\ignorespaces Prueba unitaria nº 6}}{119}{table.39}%
-\contentsline {table}{\numberline {40}{\ignorespaces Prueba unitaria nº 7}}{119}{table.40}%
-\contentsline {table}{\numberline {41}{\ignorespaces Prueba unitaria nº 8}}{120}{table.41}%
-\contentsline {table}{\numberline {42}{\ignorespaces Prueba unitaria nº 9}}{120}{table.42}%
-\contentsline {table}{\numberline {43}{\ignorespaces Prueba unitaria nº 10}}{121}{table.43}%
-\contentsline {table}{\numberline {44}{\ignorespaces Lista de comandos de voz y ámbito de uso}}{125}{table.44}%
-\contentsline {table}{\numberline {45}{\ignorespaces Tipos de respuestas del usuario a los minijuegos}}{127}{table.45}%
+\contentsline {table}{\numberline {3}{\ignorespaces Presupuesto para recursos humanos}}{31}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Presupuesto para hardware}}{31}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Presupuesto para software}}{32}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Tabla general de presupuestos}}{32}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Historia de usuario nº 1}}{38}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Historia de usuario nº 2}}{39}{table.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Historia de usuario nº 3}}{39}{table.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Historia de usuario nº 4}}{39}{table.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Historia de usuario nº 5}}{39}{table.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Historia de usuario nº 6}}{39}{table.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces Historia de usuario nº 7}}{40}{table.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Historia de usuario nº 8}}{40}{table.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces Historia de usuario nº 9}}{40}{table.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces Historia de usuario nº 10}}{40}{table.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces Historia de usuario nº 11}}{41}{table.17}%
+\contentsline {table}{\numberline {18}{\ignorespaces Historia de usuario nº 12}}{41}{table.18}%
+\contentsline {table}{\numberline {19}{\ignorespaces Historia de usuario nº 13}}{41}{table.19}%
+\contentsline {table}{\numberline {20}{\ignorespaces Historia de usuario nº 14}}{41}{table.20}%
+\contentsline {table}{\numberline {21}{\ignorespaces Caso de uso nº 1}}{45}{table.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Caso de uso nº 2}}{46}{table.22}%
+\contentsline {table}{\numberline {23}{\ignorespaces Caso de uso nº 3}}{47}{table.23}%
+\contentsline {table}{\numberline {24}{\ignorespaces Caso de uso nº 4}}{48}{table.24}%
+\contentsline {table}{\numberline {25}{\ignorespaces Caso de uso nº 5}}{49}{table.25}%
+\contentsline {table}{\numberline {26}{\ignorespaces Caso de uso nº 6}}{50}{table.26}%
+\contentsline {table}{\numberline {27}{\ignorespaces Caso de uso nº 7}}{50}{table.27}%
+\contentsline {table}{\numberline {28}{\ignorespaces Caso de uso nº 8}}{51}{table.28}%
+\contentsline {table}{\numberline {29}{\ignorespaces Caso de uso nº 9}}{52}{table.29}%
+\contentsline {table}{\numberline {30}{\ignorespaces Caso de uso nº 10}}{53}{table.30}%
+\contentsline {table}{\numberline {31}{\ignorespaces Caso de uso nº 11}}{54}{table.31}%
+\contentsline {table}{\numberline {32}{\ignorespaces Caso de uso nº 12}}{55}{table.32}%
+\contentsline {table}{\numberline {33}{\ignorespaces Caso de uso nº 13}}{55}{table.33}%
+\contentsline {table}{\numberline {34}{\ignorespaces Dimensiones y variables de la ergonomía de la app}}{70}{table.34}%
+\contentsline {table}{\numberline {35}{\ignorespaces Prueba unitaria nº 1}}{118}{table.35}%
+\contentsline {table}{\numberline {36}{\ignorespaces Prueba unitaria nº 2}}{119}{table.36}%
+\contentsline {table}{\numberline {37}{\ignorespaces Prueba unitaria nº 3}}{119}{table.37}%
+\contentsline {table}{\numberline {38}{\ignorespaces Prueba unitaria nº 4}}{120}{table.38}%
+\contentsline {table}{\numberline {39}{\ignorespaces Prueba unitaria nº 5}}{121}{table.39}%
+\contentsline {table}{\numberline {40}{\ignorespaces Prueba unitaria nº 6}}{122}{table.40}%
+\contentsline {table}{\numberline {41}{\ignorespaces Prueba unitaria nº 7}}{122}{table.41}%
+\contentsline {table}{\numberline {42}{\ignorespaces Prueba unitaria nº 8}}{123}{table.42}%
+\contentsline {table}{\numberline {43}{\ignorespaces Prueba unitaria nº 9}}{123}{table.43}%
+\contentsline {table}{\numberline {44}{\ignorespaces Prueba unitaria nº 10}}{124}{table.44}%
+\contentsline {table}{\numberline {45}{\ignorespaces Lista de comandos de voz y ámbito de uso}}{128}{table.45}%
+\contentsline {table}{\numberline {46}{\ignorespaces Tipos de respuestas del usuario a los minijuegos}}{130}{table.46}%
+\contentsline {table}{\numberline {47}{\ignorespaces Objetivos cumplidos}}{132}{table.47}%

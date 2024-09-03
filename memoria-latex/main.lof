@@ -2,86 +2,84 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Pirámides de población de España en futuros años (\href {https://www.geriatricarea.com/2020/09/25/uno-de-cada-tres-espanoles-tendra-65-o-mas-anos-en-el-2050/}{geriatricarea.com})}}{11}{figure.1}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Población por grupos de edad que han usado Internet en los últimos tres meses (INE, 2018-23)}}{13}{figure.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Población de entre 16 y 74 años que ha usado Internet en los últimos tres meses en la UE (INE, 2020-23)}}{14}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Gradior, un sistema de evaluación y rehabilitación neuropsicológica}}{18}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Mejorar de calidad de vida de adultos mayores con las TIC}}{21}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Ranking de asistentes de voz según el VPIR en 2020 (\href {https://es.statista.com/grafico/22578/clasificacion-de-los-asistentes-de-voz/}{statista})}}{24}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Celia, una asistente todoterreno 24 horas al día.}}{25}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Interfaz gráfica del juego colores v2}}{26}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Planificación temporal en el calendario}}{27}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Leyenda de la planificación temporal por (sub)tareas}}{28}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Diseño de la oca para evaluar las habilidades motoras en Educación Primaria \blx@tocontentsinit {0}\parencite {experienciaOca}}}{33}{figure.11}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Un tablero del juego tradicional de la oca}}{33}{figure.13}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Tablero completo correspondiente a las casillas de la figura superior \blx@tocontentsinit {0}\parencite {experienciaOca}}}{34}{figure.12}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Patrón general de una historia de usuario}}{36}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Matriz de cobertura de requisitos funcionales}}{54}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de secuencia de CU01 y CU02.}}{55}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama de secuencia de CU03, CU04 y CU05.}}{56}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de secuencia de CU06 y CU07 y CU13.}}{57}{figure.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Diagrama de secuencia de CU08, CU09, CU10, CU11 y CU12.}}{58}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Arquitectura de una skill de Alexa con las tecnologías AWS \blx@tocontentsinit {0}\parencite {arquitecturaSkill}}}{59}{figure.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Arquitectura de una APL con los cuatro actores principales (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Docs})}}{60}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Game Design Document página 1}}{62}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Game Design Document página 2}}{63}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama conceptual del juego de la oca (\href {https://www.visual-paradigm.com/}{\textit {Visual Paradigm}})}}{64}{figure.24}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Tablero personalizado para la skill del juego de la oca}}{65}{figure.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Boceto de la pantalla de inicio de la skill}}{66}{figure.26}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Boceto de la pantalla con los participantes}}{66}{figure.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Boceto de la pantalla de lanzamiento de dado}}{67}{figure.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Boceto de pantalla con la casilla y participante actual}}{67}{figure.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Diagrama de flujo entre pantallas}}{68}{figure.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Métodos básicos del gestor de atributos}}{72}{figure.31}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Ejemplo de documento APL básico (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Documentation})}}{73}{figure.32}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Menú de creación de una skill de Alexa}}{75}{figure.33}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Menú principal de montaje de la skill de Alexa}}{76}{figure.34}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Menú del código de la skill de Alexa}}{77}{figure.35}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Menú de la consola de desarrolladores de AWS}}{78}{figure.36}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Menú de creación de un rol IAM}}{79}{figure.37}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Rol creado para la skill y sus permisos en AWS}}{80}{figure.38}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Configuración de las relaciones de confianza del rol}}{81}{figure.39}%
-\contentsline {figure}{\numberline {40}{\ignorespaces El AWS Lambda Execution Role ARN de la skill}}{81}{figure.40}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Bucket de Amazon S3 para la skill de la oca}}{82}{figure.41}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Tablas \textit {JuegoOca} y \textit {Jugador} creadas en DynamoDB}}{83}{figure.42}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Información de la tabla \textit {Jugador} de DynamoDB}}{84}{figure.43}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Estructura del código de la función Lambda}}{84}{figure.44}%
-\contentsline {figure}{\numberline {45}{\ignorespaces Clase jugador junto con su constructor}}{85}{figure.45}%
-\contentsline {figure}{\numberline {46}{\ignorespaces Funciones que componen el módulo del dado}}{86}{figure.46}%
-\contentsline {figure}{\numberline {47}{\ignorespaces Importaciones de las baterías de preguntas de los minijuegos}}{86}{figure.47}%
-\contentsline {figure}{\numberline {48}{\ignorespaces Declaración de la clase de una casilla normal}}{87}{figure.48}%
-\contentsline {figure}{\numberline {49}{\ignorespaces Declaración de la clase de casillas de penalización}}{88}{figure.49}%
-\contentsline {figure}{\numberline {50}{\ignorespaces Clase para casilla del minijuego verdadero o falso}}{89}{figure.50}%
-\contentsline {figure}{\numberline {51}{\ignorespaces Método para obtener una pregunta aleatoria sobre un compañero}}{89}{figure.51}%
-\contentsline {figure}{\numberline {52}{\ignorespaces Método para obtener la solución de una pregunta de fecha}}{90}{figure.52}%
-\contentsline {figure}{\numberline {53}{\ignorespaces Cálculo de días de la semana o meses a partir de la fecha actual}}{90}{figure.53}%
-\contentsline {figure}{\numberline {54}{\ignorespaces Cálculo de la estación del año partiendo de la fecha actual}}{91}{figure.54}%
-\contentsline {figure}{\numberline {55}{\ignorespaces Declaración de la clase Tablero}}{91}{figure.55}%
-\contentsline {figure}{\numberline {56}{\ignorespaces Métodos para calcular una posición y buscar un tipo de casilla}}{92}{figure.56}%
-\contentsline {figure}{\numberline {57}{\ignorespaces Simula la estructura de datos \textit {enum} de los estados del juego}}{93}{figure.57}%
-\contentsline {figure}{\numberline {58}{\ignorespaces Función que devuelve un mensaje de ayuda según el estado del juego}}{93}{figure.58}%
-\contentsline {figure}{\numberline {59}{\ignorespaces Importaciones y declaración de la clase del juego de la oca}}{94}{figure.59}%
-\contentsline {figure}{\numberline {60}{\ignorespaces Método de inicialización de participantes del juego}}{94}{figure.60}%
-\contentsline {figure}{\numberline {61}{\ignorespaces Método de inicialización del tablero de la oca}}{95}{figure.61}%
-\contentsline {figure}{\numberline {62}{\ignorespaces Método para pasar al siguiente turno}}{95}{figure.62}%
-\contentsline {figure}{\numberline {63}{\ignorespaces Método para anunciar los ganadores al final del juego}}{96}{figure.63}%
-\contentsline {figure}{\numberline {64}{\ignorespaces Primeras líneas del método para avanzar las fichas}}{96}{figure.64}%
-\contentsline {figure}{\numberline {65}{\ignorespaces Importaciones de bibliotecas y módulos para los handlers}}{97}{figure.65}%
-\contentsline {figure}{\numberline {66}{\ignorespaces Todos los handlers que se exportan al \textit {index.js}}}{98}{figure.66}%
-\contentsline {figure}{\numberline {67}{\ignorespaces Exportación de manejadores a la función Lambda}}{102}{figure.67}%
-\contentsline {figure}{\numberline {68}{\ignorespaces Directorio de ficheros JSON para APL}}{102}{figure.68}%
-\contentsline {figure}{\numberline {69}{\ignorespaces Documento APL para la pantalla de inicio}}{103}{figure.69}%
-\contentsline {figure}{\numberline {70}{\ignorespaces Pantalla de bienvenida de la skill}}{104}{figure.70}%
-\contentsline {figure}{\numberline {71}{\ignorespaces Documento APL para mostrar los participantes del juego}}{105}{figure.71}%
-\contentsline {figure}{\numberline {72}{\ignorespaces Pantalla postconfiguración mostrando a los participante}}{106}{figure.72}%
-\contentsline {figure}{\numberline {73}{\ignorespaces Documento APL para mostrar la animación del dado}}{106}{figure.73}%
-\contentsline {figure}{\numberline {74}{\ignorespaces Pantalla mostrando un lanzamiento de dado}}{107}{figure.74}%
-\contentsline {figure}{\numberline {75}{\ignorespaces Documento APL para mostrar la casilla y participante actuales}}{108}{figure.75}%
-\contentsline {figure}{\numberline {76}{\ignorespaces Pantalla mostrando la casilla y participante actuales}}{109}{figure.76}%
-\contentsline {figure}{\numberline {77}{\ignorespaces Directorio de ficheros exportados a otros módulos}}{109}{figure.77}%
-\contentsline {figure}{\numberline {78}{\ignorespaces Ejemplo de objeto con la información de una casilla normal}}{110}{figure.78}%
-\contentsline {figure}{\numberline {79}{\ignorespaces Ejemplos de preguntas en \enquote {Adivina la cifra}}}{110}{figure.79}%
-\contentsline {figure}{\numberline {80}{\ignorespaces Ejemplos de preguntas de \enquote {Verdadero o falso}}}{111}{figure.80}%
-\contentsline {figure}{\numberline {81}{\ignorespaces Ejemplos de preguntas acerca de los compañeros de juego}}{111}{figure.81}%
-\contentsline {figure}{\numberline {82}{\ignorespaces Ejemplos de preguntas acerca en \enquote {Recuerda la fecha}}}{112}{figure.82}%
-\contentsline {figure}{\numberline {83}{\ignorespaces Función para asumir un rol IAM con permisos temporales}}{113}{figure.83}%
-\contentsline {figure}{\numberline {84}{\ignorespaces Función para guardar los datos de la partida en DynamoDB}}{114}{figure.84}%
-\contentsline {figure}{\numberline {85}{\ignorespaces Función para cargar los datos de la partida desde DynamoDB}}{115}{figure.85}%
-\contentsline {figure}{\numberline {86}{\ignorespaces Ejemplo de testing en el simulador online de Alexa}}{122}{figure.86}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Gradior, un sistema de evaluación y rehabilitación neuropsicológica}}{19}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Ranking de asistentes de voz según el VPIR en 2020 (\href {https://es.statista.com/grafico/22578/clasificacion-de-los-asistentes-de-voz/}{statista})}}{24}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Celia, una asistente todoterreno 24 horas al día.}}{26}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Interfaz gráfica del juego colores v2}}{27}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Planificación temporal en el calendario}}{28}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Leyenda de la planificación temporal por (sub)tareas}}{29}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Diseño de la oca para evaluar las habilidades motoras en Educación Primaria \blx@tocontentsinit {0}\parencite {experienciaOca}}}{34}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Tablero completo correspondiente a las casillas de la figura superior \blx@tocontentsinit {0}\parencite {experienciaOca}}}{34}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Un tablero del juego tradicional de la oca}}{35}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Patrón general de una historia de usuario}}{38}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Matriz de cobertura de requisitos funcionales}}{56}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama de secuencia de CU01 y CU02.}}{57}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de secuencia de CU03, CU04 y CU05.}}{58}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama de secuencia de CU06 y CU07 y CU13.}}{59}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de secuencia de CU08, CU09, CU10, CU11 y CU12.}}{60}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Arquitectura de una skill de Alexa con las tecnologías AWS \blx@tocontentsinit {0}\parencite {arquitecturaSkill}}}{61}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Arquitectura de una APL con los cuatro actores principales (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-bp-understand-apl-architecture.html}{Alexa Developer Docs})}}{62}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Game Design Document}}{64}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama conceptual del juego de la oca (\href {https://www.visual-paradigm.com/}{\textit {Visual Paradigm}})}}{65}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Tablero personalizado para la skill del juego de la oca}}{66}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Boceto de la pantalla de inicio de la skill}}{67}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Boceto de la pantalla con los participantes}}{68}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Boceto de la pantalla de lanzamiento de dado}}{68}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Boceto de pantalla con la casilla y participante actual}}{68}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Diagrama de flujo entre pantallas}}{69}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Métodos básicos del gestor de atributos}}{73}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Ejemplo de documento APL básico (\href {https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Documentation})}}{75}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Menú de creación de una skill de Alexa}}{77}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Menú principal de montaje de la skill de Alexa}}{78}{figure.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Menú del código de la skill de Alexa}}{79}{figure.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Menú de la consola de desarrolladores de AWS}}{80}{figure.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Menú de creación de un rol IAM}}{81}{figure.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Rol creado para la skill y sus permisos en AWS}}{82}{figure.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Configuración de las relaciones de confianza del rol}}{83}{figure.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces El AWS Lambda Execution Role ARN de la skill}}{83}{figure.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Bucket de Amazon S3 para la skill de la oca}}{84}{figure.39}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Tablas \textit {JuegoOca} y \textit {Jugador} creadas en DynamoDB}}{85}{figure.40}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Información de la tabla \textit {Jugador} de DynamoDB}}{86}{figure.41}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Estructura del código de la función Lambda}}{86}{figure.42}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Clase jugador junto con su constructor}}{87}{figure.43}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Funciones que componen el módulo del dado}}{88}{figure.44}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Importaciones de las baterías de preguntas de los minijuegos}}{88}{figure.45}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Declaración de la clase de una casilla normal}}{89}{figure.46}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Declaración de la clase de casillas de penalización}}{90}{figure.47}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Clase para casilla del minijuego verdadero o falso}}{91}{figure.48}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Método para obtener una pregunta aleatoria sobre un compañero}}{91}{figure.49}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Método para obtener la solución de una pregunta de fecha}}{92}{figure.50}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Cálculo de días de la semana o meses a partir de la fecha actual}}{92}{figure.51}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Cálculo de la estación del año partiendo de la fecha actual}}{93}{figure.52}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Declaración de la clase Tablero}}{93}{figure.53}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Métodos para calcular una posición y buscar un tipo de casilla}}{94}{figure.54}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Simula la estructura de datos \textit {enum} de los estados del juego}}{95}{figure.55}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Función que devuelve un mensaje de ayuda según el estado del juego}}{95}{figure.56}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Importaciones y declaración de la clase del juego de la oca}}{96}{figure.57}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Método de inicialización de participantes del juego}}{96}{figure.58}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Método de inicialización del tablero de la oca}}{97}{figure.59}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Método para pasar al siguiente turno}}{97}{figure.60}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Método para anunciar los ganadores al final del juego}}{98}{figure.61}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Primeras líneas del método para avanzar las fichas}}{98}{figure.62}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Importaciones de bibliotecas y módulos para los handlers}}{99}{figure.63}%
+\contentsline {figure}{\numberline {64}{\ignorespaces Todos los handlers que se exportan al \textit {index.js}}}{100}{figure.64}%
+\contentsline {figure}{\numberline {65}{\ignorespaces Exportación de manejadores a la función Lambda}}{104}{figure.65}%
+\contentsline {figure}{\numberline {66}{\ignorespaces Directorio de ficheros JSON para APL}}{104}{figure.66}%
+\contentsline {figure}{\numberline {67}{\ignorespaces Documento APL para la pantalla de inicio}}{105}{figure.67}%
+\contentsline {figure}{\numberline {68}{\ignorespaces Pantalla de bienvenida de la skill}}{106}{figure.68}%
+\contentsline {figure}{\numberline {69}{\ignorespaces Documento APL para mostrar los participantes del juego}}{107}{figure.69}%
+\contentsline {figure}{\numberline {70}{\ignorespaces Pantalla postconfiguración mostrando a los participante}}{108}{figure.70}%
+\contentsline {figure}{\numberline {71}{\ignorespaces Documento APL para mostrar la animación del dado}}{108}{figure.71}%
+\contentsline {figure}{\numberline {72}{\ignorespaces Pantalla mostrando un lanzamiento de dado}}{109}{figure.72}%
+\contentsline {figure}{\numberline {73}{\ignorespaces Documento APL para mostrar la casilla y participante actuales}}{110}{figure.73}%
+\contentsline {figure}{\numberline {74}{\ignorespaces Pantalla mostrando la casilla y participante actuales}}{111}{figure.74}%
+\contentsline {figure}{\numberline {75}{\ignorespaces Directorio de ficheros exportados a otros módulos}}{111}{figure.75}%
+\contentsline {figure}{\numberline {76}{\ignorespaces Ejemplo de objeto con la información de una casilla normal}}{112}{figure.76}%
+\contentsline {figure}{\numberline {77}{\ignorespaces Ejemplos de preguntas en \enquote {Adivina la cifra}}}{112}{figure.77}%
+\contentsline {figure}{\numberline {78}{\ignorespaces Ejemplos de preguntas de \enquote {Verdadero o falso}}}{113}{figure.78}%
+\contentsline {figure}{\numberline {79}{\ignorespaces Ejemplos de preguntas acerca de los compañeros de juego}}{113}{figure.79}%
+\contentsline {figure}{\numberline {80}{\ignorespaces Ejemplos de preguntas acerca en \enquote {Recuerda la fecha}}}{114}{figure.80}%
+\contentsline {figure}{\numberline {81}{\ignorespaces Función para asumir un rol IAM con permisos temporales}}{115}{figure.81}%
+\contentsline {figure}{\numberline {82}{\ignorespaces Función para guardar los datos de la partida en DynamoDB}}{116}{figure.82}%
+\contentsline {figure}{\numberline {83}{\ignorespaces Función para cargar los datos de la partida desde DynamoDB}}{117}{figure.83}%
+\contentsline {figure}{\numberline {84}{\ignorespaces Ejemplo de testing en el simulador online de Alexa}}{125}{figure.84}%

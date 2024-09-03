@@ -56,27 +56,20 @@ Como bien se menciona en el libro \textit{Game design workshop: a playcentric ap
 
 Es útil porque sirve como roadmap (plan estratégico para alcanzar unos determinados objetivos a largo plazo) para todo el proceso de desarrollo, así como una guía para coordinar las tareas de los miembros del equipo a lo largo del camino hacia alcanzar dichos objetivos.
 
-Se ha hecho una adaptación a una plantilla de uso gratuito para elaborar el documento de diseño del juego. 
+Se ha hecho una adaptación a una plantilla de uso gratuito para elaborar el documento de diseño del juego mostrado en la \autoref{fig:GDD-imagen}. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.68\textwidth]{imgs/GDD-1.jpg}
-	\caption{Game Design Document página 1}
-	\label{fig:GDD-1}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{imgs/GDD-2.jpg}
-	\caption{Game Design Document página 2}
-	\label{fig:GDD-2}
+	\includegraphics[width=1\textwidth]{imgs/GDD-imagen.jpg}
+	\caption{Game Design Document}
+	\label{fig:GDD-imagen}
 \end{figure}
 
 \subsection{Modelo conceptual del juego de la oca}
 
 Aunque en una skill de Alexa los modelos conceptuales no se ajustan de la misma forma que lo harían en un sistema orientado a objetos tradicional, sí se puede plantear un diagrama de conceptos que encapsule las clases del juego de la oca y cómo se relacionan entre sí.
 
-Se ha ilustrado el diagrama conceptual de forma aislada a la estructura particular de la skill:
+Se ha ilustrado el diagrama conceptual de forma aislada a la estructura particular de la skill en la \autoref{fig:DConcep-1}:
 
 \vline
 \begin{figure}[H]
@@ -85,6 +78,17 @@ Se ha ilustrado el diagrama conceptual de forma aislada a la estructura particul
 	\caption{Diagrama conceptual del juego de la oca (\href{https://www.visual-paradigm.com/}{\textit{Visual Paradigm}})}
 	\label{fig:DConcep-1}
 \end{figure}
+
+Dicho diagrama de conceptos describe la estructura y relaciones principales del juego de la oca. 
+
+\textit{JuegoOca} es la clase central que gestiona el juego, incluyendo aspectos como el tipo de participantes, el número de ellos, el turno actual... Además, cada instancia del juego de la oca tiene asociados:
+\begin{itemize}
+	\item Un estado de juego, definido por el enumerado \textit{EstadoJuego}, que indica el punto en el que se encuentra una partida.
+	\item Un tablero, compuesto por varias instancias de la clase \textit{Casilla}. Estas a su vez pueden ser de distintos tipos, en función del efecto que provoquen cuando alguien cae en ellas (penalizaciones, ocas, puentes, etc).
+	\item Una o más instancias de la clase \textit{Jugador}, que representa a cada participante del juego con atributos como su id, nombre, color, puntos...
+\end{itemize}
+
+El diseño de este diagrama organiza de manera clara los elementos y su interacción en el juego de la oca, facilitando en gran medida su futura implementación.
 
 \newpage 
 
@@ -105,32 +109,40 @@ Entonces, la distribución de las casillas es la siguiente: 18 especiales tomada
 
 Para que las personas mayores puedan tener una experiencia de usuario accesible y cómoda, el principio de usabilidad número uno a seguir es mantener un diseño sencillo y minimalista, con elementos claros y bien organizados, contrastes aceptables y tamaños de texto grandes. 
 
-Es lo que se ha tratado de lograr con los siguientes bocetos, que definen la apariencia de la interfaz, habiendo un total de cuatro estados para mantenerlo lo más simple posible. La herramienta empleada es \href{https://www.lucidchart.com/pages/es}{Lucidchart}, un software gratuito para el diseño de modelos, diagramas y planificación de procesos y tareas.
+Es lo que se ha tratado de lograr con los siguientes bocetos, que definen la apariencia de la interfaz, habiendo un total de cuatro estados para mantenerlo lo más simple posible. La herramienta empleada es \href{https://www.lucidchart.com/pages/es}{\textit{Lucidchart}}, un software gratuito para el diseño de modelos, diagramas y planificación de procesos y tareas.
+
+En primer lugar se tiene la pantalla de inicio (\autoref{fig:boceto-bienvenida}), cuya mayor parte será ocupada por el logo del juego de la oca, y bajo esta, un texto de bienvenida con un tamaño de fuente considerable. Esta pantalla es la que se mostrará nada más lanzar la skill.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{imgs/boceto-bienvenida.JPG}
+    \includegraphics[width=0.5\textwidth]{imgs/boceto-bienvenida.JPG}
     \caption{Boceto de la pantalla de inicio de la skill}
     \label{fig:boceto-bienvenida}
 \end{figure}
 
+A continuación, y solo en caso de que se esté creando una partida nueva, se mostrará una pantalla con los nombres de los equipos o participantes, escritos sobre un rectángulo del color que tienen asignado cada uno (\autoref{fig:boceto-fichas}). Esta pantalla servirá como recordatorio o resumen de quienes van a tomar parte en el juego actual.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{imgs/boceto-fichas.JPG}
+    \includegraphics[width=0.5\textwidth]{imgs/boceto-fichas.JPG}
     \caption{Boceto de la pantalla con los participantes}
     \label{fig:boceto-fichas}
 \end{figure}
 
+En tercer lugar, debe haber una pantalla que muestre la animación del lanzamiento de dado. Para evitar solapamientos y distracciones, el vídeo ocupará el espacio entero disponible, tal y como aparece en la \autoref{fig:boceto-dado}.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{imgs/boceto-dado.JPG}
+	\includegraphics[width=0.5\textwidth]{imgs/boceto-dado.JPG}
 	\caption{Boceto de la pantalla de lanzamiento de dado}
 	\label{fig:boceto-dado}
 \end{figure}
 
+Para finalizar, debe poder visualizarse la posición del equipo o participante actual. Puesto que las dimensiones del dispositivo de Alexa son reducidas, no es conveniente intentar mostrar el tablero entero, por lo que solo se mostrará en la miatd derecha la casilla actual (con su número e imagen representativa), y en la izquierda, las fichas de quienes se encuentran en ella, representadas con un formato idéntico al de la \autoref{fig:boceto-fichas}.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{imgs/boceto-casilla.JPG}
+	\includegraphics[width=0.5\textwidth]{imgs/boceto-casilla.JPG}
 	\caption{Boceto de pantalla con la casilla y participante actual}
 	\label{fig:boceto-casilla}
 \end{figure}
@@ -140,6 +152,13 @@ Es lo que se ha tratado de lograr con los siguientes bocetos, que definen la apa
 \subsubsection{Diagrama de flujo entre pantallas}
 
 Debido a que solo existen cuatro tipos de pantallas en todo el juego, el diagrama de flujo entre ellas es igual de simple. Pues se pretende que la navegación entre pantallas sea automática e intuitiva, mostrando únicamente los elementos que pueden ayudar a los participantes a visualizar mejor la progresión del juego.
+
+Cabe destacar el papel de la persona terapeuta o guía de la sesión, que será la responsable de configurar la partida antes de empezar a jugar, ya sea introduciendo datos nuevos para crear una desde cero, o cargando la última partida guardada. Por tanto, en la \autoref{fig:diagrama-pantallas} se distinguen tres flujos distintos: 
+\begin{itemize}
+	\item El primero, indicado en \textit{rojo}, muestra la secuencia desde la pantalla de inicio, pasando por la configuración de participantes, que hay que seguir para poder crear una nueva partida.
+	\item El segundo recorrido, representado por el \textit{azul}, omite la fase de configuración y carga los datos de la última partida guardada.
+	\item Tanto el camino rojo como el azul desembocan en el \textit{verde}, que representa el flujo de una partida en curso, compuesto por las dos fases principales de un turno: el lanzamiento de dados y el movimiento de la ficha.
+\end{itemize}
 
 \begin{figure}[H]
 	\centering
@@ -152,7 +171,7 @@ Debido a que solo existen cuatro tipos de pantallas en todo el juego, el diagram
 
 \subsubsection{Cuestiones de estética, usabilidad y accesibilidad}
 
-Para el estudio de las variables relevantes a la ergonomía del juego, se ha seguido la metodología utilizada en un juego digital para adultos mayores llamado \textit{Solitaire Quiz}. Este está inspirado en el \textit{Solitario}, un juego de cartas tradicional, y a diferencia del original, incluye contenidos didácticos en forma de pequeños cuestionarios. \parencite{diseño2017}.
+Para el estudio de las variables relevantes a la ergonomía del juego, se ha seguido la metodología utilizada en un juego digital para adultos mayores llamado \textit{Solitaire Quiz}. Este está inspirado en el \textit{Solitario}, un juego de cartas tradicional, y a diferencia del original, incluye contenidos didácticos en forma de pequeños cuestionarios \parencite{diseño2017}.
 
 \begin{table}[H]
 	\centering
@@ -179,7 +198,7 @@ Para el estudio de las variables relevantes a la ergonomía del juego, se ha seg
 	\label{tab:usabilidad}
 \end{table}
 
-Partiendo de la tabla anterior, se han considerado los siguientes aspectos de diseño:
+Partiendo del Cuadro \ref{tab:usabilidad}, se han considerado los siguientes aspectos de diseño:
 
 \begin{itemize}
 	\item \textbf{Desafío y contenidos de aprendizaje}: hace referencia al nivel de dificultad, por ejemplo, en el contexto de los minijuegos integrados en el juego de la oca. Se ha pensado a la hora de preparar las preguntas en el público objetivo al que van a ir dirigidas, es decir, personas mayores con un nivel educativo entre medio y bajo. De esta manera, las preguntas son sencillas y directas, sin dobles sentidos.

@@ -6,18 +6,20 @@ Antes de pasar a la etapa de diseño y desarrollo, se debe elegir el tipo de jue
 
 Como se ha visto en la sección \textit{2.1.3.}, los juegos tradiciones pueden servir como fuente de inspiración para lo que se busca en este proyecto. Sin embargo, existe una gran cantidad de juegos de mesa populares entre los adultos mayores, como es el caso del parchís, el scrabble, el memorama, el dominó, etc. Entonces, ¿por qué decantarse por el juego de la oca?
 
-El principal motivo es la flexibilidad que permite a la hora de diseñar un juego que cumpla unos objetivos específicos. Un ejemplo de ello es la iniciativa de un Centro de Educación Primaria en Murcia, que implementó un programa innovador para la evaluación de las habilidades motrices del estudiantado. \parencite{experienciaOca}
+El principal motivo es la flexibilidad que permite a la hora de diseñarlo para que cumpla con unos objetivos específicos. Se toma como ejemplo la iniciativa de un Centro de Educación Primaria en Murcia, que implementó un juego de la oca personalizado dentro de un programa para la evaluación de habilidades motrices del alumnado \parencite{experienciaOca}.
 
 El proceso fue el siguiente: se diseñaron tres tableros de la oca, que se correspondían con los tres ciclos escolares que participaron en el experimento. Cada uno, además de las casillas especiales del juego original (oca, puente, calavera...), disponía de una serie de actividades físicas para poner a prueba a los participantes, entre las que se encuentran: el lanzamiento y captura de objetos, ejercicios de malabares y equilibrio y cooperación con los compañeros.
 
-\begin{figure}[h]
+La \autoref{fig:casillas-oca-primaria} muestra las diez primeras casillas del tablero diseñado para el alumnado de primaria, con ejercicios físicos adecuados a este rango de edad. Y en la \autoref{fig:oca-primaria}, aparece el diseño correspondiente a dicho tablero de juego.
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{imgs/casillas-oca-primaria.JPG}
 	\caption{Diseño de la oca para evaluar las habilidades motoras en Educación Primaria \parencite{experienciaOca}}
 	\label{fig:casillas-oca-primaria}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\textwidth]{imgs/oca-primaria.JPG}
 	\caption{Tablero completo correspondiente a las casillas de la figura superior \parencite{experienciaOca}}
@@ -29,21 +31,22 @@ Esta medida tuvo gran éxito, pues los seguimientos del progreso de los particip
 
 Por tanto, se ha querido replicar de alguna manera ese enfoque, trasladándolo a un contexto donde el grupo objetivo son los adultos mayores, y teniendo en cuenta la diversidad que puede existir dentro del mismo. 
 
-Partiendo de la estructura del tablero original, hay una mayor probabilidad de que los adultos mayores estén familiarizados con su diseño y las reglas básicas, lo que puede contribuir a una experiencia de juego positiva y fluida.
+Para ello, se ha partido de la estructura del tablero original (\autoref{fig:oca-tradicional}), con un total de 63 casillas sin contar la de salida, cada una representada por un solo elemento o icono. Se han mantenido los tipos presentes en el juego tradicional: las casillas especiales de oca y de puente, las de penalización (pozo, cárcel, laberinto, hotel...) y las normales, que no desencadenan ninguna acción en particular.
+
+De esta manera, al tratarse de un juego tradicional popular tal como el de la oca, hay una mayor probabilidad de que los adultos mayores estén familiarizados con su diseño y las reglas básicas. Esto puede contribuir a una experiencia de juego fluida, ya que facilita el aprendizaje en la versión de la oca de Alexa que se va a implementar.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{imgs/oca-tradicional.jpg}
+	\includegraphics[width=0.6\textwidth]{imgs/oca-tradicional.jpg}
 	\caption{Un tablero del juego tradicional de la oca}
 	\label{fig:oca-tradicional}
 \end{figure}
 
+Sin embargo, al igual que la oca adaptada para estudiantes de Educación Primaria vista anteriormente, no se tratará de una oca tradicional cualquiera. Pues aparte de las casillas originales y el objetivo de llegar a la meta, incluirá un sistema de puntos, añadiendo un objetivo adicional al juego: el de conseguir la mayor puntuación antes de que termine la partida.
 
-Sin embargo, al igual que la oca adaptada para estudiantes de Educación Primaria vista anteriormente, no se tratará de una oca tradicional cualquiera. 
+Los participantes del juego podrán incrementar su marcador a través de una serie de minijuegos, que serán activados cuando los jugadores caigan en determinadas casillas especiales. Por tanto, a las casillas originales de la oca vistas anteriormente se le suman cinco tipos más, cada uno actuando como detonante para el tipo de minijuego implementado.
 
-Pues aparte de las casillas originales y el objetivo de llegar a la meta, incluirá un sistema de puntos, añadiendo un subobjetivo: el de conseguir la mayor puntuación antes de que termine la partida. Los participantes del juego podrán incrementar su marcador a través de una serie de minijuegos, que serán desencadenados cuando los jugadores caigan en determinadas casillas especiales.
-
-También debe evaluarse la viabilidad de los minijuegos propuestos dentro del juego principal, que es la oca, para lo que se ha consultado con un equipo de psicólogos que han participado en varias experiencias de residencias.
+En la sección siguiente, se expondrá la lista final de minijuegos que van a incluirse.
 
 \subsubsection{Lista de minijuegos dentro de la oca}
 Dada la dificultad de implementar algunos en base a las limitaciones de los dispositivos Alexa, y para evitar saturar a los participantes con demasiadas mecánicas nuevas, se han elegido los siguientes cinco minijuegos:
@@ -98,6 +101,11 @@ Dada la dificultad de implementar algunos en base a las limitaciones de los disp
 	\end{itemize}
 \end{enumerate}
 
+Se destaca el papel fundamental del equipo de psicólogos, que han participado en varias experiencias de residencias, y a los que se ha consultado la viabilidad de cada uno de los minijuegos propuestos. 
+
+De esta forma, se han logrado descartar aquellos que no cumplían con los requisitos de accesibilidad de los adultos mayores, y se han seleccionado los que pueden aportar ventajas cognitivas a este grupo demográfico. Por ejemplo, poner a prueba conocimientos generales con el trivial, implicar al resto de compañeros en el segundo y tercer minijuego listado, y ejercitar la memoria a corto plazo y temporal con los dos últimos.
+
+\newpage
 \subsection{Historias de usuario y requisitos}
 
 Las historias de usuario son imprescindibles en el desarrollo ágil de software, pero también resultan valiosas en cualquier otra metodología de desarrollo, ya sea tradicional o no. Pues a través de un formato sencillo, recogen de forma clara las necesidades y expectativas de los usuarios y clientes, facilitando la comunicación entre integrantes del equipo de desarrollo y clientes. Un ambiente colaborativo donde las ideas pueden fluctuar a medida que se avanza aumenta las probabilidades de éxito de cualquier proyecto \parencite{introHU}.
@@ -114,8 +122,6 @@ El formato típico de una historia de usuario se basa en los  tres elementos sig
 Esta estructura facilita empatizar con la persona usuaria, entender qué pretende lograr sin entrar en detalles del "cómo" y el valor que aporta al producto, conocido como beneficio. Así, además de sintetizar en gran medida la información, permite cierta flexibilidad y la adaptación a cambios e integración de nuevas ideas durante el proceso de desarrollo.
 
 Las historias de usuario ofrecen una perspectiva más centrada en los usuarios finales, mientras que los requisitos funcionales se limitan a describir el comportamiento del sistema. Entonces, merece la pena considerar ambos para que el producto final no solo cumpla con las especificaciones técnicas, sino que también otorgue valor real a quienes va dirigido.
-
-\newpage
 
 \subsubsection{Historias de usuario}
 
@@ -160,11 +166,29 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 \end{table}
 
 \begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{HU03}: Registro de participantes} \\
+		\hline
+		\textbf{Como} & jugador/a \\
+		\hline
+		\textbf{Quiero} & registrar mi nombre de equipo o de jugador/a individual \\
+		\hline
+		\textbf{Para} & que Alexa se refiera a mí con mi nombre durante la partida \\
+		\hline
+	\end{tabular}
+	\caption{Historia de usuario nº 3}
+	\label{tab:HU03}
+\end{table}
+
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|p{12cm}|}
         \hline
         \rowcolor{lightgray}
-        \multicolumn{2}{|c|}{\textbf{HU03}: Escuchar las reglas} \\
+        \multicolumn{2}{|c|}{\textbf{HU04}: Escuchar las reglas} \\
         \hline
         \textbf{Como} & jugador/a \\
         \hline
@@ -173,8 +197,8 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
         \textbf{Para} & entender cómo jugar antes de comenzar o recordar alguna explicación durante la partida \\
         \hline
     \end{tabular}
-    \caption{Historia de usuario nº 3}
-    \label{tab:HU03}
+    \caption{Historia de usuario nº 4}
+    \label{tab:HU04}
 \end{table}
 
 \begin{table}[H]
@@ -182,31 +206,13 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
     \begin{tabular}{|c|p{12cm}|}
         \hline
         \rowcolor{lightgray}
-        \multicolumn{2}{|c|}{\textbf{HU04}: Jugar un turno} \\
+        \multicolumn{2}{|c|}{\textbf{HU05}: Jugar un turno} \\
         \hline
         \textbf{Como} & jugador/a \\
         \hline
         \textbf{Quiero} & que Alexa tire los dados por mí y también mueva mi ficha \\
         \hline
         \textbf{Para} & jugar mi turno \\
-        \hline
-    \end{tabular}
-    \caption{Historia de usuario nº 4}
-    \label{tab:HU04}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|p{10cm}|}
-        \hline
-        \rowcolor{lightgray}
-        \multicolumn{2}{|c|}{\textbf{HU05}: Guardar la partida} \\
-        \hline
-        \textbf{Como} & jugador/a \\
-        \hline
-        \textbf{Quiero} & que Alexa tenga la capacidad de guardar el progreso de la partida actual \\
-        \hline
-        \textbf{Para} & poder retomar el juego más tarde sin perder el avance \\
         \hline
     \end{tabular}
     \caption{Historia de usuario nº 5}
@@ -218,13 +224,13 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
     \begin{tabular}{|c|p{10cm}|}
         \hline
         \rowcolor{lightgray}
-        \multicolumn{2}{|c|}{\textbf{HU06}: Continuar la partida anterior} \\
+        \multicolumn{2}{|c|}{\textbf{HU06}: Guardar la partida} \\
         \hline
         \textbf{Como} & jugador/a \\
         \hline
-        \textbf{Quiero} & poder continuar con la partida anterior si abro una nueva sesión \\
+        \textbf{Quiero} & que Alexa tenga la capacidad de guardar el progreso de la partida actual \\
         \hline
-        \textbf{Para} & reanudar la última partida donde la dejé \\
+        \textbf{Para} & poder retomar el juego más tarde sin perder el avance \\
         \hline
     \end{tabular}
     \caption{Historia de usuario nº 6}
@@ -236,7 +242,25 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
     \begin{tabular}{|c|p{10cm}|}
         \hline
         \rowcolor{lightgray}
-        \multicolumn{2}{|c|}{\textbf{HU07}: Recibir ayuda activa} \\
+        \multicolumn{2}{|c|}{\textbf{HU07}: Continuar la partida anterior} \\
+        \hline
+        \textbf{Como} & jugador/a \\
+        \hline
+        \textbf{Quiero} & poder continuar con la partida anterior si abro una nueva sesión \\
+        \hline
+        \textbf{Para} & reanudar la última partida donde la dejé \\
+        \hline
+    \end{tabular}
+    \caption{Historia de usuario nº 7}
+    \label{tab:HU07}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \multicolumn{2}{|c|}{\textbf{HU08}: Recibir ayuda activa} \\
         \hline
         \textbf{Como} & jugador/a \\
         \hline
@@ -245,8 +269,8 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
         \textbf{Para} & saber qué hacer por si me pierdo en cualquier momento \\
         \hline
     \end{tabular}
-    \caption{Historia de usuario nº 7}
-    \label{tab:HU07}
+    \caption{Historia de usuario nº 8}
+    \label{tab:HU08}
 \end{table}
 
 \begin{table}[H]
@@ -254,7 +278,7 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 	\begin{tabular}{|c|p{10cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU08}: Finalizar el juego} \\
+		\multicolumn{2}{|c|}{\textbf{HU09}: Finalizar el juego} \\
 		\hline
 		\textbf{Como} & jugador/a \\
 		\hline
@@ -263,8 +287,8 @@ Estas contemplan desde la creación y configuración de una partida, hasta la ge
 		\textbf{Para} & terminar la partida cuando lo desee \\
 		\hline
 	\end{tabular}
-	\caption{Historia de usuario nº 8}
-	\label{tab:HU08}
+	\caption{Historia de usuario nº 9}
+	\label{tab:HU09}
 \end{table}
 
 En el desarrollo del juego interactivo para Alexa, se han diseñado una serie de minijuegos que tienen como objetivo poner a prueba los conocimientos y la memoria de los participantes. Estos son los listados en la sección \textit{4.1.1}. 
@@ -276,31 +300,13 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\begin{tabular}{|c|p{10cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU09}: Minijuego verdadero o falso} \\
+		\multicolumn{2}{|c|}{\textbf{HU10}: Minijuego verdadero o falso} \\
 		\hline
 		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de verdadero o falso \\
 		\hline
 		\textbf{Quiero} & responder a la pregunta planteada por Alexa con verdadero o falso y que me diga si he acertado \\
 		\hline
 		\textbf{Para} & poner a prueba mis conocimientos y ganar puntos \\
-		\hline
-	\end{tabular}
-	\caption{Historia de usuario nº 9}
-	\label{tab:HU09}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|p{10cm}|}
-		\hline
-		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU10}: Minijuego conoce a tus compañeros} \\
-		\hline
-		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de conoce a tus compañeros \\
-		\hline
-		\textbf{Quiero} & responder a la pregunta acerca de otro jugador planteada por Alexa y que me confirmen si es correcto o no \\
-		\hline
-		\textbf{Para} & para demostrar cuánto conozco a mis compañeros y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 10}
@@ -312,13 +318,13 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\begin{tabular}{|c|p{10cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU11}: Minijuego adivina la cifra} \\
+		\multicolumn{2}{|c|}{\textbf{HU11}: Minijuego conoce a tus compañeros} \\
 		\hline
-		\textbf{Como} & jugador/a en una ronda del minijuego de adivina la cifra \\
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de conoce a tus compañeros \\
 		\hline
-		\textbf{Quiero} & responder a la preguntas planteada por Alexa con un número y que me diga si he acertado o no \\
+		\textbf{Quiero} & responder a la pregunta acerca de otro jugador planteada por Alexa y que me confirmen si es correcto o no \\
 		\hline
-		\textbf{Para} & poner a prueba mis conocimientos y ganar puntos \\
+		\textbf{Para} & para demostrar cuánto conozco a mis compañeros y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 11}
@@ -330,13 +336,13 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\begin{tabular}{|c|p{10cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU12}: Minijuego recuerda la última casilla} \\
+		\multicolumn{2}{|c|}{\textbf{HU12}: Minijuego adivina la cifra} \\
 		\hline
-		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de recuerda la última casilla \\
+		\textbf{Como} & jugador/a en una ronda del minijuego de adivina la cifra \\
 		\hline
-		\textbf{Quiero} & que responder con el nombre de la casilla en la que caí en el turno anterior \\
+		\textbf{Quiero} & responder a la preguntas planteada por Alexa con un número y que me diga si he acertado o no \\
 		\hline
-		\textbf{Para} & poner a prueba mi memoria y ganar puntos \\
+		\textbf{Para} & poner a prueba mis conocimientos y ganar puntos \\
 		\hline
 	\end{tabular}
 	\caption{Historia de usuario nº 12}
@@ -348,7 +354,25 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 	\begin{tabular}{|c|p{10cm}|}
 		\hline
 		\rowcolor{lightgray}
-		\multicolumn{2}{|c|}{\textbf{HU13}: Minijuego recuerda la fecha} \\
+		\multicolumn{2}{|c|}{\textbf{HU13}: Minijuego recuerda la última casilla} \\
+		\hline
+		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de recuerda la última casilla \\
+		\hline
+		\textbf{Quiero} & que responder con el nombre de la casilla en la que caí en el turno anterior \\
+		\hline
+		\textbf{Para} & poner a prueba mi memoria y ganar puntos \\
+		\hline
+	\end{tabular}
+	\caption{Historia de usuario nº 13}
+	\label{tab:HU13}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{10cm}|}
+		\hline
+		\rowcolor{lightgray}
+		\multicolumn{2}{|c|}{\textbf{HU14}: Minijuego recuerda la fecha} \\
 		\hline
 		\textbf{Como} & jugador/a que ha caído en la casilla del minijuego de recuerda la fecha \\
 		\hline
@@ -357,10 +381,11 @@ A continuación, se presentan las historias de usuario para cada uno de estos mi
 		\textbf{Para} & poner a prueba mi noción del tiempo y ganar puntos \\
 		\hline
 	\end{tabular}
-	\caption{Historia de usuario nº 13}
-	\label{tab:HU13}
+	\caption{Historia de usuario nº 14}
+	\label{tab:HU14}
 \end{table}
 
+\newpage
 \subsubsection{Requisitos funcionales}
 
 Esta sección define y describe las características de alto nivel (requisitos
@@ -414,22 +439,24 @@ Se debe poder lanzar la skill mediante el comando de invocación.
 	\item \textbf{RF7.2}: La skill debe poder capturar la respuesta del participante y verificar si es correcta o no, actualizando sus puntos si es necesario.
 \end{itemize}
 
-\newpage
 \subsubsection{Requisitos no funcionales}
 
-En este apartado se pueden ver las diferentes cualidades y restricciones del sistema (requisitos no funcionales) que no se relacionan de forma directa con el comportamiento del mismo.
-\vspace{0.3cm}
+En este apartado se pueden ver las diferentes cualidades y restricciones del sistema que no se relacionan de forma directa con el comportamiento del mismo. 
 
-\textbf{RNF1: Usabilidad}
+En concreto, los requisitos no funcionales relativos a la accesibilidad están basados en los parámetros tomados en cuenta en el estudio del juego \textit{Solitaire Quiz} dirigido a adultos mayores \parencite{diseño2017}, que será mencionado en la sección \textit{5.4.3}.
+\vspace{0.5cm}
+
+\textbf{RNF1: Accesibilidad y usabilidad}
 \begin{itemize}
-    \item \textbf{RNF1.1}: La skill debe ser fácil de usar y entender, diseñada para personas mayores.
-    \item \textbf{RNF1.2}: Para evitar dudas, que Alexa explique de forma clara y fácil de entender lo que deben hacer los jugadores.
-    \item \textbf{RNF1.3}: Alexa debe dejar un margen flexible de tiempo para esperar una respuesta y si no lo hace, repite la pregunta.
-    \item \textbf{RNF1.4}: La interfaz debe ser simple y limitarse a mostrar los elementos relevantes de la partida para evitar saturar a los jugadores y jugadoras.
-    \item \textbf{RNF1.5}: La fuente y disposición de elementos debe estar adaptada para la compresión y comodidad de los y las participantes.
+    \item \textbf{RNF1.1}: La skill debe ser fácil de usar y con una navegación de comandos intuitiva.
+    \item \textbf{RNF1.2}: Para evitar dudas, Alexa debe ir guiando cada paso de forma clara y concisa.
+    \item \textbf{RNF1.3}: Los contenidos didácticos de los minijuegos deben componerse por preguntas claras y directas, que no supongan demasiado desafío.
+    \item \textbf{RNF1.4}: Alexa debe dejar un margen flexible de tiempo para esperar una respuesta y si no lo hace, repetir la pregunta o indicación.
+    \item \textbf{RNF1.5}: La interfaz debe ser simple y limitarse a mostrar los elementos relevantes de la partida para evitar saturar a las personas usuarias.
+    \item \textbf{RNF1.6}: El tamaño y disposición de elementos (imágenes, texto...) debe estar adaptado para la compresión y comodidad de los adultos mayores.
 \end{itemize}
 
-\textbf{RNF2: Accesibilidad y compatibilidad}
+\textbf{RNF2: Compatibilidad}
 \begin{itemize}
     \item \textbf{RNF2.1}: Es necesaria una cuenta de Amazon para instalar la skill de Alexa.
     \item \textbf{RNF2.2}: Es necesario un dispositivo Alexa con pantalla rectangular (como Echo Show).
@@ -439,17 +466,18 @@ En este apartado se pueden ver las diferentes cualidades y restricciones del sis
 
 \textbf{RNF3: Rendimiento}
 \begin{itemize}
-    \item \textbf{RNF3.1}: Los tiempos de respuesta deben ser rápidos, idealmente menos de 5 segundos.
+    \item \textbf{RNF3.1}: Los tiempos de respuesta de Alexa deben ser rápidos, idealmente con esperas de menos de 5 segundos.
 \end{itemize}
 
 \textbf{RNF4: Fiabilidad}
 \begin{itemize}
     \item \textbf{RNF4.1}: La skill debe funcionar correctamente en la mayoría de las interacciones, minimizando errores y malentendidos en el reconocimiento de voz.
+    \item \textbf{RNF4.2}: Deben contemplarse numerosas comprobaciones de errores, ya sea porque los formatos de respuesta no sean válidos o se alguien hable fuera de turno.
 \end{itemize}
 
 \textbf{RNF5: Seguridad}
 \begin{itemize}
-	\item \textbf{RNF5.1}: Seguir las prácticas recomendadas basadas en principio de mínimo privilegio a la hora de utilizar los servicios de AWS.
+	\item \textbf{RNF5.1}: Seguir las prácticas recomendadas basadas en el principio de mínimo privilegio a la hora de utilizar los servicios de AWS.
 \end{itemize}
 
 \newpage
