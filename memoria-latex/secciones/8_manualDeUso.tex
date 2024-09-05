@@ -13,7 +13,16 @@ También aconseja que haya una persona que actúe como supervisora, que puede se
 
 El primer paso es lanzar la skill, para lo que es necesario decir \textbf{\textit{<<Alexa, abre probando oca>>}}.
 
-Alexa dará un mensaje de bienvenida a los jugadores. Para más información acerca del juego, se le puede pedir a Alexa que explique con más profundidad ciertos temas, diciendo: \textbf{\textit{<<Explícame [tema]>>}}. Los temas de ayuda disponibles son: 
+Alexa mostrará la pantalla de inicio (ver \autoref{fig:manual-1}) y dará un mensaje de bienvenida a los jugadores, con indicaciones básicas de cómo empezar el juego.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{imgs/interfaz-1.JPG}
+	\caption{Pantalla de inicio de la skill del juego de la oca}
+	\label{fig:manual-1}
+\end{figure}
+
+Para más información acerca del juego, se le puede pedir a Alexa que explique con más profundidad ciertos temas, diciendo: \textbf{\textit{<<Explícame [tema]>>}}. Los temas de ayuda disponibles son: 
 \begin{enumerate}
 	\item \textbf{Las reglas del juego}: hará una descripción general del juego y los objetivos a cumplir para ganar. Estos últimos son: llegar a la meta en primer lugar y/o conseguir la mayor cantidad de puntos a través de los minijuegos.
 	\item \textbf{Las casillas}: ofrece una breve explicación de cada tipo de casilla. Consultar escenario C.
@@ -62,15 +71,20 @@ Alexa procederá a pedir de forma secuencial los datos necesarios para configura
 	\item \textbf{El nombre de cada participante}. Alexa dará indicaciones sobre cómo registrar un nombre y luego irá preguntado a cada participante, uno por uno. La sintaxis que hay que seguir para ello es: \textbf{\textit{<<Mi/Nuestro nombre es [nombre]>>}}.
 \end{enumerate}
 
-Una vez registrados todos los datos, Alexa hará un resumen general de la configuración de la partida, tras lo cual se pasará al escenario C.
+Una vez registrados todos los datos, Alexa hará un resumen general de la configuración de la partida, y mostrará por pantalla la información de todos los equipos/participantes del juego (ver \autoref{fig:manual-2}), tras lo cual se pasará al escenario C.
 
-\vspace{0.5cm}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{imgs/interfaz-2.JPG}
+	\caption{Pantalla de inicio de la skill del juego de la oca}
+	\label{fig:manual-2}
+\end{figure}
 
 \textbf{Escenario B: Continuar con la partida anterior.}
 
 Si se ha guardado anteriormente una partida, la próxima vez que se inicie una sesión de la skill se podrá retomar desde el punto en el que se dejó, mediante la instrucción \textbf{\textit{<<Continuar partida>>}}.
 
-Esto permitirá cargar el estado de la partida desde la base de datos y continuar el juego a partir del último turno registrado.
+Esto permitirá cargar el estado de la partida desde la base de datos y continuar el juego a partir del último turno registrado, omitiendo entonces el Escenario A y pasando al C directamente.
 
 \vspace{0.5cm}
 
@@ -79,6 +93,13 @@ Esto permitirá cargar el estado de la partida desde la base de datos y continua
 Durante la partida, Alexa anunciará el turno del equipo/participante actual. Cada turno se compone de dos fases clave: el lanzamiento de dado y el movimiento de su ficha.
 
 Para tirar el dado, dicho participante o un integrante del equipo debe decir \textbf{\textit{<<Tirar dado>>}}, lo que llevará a mostrar la animación y el resultado del lanzamiento.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{imgs/interfaz-3.JPG}
+	\caption{Pantalla de lanzamiento de dado con resultado 1}
+	\label{fig:manual-3}
+\end{figure}
 
 Acto seguido, debe decir \textbf{\textit{<<Mover ficha>>}} para poder avanzar tantas posiciones como indique el dado. El juego lo colocará en la nueva casilla, que dependiendo de su tipo, puede implicar el final de dicho turno o el inicio de una nueva acción:
  \begin{itemize}
@@ -90,7 +111,14 @@ Acto seguido, debe decir \textbf{\textit{<<Mover ficha>>}} para poder avanzar ta
  	\item \textbf{Casilla de meta}: se da la enhorabuena a los ganadores o ganadores (quienes hayan llegado antes a la meta y/o hayan logrado acumular más puntos con los minijuegos), y se da por finalizada la partida.
  \end{itemize}
 
-\vspace{0.5cm}
+Para guiar mejor a cada persona usuaria, se mostrará en la pantalla la casilla en la que ha caído, junto con sus datos de jugador/a, tras mover su ficha (ver \autoref{fig:manual-4}).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{imgs/interfaz-4.JPG}
+	\caption{Pantalla al final del turno con los datos de la posición actual}
+	\label{fig:manual-4}
+\end{figure}
+
 \textbf{Escenario D: Participar en un minijuego}
 
 A este escenario se llega solo si se cae en una de las casilla de minijuego, por lo que la cantidad de puntos acumulados no solo depende de cuántas se acierten, sino también de la frecuencia en la que se caiga en ellas para aumentar la posibilidad de sumar puntos al marcador.

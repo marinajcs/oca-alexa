@@ -312,6 +312,43 @@
       \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
       \endverb
     \endentry
+    \entry{carr1997prototyping}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e51494d8813409508beb7214039b7db6}{%
+           family={Carr},
+           familyi={C\bibinitperiod},
+           given={Mahil},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf3049058e9c1c3b384dbbde5d60009c}{%
+           family={Verner},
+           familyi={V\bibinitperiod},
+           given={June},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{fullhash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{bibnamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authorbibnamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authornamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authorfullhash}{80c2424ba4a3af62696c7a7114d56720}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Department of Information Systems, City University of Hong Kong, Hong Kong}
+      \field{title}{Prototyping and software development approaches}
+      \field{year}{1997}
+      \field{pages}{319\bibrangedash 338}
+      \range{pages}{20}
+    \endentry
     \entry{tfgAlexa3}{thesis}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=4c78493e6ba7a21f95e37fc4e68c3cc9}{%
@@ -368,27 +405,23 @@
       \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
       \endverb
     \endentry
-    \entry{metodologiaAgil}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=d850a433733aa7e9404cc9133fd9e39f}{%
-           family={Duarte},
-           familyi={D\bibinitperiod},
-           given={Ailin\bibnamedelima Orjuela},
-           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=9e623441c64981d363a158a6d8d9e82f}{%
-           family={Rojas},
-           familyi={R\bibinitperiod},
-           given={Mauricio},
-           giveni={M\bibinitperiod},
+    \entry{tfgAlexa4}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=31cb2be43dbeb398e1e438a10881fd21}{%
+           family={Domínguez\bibnamedelima Gutiérrez},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{fullhash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{bibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authorbibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authornamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authorfullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{namehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{fullhash}{676010eb062bf555eab5521c2949fea4}
+      \strng{bibnamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authorbibnamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authornamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authorfullhash}{676010eb062bf555eab5521c2949fea4}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
@@ -396,13 +429,8 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Revista Avances en Sistemas e Informática}
-      \field{number}{2}
-      \field{title}{Las metodologías de desarrollo ágil como una oportunidad para la ingeniería del software educativo}
-      \field{volume}{5}
-      \field{year}{2008}
-      \field{pages}{159\bibrangedash 171}
-      \range{pages}{13}
+      \field{title}{Juegos serios y experiencias inclusivas}
+      \field{year}{2021}
     \endentry
     \entry{juegosMem2}{online}{}
       \name{author}{1}{}{%
@@ -749,32 +777,6 @@
       \field{year}{2017}
       \field{pages}{104\bibrangedash 116}
       \range{pages}{13}
-    \endentry
-    \entry{tfgAlexa1}{thesis}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=eb15bbfb95e6329a87e268242c901ad9}{%
-           family={Menéndez\bibnamedelima Román},
-           familyi={M\bibinitperiod\bibinitdelim R\bibinitperiod},
-           given={Sandra},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{fullhash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{bibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authorbibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authornamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authorfullhash}{eb15bbfb95e6329a87e268242c901ad9}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Creación de una skill de Alexa para la mejora de la inhibición de respuesta}
-      \field{type}{Bachelor's thesis}
-      \field{year}{2023}
     \endentry
     \entry{introHU}{article}{}
       \name{author}{6}{}{%
@@ -1416,6 +1418,43 @@
       \verb https://canalsenior.es/noticias/tecnologia-en-el-ocio-senior/
       \endverb
     \endentry
+    \entry{carr1997prototyping}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e51494d8813409508beb7214039b7db6}{%
+           family={Carr},
+           familyi={C\bibinitperiod},
+           given={Mahil},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf3049058e9c1c3b384dbbde5d60009c}{%
+           family={Verner},
+           familyi={V\bibinitperiod},
+           given={June},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{fullhash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{bibnamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authorbibnamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authornamehash}{80c2424ba4a3af62696c7a7114d56720}
+      \strng{authorfullhash}{80c2424ba4a3af62696c7a7114d56720}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Department of Information Systems, City University of Hong Kong, Hong Kong}
+      \field{title}{Prototyping and software development approaches}
+      \field{year}{1997}
+      \field{pages}{319\bibrangedash 338}
+      \range{pages}{20}
+    \endentry
     \entry{tfgAlexa3}{thesis}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=4c78493e6ba7a21f95e37fc4e68c3cc9}{%
@@ -1472,27 +1511,23 @@
       \verb https://cuidalian.com/blog/juegos-memoria-personas-mayores/
       \endverb
     \endentry
-    \entry{metodologiaAgil}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=d850a433733aa7e9404cc9133fd9e39f}{%
-           family={Duarte},
-           familyi={D\bibinitperiod},
-           given={Ailin\bibnamedelima Orjuela},
-           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=9e623441c64981d363a158a6d8d9e82f}{%
-           family={Rojas},
-           familyi={R\bibinitperiod},
-           given={Mauricio},
-           giveni={M\bibinitperiod},
+    \entry{tfgAlexa4}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=31cb2be43dbeb398e1e438a10881fd21}{%
+           family={Domínguez\bibnamedelima Gutiérrez},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{fullhash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{bibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authorbibnamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authornamehash}{8d77898905fb543eb7684d3fbfd863b4}
-      \strng{authorfullhash}{8d77898905fb543eb7684d3fbfd863b4}
+      \strng{namehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{fullhash}{676010eb062bf555eab5521c2949fea4}
+      \strng{bibnamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authorbibnamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authornamehash}{676010eb062bf555eab5521c2949fea4}
+      \strng{authorfullhash}{676010eb062bf555eab5521c2949fea4}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
@@ -1500,13 +1535,8 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Revista Avances en Sistemas e Informática}
-      \field{number}{2}
-      \field{title}{Las metodologías de desarrollo ágil como una oportunidad para la ingeniería del software educativo}
-      \field{volume}{5}
-      \field{year}{2008}
-      \field{pages}{159\bibrangedash 171}
-      \range{pages}{13}
+      \field{title}{Juegos serios y experiencias inclusivas}
+      \field{year}{2021}
     \endentry
     \entry{juegosMem2}{online}{}
       \name{author}{1}{}{%
@@ -1854,32 +1884,6 @@
       \field{pages}{104\bibrangedash 116}
       \range{pages}{13}
     \endentry
-    \entry{tfgAlexa1}{thesis}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=eb15bbfb95e6329a87e268242c901ad9}{%
-           family={Menéndez\bibnamedelima Román},
-           familyi={M\bibinitperiod\bibinitdelim R\bibinitperiod},
-           given={Sandra},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{fullhash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{bibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authorbibnamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authornamehash}{eb15bbfb95e6329a87e268242c901ad9}
-      \strng{authorfullhash}{eb15bbfb95e6329a87e268242c901ad9}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Creación de una skill de Alexa para la mejora de la inhibición de respuesta}
-      \field{type}{Bachelor's thesis}
-      \field{year}{2023}
-    \endentry
     \entry{introHU}{article}{}
       \name{author}{6}{}{%
         {{un=0,uniquepart=base,hash=47a02562416962f4257b9415533aad1c}{%
@@ -2226,6 +2230,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{tfgAlexa1}
 \endrefsection
 \endinput
 

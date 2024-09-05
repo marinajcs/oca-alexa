@@ -4,9 +4,15 @@ En esta sección se van a examinar algunas de las herramientas y conocimentos te
 
 \subsection{Justificación de la elección tecnológica}
 
-Indica toda la tecnología que has usado, qué otras alternativas existían y por qué has elegido esa. 
+En este apartado se justifica la elección de las herramientas y tecnologías utilizadas para el proyecto.
 
-En Alexa puedes decir también que era el dispositivo disponible en el proyecto
+En cuanto a la elección del asistente de voz, se ha elegido \textbf{Alexa} por varios motivos, el principal porque el dispositivo disponible para el proyecto es un \textit{Amazon Echo Show 5}, y además se ha visto en la sección \textit{2.3.2.} que es el asistente conversacional más extendido en la actualidad, entonces el producto final tendrá un mayor alcance.
+
+Para el desarrollo de la habilidad, se ha decidido crear una skill alojada en Alexa (\textit{\textbf{Alexa-hosted skill}}) desde la consola de desarrolladores, por varios motivos: simplicidad en el despliegue, al delegar la labor de configuración y gestión de la escalabilidad de la función Lambda a Amazon, y por ofrecer un entorno de desarrollo integrado, con herramientas para facilitar la depuración y poder centrarse en la lógica más que en mantener la infraestructura. 
+
+Para la skill alojada en Alexa, se ha decidido usar \textbf{Node.js} como entorno de ejecución en lugar de Python debido a que, a pesar de la simplicidad de este último, las características del primero en cuanto a rendimiento y escalabilidad lo hacen más apropiado en esta ocasión. Esto tiene su explicación en el modelo de Node.js, que trabaja con funciones asíncronas y eventos de entrada/salida no bloqueantes, lo que lo hace ideal para manejar varias tareas simultáneamente, sin tiempos de espera entre que cada una termina de finalizarse. Este aspecto es indispensable en los modelos de interacción por voz de las skill de las Alexa, que tienen requisitos en tiempo real. No solo eso, sino que también tras la investigación de recursos online y de ayuda relacionados con las skills de Alexa, se ha podido comprobar que Node.js contiene más material disponible.
+
+Como mecanismo de almacenamiento de datos, se ha elegido la base de datos NoSQL de \textbf{DynamoDB}, puesto que al ser un servicio de AWS es fácil de integrar con la skill de Alexa, por no mencionar su escalabilidad y alto rendimiento en operaciones con un volumen cambiante de datos. Adicionalmente, para almacenar las imágenes necesarias para la interfaz del proyecto, se ha optado por \textbf{Amazon S3} por los mismos motivos que la base de datos seleccionada.
 
 \subsection{Fundamentos de una skill}
 
