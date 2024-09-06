@@ -55,28 +55,26 @@ Todo modelo de prototipos se descompone en las siguientes fases, mostradas en la
 El presupuesto permite gestionar los recursos del proyecto, desde el asignamiento de recursos humanos hasta la adquisición de equipamiento y materiales necesarios.
 
 \subsubsection{Recursos humanos}
-Los recursos humanos incluyen a las personas involucradas en el proyecto, tanto en las etapas previas al desarrollo como durante el mismo.
+Los recursos humanos incluyen a las personas involucradas en el proyecto, tanto en las etapas previas al desarrollo como durante el mismo. 
+
+Los datos de esta tabla han sido calculados a partir de las tablas salariales por titulación en España \parencite{glassdoor2024}.  
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
     \hline
     \rowcolor{lightgray}
-    \textbf{Descripción} & \textbf{Horas} & \textbf{€/h} & \textbf{Coste (€)} \\
+    \textbf{Descripción} & \textbf{Horas} & \textbf{€/año} & \textbf{€/h} & \textbf{Coste (€)} \\
     \hline
-    Project manager & X & 40 & 1500 \\
+    Desarrollador(a) de software & 300 & 33.750 & 16,23 & 4.869 \\
     \hline
-    Analista & X & 30 & 1500 \\
+    Ingeniero/a de Cloud Computing & 72 & 42.507 & 20,44 & 1.471,68 \\
     \hline
-    Desarrollador(a) de software & X & 25 & 1500 \\
+    Psicólogo/a & 10 & 23.794 & 12,20 & 122 \\
     \hline
-    Ingeniero/a de Cloud Computing & X & 30 & 1600 \\
+    Expertos en Gerontología de la UGR & \multicolumn{4}{|c|}{Colaboración voluntaria} \\
     \hline
-    Psicólogo/a & X & X & 200 \\
-    \hline
-    Expertos en Gerontología de la UGR & x & x & Colaboración voluntaria \\
-    \hline
-    \textbf{Total} & \textbf{x} & \textbf{x} & \textbf{x} \\
+    \textbf{Total} & \textbf{382} & \multicolumn{2}{|c|}{} & \textbf{6.462,68} \\
     \hline
     \end{tabular}
     \caption{Presupuesto para recursos humanos}
@@ -86,18 +84,20 @@ Los recursos humanos incluyen a las personas involucradas en el proyecto, tanto 
 \subsubsection{Hardware}
 La parte de hardware son todos los dispositivos físicos y electrónicos necesarios para llevar a cabo la aplicación.
 
+El coste mensual del dispositivo se calcula dividiendo el precio original entre su vida útil (en meses), y después esa cantidad se puede multiplicar por el número de meses que se ha utilizado para hallar el importe amortizado.
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
     \hline
     \rowcolor{lightgray}
-    \textbf{Descripción} & \textbf{Coste (€)}\\
+    \textbf{Descripción} & \textbf{Precio (€)} & \textbf{Vida útil (meses}) & \textbf{Uso (meses)} & \textbf{Importe amortizado (€)}\\
     \hline
-    HP 15s Intel Core i5-1035G1/16GB/1TB/15.6" & 550-650 \\
+    HP 15s Intel Core i5 & 650 & 72 & 8 & 72,24 \\
     \hline
-    Alexa Echo Show & 70 \\
+    Amazon Echo Show 5 & 70 & 60 & 9 & 9,36 \\
     \hline
-    \textbf{Total} & \textbf{x} \\
+    \multicolumn{4}{|c|}{\textbf{Total}} & \textbf{81,6} \\
     \hline
     \end{tabular}
     \caption{Presupuesto para hardware}
@@ -126,7 +126,7 @@ La parte de software está constituida por todos los programas utilizados durant
     \hline
     Alexa Developer Console & 0 \\
     \hline
-    \textbf{Total} & \textbf{x} \\
+    \textbf{Total} & \textbf{10} \\
     \hline
     \end{tabular}
     \caption{Presupuesto para software}
@@ -143,13 +143,13 @@ Al combinar la cantidad total de presupuesto de recursos humanos, hardware y sof
         \rowcolor{lightgray}
         \textbf{Descripción} & \textbf{Coste (€)} \\
         \hline
-        Recursos humanos & 3100 \\
+        Recursos humanos & 6.462,68 \\
         \hline
-        Hardware & 670 \\
+        Hardware & 81,6 \\
         \hline
         Software & 10 \\
         \hline
-        \textbf{Total} & \textbf{3780} \\
+        \textbf{Total} & \textbf{6.554,28} \\
         \hline
     \end{tabular}
     \caption{Tabla general de presupuestos}

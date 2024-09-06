@@ -18,7 +18,7 @@ Hay una gran cantidad de guías disponibles para aprender a crear una skill desd
 	\item Se selecciona un nombre para la skill y el idioma para el que va a estar implementado el modelo.
 	\item Para la decisión del modelo, el que mejor se ajusta a las especificaciones de este proyecto es el \textit{Custom model} (o personalizado), que permite una mayor flexibilidad.
 	\item Como la idea es que Alexa se encargue de alojar el backend de la skill, se elige una de las dos opciones de \textit{Alexa-hosted}, en este caso la del entorno de ejecución de Node.js v16.x.
-	\item Se puede añadir una plantilla o importar una skill alojada en un repositorio de Git. En este caso, se ha optado por trabajar a partir de una plantilla básica, que solo incluye un ejemplo simple de \enquote{\textit{Hello world}} (ver figura 29). Sobre esta base se añadirán todas las funcionalidades del juego.
+	\item Se puede añadir una plantilla o importar una skill alojada en un repositorio de Git. En este caso, se ha optado por trabajar a partir de una plantilla básica, que solo incluye un ejemplo simple de \enquote{\textit{Hello world}} (\autoref{fig:alexa-dev-console-2}). Sobre esta base se añadirán todas las funcionalidades del juego.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -28,7 +28,7 @@ Hay una gran cantidad de guías disponibles para aprender a crear una skill desd
 	\label{fig:alexa-dev-console-2}
 \end{figure}
 
-Una vez creada y finalizada la configuración básica, se abrirá automáticamente el menú de \textit{Build}, desde el que se pueden ajustar varios aspectos de la skill.
+Una vez creada y finalizada la configuración básica, se abrirá automáticamente el menú de \textit{Build}, mostrado en la \autoref{fig:alexa-dev-console-1}, desde el que se pueden ajustar varios aspectos de la skill.
 
 Lo primero es declarar el nombre de invocación, que es con el que se llamará a la función de lanzamiento en el momento en el que se abre la skill, y se puede ajustar desde el menú lateral de \textit{Invocations}. Alexa establece una serie de restricciones sobre este parámetro: no puede incluir artículos o preposiciones, debe componerse de mínimo dos palabras, si contiene números estos deben ser escritos de manera completa, no debe incluir mayúsculas ni palabras reservadas como \enquote{Alexa, skill, app,} etc. 
 
@@ -57,7 +57,7 @@ Al tratarse de una skill alojada por Alexa, el endpoint se trata de la función 
 	\label{fig:alexa-dev-console-1}
 \end{figure}
 
-Si se navega al menú de código desde la barra de herramientas, se puede encontrar la siguiente estructura de archivos:
+Si se navega al menú de código desde la barra de herramientas (\autoref{fig:alexa-dev-console-3}), se puede encontrar la siguiente estructura de archivos:
 
 \begin{figure}[H]
 	\centering
@@ -86,7 +86,7 @@ Por otro lado, los dos ficheros restantes (\textit{local-debugger.js} y \textit{
 
 La plataforma de servicios AWS ofrece una amplia gama de mecanismos de monitorización, almacenamiento, gestión de políticas, computación, etc. Se caracteriza, entre otras cosas, por la flexibilidad y escalabilidad que permite gracias a su modelo de \enquote{pagar solo lo que se usa}.
 
-En la consola de desarrolladores de AWS aparecen todos los servicios usados recientemente, facilitando la navegación entre ellos.
+En la consola de desarrolladores de AWS (\autoref{fig:aws-console-1}) aparecen todos los servicios usados recientemente, facilitando la navegación entre ellos.
 
 \begin{figure}[H]
 	\centering
@@ -107,7 +107,7 @@ El primer servicio utilizado es IAM, con el objetivo de crear un rol capaz de ot
 	\label{fig:aws-iam-2}
 \end{figure}
 
-En el menú de creación del rol, hay que rellenar los siguientes parámetros de configuración: el tipo de entidad de confianza (un servicio de AWS), el caso de uso (la función de Lambda), las políticas de permisos a agregar (\textit{AmazonDynamoDBFullAccess}) y el nombre del rol que se está creando.
+En el menú de creación del rol mostrado en la \autoref{fig:aws-iam-2}, hay que rellenar los siguientes parámetros de configuración: el tipo de entidad de confianza (un servicio de AWS), el caso de uso (la función de Lambda), las políticas de permisos a agregar (\textit{AmazonDynamoDBFullAccess}, añadido en la \autoref{fig:aws-iam-1}) y el nombre del rol que se está creando.
 
 \begin{figure}[H]
 	\centering
@@ -116,7 +116,7 @@ En el menú de creación del rol, hay que rellenar los siguientes parámetros de
 	\label{fig:aws-iam-1}
 \end{figure}
 
-Para que la skill pueda usar los recursos de AWS que será definidos en las secciones siguientes, se necesita modificar el fichero JSON que especifica las relaciones de confianza del rol. Para ello, se añade la siguiente entrada:
+Para que la skill pueda usar los recursos de AWS que será definidos en las secciones siguientes, se necesita modificar el fichero JSON que especifica las relaciones de confianza del rol. Para ello, se añade la entrada indicada en la \autoref{fig:aws-iam-3}.
 
 \begin{figure}[H]
 	\centering
@@ -125,7 +125,7 @@ Para que la skill pueda usar los recursos de AWS que será definidos en las secc
 	\label{fig:aws-iam-3}
 \end{figure}
 
-El texto censurado es el ARN (Amazon Resource Name) o identificador del rol de ejecución IAM que la función Lambda asume al ejecutarse la skill de Alexa. Este se puede obtener desde la consola de desarrolladores de Alexa, en el menú del código, con la opción \textit{Integrate}, especialmente diseñada para poder vincular la skill a servicios personales de AWS.
+El texto censurado es el ARN (Amazon Resource Name) o identificador del rol de ejecución IAM que la función Lambda asume al ejecutarse la skill de Alexa. Este se puede obtener desde la consola de desarrolladores de Alexa, en el menú del código, pulsando en la opción \textit{Integrate} (\autoref{fig:aws-iam-4}), especialmente diseñada para poder vincular la skill a servicios personales de AWS.
 
 \begin{figure}[H]
 	\centering
@@ -140,7 +140,7 @@ Como su nombre indica, es un servicio ofrecido en AWS que permite almacenar obje
 
 En Amazon S3, se ha adoptado el término de \textit{bucket} como un contenedor para almacenar objetos. Cada bucket tiene un nombre único y puede simular una estructura de directorios, además pueden ser de acceso público o privado, al igual que sus elementos, que pueden configurarse a través de políticas de acceso.
 
-Para este proyecto, se ha creado un bucket de nombre \textit{bucket-oca} para guardar todos los archivos multimedia que necesita la skill.
+Para este proyecto, se ha creado un bucket de nombre \textit{bucket-oca} (\autoref{fig:aws-s3-1}) para guardar todos los archivos multimedia que necesita la skill.
 
 \begin{figure}[H]
 	\centering
@@ -155,7 +155,7 @@ Como se ha mencionado en la sección \textit{6.1.2.}, los datos de una skill no 
 
 Esta base de datos es de tipo NoSQL y es una alternativa interesante no solo por su total compatibilidad con las herramientas actuales del proyecto debido a que es otro servicio Amazon, sino también por su alta capacidad de adaptación a cualquier volumen de datos. 
 
-Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado automático en función del tráfico, gracias a su esquema NoSQL, cuyos elementos de las tablas se identifican mediante claves primarias únicas. Estas últimas pueden ser de partición o compuestas (unión de una clave de partición con una de ordenamiento). Para este proyecto, se han creado dos tablas: 
+Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado automático en función del tráfico, gracias a su esquema NoSQL, cuyos elementos de las tablas se identifican mediante claves primarias únicas. Estas últimas pueden ser de partición o compuestas (unión de la anterior con una de ordenamiento). Se han creado dos tablas (\autoref{fig:aws-db-1}): 
 \begin{itemize}
 	\item \textbf{JuegoOca}: su clave primaria es \textit{idJuego}, que siempre valdrá 0 debido a que se pretende guardar los datos de una sola partida entre sesiones. Tiene los elementos generales de un juego de la oca, que son el estado, el turno y ronda actual, el número de jugadores, el tipo de participantes...
 	\item \textbf{Jugador}: identificada por la clave primaria \textit{idJugador}, que a la vez determina el orden de turno, y será un valor entero único entre 0 y el el numero de total de participantes menos uno. Los atributos de cada elemento son: el nombre, el color, los puntos, la posición y penalizaciones actuales, etc.
@@ -168,7 +168,7 @@ Es conocido por optimizar sus tiempos de respuesta y llevar a cabo un escalado a
 	\label{fig:aws-db-1}
 \end{figure}
 
-Desde la consola de AWS, dentro del servicio de DynamoDB, se pueden explorar los elementos guardados en las tablas, así como consultar las unidades de lectura/escritura consumidas hasta el momento.
+Desde la consola de AWS, dentro del servicio de DynamoDB, se pueden explorar los elementos guardados en las tablas (\autoref{fig:aws-db-2}), así como consultar las unidades de lectura/escritura consumidas hasta el momento.
 
 \begin{figure}[H]
 	\centering

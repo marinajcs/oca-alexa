@@ -6,7 +6,7 @@ En esta sección se van a examinar algunas de las herramientas y conocimentos te
 
 En este apartado se justifica la elección de las herramientas y tecnologías utilizadas para el proyecto.
 
-En cuanto a la elección del asistente de voz, se ha elegido \textbf{Alexa} por varios motivos, el principal porque el dispositivo disponible para el proyecto es un \textit{Amazon Echo Show 5}, y además se ha visto en la sección \textit{2.3.2.} que es el asistente conversacional más extendido en la actualidad, entonces el producto final tendrá un mayor alcance.
+En cuanto a la elección del asistente de voz, se ha elegido \textbf{Alexa} por varios motivos, el principal porque el dispositivo disponible para el proyecto es un \textit{Amazon Echo Show 5}, y además se ha visto en las secciones \textit{2.3.2.} y \textit{2.3.3.} que es el asistente conversacional más extendido en la actualidad y tiene potencial para mejorar la calidad de vida de las personas mayores, entonces el producto final tendrá un mayor alcance.
 
 Para el desarrollo de la habilidad, se ha decidido crear una skill alojada en Alexa (\textit{\textbf{Alexa-hosted skill}}) desde la consola de desarrolladores, por varios motivos: simplicidad en el despliegue, al delegar la labor de configuración y gestión de la escalabilidad de la función Lambda a Amazon, y por ofrecer un entorno de desarrollo integrado, con herramientas para facilitar la depuración y poder centrarse en la lógica más que en mantener la infraestructura. 
 
@@ -69,12 +69,12 @@ Se va a utilizar \textbf{AWS Lambda} para la creación de este juego digital, ap
 La parte visual de la skill se gestiona mediante el lenguaje de presentación de Alexa (APL), a través del envío de documentos APL al dispositivo en forma de una directiva que se verá más adelante.
 
 Un documento APL consiste en un fichero JSON que define la estructura y disposición de elementos a mostrar por la pantalla del dispositivo de Alexa.
-A continuación se muestra un ejemplo básico de documento APL que imprime por pantalla una cadena de texto:
+A continuación se muestra un ejemplo básico de documento APL que imprime por pantalla una cadena de texto (\autoref{fig:apl-ejemplo}).
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{imgs/apl-example.JPG}
-	\caption{Ejemplo de documento APL básico (\href{https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Documentation})}
+	\caption{Ejemplo de documento APL básico (\href{https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-document.html}{Alexa Developer Docs})}
 	\label{fig:apl-ejemplo}
 \end{figure}
 
