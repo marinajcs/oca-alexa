@@ -11,3 +11,6 @@ saludable» de la Universidad de Granada. Alexa es el asistente virtual escogido
 debido a que sus skills ofrecen una amplia gama de posibilidades para crear experiencias interactivas y entretenidas.
 Estas habilidades permiten a los desarrolladores crear juegos de diferentes géneros y niveles de complejidad, desde
 simples juegos de palabras y adivinanzas hasta juegos de aventuras o trivial más elaborados.
+
+El presente Trabajo de Fin de Grado ha sido evaluado por el tribunal correspondiente y ha obtenido la máxima calificación,
+siendo merecedor de la Matrícula de Honor. El documento completo puede consultarse en el siguiente [enlace](https://hdl.handle.net/10481/95270).
